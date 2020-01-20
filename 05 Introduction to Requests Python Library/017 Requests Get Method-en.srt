@@ -1,0 +1,416 @@
+1
+00:00:00,580 --> 00:00:02,240
+Hello everyone!
+
+2
+00:00:02,260 --> 00:00:05,660
+Today we will discuss requests.
+
+3
+00:00:05,890 --> 00:00:13,020
+Like how we send requests to a server and how we receive an object response back from the server as
+
+4
+00:00:13,020 --> 00:00:14,540
+we discussed earlier.
+
+5
+00:00:14,650 --> 00:00:21,280
+When you open a website on a browser, what happens is that a user sends a request which is you typing
+
+6
+00:00:21,700 --> 00:00:25,860
+a URL of a website that you want to open and hitting Enter.
+
+7
+00:00:25,870 --> 00:00:32,830
+Server receives that request and then sends back a response to the user which, in the browser scenario,
+
+8
+00:00:33,010 --> 00:00:35,620
+the website opens
+
+9
+00:00:35,800 --> 00:00:40,980
+once you press enter after you are in.
+
+10
+00:00:40,990 --> 00:00:42,730
+So how can we emulate this
+
+11
+00:00:42,730 --> 00:00:47,980
+in Python. In Python we have a module Request which lets us do this.
+
+12
+00:00:47,980 --> 00:00:50,440
+There are four types of requests.
+
+13
+00:00:50,740 --> 00:00:58,540
+So by that I mean that there are four different ways in which I can send requests to server.
+
+14
+00:00:58,630 --> 00:01:01,930
+Only two are more commonly used.
+
+15
+00:01:02,300 --> 00:01:10,300
+The most commonly used ones are GET and POST. The GET type request is mostly used to retrieve information.
+
+16
+00:01:10,990 --> 00:01:13,810
+Whenever you want to fetch some data from server,
+
+17
+00:01:14,040 --> 00:01:20,270
+use a GET request. And a POST request is normally used to send information to server.
+
+18
+00:01:20,680 --> 00:01:24,140
+Again I'm saying they're normally used for this purpose.
+
+19
+00:01:24,160 --> 00:01:30,400
+I'm not saying that this is the only purpose they use for.
+
+20
+00:01:30,430 --> 00:01:36,850
+So just to keep it simple, GET is used to retrieve information and POST is used to send
+
+21
+00:01:36,850 --> 00:01:39,550
+information and requests.
+
+22
+00:01:39,580 --> 00:01:42,000
+Let's assimilate all of this.
+
+23
+00:01:42,000 --> 00:01:43,760
+So how do we do this.
+
+24
+00:01:44,530 --> 00:01:52,220
+We have a method "requests.get()". Let's assimilate a GET request.
+
+25
+00:01:52,600 --> 00:01:58,090
+So what it receives in its parameter is a URL which you want to open.
+
+26
+00:01:58,280 --> 00:01:58,880
+OK.
+
+27
+00:01:59,060 --> 00:02:08,100
+And this line return us our response object.
+
+28
+00:02:08,340 --> 00:02:14,880
+I'll just show you this within an example and I hope things will be more clear then. I say
+
+29
+00:02:15,010 --> 00:02:15,460
+"request.get()".
+
+30
+00:02:15,500 --> 00:02:23,880
+And I'm going to open Google using requests. So if I print response
+
+31
+00:02:23,880 --> 00:02:24,230
+now
+
+32
+00:02:29,360 --> 00:02:30,410
+you can see what happened.
+
+33
+00:02:30,450 --> 00:02:35,200
+What happened was that when I typed this is the same as typing Google.com in my browser.
+
+34
+00:02:35,630 --> 00:02:37,720
+So the Google server
+
+35
+00:02:37,720 --> 00:02:46,080
+receives a request and then sent back a response which is this object here this response with even
+
+36
+00:02:46,090 --> 00:02:46,830
+alike name.
+
+37
+00:02:46,860 --> 00:02:51,250
+I've named it response. And if print it says me "<Response [200]>".
+
+38
+00:02:51,480 --> 00:02:57,580
+I'll just explain what 200 is, the status code and I'll just get to them.
+
+39
+00:02:57,690 --> 00:03:06,960
+So our response, whenever we send a request we'll receive a response and to see what the response is,
+
+40
+00:03:06,960 --> 00:03:18,150
+the contents of response are, what we do is there is a method which is "response.content" and print
+
+41
+00:03:18,300 --> 00:03:29,120
+response.content. So run that. You can see I have the HTML which the Google servers have sent to me if I
+
+42
+00:03:29,120 --> 00:03:35,600
+copy this in an HTML file and run it, you'll see that I have the Google home page with me.
+
+43
+00:03:35,600 --> 00:03:37,020
+This is in the single line right now.
+
+44
+00:03:37,030 --> 00:03:43,190
+I mean it is not formatted so it means you may not be able to understand this but
+
+45
+00:03:43,280 --> 00:03:47,340
+you can see the tags, the starting backs and "doctype" and then the HTML tag.
+
+46
+00:03:47,600 --> 00:03:53,240
+And if you move further, you can see this meta tag here and this goes on.
+
+47
+00:03:53,420 --> 00:03:59,240
+So what I received was like as soon as the sent a request to Google server,
+
+48
+00:03:59,240 --> 00:04:05,950
+the Google server sent me back a response. And to see the content of the response,
+
+49
+00:04:05,960 --> 00:04:08,330
+I have this method "response.content".
+
+50
+00:04:08,720 --> 00:04:16,370
+And if I print this I get this. This HTML which the Google servers have sent to me.
+
+51
+00:04:16,770 --> 00:04:17,610
+OK.
+
+52
+00:04:18,670 --> 00:04:20,540
+So what are this codes.
+
+53
+00:04:21,050 --> 00:04:24,350
+Whenever a server sends back a response,
+
+54
+00:04:24,350 --> 00:04:29,610
+it also sends back a status code. This code is a three digit integer value.
+
+55
+00:04:30,070 --> 00:04:38,620
+And that indicate how the server processed
+
+56
+00:04:38,620 --> 00:04:40,990
+our request.
+
+57
+00:04:40,990 --> 00:04:44,960
+So let's say you open some pages which is just not there.
+
+58
+00:04:45,370 --> 00:04:52,540
+And whatwill happen there is it will send back an error status code indicating
+
+59
+00:04:52,540 --> 00:04:52,750
+that
+
+60
+00:04:52,750 --> 00:04:53,880
+there is an error.
+
+61
+00:04:54,250 --> 00:05:01,350
+So if I run, I say "print(response.status_code)".
+
+62
+00:05:01,560 --> 00:05:06,520
+and I ran that and I guess it says 200.
+
+63
+00:05:06,550 --> 00:05:15,180
+So I mean like from 100 to 199 status codes mean that the service
+
+64
+00:05:15,210 --> 00:05:21,350
+is sending us back some information, like it could be anything related to the information
+
+65
+00:05:21,460 --> 00:05:27,510
+like the request we send to the server. From 200 to 299,
+
+66
+00:05:27,580 --> 00:05:34,790
+this status code indicates that our request was processed successfully. From 300 to 399,
+
+67
+00:05:34,790 --> 00:05:37,300
+is that whatever the request was,
+
+68
+00:05:37,340 --> 00:05:42,470
+it has been redirected either to another server or URL,
+
+69
+00:05:42,610 --> 00:05:49,910
+it has been redirect. And 400 to 499 are client based error code.
+
+70
+00:05:50,090 --> 00:05:55,730
+This indicates that there is some error on our side and we sent the wrong request or maybe we
+
+71
+00:05:55,730 --> 00:05:59,450
+didn't have the privilege to send such a request.
+
+72
+00:05:59,540 --> 00:06:08,900
+And so it goes from five hundred to 599 indicate that the server when processing
+
+73
+00:06:08,900 --> 00:06:12,160
+on request had some error and it sent us back
+
+74
+00:06:12,170 --> 00:06:19,130
+this status code that OK that the fault this time was at the servers end
+
+75
+00:06:19,220 --> 00:06:20,050
+and not at that side.
+
+76
+00:06:20,210 --> 00:06:26,540
+So I mean each time you send a request, you can check back this status code of the response object to see
+
+77
+00:06:26,930 --> 00:06:28,920
+if you received a... like
+
+78
+00:06:28,940 --> 00:06:33,190
+if your request was one of success or not.
+
+79
+00:06:33,260 --> 00:06:38,540
+OK, so the way to do this is like I have this method "response.status_code".
+
+80
+00:06:38,660 --> 00:06:44,370
+It gives me back the status code which the server has sent to me OK.
+
+81
+00:06:44,500 --> 00:06:53,510
+So there there are also headers encoded in their response which the servers sent us back. By headers
+
+82
+00:06:53,530 --> 00:06:55,060
+I mean I'll just show you.
+
+83
+00:06:55,090 --> 00:06:59,590
+So that will clarify things more I think.
+
+84
+00:06:59,590 --> 00:07:09,640
+So the method for headers is "response.headers" and headers are basically a dictionary which
+
+85
+00:07:10,080 --> 00:07:14,630
+the server returns us and I can say print
+
+86
+00:07:14,770 --> 00:07:18,470
+response.headers and if I run this now
+
+87
+00:07:18,700 --> 00:07:26,580
+you can see it as a dictionary and if you remember a way to iterate what a dictionary is you say
+
+88
+00:07:26,590 --> 00:07:28,690
+"for key, value in
+
+89
+00:07:31,420 --> 00:07:33,720
+response.header.items():".
+
+90
+00:07:36,670 --> 00:07:37,100
+Print
+
+91
+00:07:41,760 --> 00:07:47,010
+and then value. You run this now.
+
+92
+00:07:47,200 --> 00:07:50,110
+You can see I have the date.
+
+93
+00:07:50,210 --> 00:07:53,820
+This is the day the server sent us back our response.
+
+94
+00:07:53,870 --> 00:08:01,380
+It says when this is going to expire. By expire it means like, you know, there are
+
+95
+00:08:01,400 --> 00:08:06,640
+cookies there and how they work and this "expires" is for that.
+
+96
+00:08:06,640 --> 00:08:08,540
+So here we have "Cache-Control".
+
+97
+00:08:08,540 --> 00:08:14,950
+This "Content-Type" and a whole lot of other things which I don't think you really need to
+
+98
+00:08:14,950 --> 00:08:22,390
+know about them but it's good to know that these are returned with our response
+
+99
+00:08:22,480 --> 00:08:23,280
+object.
+
+100
+00:08:23,530 --> 00:08:32,750
+So today we learn about three things: how we send a request to server and hopefully receive back a response
+
+101
+00:08:33,240 --> 00:08:41,480
+and how the different methods of response like the content method, the status_code and the headers.
+
+102
+00:08:41,490 --> 00:08:44,270
+I hope I've made myself clear.
+
+103
+00:08:44,580 --> 00:08:49,280
+And if you have any issues please let me know.
+
+104
+00:08:49,350 --> 00:08:50,020
+Thank you.
+

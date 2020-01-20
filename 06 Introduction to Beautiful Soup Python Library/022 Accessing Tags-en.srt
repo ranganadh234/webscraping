@@ -1,0 +1,376 @@
+1
+00:00:00,540 --> 00:00:08,670
+Hello everyone! In this video we will be discussing how we access tags, their attributes and how we can modify
+
+2
+00:00:08,670 --> 00:00:09,310
+them.
+
+3
+00:00:10,700 --> 00:00:11,610
+OK.
+
+4
+00:00:11,730 --> 00:00:19,950
+So for this file, for this video, I'm to use this HTML file.
+
+5
+00:00:11,730 --> 00:00:19,950
+I have this "html", this
+
+6
+00:00:19,950 --> 00:00:21,300
+"head", this "body".
+
+7
+00:00:21,300 --> 00:00:25,050
+I have two "div"s and have two "p" tags in them.
+
+8
+00:00:25,680 --> 00:00:28,640
+OK, so an attribute of a tag is this.
+
+9
+00:00:28,670 --> 00:00:32,670
+This here. This "class" is an attribute of this "body" tag.
+
+10
+00:00:32,700 --> 00:00:36,390
+This "charset" is an attribute of this "meta" tag.
+
+11
+00:00:36,400 --> 00:00:40,740
+The "styl"e is an attribute of this "p" tag.
+
+12
+00:00:40,950 --> 00:00:42,520
+So this is an attribute.
+
+13
+00:00:42,570 --> 00:00:51,690
+And they can have multiple attributes like a "class" and also have "style". So, OK. So you know.
+
+14
+00:00:51,950 --> 00:00:57,040
+OK, so how do we access tags.
+
+15
+00:00:57,330 --> 00:01:03,900
+The very basic method is that, let's say, I want to access this meta tag here what I'd do is I
+
+16
+00:01:03,900 --> 00:01:13,500
+say "meta" is equal to "soup.meta". What this is going to do is this is going to give
+
+17
+00:01:13,590 --> 00:01:18,740
+me this meta tag, the first occurrence of this tag.
+
+18
+00:01:19,110 --> 00:01:26,420
+And if I print meta begin, we can see I get that tag here, the exact thing.
+
+19
+00:01:26,800 --> 00:01:29,490
+That's one.
+
+20
+00:01:29,530 --> 00:01:37,060
+So again, what this does is this gives me the first occurrence of the tag I am trying to access.
+
+21
+00:01:37,060 --> 00:01:39,350
+So I mean I have two div's.
+
+22
+00:01:39,370 --> 00:01:42,150
+All right let's I want to get to this div.
+
+23
+00:01:42,220 --> 00:01:46,340
+What am I going to do is to say "div" is equal to "soup.div".
+
+24
+00:01:46,530 --> 00:01:52,710
+And if I print "div" I get this here.
+
+25
+00:01:52,830 --> 00:02:02,150
+Div, in first div, but if I want to get the second "div", it's not that simple. I can't access the second "div"
+
+26
+00:02:02,190 --> 00:02:08,260
+using this, only this "soup.div".
+
+27
+00:02:02,190 --> 00:02:08,260
+This won't give me the second "div".
+
+28
+00:02:08,370 --> 00:02:13,640
+This only gives me the first occurrence of "div" and in our case it's this one.
+
+29
+00:02:13,860 --> 00:02:14,650
+This one here.
+
+30
+00:02:14,820 --> 00:02:20,890
+It's the first time this "div" occurs in our HTML document starting from the very top.
+
+31
+00:02:21,000 --> 00:02:28,530
+So when we write "soup." some tag, that gives the first occurrence of that tag.
+
+32
+00:02:28,670 --> 00:02:31,680
+OK, so I was accessing meta tag here.
+
+33
+00:02:31,860 --> 00:02:35,840
+I said "soup.meta" is equal to "meta", and if I print "meta"
+
+34
+00:02:36,900 --> 00:02:46,720
+I get that tag here, that meta tag. Ok, so some commonly used tag methods are if I want to get the
+
+35
+00:02:46,720 --> 00:02:51,210
+attributes of meta tag, it has, you can see, an attribute "charset".
+
+36
+00:02:51,250 --> 00:02:58,780
+So if I say print "meta.get('charset')".
+
+37
+00:02:59,720 --> 00:03:02,450
+This is going to give me the value of this attribute.
+
+38
+00:03:02,660 --> 00:03:10,880
+As you can see "charset" has the value "UTF-8" and if I run this get method I get this.
+
+39
+00:03:10,880 --> 00:03:15,140
+So get method can be used to get the value of any attribute.
+
+40
+00:03:15,440 --> 00:03:15,970
+OK.
+
+41
+00:03:16,100 --> 00:03:21,660
+And let's say I input an invalid key, an invalid attribute.
+
+42
+00:03:21,860 --> 00:03:23,610
+So what it does is it says none.
+
+43
+00:03:23,630 --> 00:03:25,850
+It didn't get it.
+
+44
+00:03:26,050 --> 00:03:28,780
+None means that this attribute didn't exist.
+
+45
+00:03:28,780 --> 00:03:30,660
+It did not get this attribute.
+
+46
+00:03:31,160 --> 00:03:34,840
+OK, so you can also treat this as a dictionary.
+
+47
+00:03:31,160 --> 00:03:34,840
+I could write
+
+48
+00:03:34,850 --> 00:03:37,350
+"meta['charset']".
+
+49
+00:03:40,780 --> 00:03:42,840
+So it gives me "UTF-8".
+
+50
+00:03:42,880 --> 00:03:48,630
+So like there are in general two methods in which you can access any tag attributes. One is "get()" and
+
+51
+00:03:48,650 --> 00:03:50,490
+other is treating it like a dictionary.
+
+52
+00:03:51,550 --> 00:03:52,150
+OK.
+
+53
+00:03:53,660 --> 00:03:58,430
+So we can actually modify these attributes at runtime.
+
+54
+00:03:58,430 --> 00:04:02,330
+Let's say I want to change the value of this "charset".
+
+55
+00:04:02,690 --> 00:04:05,730
+Or maybe let's make it interesting.
+
+56
+00:04:05,780 --> 00:04:11,340
+I want to input something here in "style". You can see body style has nothing right now.
+
+57
+00:04:11,630 --> 00:04:16,890
+So what I do when I say "body", first I access my body tag, "soup.body".
+
+58
+00:04:16,910 --> 00:04:22,420
+This gives me the first ocurrance of body  and fortunately only have one body in the document.
+
+59
+00:04:22,430 --> 00:04:23,040
+OK.
+
+60
+00:04:23,330 --> 00:04:24,470
+So if a print "body",
+
+61
+00:04:28,730 --> 00:04:37,410
+you can see I have the whole "body" here, the whole "body" tag and what it contains. OK, so now I'm going to
+
+62
+00:04:37,410 --> 00:04:47,060
+access this "style" tag. I'm going to say "body" and "style".
+
+63
+00:04:37,410 --> 00:04:47,060
+And if I run it and it gives it blank because I don't have anything
+
+64
+00:04:47,060 --> 00:04:58,320
+in "style". Now I want to set something for the style tag.
+
+65
+00:04:47,060 --> 00:04:58,320
+I can say "body['style']" is equal to some style.
+
+66
+00:05:00,650 --> 00:05:02,180
+and if I print it now
+
+67
+00:05:05,590 --> 00:05:14,320
+you can see it gives me "some style". So at runtime it has changed the value of this style attribute. It is
+
+68
+00:05:14,320 --> 00:05:15,840
+very helpful
+
+69
+00:05:16,120 --> 00:05:21,850
+When you are trying to parse something, like parse different tags and you want to maintain
+
+70
+00:05:21,850 --> 00:05:26,340
+the check, so you could have your own tag attributes.
+
+71
+00:05:26,370 --> 00:05:31,960
+And it would keep checks this way by changing their value that "yes, you have already fetched the contents
+
+72
+00:05:31,960 --> 00:05:33,100
+from there".
+
+73
+00:05:33,250 --> 00:05:36,380
+I mean it depends on what you are doing.
+
+74
+00:05:36,760 --> 00:05:41,410
+So this is how we modify a tag attribute.
+
+75
+00:05:41,410 --> 00:05:50,600
+OK, so now there's this concept of multi-valued attributes.
+
+76
+00:05:41,410 --> 00:05:50,600
+As you can see body here has an attribute
+
+77
+00:05:50,660 --> 00:05:58,910
+"class" and it has two classes. The attribute "class" has two classes, the first and second.
+
+78
+00:06:00,560 --> 00:06:06,410
+If you're familiar with CSS, you know we can have a lot of classes here.
+
+79
+00:06:06,410 --> 00:06:10,530
+I mean all of these classes would apply to this tag, to this "body" tag.
+
+80
+00:06:10,670 --> 00:06:14,890
+So this is a multivalued attribute.
+
+81
+00:06:15,230 --> 00:06:20,050
+So how do we access this it's same, it's not different.
+
+82
+00:06:20,230 --> 00:06:21,920
+I say "body['class']".
+
+83
+00:06:22,050 --> 00:06:25,860
+But what's different is this time it is going to give me a list.
+
+84
+00:06:25,950 --> 00:06:28,630
+It will return me a list and not a single value.
+
+85
+00:06:28,770 --> 00:06:34,500
+So if you have a multivalued attribute that will always be a list and not a single value. You should
+
+86
+00:06:34,500 --> 00:06:40,020
+keep this in mind when you are accessing tags attributes and parsing them.
+
+87
+00:06:40,050 --> 00:06:48,750
+Ok ,so today we discussed how to access tags, the very basic version of tags, and how we can access the
+
+88
+00:06:48,750 --> 00:06:53,370
+tags attributes and change their values or modify them.
+
+89
+00:06:53,380 --> 00:06:54,750
+I hope this is clear.
+
+90
+00:06:54,760 --> 00:06:56,990
+Next we'll move to some more
+
+91
+00:06:57,000 --> 00:07:05,620
+advanced stuff and navigating our soup and how we can access
+
+92
+00:06:57,000 --> 00:07:05,620
+different tags, and their children, and their
+
+93
+00:07:05,620 --> 00:07:06,580
+parents.
+
+94
+00:07:06,880 --> 00:07:08,040
+Thank you very much.
+

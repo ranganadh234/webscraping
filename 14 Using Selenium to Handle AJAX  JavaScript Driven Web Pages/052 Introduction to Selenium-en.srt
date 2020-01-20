@@ -1,0 +1,472 @@
+1
+00:00:00,240 --> 00:00:08,290
+Hello everyone! In this video, we're going to talk about
+
+2
+00:00:00,240 --> 00:00:08,290
+Selenium and how we can use it with Python. In the
+
+3
+00:00:08,290 --> 00:00:09,010
+previous video,
+
+4
+00:00:09,010 --> 00:00:14,810
+we discussed JavaScript, Ajax and the need for Selenium.
+
+5
+00:00:14,830 --> 00:00:21,780
+So from what we know right now, Selenium is another
+
+6
+00:00:14,830 --> 00:00:21,780
+way of opening web pages and interacting with them.
+
+7
+00:00:22,930 --> 00:00:30,280
+So let's see what Selenium does and how actually does
+
+8
+00:00:22,930 --> 00:00:30,280
+it interact with web pages and how we can open
+
+9
+00:00:30,280 --> 00:00:32,330
+web pages using Selenium.
+
+10
+00:00:32,830 --> 00:00:35,330
+So at line number one, this is a necessary import
+
+11
+00:00:35,350 --> 00:00:39,140
+you need to do, "from selenium import web driver".
+
+12
+00:00:39,360 --> 00:00:46,110
+After doing that in my installation video you'll see that
+
+13
+00:00:39,360 --> 00:00:46,110
+I have shown you, you have to download the Chrome
+
+14
+00:00:46,110 --> 00:00:49,050
+driver for Selenium.
+
+15
+00:00:49,160 --> 00:00:57,000
+So wherever you have the Chrome driver in your system,
+
+16
+00:00:49,160 --> 00:00:57,000
+just copy that path. Like for my system the path is here,
+
+17
+00:00:57,390 --> 00:00:59,490
+I have it in my "Downloads" folder.
+
+18
+00:00:59,490 --> 00:01:05,430
+So it is right here, the Chrome driver, that's in my
+
+19
+00:00:59,490 --> 00:01:05,430
+"Downloads" folder. I've just copied the path and it is here
+
+20
+00:01:05,880 --> 00:01:07,070
+in my system.
+
+21
+00:01:07,100 --> 00:01:11,470
+What do you have to do is you have to see what's the path for your system.
+
+22
+00:01:11,500 --> 00:01:22,350
+After doing that, we are going to create a driver object.
+
+23
+00:01:11,500 --> 00:01:22,350
+We say "driver" is equals to "webdriver.chrome" and here I'm going
+
+24
+00:01:22,350 --> 00:01:28,840
+to copy this path and send it as a parameter.
+
+25
+00:01:28,840 --> 00:01:33,850
+OK, so now I have a driver object, that driver object.
+
+26
+00:01:33,880 --> 00:01:39,250
+So what is that webdriver object. You can think of it
+
+27
+00:01:33,880 --> 00:01:39,250
+as a complete browser, like I have a complete Chrome
+
+28
+00:01:39,250 --> 00:01:47,450
+browser which I can programmatically control,
+
+29
+00:01:39,250 --> 00:01:47,450
+I can actually control this Chrome browser programmatically.
+
+30
+00:01:47,660 --> 00:01:54,190
+I can actually control with clicks and
+
+31
+00:01:47,660 --> 00:01:54,190
+stuff, actually moving my cursor or doing
+
+32
+00:01:54,260 --> 00:01:57,290
+something, I'm going to control it with my code.
+
+33
+00:01:57,500 --> 00:02:04,020
+So as soon as you make a driver object, you need to
+
+34
+00:01:57,500 --> 00:02:04,020
+realize that this will open an instance of Chrome.
+
+35
+00:02:04,070 --> 00:02:08,900
+So what do you need to do now is you need to make
+
+36
+00:02:04,070 --> 00:02:08,900
+sure that when your program ends you need to close
+
+37
+00:02:08,900 --> 00:02:10,370
+that instance.
+
+38
+00:02:10,370 --> 00:02:20,110
+So I'm going to say "driver.close" this will
+
+39
+00:02:10,370 --> 00:02:20,110
+quit the Chrome application which is being
+
+40
+00:02:20,110 --> 00:02:26,620
+launched at line number eight and I'm going to run this
+
+41
+00:02:20,110 --> 00:02:26,620
+now and I'm going to show you what's going on and how this is
+
+42
+00:02:26,620 --> 00:02:27,150
+going on.
+
+43
+00:02:31,550 --> 00:02:32,510
+Can you see this?
+
+44
+00:02:32,510 --> 00:02:34,170
+It was really quick.
+
+45
+00:02:34,370 --> 00:02:43,100
+Maybe I'll use time to have some sleep so that
+
+46
+00:02:34,370 --> 00:02:43,100
+after opening, my program sleeps for let's say
+
+47
+00:02:43,490 --> 00:02:48,350
+five seconds so that we actually know that
+
+48
+00:02:43,490 --> 00:02:48,350
+the Chrome browser opened. I think five is good.
+
+49
+00:02:48,390 --> 00:02:48,750
+OK.
+
+50
+00:02:48,770 --> 00:03:00,160
+I'm going to run this now. Ok, can you see
+
+51
+00:02:48,770 --> 00:03:00,160
+this here? And it automatically quits.
+
+52
+00:03:00,260 --> 00:03:05,090
+So I can have a print statement here before "sleep".
+
+53
+00:03:06,840 --> 00:03:09,920
+Print "after sleep".
+
+54
+00:03:14,740 --> 00:03:16,170
+So "before sleep".
+
+55
+00:03:16,450 --> 00:03:17,260
+And here we go.
+
+56
+00:03:20,930 --> 00:03:28,400
+So this basically opens a Chrome browser, a complete
+
+57
+00:03:20,930 --> 00:03:28,400
+Chrome browser, and it can do whatever I want with
+
+58
+00:03:28,400 --> 00:03:28,870
+that
+
+59
+00:03:29,030 --> 00:03:32,340
+with that browser, with that window I have opened.
+
+60
+00:03:32,510 --> 00:03:39,110
+So the most basic thing that we need to do right now
+
+61
+00:03:32,510 --> 00:03:39,110
+is we need to open some page and see how that works
+
+62
+00:03:39,110 --> 00:03:39,640
+out.
+
+63
+00:03:39,860 --> 00:03:45,750
+So we say the method is "get" method. Here
+
+64
+00:03:39,860 --> 00:03:45,750
+I'm going to input the URL for Google
+
+65
+00:03:49,210 --> 00:03:55,090
+and then I'm going to use sleep for five
+
+66
+00:03:49,210 --> 00:03:55,090
+seconds so that I can see that Google is open.
+
+67
+00:03:55,140 --> 00:04:02,740
+OK, and I'm going to run this and then going to see if
+
+68
+00:03:55,140 --> 00:04:02,740
+we have Google opened, the Chrome instance, which
+
+69
+00:04:03,400 --> 00:04:06,310
+we create at line number eight. Let's run this
+
+70
+00:04:11,740 --> 00:04:18,420
+here.
+
+71
+00:04:18,500 --> 00:04:23,110
+So it actually opens a Google window.
+
+72
+00:04:23,190 --> 00:04:28,380
+I can change to anything. I could have it
+
+73
+00:04:23,190 --> 00:04:28,380
+to Facebook. I'm going to run this now.
+
+74
+00:04:30,590 --> 00:04:31,510
+You can see that here.
+
+75
+00:04:35,420 --> 00:04:42,610
+So you can see. So I have a Chrome window which opens a Facebook page.
+
+76
+00:04:42,700 --> 00:04:48,660
+So the method is "get" method and the parameter
+
+77
+00:04:42,700 --> 00:04:48,660
+required is the URL and these are the parameters.
+
+78
+00:04:52,460 --> 00:04:52,860
+OK.
+
+79
+00:04:52,860 --> 00:05:02,340
+So what we have seen right now is we have
+
+80
+00:04:52,860 --> 00:05:02,340
+learned how to open a Selenium web driver and
+
+81
+00:05:02,360 --> 00:05:07,070
+for these videos, we are using Chrome driver for doing this.
+
+82
+00:05:07,230 --> 00:05:11,920
+And we have learned that whenever we open
+
+83
+00:05:07,230 --> 00:05:11,920
+an instance of Chrome we need to close it.
+
+84
+00:05:11,920 --> 00:05:14,940
+So that's why we have this "driver.close" statement.
+
+85
+00:05:15,270 --> 00:05:19,470
+And if we need to open some web page we use the "driver.get" method.
+
+86
+00:05:19,680 --> 00:05:25,980
+This opens the required web page. And let's
+
+87
+00:05:19,680 --> 00:05:25,980
+say I want to get the HTML for that page.
+
+88
+00:05:25,980 --> 00:05:27,980
+How do I do that?
+
+89
+00:05:28,040 --> 00:05:31,900
+So first of all, I'm going to make a soup out of this
+
+90
+00:05:31,950 --> 00:05:35,590
+Facebook's HTML. I say "BeautifulSoup".
+
+91
+00:05:35,900 --> 00:05:36,880
+And now what I'm going to do.
+
+92
+00:05:36,880 --> 00:05:43,940
+What I'm going to do is I'm to say "soup" is equal to "BeautifulSoup".
+
+93
+00:05:43,950 --> 00:05:49,210
+Now I'm to say "driver.page_source".
+
+94
+00:05:49,390 --> 00:06:00,230
+This is going to give me the HTML for
+
+95
+00:05:49,390 --> 00:06:00,230
+Facebook page and I'm going to remove the
+
+96
+00:06:00,290 --> 00:06:05,320
+"sleep" here because I we only want to get the
+
+97
+00:06:00,290 --> 00:06:05,320
+HTML right now and see if it works or not.
+
+98
+00:06:05,620 --> 00:06:14,680
+And how this is actually going on.
+
+99
+00:06:14,850 --> 00:06:22,740
+So you can see that I have the Facebook's HTML here, you
+
+100
+00:06:14,850 --> 00:06:22,740
+can see this here, "html class", "id='facebook'", language
+
+101
+00:06:22,800 --> 00:06:25,010
+English and all that.
+
+102
+00:06:25,020 --> 00:06:33,030
+So this is how we get the HTML in for whatever page we
+
+103
+00:06:25,020 --> 00:06:33,030
+have opened on the web driver. The method is
+
+104
+00:06:33,030 --> 00:06:38,830
+"driver.page_source".
+
+105
+00:06:38,920 --> 00:06:40,090
+Sorry this
+
+106
+00:06:40,250 --> 00:06:44,180
+is a ".page_source".
+
+107
+00:06:44,230 --> 00:06:49,440
+So now this is how we can make a soup out of the
+
+108
+00:06:44,230 --> 00:06:49,440
+web page we have opened and using Selenium.
+
+109
+00:06:49,840 --> 00:06:56,520
+So previously we used Beautiful Soup with requests
+
+110
+00:06:49,840 --> 00:06:56,520
+and now we've seen how we can use Selenium instead of
+
+111
+00:06:56,530 --> 00:07:03,430
+request to open some page and in the future we are
+
+112
+00:06:56,530 --> 00:07:03,430
+going to see how we can interact with the elements
+
+113
+00:07:03,430 --> 00:07:09,350
+that are present on the web page and programmatically
+
+114
+00:07:03,430 --> 00:07:09,350
+control then and control the flow and elements of
+
+115
+00:07:09,410 --> 00:07:16,210
+our program and the browser and how this is going to work out.
+
+116
+00:07:16,480 --> 00:07:19,740
+I hope now you understand how this works.
+
+117
+00:07:19,760 --> 00:07:24,500
+I'll see in the next video, we'll
+
+118
+00:07:19,760 --> 00:07:24,500
+discuss more Selenium. Thank you.
+

@@ -1,0 +1,417 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>015 BeautifulSoup Solved Exercise</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>We have not started yet :) However, let's check this warm-up simple exercise to get a general idea about how we can use BeautifulSoup and Requests to scrape websites.</p>
+
+<h4><strong><br></strong></h4>
+
+
+
+
+
+<h4><strong>Installation:</strong></h4>
+
+
+
+
+
+
+
+
+
+
+
+<p>First of all, install <em>BeautifulSoup</em> and <em>Requests</em>. You can simply use <code>pip</code> in Terminal (on Linux/Mac) or CMD (on Windows) as follows:</p>
+
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<code>pip install beautifulsoup4</code> </p>
+
+<p><code>pip install requests </code> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you are on <em>Linux</em> or <em>Mac</em>, starting with <code> sudo</code> might be required.</p>
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+<h4><strong>Code:</strong></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">from bs4 import BeautifulSoup
+import requests
+
+url = "http://example.com/"
+
+# Getting the webpage, creating a Response object.
+response = requests.get(url)
+
+# Extracting the source code of the page.
+data = response.text
+
+# Passing the source code to Beautiful Soup to create a BeautifulSoup object for it.
+soup = BeautifulSoup(data, 'html.parser')
+
+# Extracting all the &lt;a&gt; tags into a list.
+tags = soup.find_all('a')
+
+# Extracting URLs from the attribute href in the &lt;a&gt; tags.
+for tag in tags:
+    print(tag.get('href'))</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you run the code above, the result will be as follows - as there is only one URL:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">http://www.iana.org/domains/example
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Let's start by talking informally, but you can find the formal terms 
+in comments of the code. Needless to say, variable names can be anything
+ else; we care more about the code workflow.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>So we have 5 variables:</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol><li><strong>url:</strong> It is the website/page you want to open. </li><li><strong>response:</strong> Great! 
+Your internet connection works, your URL is correct; you are allowed to 
+access this page. It is just like you can see the web page now in your 
+browser. </li><li><strong>data: </strong>It is like you are using copy-paste to get the text, 
+namely the source code, of the page into memory, but it is rather into a
+ variable. </li><li><strong>soup: </strong>You are asking BeautifulSoup to parse text; i.e. to extract text out of tags. </li><li><strong>tags:</strong> You are now extracting specific tags like tags for links into a list so that you can loop on them later.</li></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Currently, you do not have to understand the details if this code because we will explain everything in detail in next lectures. Still, it is recommended that you run it on your machine. Download the code from the "Resources" tab, and run it. Make sure you first install BeautifulSoup and Requests. You can also change the URL to <strong>http://www.htmlandcssbook.com/code-samples/chapter-04/example.html</strong> or any other website you like to test.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+<p>Let's get into the details in the next lectures! :)<br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br></p>
+
+
+
+
+
+<p>If you have any questions so far, please send them to the <a href="https://www.udemy.com/web-scraping-with-python-beautifulsoup/learn/v4/questions" rel="nofollow" target="_blank">Q&amp;A</a> section of this course.<br></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

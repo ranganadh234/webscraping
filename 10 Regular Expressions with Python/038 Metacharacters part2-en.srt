@@ -1,0 +1,140 @@
+1
+00:00:00,600 --> 00:00:01,980
+Hello everyone.
+
+2
+00:00:01,980 --> 00:00:05,610
+This is the last video we are going to have on Regular Expressions.
+
+3
+00:00:05,880 --> 00:00:11,000
+And in this I'm just making you are more
+
+4
+00:00:05,880 --> 00:00:11,000
+familiar with some more metacharacters.
+
+5
+00:00:11,070 --> 00:00:16,640
+I want you to play around with them and experiment with them
+
+6
+00:00:11,070 --> 00:00:16,640
+yourself, I'm just going to explain what they do and
+
+7
+00:00:16,660 --> 00:00:21,810
+never do any basic expressions using them.
+
+8
+00:00:21,810 --> 00:00:25,640
+OK, so the first is this hat character.
+
+9
+00:00:25,640 --> 00:00:28,950
+I mean these are the most commonly used
+
+10
+00:00:25,640 --> 00:00:28,950
+metacharacters. There are more
+
+11
+00:00:29,190 --> 00:00:34,430
+and if you're interested you can look them.
+
+12
+00:00:29,190 --> 00:00:34,430
+I can have them in a Word document if you want.
+
+13
+00:00:34,890 --> 00:00:38,830
+OK, so the first one is this hat character.
+
+14
+00:00:38,880 --> 00:00:41,090
+What this does is
+
+15
+00:00:41,130 --> 00:00:44,220
+this say that this string should start with
+
+16
+00:00:44,400 --> 00:00:45,190
+this character
+
+17
+00:00:45,190 --> 00:00:47,210
+Let's say I have this "^a".
+
+18
+00:00:47,280 --> 00:00:51,370
+This means that my string should start with "a".
+
+19
+00:00:51,750 --> 00:00:57,740
+OK, so this pipe character is the "or" operator.
+
+20
+00:00:51,750 --> 00:00:57,740
+I've written this expression here.
+
+21
+00:00:57,780 --> 00:01:02,170
+This means that the string should have either A or B OK.
+
+22
+00:01:02,340 --> 00:01:09,690
+And then I have this dollar character.
+
+23
+00:01:02,340 --> 00:01:09,690
+It says that it matches at the end of line.
+
+24
+00:01:10,280 --> 00:01:16,300
+If I wanted to match this string using this expression,
+
+25
+00:01:10,280 --> 00:01:16,300
+that would mean that that string should end
+
+26
+00:01:16,320 --> 00:01:22,150
+with "c". That's definite, that string should end with "c".
+
+27
+00:01:22,470 --> 00:01:28,680
+Ok, so I just want you to play around with it and I
+
+28
+00:01:22,470 --> 00:01:28,680
+hope you're more familiar with Regular Expressions
+
+29
+00:01:28,710 --> 00:01:32,440
+and are able to write Regular Expressions. Next
+
+30
+00:01:32,530 --> 00:01:37,300
+we are going to move on to searching our Beautiful Soup parse tree.
+
+31
+00:01:37,890 --> 00:01:43,610
+And we'll use Regular Expressions while searching through tags and classes.
+
+32
+00:01:43,610 --> 00:01:50,250
+So, OK I think I'll see you in the next video and I
+
+33
+00:01:43,610 --> 00:01:50,250
+hope that you understand Regular Expressions
+
+34
+00:01:50,250 --> 00:01:51,130
+better now.
+
+35
+00:01:51,420 --> 00:01:51,880
+Thank you.
+

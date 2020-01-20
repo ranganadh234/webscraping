@@ -1,0 +1,732 @@
+1
+00:00:00,880 --> 00:00:06,410
+Hello everyone! In this video, we're going
+
+2
+00:00:00,880 --> 00:00:06,410
+to learn how to write to an Excel file.
+
+3
+00:00:06,820 --> 00:00:13,420
+As you know that we have been learning web
+
+4
+00:00:06,820 --> 00:00:13,420
+scraping and we have learned how to extract data from
+
+5
+00:00:13,420 --> 00:00:19,540
+webpages and how to refine that
+
+6
+00:00:13,420 --> 00:00:19,540
+data and get exactly what we need.
+
+7
+00:00:19,540 --> 00:00:24,820
+So after we have that, we can't
+
+8
+00:00:19,540 --> 00:00:24,820
+really have all that data in the RAM memory.
+
+9
+00:00:24,820 --> 00:00:30,160
+So what do we need to do now we need to write
+
+10
+00:00:24,820 --> 00:00:30,160
+somewhere, we need to write it to maybe a file
+
+11
+00:00:30,160 --> 00:00:36,940
+or something or anywhere or maybe to a
+
+12
+00:00:30,160 --> 00:00:36,940
+database or somewhere so that we are able to
+
+13
+00:00:37,000 --> 00:00:44,280
+access it later back on in a
+
+14
+00:00:37,000 --> 00:00:44,280
+defined format or in a predefined format.
+
+15
+00:00:44,290 --> 00:00:50,150
+So one way to do is to
+
+16
+00:00:44,290 --> 00:00:50,150
+write an Excel file and then
+
+17
+00:00:50,370 --> 00:00:52,370
+you could write it to a database.
+
+18
+00:00:52,390 --> 00:00:56,480
+You can do the same with Excel file or with the
+
+19
+00:00:56,500 --> 00:00:57,450
+the CSV file.
+
+20
+00:00:57,700 --> 00:00:59,050
+It is the same thing.
+
+21
+00:00:59,050 --> 00:01:03,790
+So in this video, we are going to
+
+22
+00:00:59,050 --> 00:01:03,790
+learn how to write data to an Excel file.
+
+23
+00:01:03,850 --> 00:01:05,890
+We'll be using the module
+
+24
+00:01:05,910 --> 00:01:07,530
+"xlsxwriter". I'll just show it to you.
+
+25
+00:01:07,540 --> 00:01:14,910
+But first I'm going to open Microsoft Excel and
+
+26
+00:01:07,540 --> 00:01:14,910
+I'm just going to show you how this works, how Excel works.
+
+27
+00:01:14,920 --> 00:01:17,450
+Like the very basic. I'm sure you all know.
+
+28
+00:01:17,470 --> 00:01:20,250
+I'm just going to give you a quick review.
+
+29
+00:01:20,530 --> 00:01:27,160
+So here I have an open Excel and you can see that there
+
+30
+00:01:20,530 --> 00:01:27,160
+are different things, different templates
+
+31
+00:01:27,220 --> 00:01:29,680
+but I want to open a blank workbook.
+
+32
+00:01:29,980 --> 00:01:34,220
+So now if I click on this,
+
+33
+00:01:29,980 --> 00:01:34,220
+it is going to make a blank workbook.
+
+34
+00:01:34,240 --> 00:01:37,490
+It is going to make a workbook.
+
+35
+00:01:37,550 --> 00:01:38,650
+OK, so here we are.
+
+36
+00:01:38,660 --> 00:01:40,570
+It has now made a workbook.
+
+37
+00:01:40,690 --> 00:01:43,430
+OK, so now
+
+38
+00:01:43,460 --> 00:01:48,670
+look. I have this workbook here and
+
+39
+00:01:43,460 --> 00:01:48,670
+then I have these rows and then I have these columns
+
+40
+00:01:48,670 --> 00:01:49,180
+here.
+
+41
+00:01:49,300 --> 00:01:52,420
+The ABCD are columns then 1, 2, 3, 4, 5, 6
+
+42
+00:01:52,510 --> 00:01:53,650
+are rows.
+
+43
+00:01:53,980 --> 00:02:00,940
+So like this being this, what I did was
+
+44
+00:01:53,980 --> 00:02:00,940
+I made a workbook and it automatically added a sheet
+
+45
+00:02:01,030 --> 00:02:08,170
+to this workbook. So you can see that
+
+46
+00:02:01,030 --> 00:02:08,170
+where my cursor is "Sheet1". If I click on this,
+
+47
+00:02:08,230 --> 00:02:13,240
+this is going to say "Sheet2". I can have as
+
+48
+00:02:08,230 --> 00:02:13,240
+many sheets as I want and the data will be separate on each
+
+49
+00:02:13,240 --> 00:02:19,330
+sheet so I can write something here but it won't
+
+50
+00:02:13,240 --> 00:02:19,330
+show up on "Sheet2" because it's separate and all of
+
+51
+00:02:19,330 --> 00:02:22,610
+this is in a single workbook or in a single Excel file.
+
+52
+00:02:23,520 --> 00:02:25,480
+So I hope
+
+53
+00:02:25,620 --> 00:02:28,020
+you know what I mean by workbook now.
+
+54
+00:02:28,320 --> 00:02:29,930
+Or our sheet.
+
+55
+00:02:29,940 --> 00:02:30,750
+OK.
+
+56
+00:02:30,750 --> 00:02:32,480
+So let's get started.
+
+57
+00:02:32,520 --> 00:02:41,950
+How we can write an Excel file using Python and "xlsxwriter". OK.
+
+58
+00:02:42,530 --> 00:02:48,700
+So the necessary import is from "from xlsxwriter import Workbook".
+
+59
+00:02:49,070 --> 00:02:53,670
+So the first step we need to do
+
+60
+00:02:49,070 --> 00:02:53,670
+is we need to make a workbook.
+
+61
+00:02:53,780 --> 00:03:00,500
+So this module "xlsxwriter" has a class Workbook.
+
+62
+00:03:00,500 --> 00:03:09,090
+We are going to make an instance of this Workbook class. We are
+
+63
+00:03:00,500 --> 00:03:09,090
+going to say "Workbook", it takes a filename as its parameter
+
+64
+00:03:09,090 --> 00:03:10,290
+which we want to create.
+
+65
+00:03:10,290 --> 00:03:12,930
+Let's say I want to say
+
+66
+00:03:13,020 --> 00:03:16,880
+"first_file.xlsx".
+
+67
+00:03:16,900 --> 00:03:23,540
+So now the Excel file which is going to be
+
+68
+00:03:16,900 --> 00:03:23,540
+created now, it is going to be named
+
+69
+00:03:23,560 --> 00:03:25,490
+"first_file.xlsx".
+
+70
+00:03:25,810 --> 00:03:26,650
+OK.
+
+71
+00:03:27,460 --> 00:03:32,260
+So as soon as you make a workbook, you should
+
+72
+00:03:27,460 --> 00:03:32,260
+definitely close in because if you don't
+
+73
+00:03:32,260 --> 00:03:36,050
+do that there is a high probability that your data
+
+74
+00:03:36,100 --> 00:03:41,600
+might get corrupted or something if
+
+75
+00:03:36,100 --> 00:03:41,600
+it unwritten in some buffer, somewhere.
+
+76
+00:03:41,710 --> 00:03:45,700
+So good practice is that you always close
+
+77
+00:03:41,710 --> 00:03:45,700
+your workbook as soon as you make it.
+
+78
+00:03:45,750 --> 00:03:49,830
+So I'm going to say "workbook.close".
+
+79
+00:03:49,910 --> 00:03:55,820
+So right now what I've done is I've written
+
+80
+00:03:49,910 --> 00:03:55,820
+"workbook" is equals to "Workbook" and then
+
+81
+00:03:55,820 --> 00:03:59,380
+I've instantiated an object of this class.
+
+82
+00:03:59,600 --> 00:04:06,220
+I've sent the name of the file I want and then I closed
+
+83
+00:03:59,600 --> 00:04:06,220
+this workbook. Now I'm going to run this and we'll see
+
+84
+00:04:06,350 --> 00:04:11,030
+does this create a workbook and if it does what exactly is there in it.
+
+85
+00:04:13,020 --> 00:04:16,860
+OK, so you can see that I have something here.
+
+86
+00:04:17,220 --> 00:04:21,040
+You can see this here, "first_file.xlsx".
+
+87
+00:04:21,040 --> 00:04:22,050
+So if I open this,
+
+88
+00:04:25,390 --> 00:04:34,490
+I have a blank Excel file, I have a blank Excel file.
+
+89
+00:04:34,640 --> 00:04:37,140
+Great.
+
+90
+00:04:37,160 --> 00:04:42,290
+So what we did right now,
+
+91
+00:04:42,290 --> 00:04:44,700
+it created an Excel file.
+
+92
+00:04:44,780 --> 00:04:48,120
+We created workbook and then we closed it.
+
+93
+00:04:48,130 --> 00:04:52,730
+What we are going to do is we are going
+
+94
+00:04:48,130 --> 00:04:52,730
+to add a sheet like the default sheet.
+
+95
+00:04:53,330 --> 00:05:00,980
+So that is like we say "worksheet"
+
+96
+00:04:53,330 --> 00:05:00,980
+is equals to "workbook.add_worksheet".
+
+97
+00:05:01,220 --> 00:05:05,580
+Like the "Sheet1", "Sheet2", "Sheet3" we saw earlier right now.
+
+98
+00:05:06,050 --> 00:05:13,930
+So, OK now we have added a single sheet to
+
+99
+00:05:06,050 --> 00:05:13,930
+our workbook and now we get to the actual thing,
+
+100
+00:05:13,930 --> 00:05:18,110
+to do the right thing.
+
+101
+00:05:18,340 --> 00:05:22,250
+We are going to get how to write data into our Excel file.
+
+102
+00:05:22,330 --> 00:05:27,230
+Ok, so what we do is let me think
+
+103
+00:05:22,330 --> 00:05:27,230
+of something like what should we write.
+
+104
+00:05:27,230 --> 00:05:27,590
+OK.
+
+105
+00:05:27,590 --> 00:05:31,820
+So I say the method is "worksheet.write".
+
+106
+00:05:33,690 --> 00:05:36,050
+And it takes three parameters for now.
+
+107
+00:05:36,060 --> 00:05:40,200
+I mean it takes more parameters but
+
+108
+00:05:36,060 --> 00:05:40,200
+keep it simple and take three parameters.
+
+109
+00:05:40,410 --> 00:05:42,250
+The first one is the row number.
+
+110
+00:05:42,250 --> 00:05:46,750
+The second one is the column and the
+
+111
+00:05:42,250 --> 00:05:46,750
+last one is the value you want to write.
+
+112
+00:05:46,770 --> 00:06:03,400
+So I say like 0 row, 0 column and I say "zero row
+
+113
+00:05:46,770 --> 00:06:03,400
+and zero column" and I could do the same
+
+114
+00:06:03,630 --> 00:06:08,370
+thing then I could say "worksheet.write",
+
+115
+00:06:03,630 --> 00:06:08,370
+I could say 0, 1 and I could say
+
+116
+00:06:08,610 --> 00:06:14,990
+"zero row and one column".
+
+117
+00:06:15,160 --> 00:06:15,730
+OK.
+
+118
+00:06:15,880 --> 00:06:21,820
+So we'll just copy this so that it is easy.
+
+119
+00:06:21,930 --> 00:06:32,270
+So I'm going to change this here, I'm
+
+120
+00:06:21,930 --> 00:06:32,270
+going to say "one row", "one row and one colum".
+
+121
+00:06:32,300 --> 00:06:32,590
+OK.
+
+122
+00:06:32,600 --> 00:06:33,400
+So here we go.
+
+123
+00:06:36,620 --> 00:06:44,620
+So what we have done right now is
+
+124
+00:06:36,620 --> 00:06:44,620
+we said "worksheet.write", giving it row
+
+125
+00:06:44,620 --> 00:06:49,460
+number then column number and
+
+126
+00:06:44,620 --> 00:06:49,460
+then the value I want to write at that place.
+
+127
+00:06:49,460 --> 00:06:51,280
+Same goes for this one.
+
+128
+00:06:51,400 --> 00:06:56,980
+I've written four statements, it's going to write
+
+129
+00:06:51,400 --> 00:06:56,980
+four values in four different places. I'm going to run this and
+
+130
+00:06:56,980 --> 00:07:02,140
+then see how this works out and does this right as expected.
+
+131
+00:07:02,540 --> 00:07:06,080
+OK, let's get started. I'm going to run this.
+
+132
+00:07:06,110 --> 00:07:08,320
+So I did run this and let's open this first file now.
+
+133
+00:07:11,010 --> 00:07:14,210
+It did open. OK, here we go.
+
+134
+00:07:19,780 --> 00:07:22,710
+So great.
+
+135
+00:07:22,750 --> 00:07:30,090
+This is like your "zero row zero column", this is your "zero row one
+
+136
+00:07:22,750 --> 00:07:30,090
+column" and this is like "one row zero column" and "one
+
+137
+00:07:30,090 --> 00:07:31,350
+row one column".
+
+138
+00:07:31,440 --> 00:07:35,340
+So you can see it has returned as desired.
+
+139
+00:07:35,420 --> 00:07:38,100
+It has written as desired.
+
+140
+00:07:38,240 --> 00:07:44,540
+So I had row number here and the column
+
+141
+00:07:38,240 --> 00:07:44,540
+number here and then the value. Let's
+
+142
+00:07:44,540 --> 00:07:47,330
+do something different.
+
+143
+00:07:47,390 --> 00:07:52,270
+Let's say I want to write, I want
+
+144
+00:07:47,390 --> 00:07:52,270
+to have numbers here until
+
+145
+00:07:52,310 --> 00:07:52,850
+20.
+
+146
+00:07:52,870 --> 00:07:58,010
+I want to write 20 numbers in my Excel file.
+
+147
+00:07:58,050 --> 00:08:04,620
+What do I do now? I say "for row in range(20)" then I say
+
+148
+00:08:08,980 --> 00:08:14,370
+"row" and for this I say "Row Number",
+
+149
+00:08:17,820 --> 00:08:18,950
+"worksheet.write",
+
+150
+00:08:19,060 --> 00:08:24,470
+I say "row", 1. So I'm going to run this now.
+
+151
+00:08:24,810 --> 00:08:26,820
+And we are going to see what the output is.
+
+152
+00:08:33,280 --> 00:08:37,890
+Sorry.
+
+153
+00:08:37,890 --> 00:08:41,100
+So you can see it here. What it did was
+
+154
+00:08:41,410 --> 00:08:48,250
+I had the loop here which ran from 0 to 19, or 20 times. At zero column
+
+155
+00:08:48,280 --> 00:08:54,710
+what I have, I have written "Row Number"
+
+156
+00:08:48,280 --> 00:08:54,710
+and at my first column I have the relative
+
+157
+00:08:54,720 --> 00:08:59,600
+row number according to that row. So for
+
+158
+00:08:54,720 --> 00:08:59,600
+first it says 0, then 1 and it goes to 19.
+
+159
+00:08:59,860 --> 00:09:01,400
+So you can do whatever you want.
+
+160
+00:09:01,470 --> 00:09:01,940
+OK.
+
+161
+00:09:01,950 --> 00:09:04,510
+I mean you can have as many statements as you want.
+
+162
+00:09:04,650 --> 00:09:09,260
+It is not a restriction and you can use as
+
+163
+00:09:04,650 --> 00:09:09,260
+many columns as you want, as many rows as you want.
+
+164
+00:09:09,420 --> 00:09:14,430
+I could have this loop run
+
+165
+00:09:09,420 --> 00:09:14,430
+to like 200 and it will work fine.
+
+166
+00:09:14,430 --> 00:09:20,140
+I'm just going to close this and let's see this quickly.
+
+167
+00:09:20,160 --> 00:09:26,060
+So when I open this now, you can
+
+168
+00:09:20,160 --> 00:09:26,060
+see that this goes on.
+
+169
+00:09:26,200 --> 00:09:29,410
+This goes until 199, 200.
+
+170
+00:09:29,590 --> 00:09:35,370
+Yes, because the index starts from one and
+
+171
+00:09:29,590 --> 00:09:35,370
+it says 200 there but their row number
+
+172
+00:09:35,480 --> 00:09:36,600
+it says 199.
+
+173
+00:09:36,890 --> 00:09:37,740
+OK.
+
+174
+00:09:37,750 --> 00:09:42,520
+So you can see you can use as many rows as you
+
+175
+00:09:37,750 --> 00:09:42,520
+want and as many columns as you want, you can use loops
+
+176
+00:09:42,520 --> 00:09:43,300
+or whatever you want.
+
+177
+00:09:43,300 --> 00:09:49,810
+I mean that depends on your data
+
+178
+00:09:43,300 --> 00:09:49,810
+set or on how you want to have the
+
+179
+00:09:49,810 --> 00:09:52,160
+data classified in your Excel file.
+
+180
+00:09:52,320 --> 00:09:58,600
+So this was how we write data to our Excel file and in
+
+181
+00:09:52,320 --> 00:09:58,600
+the next video we're going to learn how
+
+182
+00:09:58,600 --> 00:10:00,710
+to read data from an Excel file.
+
+183
+00:10:00,850 --> 00:10:01,740
+Thank you very much.
+

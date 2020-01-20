@@ -1,0 +1,512 @@
+1
+00:00:00,360 --> 00:00:07,560
+Hello everyone! In the last video, we discussed
+
+2
+00:00:00,360 --> 00:00:07,560
+how we can search through our parse tree.
+
+3
+00:00:07,710 --> 00:00:14,100
+That was an introduction as to why searching
+
+4
+00:00:07,710 --> 00:00:14,100
+is important and how we can do it. In this video
+
+5
+00:00:14,090 --> 00:00:20,790
+we are going to discuss the most commonly used
+
+6
+00:00:14,090 --> 00:00:20,790
+function in Beautiful Soup for searching elements.
+
+7
+00:00:21,870 --> 00:00:28,980
+So that function is "find_all", I did give you an intro to
+
+8
+00:00:21,870 --> 00:00:28,980
+this function in the previous video and we discussed
+
+9
+00:00:29,040 --> 00:00:36,260
+the different filters we can use to get different tags or elements.
+
+10
+00:00:36,300 --> 00:00:43,050
+So now I will discuss this function in detail and see
+
+11
+00:00:36,300 --> 00:00:43,050
+what kind of parameters it can take and how we can
+
+12
+00:00:43,380 --> 00:00:48,060
+actually use it to get the elements we want.
+
+13
+00:00:48,810 --> 00:00:56,040
+So I'm going to use the same HTML file as we've been
+
+14
+00:00:48,810 --> 00:00:56,040
+using before, this one, the three sisters story.
+
+15
+00:00:57,500 --> 00:00:57,940
+And
+
+16
+00:00:57,960 --> 00:01:02,070
+OK, so the signature for this function is here, this.
+
+17
+00:01:02,300 --> 00:01:06,660
+So the first parameter of this function takes his name.
+
+18
+00:01:06,690 --> 00:01:08,160
+The second is attribute.
+
+19
+00:01:08,160 --> 00:01:14,580
+The third is recursive, the fourth string and the fifth limit and the sixth are keyword arguments
+
+20
+00:01:14,580 --> 00:01:16,020
+that I
+
+21
+00:01:16,020 --> 00:01:18,100
+hope you're familiar with keyword arguments.
+
+22
+00:01:18,270 --> 00:01:22,850
+I mean we can give as many arguments as we want here. OK.
+
+23
+00:01:22,920 --> 00:01:25,400
+I'll explain this part in the next video,
+
+24
+00:01:25,390 --> 00:01:29,750
+when we'll discuss this function in detail, in more detail.
+
+25
+00:01:29,970 --> 00:01:30,320
+OK.
+
+26
+00:01:30,330 --> 00:01:35,770
+In this video, we're going to discuss the name
+
+27
+00:01:30,330 --> 00:01:35,770
+parameter, the attribute and the limit parameter.
+
+28
+00:01:36,300 --> 00:01:40,370
+OK, so the name parameter is very simple.
+
+29
+00:01:40,470 --> 00:01:42,390
+It's really simple.
+
+30
+00:01:42,390 --> 00:01:43,220
+It can take a
+
+31
+00:01:43,350 --> 00:01:48,920
+RegEX object or it can take a string.
+
+32
+00:01:50,180 --> 00:01:54,430
+Or it can take a object.
+
+33
+00:01:54,430 --> 00:01:55,880
+It can take a string.
+
+34
+00:01:55,880 --> 00:01:59,740
+It can take a "True", it can take a function.
+
+35
+00:01:59,740 --> 00:02:02,850
+I mean these are the filters as discussed before.
+
+36
+00:02:02,860 --> 00:02:05,730
+So in the previous video.
+
+37
+00:02:06,200 --> 00:02:09,590
+OK, let's just show you how this works.
+
+38
+00:02:09,610 --> 00:02:16,980
+I say that I want to find all the "a"
+
+39
+00:02:09,610 --> 00:02:16,980
+tags in this HTML file, this one.
+
+40
+00:02:16,990 --> 00:02:19,700
+I have this one here.
+
+41
+00:02:19,900 --> 00:02:26,290
+So I say "soup.find_all" and I say "a".
+
+42
+00:02:26,810 --> 00:02:28,460
+And if I print "a_tags",
+
+43
+00:02:31,620 --> 00:02:45,320
+you can see I have all the "a" tags here or I
+
+44
+00:02:31,620 --> 00:02:45,320
+could loop through this "for a in a.tags".
+
+45
+00:02:45,420 --> 00:02:49,260
+So I have all the "a" tags here
+
+46
+00:02:45,420 --> 00:02:49,260
+which are present in this document.
+
+47
+00:02:50,320 --> 00:02:58,040
+There are three. This "link1", "link2"
+
+48
+00:02:50,320 --> 00:02:58,040
+and this "link2" should be "link3".
+
+49
+00:02:58,500 --> 00:02:58,890
+OK.
+
+50
+00:02:58,900 --> 00:03:03,490
+So there are three "a" tagss and I have them all.
+
+51
+00:03:03,490 --> 00:03:07,490
+I have all of them here using this
+
+52
+00:03:03,490 --> 00:03:07,490
+function, this "find_all" function.
+
+53
+00:03:07,510 --> 00:03:14,470
+Ok, so the second parameter takes the attributes parameter.
+
+54
+00:03:14,690 --> 00:03:17,030
+This actually is basically a dictionary.
+
+55
+00:03:17,180 --> 00:03:22,470
+It's a dictionary and I'll just show you how this works.
+
+56
+00:03:22,470 --> 00:03:27,030
+This is like each tag has an attribute like this "p" tag here.
+
+57
+00:03:27,030 --> 00:03:29,760
+It has an attribute class which is equals to "title".
+
+58
+00:03:29,820 --> 00:03:30,380
+OK.
+
+59
+00:03:31,180 --> 00:03:35,200
+Or this "a" tag here.
+
+60
+00:03:35,200 --> 00:03:41,380
+It has three attributes. Has one attribute "class", this is a "href", this
+
+61
+00:03:41,380 --> 00:03:45,960
+is then "id". It has three attributes, this tag has three attributes.
+
+62
+00:03:45,970 --> 00:03:56,250
+So what I can do is I can say "attr" is equals
+
+63
+00:03:45,970 --> 00:03:56,250
+to "class" and I want to get this tags here,
+
+64
+00:03:56,270 --> 00:03:58,220
+this "Elsie" a tag.
+
+65
+00:03:58,570 --> 00:04:00,460
+So I say the class is "sister"
+
+66
+00:04:03,260 --> 00:04:05,450
+and let's give it another attribute.
+
+67
+00:04:05,460 --> 00:04:13,620
+Let's give it "id". So "id" is "link1", you can see that here.
+
+68
+00:04:14,140 --> 00:04:23,500
+The "id" is "link1" and the class is "sister".
+
+69
+00:04:14,140 --> 00:04:23,500
+So now I have this dictionary, it says
+
+70
+00:04:23,500 --> 00:04:24,550
+the class is "sister"
+
+71
+00:04:24,580 --> 00:04:26,470
+and the "id" is "link1".
+
+72
+00:04:26,470 --> 00:04:36,670
+So what I do is I say "first_a" is equals to "soup.find_all", I say a.
+
+73
+00:04:36,820 --> 00:04:48,980
+And then I say "attrs" is equal to "attr". And if I print
+
+74
+00:04:36,820 --> 00:04:48,980
+"first_a", you can see it returns me this "a" tag which
+
+75
+00:04:48,980 --> 00:04:54,050
+I want, this one.
+
+76
+00:04:54,110 --> 00:04:59,660
+So let's say I want all those
+
+77
+00:04:54,110 --> 00:04:59,660
+tags which have the class "sister".
+
+78
+00:04:59,660 --> 00:05:00,860
+So what can I do.
+
+79
+00:05:01,050 --> 00:05:01,630
+What I'll do
+
+80
+00:05:01,650 --> 00:05:04,360
+is I'll just remove this "id" here.
+
+81
+00:05:04,910 --> 00:05:14,590
+And if I run this now, it returns back
+
+82
+00:05:04,910 --> 00:05:14,590
+three "a" tags, it returns back tags which
+
+83
+00:05:14,590 --> 00:05:19,050
+are "a" and which have the class equal to "sister".
+
+84
+00:05:19,060 --> 00:05:24,750
+So what I can do is I can also delete this name
+
+85
+00:05:24,770 --> 00:05:29,540
+parameter. And if I run this now it still
+
+86
+00:05:24,770 --> 00:05:29,540
+gives you the same thing. Why does it do that.
+
+87
+00:05:29,560 --> 00:05:37,010
+It does that because there are only "a" tags which
+
+88
+00:05:29,560 --> 00:05:37,010
+have their class "sister". If I change to "story".
+
+89
+00:05:37,090 --> 00:05:39,720
+Let's see what happens then if they change to "story".
+
+90
+00:05:43,980 --> 00:05:47,270
+Do you see this? What it does is it returns me two "p" objects now,
+
+91
+00:05:47,290 --> 00:05:54,120
+"p" tags now. This tag here and this tag
+
+92
+00:05:47,290 --> 00:05:54,120
+because both of them have their class "story".
+
+93
+00:05:54,210 --> 00:06:00,150
+So that returns me "p" tags which have the class "story".
+
+94
+00:06:00,190 --> 00:06:04,290
+So this is how the attribute tag works.
+
+95
+00:06:04,320 --> 00:06:08,380
+Now we're going to move to the limit parameter,
+
+96
+00:06:08,400 --> 00:06:13,890
+the last one for the video here. What limit parameter
+
+97
+00:06:08,400 --> 00:06:13,890
+does is it limits the number of search or the number
+
+98
+00:06:13,890 --> 00:06:15,270
+of searches it returns.
+
+99
+00:06:15,300 --> 00:06:19,860
+So let's say I want you to find "a" tags.
+
+100
+00:06:19,950 --> 00:06:28,970
+Now there are three "a" tags in our HTML file as you
+
+101
+00:06:19,950 --> 00:06:28,970
+can see here. One, two, three. So what I can do is
+
+102
+00:06:29,000 --> 00:06:33,560
+I can say "find_all('a')" then I say "limit" is equal to two.
+
+103
+00:06:33,730 --> 00:06:36,270
+Let's keep it to one. And if I say print "a_tags" now.
+
+104
+00:06:36,290 --> 00:06:49,040
+There's gonna be one "a" tag. If I remove
+
+105
+00:06:36,290 --> 00:06:49,040
+the "limit", you can see it returns me three now.
+
+106
+00:06:49,130 --> 00:06:53,880
+So what "limit" does is it limits the number of search results returned.
+
+107
+00:06:53,900 --> 00:06:59,510
+So if I say two, it gives me two "a" tags, not three now.
+
+108
+00:07:00,090 --> 00:07:00,630
+So "limit"
+
+109
+00:07:00,630 --> 00:07:02,340
+limits the number of searches so.
+
+110
+00:07:02,480 --> 00:07:03,720
+This "attr" parameter,
+
+111
+00:07:03,720 --> 00:07:09,090
+these are the tags attributes and we can pass
+
+112
+00:07:03,720 --> 00:07:09,090
+this parameter using a dictionary like the
+
+113
+00:07:09,160 --> 00:07:15,920
+class "story", I can have "id", I can
+
+114
+00:07:09,160 --> 00:07:15,920
+have "style", I can have like "href".
+
+115
+00:07:15,950 --> 00:07:22,080
+Whatever attributes that we can specify them here in the dictionary and
+
+116
+00:07:22,080 --> 00:07:25,810
+then pass them to this "find_all" function. OK.
+
+117
+00:07:25,820 --> 00:07:31,610
+And then the name parameter, we discussed this in the
+
+118
+00:07:25,820 --> 00:07:31,610
+previous video when I was giving an intro to searching
+
+119
+00:07:32,380 --> 00:07:40,080
+and this takes a RegEX object, a string
+
+120
+00:07:32,380 --> 00:07:40,080
+or a boolean "true" or a function or anything.
+
+121
+00:07:40,140 --> 00:07:44,790
+I mean the filters we discussed in the previous video. I hope
+
+122
+00:07:44,810 --> 00:07:46,280
+up to now we are clear.
+
+123
+00:07:46,310 --> 00:07:51,950
+I want you to play around with this. In the next video,
+
+124
+00:07:46,310 --> 00:07:51,950
+we're going to discuss the remaining parameters and
+
+125
+00:07:51,950 --> 00:07:58,770
+how they work and how we can utilize them and
+
+126
+00:07:51,950 --> 00:07:58,770
+these parameters to search efficiently.
+
+127
+00:07:58,790 --> 00:07:59,870
+Thank you very much.
+
+128
+00:07:59,870 --> 00:08:00,890
+See you in the next video.
+

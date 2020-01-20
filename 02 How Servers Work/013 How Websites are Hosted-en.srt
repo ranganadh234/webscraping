@@ -1,0 +1,60 @@
+1
+00:00:00,850 --> 00:00:09,080
+Hello everyone! Today we will discuss how web sites are hosted on servers and how do we access them.
+
+2
+00:00:09,130 --> 00:00:12,550
+So let's go with a very simple scenario.
+
+3
+00:00:12,550 --> 00:00:19,570
+What happens is that a user opens his browser and then, let's say, he inputs there
+
+4
+00:00:19,780 --> 00:00:23,770
+"Google.com".
+
+5
+00:00:23,860 --> 00:00:29,640
+So what the browser does is: browser sends the request to Google server.
+
+6
+00:00:29,770 --> 00:00:38,660
+Server receives this request and processes it and then server returns response to browser. Browser
+
+7
+00:00:38,660 --> 00:00:47,430
+displays the response the server sent and then Google home page opens which the user can now see.
+
+8
+00:00:47,440 --> 00:00:53,150
+So the basic workflow is: user sends a request, server gets it.
+
+9
+00:00:53,480 --> 00:00:58,490
+Server processes it and then sends the response back to the user.
+
+10
+00:00:58,660 --> 00:01:05,390
+So the user is able to see what the server has sent which in our case right now is the Google home page.
+
+11
+00:01:05,400 --> 00:01:10,390
+So this is how web sites are basically hosted on servers.
+
+12
+00:01:10,410 --> 00:01:15,620
+I mean like a very basic view of how this works.
+
+13
+00:01:15,680 --> 00:01:22,390
+A request to send by user, server receives request, processes it and then sends back a response.
+
+14
+00:01:23,600 --> 00:01:29,690
+I hope this is very simple and I hope this is clear to you right now.
+
+15
+00:01:29,930 --> 00:01:31,140
+Thank you very much.
+

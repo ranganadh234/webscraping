@@ -1,0 +1,524 @@
+1
+00:00:00,810 --> 00:00:07,630
+Hello everyone! In this video, we are going to discuss how
+
+2
+00:00:00,810 --> 00:00:07,630
+we can interact with the elements that are present on
+
+3
+00:00:07,680 --> 00:00:10,300
+the page using Selenium.
+
+4
+00:00:10,360 --> 00:00:13,120
+So let's say I have opened Google here.
+
+5
+00:00:14,570 --> 00:00:19,320
+So if you use request and you
+
+6
+00:00:14,570 --> 00:00:19,320
+open Google you get this page here.
+
+7
+00:00:19,590 --> 00:00:26,180
+But what I want to actually do is I want to
+
+8
+00:00:19,590 --> 00:00:26,180
+search for something by inputting
+
+9
+00:00:26,180 --> 00:00:31,600
+something in this text bar and then saying Google search.
+
+10
+00:00:26,180 --> 00:00:31,600
+I'm want to do something like this but how can I
+
+11
+00:00:31,600 --> 00:00:32,950
+do it?
+
+12
+00:00:33,020 --> 00:00:37,250
+So one way is that we're going to use Selenium for this job.
+
+13
+00:00:37,670 --> 00:00:39,850
+So how do we do with this?
+
+14
+00:00:39,860 --> 00:00:45,830
+So this is a textfield and what Selenium is going to do
+
+15
+00:00:39,860 --> 00:00:45,830
+is it is going to open this page and then going
+
+16
+00:00:45,830 --> 00:00:50,830
+to ask it to search for this text field here
+
+17
+00:00:45,830 --> 00:00:50,830
+and I am just going to use "Inspect Element".
+
+18
+00:00:50,840 --> 00:00:54,800
+And let's see if we can locate this textfield, this "input" tag.
+
+19
+00:00:54,830 --> 00:00:59,310
+So this "input" tag has id "lst-ib", if you can see that here.
+
+20
+00:00:59,780 --> 00:01:03,290
+So I mean an id is something that is unique.
+
+21
+00:01:03,290 --> 00:01:06,480
+So we can access this "input" tag.
+
+22
+00:01:06,890 --> 00:01:08,060
+And then
+
+23
+00:01:08,060 --> 00:01:08,990
+what we are going to do is
+
+24
+00:01:08,990 --> 00:01:15,300
+we are going to write something down using Selenium
+
+25
+00:01:08,990 --> 00:01:15,300
+and then we'll do a google search using Selenium.
+
+26
+00:01:15,320 --> 00:01:18,100
+This is what I've decided for this video.
+
+27
+00:01:18,110 --> 00:01:19,820
+And let's get on with it now.
+
+28
+00:01:21,890 --> 00:01:22,290
+OK.
+
+29
+00:01:22,300 --> 00:01:25,370
+So here we are.
+
+30
+00:01:25,380 --> 00:01:31,280
+This is the basic setup we have, I made a driver object of Selenium.
+
+31
+00:01:31,320 --> 00:01:32,040
+OK.
+
+32
+00:01:32,130 --> 00:01:35,120
+And then I've also closed it.
+
+33
+00:01:35,130 --> 00:01:40,230
+Now what I want to do is I want to be able to search
+
+34
+00:01:35,130 --> 00:01:40,230
+text field here so that I can input some value
+
+35
+00:01:40,230 --> 00:01:41,710
+in this.
+
+36
+00:01:41,820 --> 00:01:48,010
+So as we have the id for this, I say "search_bar" is equals to "driver".
+
+37
+00:01:48,600 --> 00:01:55,620
+Now I say "find_element_by_id". There are different
+
+38
+00:01:48,600 --> 00:01:55,620
+ways that you can find elements using Selenium.
+
+39
+00:01:55,620 --> 00:02:00,960
+So you can see that one of them is by ID, then
+
+40
+00:01:55,620 --> 00:02:00,960
+one of then is by class name and css selectors,
+
+41
+00:02:00,960 --> 00:02:03,040
+link_text, element by name.
+
+42
+00:02:03,180 --> 00:02:08,490
+I'll have a reference document and you can
+
+43
+00:02:03,180 --> 00:02:08,490
+actually see which suits you better and you
+
+44
+00:02:08,490 --> 00:02:09,640
+can do it there.
+
+45
+00:02:09,690 --> 00:02:13,650
+So I'm going to show you right now how to do this by ID.
+
+46
+00:02:13,830 --> 00:02:20,900
+So I say "driver.find_element_by_id" and here
+
+47
+00:02:13,830 --> 00:02:20,900
+I'm going to input this ID for this "input" tag.
+
+48
+00:02:21,270 --> 00:02:22,790
+So the id is this
+
+49
+00:02:25,480 --> 00:02:32,910
+and OK, now my search bar is actually this text here we can see.
+
+50
+00:02:32,930 --> 00:02:35,050
+Now I want to send some value to this.
+
+51
+00:02:35,050 --> 00:02:36,980
+Like I want to input some value.
+
+52
+00:02:36,980 --> 00:02:38,630
+What do I do now?
+
+53
+00:02:38,630 --> 00:02:39,990
+Now this has another method.
+
+54
+00:02:39,990 --> 00:02:49,870
+It's a "search_bar.send_keys" method. Let's say
+
+55
+00:02:39,990 --> 00:02:49,870
+I'm going to write "I want to learn web scraping".
+
+56
+00:02:52,470 --> 00:02:56,750
+OK, so now what search bar is doing
+
+57
+00:02:52,470 --> 00:02:56,750
+is if I'm saying "search_bar.send_keys"
+
+58
+00:02:56,790 --> 00:03:04,910
+"I want to learn web scraping" this is going
+
+59
+00:02:56,790 --> 00:03:04,910
+to write this text in this field here. We are going
+
+60
+00:03:04,920 --> 00:03:06,480
+to see how this is happening
+
+61
+00:03:06,480 --> 00:03:12,600
+but, this is the method which
+
+62
+00:03:06,480 --> 00:03:12,600
+does this ".send_keys" method.
+
+63
+00:03:12,660 --> 00:03:18,280
+OK, so now as you know that this "input" tag
+
+64
+00:03:12,660 --> 00:03:18,280
+is basically inside and under there "form" tag.
+
+65
+00:03:18,380 --> 00:03:22,020
+That is how you input some data.
+
+66
+00:03:22,030 --> 00:03:23,450
+And data is sent to
+
+67
+00:03:23,480 --> 00:03:25,830
+server back as a request.
+
+68
+00:03:25,880 --> 00:03:29,300
+So mostly websites use forms for this.
+
+69
+00:03:29,300 --> 00:03:35,630
+And similarly we have a "form", we have a form
+
+70
+00:03:29,300 --> 00:03:35,630
+here which is the parent of this "input"
+
+71
+00:03:35,630 --> 00:03:35,950
+tag.
+
+72
+00:03:35,960 --> 00:03:42,270
+And if we actually want to search for something
+
+73
+00:03:35,960 --> 00:03:42,270
+what we're doing is we are submitting that form.
+
+74
+00:03:42,290 --> 00:03:44,020
+So where is that form.
+
+75
+00:03:44,380 --> 00:03:53,010
+Let's see but one other thing to note here is
+
+76
+00:03:44,380 --> 00:03:53,010
+that you see like this is the form here.
+
+77
+00:03:53,010 --> 00:03:56,010
+This is the form it contains these two buttons
+
+78
+00:03:56,030 --> 00:03:57,360
+and this "textfield".
+
+79
+00:03:57,480 --> 00:04:00,970
+If I get to this tag here, it is the closing braces
+
+80
+00:04:00,990 --> 00:04:03,900
+I mean there's the closing tag for "form".
+
+81
+00:04:03,950 --> 00:04:05,440
+So this is the "form" here.
+
+82
+00:04:05,450 --> 00:04:11,330
+And as soon as you press Enter or you press
+
+83
+00:04:05,450 --> 00:04:11,330
+Google search what that means is "OK, I'm
+
+84
+00:04:11,330 --> 00:04:16,520
+submitting my form. I've written and what I
+
+85
+00:04:11,330 --> 00:04:16,520
+wanted to know and now I want to search Google".
+
+86
+00:04:17,570 --> 00:04:19,280
+By submitting a "form" you mean that
+
+87
+00:04:19,280 --> 00:04:25,910
+OK, now you are actually submitting that
+
+88
+00:04:19,280 --> 00:04:25,910
+data you have input back to the server
+
+89
+00:04:25,940 --> 00:04:29,670
+and then server is going to send you another response back.
+
+90
+00:04:29,690 --> 00:04:32,860
+So how do we submit a "form" using Selenium.
+
+91
+00:04:32,900 --> 00:04:39,680
+One way could be that I could search this
+
+92
+00:04:32,900 --> 00:04:39,680
+"button" and I could use another
+
+93
+00:04:39,680 --> 00:04:42,830
+method which is going to search Google.
+
+94
+00:04:42,820 --> 00:04:47,720
+I mean it's going to click this button but we'll do
+
+95
+00:04:42,820 --> 00:04:47,720
+that in the next video. For right now, we can see
+
+96
+00:04:47,720 --> 00:04:52,050
+how we can automatically submit the form of this "input" tag.
+
+97
+00:04:52,280 --> 00:04:53,750
+So how do we do that
+
+98
+00:04:53,750 --> 00:05:01,110
+is there is a method it says "search_bar.submit".
+
+99
+00:04:53,750 --> 00:05:01,110
+It is going to submit the form, the search
+
+100
+00:05:01,110 --> 00:05:01,440
+bar.
+
+101
+00:05:01,470 --> 00:05:05,580
+This method is going to submit the form
+
+102
+00:05:01,470 --> 00:05:05,580
+in which this "input" tags is enclosed.
+
+103
+00:05:05,640 --> 00:05:12,720
+So this "input" tag here, this one here, it is enclosed
+
+104
+00:05:05,640 --> 00:05:12,720
+in this form so it is automatically going to submit
+
+105
+00:05:12,750 --> 00:05:18,370
+this form and when they call the submit method and
+
+106
+00:05:12,750 --> 00:05:18,370
+then I'm going to remove this "sleep" here
+
+107
+00:05:18,700 --> 00:05:20,270
+so that we can actually see that.
+
+108
+00:05:20,300 --> 00:05:22,460
+OK, did it even work or not.
+
+109
+00:05:23,860 --> 00:05:26,880
+So let's see how this goes and I'm going to run it
+
+110
+00:05:26,890 --> 00:05:27,080
+now.
+
+111
+00:05:30,580 --> 00:05:39,980
+So you see I have Google here.
+
+112
+00:05:40,090 --> 00:05:42,140
+I didn't do anything, I didn't write anything.
+
+113
+00:05:42,220 --> 00:05:43,750
+I assure you of that.
+
+114
+00:05:43,750 --> 00:05:48,800
+So this is like it automatically did this
+
+115
+00:05:43,750 --> 00:05:48,800
+it wrote that and it submitted the form.
+
+116
+00:05:49,000 --> 00:05:54,660
+And it's closed now because we had "sleep" for 10 seconds.
+
+117
+00:05:54,940 --> 00:05:57,450
+So I hope that this is clear to you.
+
+118
+00:05:57,460 --> 00:06:00,690
+We discussed searching tags or elements.
+
+119
+00:06:00,790 --> 00:06:07,050
+There are different ways we can search tags or elements
+
+120
+00:06:00,790 --> 00:06:07,050
+and I'll provide a document you can make. It's
+
+121
+00:06:07,070 --> 00:06:08,900
+a little kind of cheat sheet.
+
+122
+00:06:09,070 --> 00:06:11,660
+You can actually look at it and see how this works.
+
+123
+00:06:11,710 --> 00:06:14,680
+So you can train with yourself and learn how to do that.
+
+124
+00:06:15,040 --> 00:06:21,130
+And then we learned the "send_keys" method with which
+
+125
+00:06:15,040 --> 00:06:21,130
+we can input data into a text field or "input" tags
+
+126
+00:06:21,550 --> 00:06:27,370
+and then we learn how we can submit a form. In the
+
+127
+00:06:21,550 --> 00:06:27,370
+next video, we are going to learn how to click a button and some
+
+128
+00:06:27,370 --> 00:06:34,640
+other things using Selenium and then we'll move on to
+
+129
+00:06:27,370 --> 00:06:34,640
+some different things which we can do with Selenium.
+
+130
+00:06:34,660 --> 00:06:35,380
+Thank you very much.
+
+131
+00:06:35,380 --> 00:06:36,680
+I hope this is clear to you.
+

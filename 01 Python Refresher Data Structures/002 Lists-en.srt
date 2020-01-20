@@ -1,0 +1,492 @@
+1
+00:00:01,310 --> 00:00:04,430
+A list is a collection of objects.
+
+2
+00:00:04,770 --> 00:00:12,240
+So in Python the way to declare a
+
+3
+00:00:04,770 --> 00:00:12,240
+list is using these empty square brackets.
+
+4
+00:00:12,270 --> 00:00:14,970
+Now this variable "my_list" here is an empty list.
+
+5
+00:00:15,000 --> 00:00:20,810
+If I just print this variable you can see that
+
+6
+00:00:15,000 --> 00:00:20,810
+I get these empty square brackets. This indicate that
+
+7
+00:00:20,810 --> 00:00:23,150
+this variable is an empty list.
+
+8
+00:00:23,180 --> 00:00:25,730
+So how do we insert values in the list.
+
+9
+00:00:25,730 --> 00:00:27,860
+One simple way is to just write them down.
+
+10
+00:00:27,860 --> 00:00:31,370
+Separated by commas. So if run it again,
+
+11
+00:00:31,380 --> 00:00:34,380
+I can see that I have 4, 3, 2, 1.
+
+12
+00:00:34,380 --> 00:00:37,070
+I have these four different values in my list now.
+
+13
+00:00:37,080 --> 00:00:41,590
+The next question is how do we fetch them.
+
+14
+00:00:41,740 --> 00:00:48,130
+So to fetch them we use the square brackets again
+
+15
+00:00:41,740 --> 00:00:48,130
+with a variable name and we write the index of the
+
+16
+00:00:48,130 --> 00:00:49,980
+value we want to fetch.
+
+17
+00:00:49,990 --> 00:00:52,080
+So let's say I want to fetch the first value.
+
+18
+00:00:52,100 --> 00:00:54,940
+So the index for the first value is 0.
+
+19
+00:00:54,950 --> 00:00:57,090
+So for the second value it is 3.
+
+20
+00:00:57,100 --> 00:01:01,490
+And similarly It goes on to 1 and 1 will have an index
+
+21
+00:01:01,490 --> 00:01:08,800
+3. So if run this, I get 4 here as 4 is
+
+22
+00:01:01,490 --> 00:01:08,800
+on my zero index. So if I want to get the last value
+
+23
+00:01:09,160 --> 00:01:14,710
+which index I use? I should use three.
+
+24
+00:01:14,730 --> 00:01:17,800
+You can see I get 1 here now.
+
+25
+00:01:17,850 --> 00:01:25,020
+So in python we have this feature where
+
+26
+00:01:17,850 --> 00:01:25,020
+we can get multiple values or a range of values
+
+27
+00:01:25,050 --> 00:01:26,890
+using a single statement.
+
+28
+00:01:26,940 --> 00:01:29,370
+This is known as slicing.
+
+29
+00:01:29,390 --> 00:01:30,970
+So how do we do this?
+
+30
+00:01:30,980 --> 00:01:37,460
+We write the name of our list of the variable name
+
+31
+00:01:30,980 --> 00:01:37,460
+and we write the index we want to start
+
+32
+00:01:37,580 --> 00:01:40,280
+and the ending index plus 1.
+
+33
+00:01:40,760 --> 00:01:42,830
+So just to give you an example.
+
+34
+00:01:44,920 --> 00:01:48,380
+If I do this, let's say I want to get values from 4 to 2.
+
+35
+00:01:48,380 --> 00:01:52,340
+So 4 has index 0 and 2 has index 2.
+
+36
+00:01:52,510 --> 00:01:58,540
+So that would be 2 + 1 according to
+
+37
+00:01:52,510 --> 00:01:58,540
+a formula here. I would use three.
+
+38
+00:01:58,540 --> 00:02:04,540
+So if I run this now, you can see I
+
+39
+00:01:58,540 --> 00:02:04,540
+get the first three elements, 4, 3, 2.
+
+40
+00:02:04,570 --> 00:02:06,560
+So let's say I want to get first two elements.
+
+41
+00:02:06,580 --> 00:02:11,370
+What I'll do is I'll use 0, 2 and I
+
+42
+00:02:06,580 --> 00:02:11,370
+get the first two elements.
+
+43
+00:02:11,560 --> 00:02:12,940
+Perfect.
+
+44
+00:02:12,960 --> 00:02:18,970
+So now I'll just quickly go over some of the most
+
+45
+00:02:12,960 --> 00:02:18,970
+commonly used functions in Python which are related
+
+46
+00:02:18,970 --> 00:02:20,010
+to list.
+
+47
+00:02:20,400 --> 00:02:26,850
+So this "append" function here what it does is it
+
+48
+00:02:20,400 --> 00:02:26,850
+receives a value as a parameter and it adds this value
+
+49
+00:02:26,850 --> 00:02:28,850
+to the very end of a list.
+
+50
+00:02:29,250 --> 00:02:31,100
+Just to show you how this works.
+
+51
+00:02:31,140 --> 00:02:34,610
+I'm going to add 5 to get to the end of my list.
+
+52
+00:02:35,650 --> 00:02:39,950
+Just let me move the statements. If I print my list
+
+53
+00:02:39,950 --> 00:02:40,260
+now,
+
+54
+00:02:43,760 --> 00:02:45,360
+you can see I added 5 to
+
+55
+00:02:45,380 --> 00:02:47,190
+the very end of my list.
+
+56
+00:02:48,720 --> 00:02:56,460
+So let's move to "pop". What "pop" does is it receives
+
+57
+00:02:48,720 --> 00:02:56,460
+an index as a parameter and it removes that index from
+
+58
+00:02:56,460 --> 00:03:02,190
+a list and it returns that value which it has removed from a list.
+
+59
+00:03:02,370 --> 00:03:04,200
+Let's say I want to remove the first value.
+
+60
+00:03:04,200 --> 00:03:07,080
+So what index does the first value has?
+
+61
+00:03:07,140 --> 00:03:09,040
+It has index 0.
+
+62
+00:03:09,270 --> 00:03:19,480
+So I'm going to use print "my_list.pop" and zero
+
+63
+00:03:09,270 --> 00:03:19,480
+index and then I'm going to print "my_list" to see if
+
+64
+00:03:19,480 --> 00:03:21,900
+I have 4.
+
+65
+00:03:21,910 --> 00:03:23,980
+So if I run this,
+
+66
+00:03:24,010 --> 00:03:27,420
+you can see that it pops off the first element which is 4.
+
+67
+00:03:27,640 --> 00:03:30,870
+And now I get the rest of the list back, 3, 2, 1.
+
+68
+00:03:30,910 --> 00:03:32,520
+I don't have four here.
+
+69
+00:03:32,530 --> 00:03:35,410
+It has removed it from a list.
+
+70
+00:03:35,500 --> 00:03:40,140
+So what does "remove" do? It accepts a value as its parameter.
+
+71
+00:03:40,330 --> 00:03:47,020
+The value is an element which is present
+
+72
+00:03:40,330 --> 00:03:47,020
+in my list and it removes that.
+
+73
+00:03:47,020 --> 00:03:59,030
+So let's say I want to remove 3. So I'm going
+
+74
+00:03:47,020 --> 00:03:59,030
+to say "remove(3)" and then print "my_list".
+
+75
+00:03:59,150 --> 00:04:01,010
+You can see 4, 2, 1.
+
+76
+00:04:01,010 --> 00:04:02,380
+I don't have to 3 there anymore.
+
+77
+00:04:02,410 --> 00:04:05,820
+So it has removed 3 from a list.
+
+78
+00:04:05,930 --> 00:04:12,200
+So what does "insert" do? "insert" accepts two parameters.
+
+79
+00:04:05,930 --> 00:04:12,200
+The first is the index where you want to insert
+
+80
+00:04:12,200 --> 00:04:12,760
+a value
+
+81
+00:04:12,770 --> 00:04:16,090
+and the second parameter is a value which we want to insert.
+
+82
+00:04:16,250 --> 00:04:20,390
+So let's say I want to insert the value 100 at index 1.
+
+83
+00:04:20,390 --> 00:04:25,830
+So what I am going to do is I'm
+
+84
+00:04:20,390 --> 00:04:25,830
+going to say "my_list", "insert", value.
+
+85
+00:04:26,000 --> 00:04:35,640
+I want insert 100 on one index. So 1 is my index
+
+86
+00:04:26,000 --> 00:04:35,640
+and hundred is my value and if I print "my_list" now, I get 4,
+
+87
+00:04:35,640 --> 00:04:36,720
+100, 3, 2, 1.
+
+88
+00:04:36,720 --> 00:04:40,310
+So 100 is on the first index just as I wanted.
+
+89
+00:04:41,360 --> 00:04:42,970
+So what does "clear" do?
+
+90
+00:04:42,970 --> 00:04:49,440
+"clear" deletes all the elements present in my
+
+91
+00:04:42,970 --> 00:04:49,440
+list. So if I use "clear" and if I print it now I won't have
+
+92
+00:04:49,470 --> 00:04:50,540
+any more elements.
+
+93
+00:04:50,540 --> 00:04:51,680
+It would be an empty list now.
+
+94
+00:04:51,690 --> 00:05:01,040
+What does "index" do? It accepts a value as its parameter
+
+95
+00:04:51,690 --> 00:05:01,040
+and it gives me the index of that value like
+
+96
+00:05:01,060 --> 00:05:03,430
+where it is right now.
+
+97
+00:05:03,460 --> 00:05:12,710
+So if they use "my_list.index" and I want to
+
+98
+00:05:03,460 --> 00:05:12,710
+know where is my 1 like at which
+
+99
+00:05:12,710 --> 00:05:14,570
+index is 1 present.
+
+100
+00:05:14,570 --> 00:05:17,160
+So if I use this, I get three.
+
+101
+00:05:17,210 --> 00:05:21,600
+So 1 is at indexed 3 and that's absolutely correct.
+
+102
+00:05:21,620 --> 00:05:28,250
+So what does "count" do? "count" accepts a
+
+103
+00:05:21,620 --> 00:05:28,250
+value as its parameter and it counts the number of times
+
+104
+00:05:28,880 --> 00:05:31,000
+this value occurs in my list.
+
+105
+00:05:31,010 --> 00:05:40,230
+So let's say I have 1 three or four times and if I
+
+106
+00:05:31,010 --> 00:05:40,230
+run this now "my_list.count", I want to count 1.
+
+107
+00:05:40,280 --> 00:05:44,120
+So I'm just going to use it
+
+108
+00:05:40,280 --> 00:05:44,120
+and you can see it gives me four.
+
+109
+00:05:44,120 --> 00:05:46,830
+I have four 1's in my list.
+
+110
+00:05:47,070 --> 00:05:54,980
+This being this, the last function that
+
+111
+00:05:47,070 --> 00:05:54,980
+we use very often is "sort". So if I use "sort"...
+
+112
+00:05:54,990 --> 00:06:03,530
+So I'm going to print "my_list" before sorting
+
+113
+00:05:54,990 --> 00:06:03,530
+and I'm going to print "my_list" after sorting.
+
+114
+00:06:03,600 --> 00:06:11,240
+So now you can see before starting my list was
+
+115
+00:06:03,600 --> 00:06:11,240
+4, 3, 2, tetra 1. After sorting it is tetra 1, 2, 3, 4.
+
+116
+00:06:11,280 --> 00:06:17,430
+So these were some of the commonly used
+
+117
+00:06:11,280 --> 00:06:17,430
+functions which we use while dealing with lists.
+
+118
+00:06:17,640 --> 00:06:23,690
+Next we'll have dictionaries and tuples
+
+119
+00:06:17,640 --> 00:06:23,690
+and dictionary comprehensions and list comprehensions.
+
+120
+00:06:23,970 --> 00:06:32,490
+All the compressions and then we'll move to some
+
+121
+00:06:23,970 --> 00:06:32,490
+more stuff like map, filter, reduce and then finally
+
+122
+00:06:32,670 --> 00:06:39,970
+I think you'll be more familiar with data structures used in Python.
+
+123
+00:06:32,670 --> 00:06:39,970
+Thank you very much!
+

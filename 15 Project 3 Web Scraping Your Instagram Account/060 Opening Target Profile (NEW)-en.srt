@@ -1,0 +1,524 @@
+1
+00:00:00,860 --> 00:00:07,350
+Hello everyone! In this video, we're going to
+
+2
+00:00:00,860 --> 00:00:07,350
+discuss how we're going to open the targets profile.
+
+3
+00:00:07,730 --> 00:00:09,920
+So by now all of us should be logged in.
+
+4
+00:00:09,920 --> 00:00:14,930
+And if any of you isn't logged in then you should check
+
+5
+00:00:09,920 --> 00:00:14,930
+out the previous video in which we did a login for
+
+6
+00:00:14,930 --> 00:00:16,130
+Instagram.
+
+7
+00:00:16,610 --> 00:00:20,160
+So as soon as you log in you can see that this dialog box appears.
+
+8
+00:00:20,210 --> 00:00:25,270
+So now this may be appearing for some of
+
+9
+00:00:20,210 --> 00:00:25,270
+you and for some of you it may not be appearing.
+
+10
+00:00:25,520 --> 00:00:33,400
+So for those people who are seeing this dialog
+
+11
+00:00:25,520 --> 00:00:33,400
+box don't worry, we're just going to
+
+12
+00:00:33,400 --> 00:00:36,530
+see how are we going to handle it with our code and for those
+
+13
+00:00:36,610 --> 00:00:38,410
+who are not seeing any dialog boxes,
+
+14
+00:00:38,490 --> 00:00:43,750
+well we're going to move forward with
+
+15
+00:00:38,490 --> 00:00:43,750
+opening the target's profile which we will discuss in
+
+16
+00:00:43,750 --> 00:00:45,400
+a few minutes.
+
+17
+00:00:45,430 --> 00:00:45,690
+OK.
+
+18
+00:00:45,700 --> 00:00:50,730
+So the question is how do we close the dialog box.
+
+19
+00:00:50,740 --> 00:00:51,960
+Very simple answer.
+
+20
+00:00:51,970 --> 00:00:53,880
+There is this cross mark.
+
+21
+00:00:54,070 --> 00:01:01,180
+So what we do is we find that HTML for
+
+22
+00:00:54,070 --> 00:01:01,180
+this cross and we're going to then
+
+23
+00:01:01,540 --> 00:01:07,630
+click on this button and it is going to close the
+
+24
+00:01:01,540 --> 00:01:07,630
+dialog box. So we can see that this is a button which
+
+25
+00:01:07,630 --> 00:01:13,590
+has the class "_dbnr9".
+
+26
+00:01:14,170 --> 00:01:19,920
+OK, so let's write a function now which is going to close dialog box
+
+27
+00:01:23,200 --> 00:01:31,260
+and I'm going to write this "try except". The reason is that
+
+28
+00:01:23,200 --> 00:01:31,260
+if there is no dialog box it
+
+29
+00:01:31,260 --> 00:01:35,030
+may disappear or it may not be appearing for some people right now.
+
+30
+00:01:35,080 --> 00:01:41,890
+If they have this code running with their
+
+31
+00:01:35,080 --> 00:01:41,890
+script it isn't going to come
+
+32
+00:01:41,890 --> 00:01:44,480
+and crash down things that have come crashing down.
+
+33
+00:01:44,500 --> 00:01:48,610
+The script is still going to work so that's
+
+34
+00:01:44,500 --> 00:01:48,610
+why I'm just having the "try except" block here.
+
+35
+00:01:49,000 --> 00:01:57,340
+OK, so I need to do this "sleep" first and then I say
+
+36
+00:01:49,000 --> 00:01:57,340
+"close_button" is equals to "self.driver.find_element_by_xpath"
+
+37
+00:01:57,340 --> 00:02:01,660
+We are looking forward for a button with class.
+
+38
+00:02:04,540 --> 00:02:12,660
+Ok, and then say "cloase_button.click" and
+
+39
+00:02:04,540 --> 00:02:12,660
+I can introduce another sleep for one second.
+
+40
+00:02:14,630 --> 00:02:19,940
+OK, so now I'm going to close this function
+
+41
+00:02:14,630 --> 00:02:19,940
+and let's see if this works or not.
+
+42
+00:02:19,940 --> 00:02:20,550
+OK.
+
+43
+00:02:20,840 --> 00:02:22,080
+I'm running this now.
+
+44
+00:02:27,970 --> 00:02:28,720
+OK.
+
+45
+00:02:28,950 --> 00:02:29,530
+Insta
+
+46
+00:02:35,370 --> 00:02:36,890
+and now we are logged in.
+
+47
+00:02:36,930 --> 00:02:38,570
+And it is.
+
+48
+00:02:38,650 --> 00:02:39,040
+OK.
+
+49
+00:02:39,040 --> 00:02:39,670
+So great.
+
+50
+00:02:39,670 --> 00:02:42,330
+This work, it close the dialog box.
+
+51
+00:02:43,610 --> 00:02:51,080
+OK, so now that's done what we want to do
+
+52
+00:02:43,610 --> 00:02:51,080
+is we want to open our profile.
+
+53
+00:02:51,150 --> 00:02:56,660
+So in our case, the guy whose profile we want
+
+54
+00:02:51,150 --> 00:02:56,660
+to open is "dataminer2060".
+
+55
+00:02:56,670 --> 00:02:59,060
+So we're going to type it here.
+
+56
+00:03:00,430 --> 00:03:03,860
+And now we are going to type it here.
+
+57
+00:03:03,880 --> 00:03:10,090
+And then as we move forward to "dataminer60" profile,
+
+58
+00:03:03,880 --> 00:03:10,090
+we can see the URL of Instagram
+
+59
+00:03:10,100 --> 00:03:13,350
+is "instagram.com/" then
+
+60
+00:03:13,360 --> 00:03:18,090
+it's the username of the profile you're trying to open.
+
+61
+00:03:18,100 --> 00:03:20,660
+And then another forward slash.
+
+62
+00:03:20,720 --> 00:03:26,080
+So now what we are going to do is first
+
+63
+00:03:20,720 --> 00:03:26,080
+we're going to write that "dataminer2060"
+
+64
+00:03:26,100 --> 00:03:32,240
+here and then going to click Enter
+
+65
+00:03:26,100 --> 00:03:32,240
+because it might display multiple
+
+66
+00:03:32,240 --> 00:03:37,420
+results and there might be some other guy who has his name "dataminer".
+
+67
+00:03:37,490 --> 00:03:42,820
+So it is possible that it might display
+
+68
+00:03:37,490 --> 00:03:42,820
+multiple results for some other user names.
+
+69
+00:03:43,040 --> 00:03:49,340
+So what we do is we find a fail proof
+
+70
+00:03:43,040 --> 00:03:49,340
+method which is that we add the user
+
+71
+00:03:49,350 --> 00:03:52,090
+name after "Instagram.com".
+
+72
+00:03:52,160 --> 00:03:54,470
+I'll just show you how this is going to be done.
+
+73
+00:03:54,500 --> 00:03:59,710
+But first let's input our desired to user name here.
+
+74
+00:03:59,710 --> 00:04:05,720
+So let's check out the HTML for this search bar.
+
+75
+00:04:06,060 --> 00:04:07,350
+So it's basically
+
+76
+00:04:09,630 --> 00:04:14,540
+"span" and it's basically this "div".
+
+77
+00:04:14,560 --> 00:04:16,070
+No, it's a simple tag here.
+
+78
+00:04:16,170 --> 00:04:16,640
+OK.
+
+79
+00:04:18,010 --> 00:04:30,860
+So you can see that this "input" tag has this class and
+
+80
+00:04:18,010 --> 00:04:30,860
+I'm going to find "def open_target_profile"
+
+81
+00:04:35,490 --> 00:04:36,590
+I'm going to find this
+
+82
+00:04:43,520 --> 00:04:44,920
+and here we go. OK.
+
+83
+00:04:44,920 --> 00:04:54,090
+So I say "search_bar.send_keys" and
+
+84
+00:04:44,920 --> 00:04:54,090
+that is going to be "self.target_username".
+
+85
+00:04:54,330 --> 00:04:59,420
+And let's keep to that for now.
+
+86
+00:04:59,420 --> 00:05:02,820
+See if we're able to input anything there.
+
+87
+00:05:03,290 --> 00:05:13,230
+So "self.open_target_profile". OK I'm running this now,
+
+88
+00:05:03,290 --> 00:05:13,230
+let's see if we're able to input target's
+
+89
+00:05:13,350 --> 00:05:15,480
+username in that search bar.
+
+90
+00:05:19,460 --> 00:05:21,930
+OK, so we are logged in.
+
+91
+00:05:22,010 --> 00:05:25,150
+It should close the dialog box now.
+
+92
+00:05:25,260 --> 00:05:27,340
+And yes, there we go.
+
+93
+00:05:27,440 --> 00:05:33,770
+You can see that it has successfully inserted
+
+94
+00:05:27,440 --> 00:05:33,770
+the target profile's username into the search
+
+95
+00:05:33,770 --> 00:05:34,720
+field.
+
+96
+00:05:35,300 --> 00:05:36,260
+So this is working.
+
+97
+00:05:36,260 --> 00:05:37,440
+What do we want to do next
+
+98
+00:05:37,460 --> 00:05:46,900
+is if I write "dataminer2060" here, and I open it
+
+99
+00:05:37,460 --> 00:05:46,900
+you can see that the URL of Instagram
+
+100
+00:05:46,900 --> 00:05:52,360
+has changed. It is now "instagram.com/dataminer2060".
+
+101
+00:05:52,420 --> 00:05:53,390
+OK.
+
+102
+00:05:53,410 --> 00:05:56,620
+So how am I going to open the target's profile.
+
+103
+00:05:56,630 --> 00:06:07,090
+What I to do is to say "target_profile_url"
+
+104
+00:05:56,630 --> 00:06:07,090
+is equals to "self.main_url".
+
+105
+00:06:07,610 --> 00:06:09,310
+Now you can see that the "main_url"
+
+106
+00:06:09,370 --> 00:06:13,560
+is "https://www.instagram.com".
+
+107
+00:06:13,580 --> 00:06:14,610
+OK.
+
+108
+00:06:14,690 --> 00:06:20,360
+And what we're going to do is we are going to
+
+109
+00:06:14,690 --> 00:06:20,360
+insert a forward slash here and then "self.target_username"
+
+110
+00:06:20,390 --> 00:06:20,710
+then
+
+111
+00:06:20,750 --> 00:06:24,100
+another forward slash.
+
+112
+00:06:24,190 --> 00:06:32,990
+Now I'm going to say "self.driver.get",
+
+113
+00:06:24,190 --> 00:06:32,990
+"target_profile_url" and let's introduce the sleep
+
+114
+00:06:33,020 --> 00:06:34,230
+for two seconds.
+
+115
+00:06:34,550 --> 00:06:35,050
+OK.
+
+116
+00:06:36,100 --> 00:06:52,090
+And I'm going to run this now and this
+
+117
+00:06:36,100 --> 00:06:52,090
+should open our target usernames profile.
+
+118
+00:06:52,150 --> 00:06:54,530
+So it's going to close the dialog box.
+
+119
+00:06:54,570 --> 00:06:57,710
+There you go.
+
+120
+00:06:57,750 --> 00:07:03,990
+So you saw that what we did was we
+
+121
+00:06:57,750 --> 00:07:03,990
+added a forward slash to the main URL,
+
+122
+00:07:03,990 --> 00:07:07,590
+our main URL was this, the portion I've highlighted.
+
+123
+00:07:07,920 --> 00:07:14,100
+I added a forward slash and then there's this target
+
+124
+00:07:07,920 --> 00:07:14,100
+profile username and then the forward slash and
+
+125
+00:07:14,100 --> 00:07:20,340
+it opens up our target username's profile which in this case is ours.
+
+126
+00:07:20,610 --> 00:07:26,320
+In the next video, we are going to discuss
+
+127
+00:07:20,610 --> 00:07:26,320
+how we're going to download the photos from
+
+128
+00:07:26,430 --> 00:07:28,810
+a target's profile here.
+
+129
+00:07:28,860 --> 00:07:29,970
+See you in the next video.
+
+130
+00:07:31,380 --> 00:07:32,990
+I hope this video makes sense.
+
+131
+00:07:33,060 --> 00:07:33,520
+Thank you.
+

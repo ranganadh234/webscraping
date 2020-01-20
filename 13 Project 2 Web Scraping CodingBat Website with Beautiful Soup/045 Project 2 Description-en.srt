@@ -1,0 +1,312 @@
+1
+00:00:00,300 --> 00:00:06,600
+Hello everyone. In this video, I am going
+
+2
+00:00:00,300 --> 00:00:06,600
+to explain to you your first project.
+
+3
+00:00:06,720 --> 00:00:12,000
+So I have the site opened here, "codingbat.com".
+
+4
+00:00:12,090 --> 00:00:19,920
+This website has questions of Java and Python and
+
+5
+00:00:12,090 --> 00:00:19,920
+it helps you learn Java and Python questions especially
+
+6
+00:00:19,920 --> 00:00:24,500
+for competitions for different competitions like ICPC.
+
+7
+00:00:25,080 --> 00:00:28,980
+OK, so you can see that you have
+
+8
+00:00:29,220 --> 00:00:34,240
+a compiler, you have a sort of thing
+
+9
+00:00:29,220 --> 00:00:34,240
+where you can type code and then you can say
+
+10
+00:00:34,280 --> 00:00:40,100
+"Go" and then you can see the solution for it and
+
+11
+00:00:40,170 --> 00:00:41,580
+there are multiple questions here.
+
+12
+00:00:41,580 --> 00:00:43,640
+I mean there are many questions you can find.
+
+13
+00:00:43,830 --> 00:00:47,440
+So the flow for this website is that there are sections.
+
+14
+00:00:48,060 --> 00:00:54,710
+As you can see for Java you have "Warmup-1", "Warmup-2",
+
+15
+00:00:48,060 --> 00:00:54,710
+then "Strings" and "Array" and "Logic-1" and "Logic-2", "Array-2"
+
+16
+00:00:54,760 --> 00:01:02,640
+"Array-3", "AP-1", then "Recursion-1" then "Map-1" and
+
+17
+00:00:54,760 --> 00:01:02,640
+"Map-2" and then if I click let's say I click on "Warmup-1"
+
+18
+00:01:02,640 --> 00:01:04,240
+which I've opened here.
+
+19
+00:01:04,290 --> 00:01:07,960
+So as soon as I open this,
+
+20
+00:01:04,290 --> 00:01:07,960
+you can see I have questions here.
+
+21
+00:01:08,920 --> 00:01:15,540
+So for each section you get questions, like
+
+22
+00:01:08,920 --> 00:01:15,540
+you open the section you get questions.
+
+23
+00:01:15,730 --> 00:01:23,900
+You can see them here, like "sleepIn" is a question. Each of these listed links
+
+24
+00:01:23,960 --> 00:01:27,080
+are links to questions.
+
+25
+00:01:27,260 --> 00:01:31,630
+So when I open "sleepIn", it opens this.
+
+26
+00:01:27,260 --> 00:01:31,630
+This is a question here.
+
+27
+00:01:31,670 --> 00:01:32,270
+OK.
+
+28
+00:01:32,270 --> 00:01:34,630
+So you can see that this is a question and this here,
+
+29
+00:01:34,670 --> 00:01:41,810
+the three statements here, they are example
+
+30
+00:01:34,670 --> 00:01:41,810
+inputs and exemple outputs, the required
+
+31
+00:01:41,810 --> 00:01:42,910
+outputs.
+
+32
+00:01:42,920 --> 00:01:50,790
+So the question is this one here and the example inputs
+
+33
+00:01:42,920 --> 00:01:50,790
+and outputs are this one here. So the "sleepIn"
+
+34
+00:01:50,790 --> 00:01:53,910
+takes "false" and "false" as its inputs and then it returns "true".
+
+35
+00:01:54,060 --> 00:01:57,520
+It returns us "true" if the inputs are "false" and "false".
+
+36
+00:01:57,540 --> 00:02:01,760
+So these are sample inputs and this is a sample output.
+
+37
+00:02:01,770 --> 00:02:06,100
+So once again the flow is like you have sections here.
+
+38
+00:02:06,420 --> 00:02:12,660
+Then as I open the section, each section has many
+
+39
+00:02:06,420 --> 00:02:12,660
+questions, so multiple questions and then I open
+
+40
+00:02:12,660 --> 00:02:17,060
+a single question and I get this here,
+
+41
+00:02:12,660 --> 00:02:17,060
+where I can type code and everything.
+
+42
+00:02:17,070 --> 00:02:23,370
+And here I have a question here, a question
+
+43
+00:02:17,070 --> 00:02:23,370
+statement and then the question examples.
+
+44
+00:02:23,430 --> 00:02:31,830
+So what I want you to do is I want you
+
+45
+00:02:23,430 --> 00:02:31,830
+to scrape each question and the examples for that
+
+46
+00:02:31,830 --> 00:02:37,660
+question and I want you to give
+
+47
+00:02:31,830 --> 00:02:37,660
+this to me in a standardized format.
+
+48
+00:02:38,680 --> 00:02:41,880
+Once again we opened the site.
+
+49
+00:02:41,920 --> 00:02:45,370
+This page opens, this has sections here.
+
+50
+00:02:45,400 --> 00:02:48,390
+Each section has questions.
+
+51
+00:02:48,420 --> 00:02:55,370
+These are questions "sleepIn", "monkeyTrouble",
+
+52
+00:02:48,420 --> 00:02:55,370
+"sumDouble", "endUp, "icyHot", "startHi".
+
+53
+00:02:55,780 --> 00:03:01,780
+So as soon as you open the question, you get this window
+
+54
+00:02:55,780 --> 00:03:01,780
+and in this window you can see that this is the
+
+55
+00:03:01,900 --> 00:03:03,660
+question here.
+
+56
+00:03:03,720 --> 00:03:07,580
+This is a question and this is a sample input/output.
+
+57
+00:03:07,620 --> 00:03:13,820
+So basically I wanted the whole of this.
+
+58
+00:03:07,620 --> 00:03:13,820
+I want this highlighted data.
+
+59
+00:03:14,010 --> 00:03:19,960
+I want all of these questions that are present here
+
+60
+00:03:14,010 --> 00:03:19,960
+in this CodingBat for Java, not for Python. Only for
+
+61
+00:03:19,960 --> 00:03:21,460
+a Java.
+
+62
+00:03:21,650 --> 00:03:27,900
+So my hint is what you can do is you can
+
+63
+00:03:21,650 --> 00:03:27,900
+scrape this first like the links for these sections.
+
+64
+00:03:28,130 --> 00:03:36,510
+Then you can open them in a loop and then
+
+65
+00:03:28,130 --> 00:03:36,510
+for this page you scrape the questions like the link
+
+66
+00:03:36,510 --> 00:03:42,800
+for these questions and then you open each question
+
+67
+00:03:36,510 --> 00:03:42,800
+in aloop and then you get the desired values
+
+68
+00:03:43,670 --> 00:03:49,370
+and then you can make a dictionary or a list, that depends
+
+69
+00:03:43,670 --> 00:03:49,370
+on you, but the output should be in a standardized
+
+70
+00:03:49,370 --> 00:03:50,200
+format.
+
+71
+00:03:51,140 --> 00:03:58,250
+I hope the project description is clear to you
+
+72
+00:03:51,140 --> 00:03:58,250
+and I've given you a hand, a big one,
+
+73
+00:03:58,280 --> 00:04:00,140
+as to how you can do this.
+
+74
+00:04:00,590 --> 00:04:04,980
+And I'll see you in the next video with the solution.
+
+75
+00:04:05,000 --> 00:04:08,870
+But I would really appreciate if you do this yourself first.
+
+76
+00:04:09,040 --> 00:04:11,400
+I am sure you can do this.
+
+77
+00:04:11,570 --> 00:04:12,690
+Thank you very much.
+
+78
+00:04:12,740 --> 00:04:13,180
+See you.
+

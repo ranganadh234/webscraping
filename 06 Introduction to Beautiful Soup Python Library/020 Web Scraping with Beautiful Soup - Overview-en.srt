@@ -1,0 +1,240 @@
+1
+00:00:00,810 --> 00:00:02,330
+Hello everyone!
+
+2
+00:00:02,580 --> 00:00:11,460
+In the last video we discussed user agents and how we can imitate our browser.
+
+3
+00:00:11,460 --> 00:00:19,430
+In this video we are going to start with Beautiful Soup.
+
+4
+00:00:11,460 --> 00:00:19,430
+Beautiful Soup is a parser which we use to parse HTML data.
+
+5
+00:00:20,330 --> 00:00:27,140
+If you remember, all HTML files can be thought of having a tree structure
+
+6
+00:00:28,280 --> 00:00:36,670
+like the file we had when I discussed HTML was this.
+
+7
+00:00:28,280 --> 00:00:36,670
+We had this HTML file,
+
+8
+00:00:36,670 --> 00:00:42,280
+we had this HTML tag and then it had two children, "head" and "body", and then "header" had further
+
+9
+00:00:42,320 --> 00:00:44,800
+two children and "body" had further two children.
+
+10
+00:00:44,810 --> 00:00:52,350
+So if I make that tree, it would be like HTML, would be the parent. HTML has two children, head
+
+11
+00:00:52,430 --> 00:00:57,830
+and body, and head has further two children, "meta" and "title", and "body" had further two children,
+
+12
+00:00:57,840 --> 00:01:07,090
+two paragraphs tags. So what we do is we have a parser which is known as Beautiful Soup in Python
+
+13
+00:01:07,090 --> 00:01:13,660
+which parses this tree and we can access each tag individually.
+
+14
+00:01:15,320 --> 00:01:23,240
+OK, so for this you need to install two packages, bs4 and lxml.
+
+15
+00:01:23,690 --> 00:01:27,390
+bs4 is a Beautiful Soup package, and lxml
+
+16
+00:01:27,440 --> 00:01:30,270
+is another parser and external dependency.
+
+17
+00:01:30,270 --> 00:01:30,960
+It works
+
+18
+00:01:30,960 --> 00:01:36,910
+if you don't have lxml but it's prefered if you have it.
+
+19
+00:01:37,400 --> 00:01:38,030
+OK.
+
+20
+00:01:38,190 --> 00:01:43,580
+So what I do is I have this file here, this HTML file here.
+
+21
+00:01:43,620 --> 00:01:49,740
+You can see it has these tags. In the "body" I have two div's.
+
+22
+00:01:43,620 --> 00:01:49,740
+In the first div
+
+23
+00:01:49,800 --> 00:01:57,580
+I have further a "p" tag and then in the another "div" I have another "p" tag.
+
+24
+00:01:57,610 --> 00:02:07,000
+OK, so what I do is I have a function which reads this file, this HTML file, and gives this file back
+
+25
+00:02:07,000 --> 00:02:07,330
+to me.
+
+26
+00:02:07,330 --> 00:02:17,010
+So I read it, I say "html_file" is equal to "read_file".
+
+27
+00:02:07,330 --> 00:02:17,010
+And if I run that.
+
+28
+00:02:17,080 --> 00:02:20,680
+You can see I have my HTML file here.
+
+29
+00:02:20,880 --> 00:02:22,370
+This one.
+
+30
+00:02:22,430 --> 00:02:26,050
+So this function is just reading this HTML file.
+
+31
+00:02:26,090 --> 00:02:27,350
+Nothing else.
+
+32
+00:02:27,350 --> 00:02:28,250
+This one.
+
+33
+00:02:28,250 --> 00:02:30,470
+To be clear of this.
+
+34
+00:02:30,510 --> 00:02:37,920
+OK, so what we do is we make a soup out of this HTML file. By soup
+
+35
+00:02:37,920 --> 00:02:40,340
+I mean we make a tree out of this.
+
+36
+00:02:40,350 --> 00:02:45,270
+And from that tree we can access each element individually.
+
+37
+00:02:45,750 --> 00:02:54,290
+So the syntax for making a soup or a tree out of an HTML file is we write "BeautifulSoup", this
+
+38
+00:02:54,300 --> 00:02:57,150
+class we took and its constructor
+
+39
+00:02:57,410 --> 00:02:59,750
+takes two parameters:
+
+40
+00:02:59,750 --> 00:03:04,130
+the HTML file which we want to parse and the parser.
+
+41
+00:03:04,340 --> 00:03:08,050
+So I write "soup" is equal to "BeautifulSoup".
+
+42
+00:03:08,060 --> 00:03:09,470
+I give it a HTML file
+
+43
+00:03:09,470 --> 00:03:15,540
+I am parsing and here I give it the parser which is "lxml".
+
+44
+00:03:15,920 --> 00:03:21,080
+If you haven't installed "lxml" you can just write "html.parser".
+
+45
+00:03:21,580 --> 00:03:22,580
+OK.
+
+46
+00:03:23,060 --> 00:03:33,150
+OK, so this will create a soup, this line will create a soup of this HTML file.
+
+47
+00:03:33,530 --> 00:03:34,910
+So if I print soup
+
+48
+00:03:38,070 --> 00:03:43,490
+I get the HTML file which it has parsed.
+
+49
+00:03:43,520 --> 00:03:52,030
+OK so there's a method the soup has which is "soup.prettify". What this does is this...
+
+50
+00:03:52,560 --> 00:03:55,150
+Oh, I'm sorry. I didn't print that.
+
+51
+00:03:55,410 --> 00:04:04,050
+What this method does is it prints the HTML file using the correct indentation.
+
+52
+00:04:04,080 --> 00:04:06,360
+So I mean it is more neat this way.
+
+53
+00:04:07,270 --> 00:04:12,930
+OK. So I want you to identify some tags here, like which tags are present in this HTML file.
+
+54
+00:04:13,020 --> 00:04:17,260
+First we have this one, then HTML, then "head", then "meta", then "title".
+
+55
+00:04:17,300 --> 00:04:21,690
+Then I have my "body", then "div", then "p", then another "div" and another "p".
+
+56
+00:04:21,850 --> 00:04:23,530
+And there we go.
+
+57
+00:04:23,530 --> 00:04:30,970
+So these were tags here and this is how we make a soup out a HTML file. In the next video
+
+58
+00:04:30,970 --> 00:04:38,370
+we will discuss how to use requests and Beautiful Soup together, how
+
+59
+00:04:39,550 --> 00:04:41,940
+to make a soup out of a website HTML.
+
+60
+00:04:42,220 --> 00:04:43,480
+So thank you very much.
+

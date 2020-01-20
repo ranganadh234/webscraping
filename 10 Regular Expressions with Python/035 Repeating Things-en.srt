@@ -1,0 +1,268 @@
+1
+00:00:00,300 --> 00:00:07,080
+Hello everyone! In this video, we are going to discuss
+
+2
+00:00:00,300 --> 00:00:07,080
+how we can write more powerful RegEX expressions
+
+3
+00:00:07,500 --> 00:00:11,510
+and how we can handle recurring characters.
+
+4
+00:00:11,640 --> 00:00:16,060
+So let's say I have this expression here, this "a" one.
+
+5
+00:00:16,080 --> 00:00:21,990
+So this regular expression is going to
+
+6
+00:00:16,080 --> 00:00:21,990
+match any string which contains an "a".
+
+7
+00:00:21,990 --> 00:00:31,810
+So if I say print "regex.match" and "a", it says
+
+8
+00:00:21,990 --> 00:00:31,810
+"Yes, it's a perfect match". But let's say
+
+9
+00:00:31,810 --> 00:00:32,730
+I want to
+
+10
+00:00:32,830 --> 00:00:37,570
+have an expression which can match any number of a's.
+
+11
+00:00:37,680 --> 00:00:41,230
+So, OK. Let's start with five numbers of "a".
+
+12
+00:00:41,230 --> 00:00:46,120
+So what I can do is I can say one, two,
+
+13
+00:00:41,230 --> 00:00:46,120
+hree, four, five. And if I run this
+
+14
+00:00:46,140 --> 00:00:47,300
+now, it says "None".
+
+15
+00:00:47,310 --> 00:00:52,580
+So my string has to have five "a".
+
+16
+00:00:52,660 --> 00:00:53,440
+If I run this, it says
+
+17
+00:00:53,460 --> 00:00:55,150
+"Yes, it's a perfect match."
+
+18
+00:00:56,780 --> 00:01:03,450
+OK, but what if I want to match 20.
+
+19
+00:01:03,580 --> 00:01:05,740
+OK, still you can write 20.
+
+20
+00:01:05,740 --> 00:01:08,710
+But let's I want you to match 500 a's.
+
+21
+00:01:08,720 --> 00:01:12,190
+So don't tell me you are going to write 500 a's.
+
+22
+00:01:12,350 --> 00:01:16,370
+You are going to write like this, this,
+
+23
+00:01:12,350 --> 00:01:16,370
+this, this, this... That's not happening.
+
+24
+00:01:16,390 --> 00:01:20,080
+RegEX gives us a very powerful
+
+25
+00:01:20,100 --> 00:01:28,250
+tool, a very powerful character to which we
+
+26
+00:01:20,100 --> 00:01:28,250
+can actually handle this very efficiently.
+
+27
+00:01:28,510 --> 00:01:34,390
+So the first character we are going to discuss is this
+
+28
+00:01:28,510 --> 00:01:34,390
+asterisk character. This specifies that the previous character
+
+29
+00:01:34,390 --> 00:01:35,270
+can be matched
+
+30
+00:01:35,290 --> 00:01:38,540
+zero or more times instead of exactly once.
+
+31
+00:01:38,560 --> 00:01:44,980
+So what this means is that if I use this, this means that either they can be zero a's or they can be many
+
+32
+00:01:44,980 --> 00:01:46,010
+occurrences of "a".
+
+33
+00:01:46,150 --> 00:01:48,040
+That would be like infinity.
+
+34
+00:01:48,040 --> 00:01:49,190
+So if I run this now,
+
+35
+00:01:52,180 --> 00:01:58,500
+it still gives me a match, a perfect one.
+
+36
+00:01:52,180 --> 00:01:58,500
+If I don't have anything here,
+
+37
+00:01:59,740 --> 00:02:06,610
+I still get a match because asterisk says that either
+
+38
+00:01:59,740 --> 00:02:06,610
+this "a" will come once or like in finite time.
+
+39
+00:02:06,610 --> 00:02:23,600
+So the lower limit is zero and the upper limit is infinity.
+
+40
+00:02:23,600 --> 00:02:28,310
+OK so I can have any number of a's and it's going to match the
+
+41
+00:02:31,820 --> 00:02:32,540
+them.
+
+42
+00:02:32,990 --> 00:02:41,330
+So in this video, we discussed this asterisk
+
+43
+00:02:32,990 --> 00:02:41,330
+character which matches zero or more times any
+
+44
+00:02:41,330 --> 00:02:43,270
+character which comes before it.
+
+45
+00:02:44,070 --> 00:02:47,170
+And I can have a character class here too.
+
+46
+00:02:47,250 --> 00:02:52,500
+OK, I could use it like this too. So I could
+
+47
+00:02:47,250 --> 00:02:52,500
+say "a" to "c" and if I run this,
+
+48
+00:02:52,590 --> 00:03:01,040
+it still gives me a perfect match. And I can have "b"
+
+49
+00:02:52,590 --> 00:03:01,040
+and still it will give me a perfect match because
+
+50
+00:03:01,170 --> 00:03:08,070
+this expression says that "a", "b" or "c" can come as many times as they want.
+
+51
+00:03:08,100 --> 00:03:10,480
+And in any order they want to come.
+
+52
+00:03:10,860 --> 00:03:14,680
+So this is a very powerful expression here right now.
+
+53
+00:03:14,730 --> 00:03:22,650
+This is going to match any string which contains "a", "b" or "c.
+
+54
+00:03:22,680 --> 00:03:24,780
+And in any order.
+
+55
+00:03:24,860 --> 00:03:32,960
+So you can test it out. I can have the "bc" here
+
+56
+00:03:24,860 --> 00:03:32,960
+and you'll see it will still match it. So I could
+
+57
+00:03:32,960 --> 00:03:37,070
+start with "c" and it will still match.
+
+58
+00:03:37,260 --> 00:03:45,210
+So I hope this asterisk character is more clear to you
+
+59
+00:03:37,260 --> 00:03:45,210
+and I would like you to go through with this yourself
+
+60
+00:03:45,300 --> 00:03:51,720
+and write some strings and check this out, write
+
+61
+00:03:45,300 --> 00:03:51,720
+some expressions and test so that you understand
+
+62
+00:03:51,720 --> 00:03:53,500
+this better.
+
+63
+00:03:53,570 --> 00:03:59,110
+Next, we are going to discuss some
+
+64
+00:03:53,570 --> 00:03:59,110
+more characters which help us repeat things.
+
+65
+00:03:59,260 --> 00:04:01,720
+I hope this is clear to you.
+
+66
+00:04:01,750 --> 00:04:03,070
+So thank you very much.
+
+67
+00:04:03,070 --> 00:04:04,720
+See you in the next video.
+

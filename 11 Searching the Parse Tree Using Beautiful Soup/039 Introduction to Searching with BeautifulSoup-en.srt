@@ -1,0 +1,564 @@
+1
+00:00:00,640 --> 00:00:11,730
+Hello everyone! In the last video, we discussed
+
+2
+00:00:00,640 --> 00:00:11,730
+RegEX and in this video we are trying to start
+
+3
+00:00:11,730 --> 00:00:19,080
+searching our parse tree and this video is going to
+
+4
+00:00:11,730 --> 00:00:19,080
+give an intro on searching our parse tree. If you remember
+
+5
+00:00:19,740 --> 00:00:28,170
+each HTML page is treated as a tree by Beautiful Soup when we make the Beautiful Soup
+
+6
+00:00:28,230 --> 00:00:32,450
+out of this HTML file. So it is treated like a tree.
+
+7
+00:00:32,610 --> 00:00:38,670
+We discussed before that we can navigate
+
+8
+00:00:32,610 --> 00:00:38,670
+through our tree using different methods.
+
+9
+00:00:38,670 --> 00:00:44,130
+We have like three different ways we can navigate through
+
+10
+00:00:38,670 --> 00:00:44,130
+our parse tree that is like going down, going up and going
+
+11
+00:00:44,130 --> 00:00:45,020
+sideways.
+
+12
+00:00:45,150 --> 00:00:48,210
+And then we had different methods for each these
+
+13
+00:00:48,300 --> 00:00:56,100
+directions. Like if Im moving up, we can
+
+14
+00:00:48,300 --> 00:00:56,100
+use the "parent" method. If I'm moving
+
+15
+00:00:56,760 --> 00:00:57,750
+sideways,
+
+16
+00:00:57,780 --> 00:01:03,330
+we can have the "next_sibling" method and there are
+
+17
+00:00:57,780 --> 00:01:03,330
+different methods for each of the movements
+
+18
+00:01:03,330 --> 00:01:04,760
+we have.
+
+19
+00:01:05,240 --> 00:01:13,140
+OK, so now the thing with that is you can
+
+20
+00:01:05,240 --> 00:01:13,140
+only move around a HTML document if we know
+
+21
+00:01:13,340 --> 00:01:20,490
+which tag you want, which tag you're
+
+22
+00:01:13,340 --> 00:01:20,490
+after and where it is located in the tree.
+
+23
+00:01:20,850 --> 00:01:25,350
+But it lets say your tree has thousands of tags.
+
+24
+00:01:25,390 --> 00:01:29,900
+How are you going navigate through thousands
+
+25
+00:01:25,390 --> 00:01:29,900
+of tags to get to the tags desire.
+
+26
+00:01:29,910 --> 00:01:39,000
+So here we come to searching. Beautiful Soup
+
+27
+00:01:29,910 --> 00:01:39,000
+provides us with very strong methods and very efficient
+
+28
+00:01:39,000 --> 00:01:42,950
+methods which return us the tags
+
+29
+00:01:42,960 --> 00:01:44,880
+we want.
+
+30
+00:01:44,880 --> 00:01:49,870
+It searches the whole parse tree for the tags
+
+31
+00:01:44,880 --> 00:01:49,870
+we want and it gives us back to those tags.
+
+32
+00:01:50,250 --> 00:01:57,340
+So the most popular method for searching are
+
+33
+00:01:50,250 --> 00:01:57,340
+"find" and "find_all". To keep it simple for now,
+
+34
+00:01:57,420 --> 00:01:59,390
+we say that these both methods
+
+35
+00:01:59,400 --> 00:02:09,210
+take the tags name as its parameter. OK, so I'm
+
+36
+00:01:59,400 --> 00:02:09,210
+going to be using this HTML file here for
+
+37
+00:02:09,210 --> 00:02:17,120
+searching examples right now. And this code here,
+
+38
+00:02:09,210 --> 00:02:17,120
+what it does is I've imported the necessary
+
+39
+00:02:17,150 --> 00:02:23,490
+modules and I'm reading this file and making a soup of it. OK.
+
+40
+00:02:23,720 --> 00:02:27,660
+So let's get started.
+
+41
+00:02:27,660 --> 00:02:35,930
+This video basically aims to make you
+
+42
+00:02:27,660 --> 00:02:35,930
+more familiar with searching and I
+
+43
+00:02:35,930 --> 00:02:36,820
+intend to
+
+44
+00:02:36,830 --> 00:02:42,000
+show you which filters you can use to retrieve tags.
+
+45
+00:02:42,110 --> 00:02:47,840
+OK, so filters are basically what dogs we want to retrieve.
+
+46
+00:02:47,840 --> 00:02:56,430
+So I can parse a string string like let's
+
+47
+00:02:47,840 --> 00:02:56,430
+say I want to find all "b" tags.
+
+48
+00:02:56,450 --> 00:03:00,570
+So what I do is I say "soup.find_all" and I run it.
+
+49
+00:03:00,790 --> 00:03:03,610
+It gives me all "b" tags, this "b" here
+
+50
+00:03:03,620 --> 00:03:05,380
+and I have this "b" tag here
+
+51
+00:03:05,450 --> 00:03:07,190
+and then this "b" tag here.
+
+52
+00:03:07,280 --> 00:03:10,930
+So "find_all" returns us a list.
+
+53
+00:03:11,360 --> 00:03:12,230
+We'll discuss more
+
+54
+00:03:12,260 --> 00:03:14,480
+"find_all" in detail later on.
+
+55
+00:03:14,690 --> 00:03:16,850
+This is just a introduction.
+
+56
+00:03:17,000 --> 00:03:20,530
+What kind of filters it is going
+
+57
+00:03:17,000 --> 00:03:20,530
+to accept as a parameter.
+
+58
+00:03:21,110 --> 00:03:28,090
+OK, so this was very basic like it accepts
+
+59
+00:03:21,110 --> 00:03:28,090
+a string and treats it like a tag name.
+
+60
+00:03:28,100 --> 00:03:35,750
+So if I have "a" here, you see it
+
+61
+00:03:28,100 --> 00:03:35,750
+gives me all "a" tags in my document.
+
+62
+00:03:35,770 --> 00:03:37,660
+So this was for string.
+
+63
+00:03:37,660 --> 00:03:39,630
+Now we can pass
+
+64
+00:03:39,730 --> 00:03:43,120
+a Regular Expression to retrieve tags.
+
+65
+00:03:43,150 --> 00:03:48,190
+So let's say I want all those tags
+
+66
+00:03:43,150 --> 00:03:48,190
+whose name start with "b".
+
+67
+00:03:48,190 --> 00:03:55,390
+So what I'm doing is I'm going to make a Regular
+
+68
+00:03:48,190 --> 00:03:55,390
+Expression. The Regular Expression is going to
+
+69
+00:03:55,390 --> 00:04:02,550
+be "^b". This indicates any strings which start with "b".
+
+70
+00:04:02,980 --> 00:04:17,040
+So I say "for tag in soup.find_all(regex)", I say
+
+71
+00:04:02,980 --> 00:04:17,040
+print "tag.name". And if I run it, you can see
+
+72
+00:04:17,040 --> 00:04:24,690
+it gives me all tags whose first character is "b". OK.
+
+73
+00:04:24,740 --> 00:04:34,760
+So this just shows you how we can use RegEX
+
+74
+00:04:24,740 --> 00:04:34,760
+to find tags and we can write very complex Regular
+
+75
+00:04:34,760 --> 00:04:41,010
+Expressions for finding different kind
+
+76
+00:04:34,760 --> 00:04:41,010
+of tags or by narrowing down classes,
+
+77
+00:04:41,230 --> 00:04:48,830
+narrowing down tags using their attributes and RegEX. We'll
+
+78
+00:04:48,830 --> 00:04:50,360
+discuss more of it.
+
+79
+00:04:50,380 --> 00:04:58,070
+We will use RegEX more later on as we do "find_all"
+
+80
+00:04:50,380 --> 00:04:58,070
+and "find" later this introduction to see how
+
+81
+00:04:58,070 --> 00:05:03,780
+we can use RegEX to help give us tags. OK.
+
+82
+00:05:03,780 --> 00:05:07,020
+So just to give you one more quick example.
+
+83
+00:05:08,250 --> 00:05:11,020
+I want all those tags,
+
+84
+00:05:11,220 --> 00:05:14,280
+all those tags which contain the character "t".
+
+85
+00:05:14,350 --> 00:05:23,860
+I write the Regular Expression for this and it's simple.
+
+86
+00:05:14,350 --> 00:05:23,860
+And I say "for tag in soup.find_all('t')", and say print "tag.name".
+
+87
+00:05:27,470 --> 00:05:33,400
+And if I run that.
+
+88
+00:05:33,600 --> 00:05:44,150
+Oh, I'm sorry. I didn't pass the RegEX object. It gives
+
+89
+00:05:33,600 --> 00:05:44,150
+me all the tags which contain the character "t"
+
+90
+00:05:44,290 --> 00:05:46,710
+here. OK.
+
+91
+00:05:47,110 --> 00:05:55,780
+So this is just an example of how we can use
+
+92
+00:05:47,110 --> 00:05:55,780
+RegEX to retrieve tags, to search for tags.
+
+93
+00:05:55,900 --> 00:06:02,200
+OK, so right now we have discussed two
+
+94
+00:05:55,900 --> 00:06:02,200
+ways. We can give it a string which it treats
+
+95
+00:06:02,290 --> 00:06:08,410
+as a tag name and then we have discussed Regular Expressions,
+
+96
+00:06:02,290 --> 00:06:08,410
+like we can send Regular Expressions and that
+
+97
+00:06:08,800 --> 00:06:17,800
+will retrieve those tag names which satisfy our Regular Expression.
+
+98
+00:06:18,070 --> 00:06:26,740
+So now I can also send a list of tag names.
+
+99
+00:06:18,070 --> 00:06:26,740
+Let's say I want all "a" and "b" tags.
+
+100
+00:06:26,770 --> 00:06:40,490
+So I say "for tag in tag.soup.find_all", and
+
+101
+00:06:26,770 --> 00:06:40,490
+then pass a list and I say "a" and "b".
+
+102
+00:06:40,630 --> 00:06:50,440
+And if I print "tag.name", you can see it has given
+
+103
+00:06:40,630 --> 00:06:50,440
+me all tags which are either "b" or "a" tags.
+
+104
+00:06:50,560 --> 00:06:57,750
+So we just discussed that filter and that list. We can pass this function a list and
+
+105
+00:06:57,750 --> 00:07:04,780
+it will give us all those tags which satisfy a list of constraints.
+
+106
+00:07:04,830 --> 00:07:12,050
+I said I want all those tags which are "a" tags or "b" tags. So lastly
+
+107
+00:07:12,320 --> 00:07:14,700
+it can also accept functions.
+
+108
+00:07:15,130 --> 00:07:21,220
+This "find_all" function can accept functions as its parameters.
+
+109
+00:07:21,320 --> 00:07:23,760
+So this is just one example here.
+
+110
+00:07:23,770 --> 00:07:30,980
+Like when we discuss "find_all" in detail, we
+
+111
+00:07:23,770 --> 00:07:30,980
+are going to discuss more on how we can
+
+112
+00:07:30,980 --> 00:07:39,300
+use functions to narrow down our search and get those tags which you
+
+113
+00:07:39,300 --> 00:07:41,270
+really want.
+
+114
+00:07:41,290 --> 00:07:48,660
+So this function, just to give you a basic intro,
+
+115
+00:07:41,290 --> 00:07:48,660
+this function either return true or false.
+
+116
+00:07:48,670 --> 00:07:55,990
+So you write a function that say I want all those which have class. I say "has_class",
+
+117
+00:07:57,940 --> 00:08:07,920
+return "tag.has_att('class')". Then I say print
+
+118
+00:08:08,040 --> 00:08:13,410
+"for tag in soup.find_all"
+
+119
+00:08:13,630 --> 00:08:25,550
+and then I say this "has_class", and I say print.
+
+120
+00:08:13,630 --> 00:08:25,550
+OK so what happens is I've written a function which accepts
+
+121
+00:08:25,640 --> 00:08:30,960
+a tag as its parameter and what it does is it returns either true or false.
+
+122
+00:08:30,980 --> 00:08:37,380
+So tag has this method has attribute, "has_attr".
+
+123
+00:08:37,430 --> 00:08:40,210
+And then I check if that has an attribute "class".
+
+124
+00:08:40,220 --> 00:08:41,690
+If it does it is going to return
+
+125
+00:08:41,690 --> 00:08:48,710
+true and if it returns true I get that tag here in this "find_all".
+
+126
+00:08:48,920 --> 00:08:54,190
+And if it returns false, this "find_all" doesn't include that tag in my result.
+
+127
+00:08:54,410 --> 00:09:00,070
+So before I run this I want us to see this document.
+
+128
+00:09:00,080 --> 00:09:09,570
+So you can see that only this "p" tag, this "p" tag and
+
+129
+00:09:00,080 --> 00:09:09,570
+this "p" tag have the "class" attribute and these
+
+130
+00:09:09,780 --> 00:09:11,300
+"a" tags too.
+
+131
+00:09:11,480 --> 00:09:21,860
+So if I run this now, you can see it gives me these "p"
+
+132
+00:09:11,480 --> 00:09:21,860
+tags and the "a" tags. So I can also have functions as
+
+133
+00:09:21,860 --> 00:09:29,160
+parameter for this "find_all" function or the
+
+134
+00:09:21,860 --> 00:09:29,160
+"find" function. We'll discuss more about this later, in the later
+
+135
+00:09:29,160 --> 00:09:31,990
+videos.
+
+136
+00:09:32,010 --> 00:09:39,130
+So I'll see you in the next video, I'll start off with these
+
+137
+00:09:32,010 --> 00:09:39,130
+common methods and what are the parameters we can send
+
+138
+00:09:39,130 --> 00:09:41,560
+and how we can search
+
+139
+00:09:41,610 --> 00:09:44,550
+more to get the data we really need.
+
+140
+00:09:44,580 --> 00:09:45,830
+So thank you very much.
+
+141
+00:09:45,900 --> 00:09:47,560
+I hope to see you soon.
+

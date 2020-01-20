@@ -1,0 +1,668 @@
+1
+00:00:00,690 --> 00:00:06,010
+Hello everyone! In the previous video, we discussed
+
+2
+00:00:00,690 --> 00:00:06,010
+the basics of XPath expressions, of writing
+
+3
+00:00:06,010 --> 00:00:13,530
+XPath expressions and what constitutes an
+
+4
+00:00:06,010 --> 00:00:13,530
+XPath expression like we have axis, we have
+
+5
+00:00:13,530 --> 00:00:16,060
+nodetest and then we have predicate.
+
+6
+00:00:16,110 --> 00:00:23,940
+In this video, we are going to do some examples of
+
+7
+00:00:16,110 --> 00:00:23,940
+writing XPath expressions so that we can
+
+8
+00:00:23,980 --> 00:00:26,960
+actually see them live.
+
+9
+00:00:27,060 --> 00:00:32,500
+You know like selecting different tags and
+
+10
+00:00:27,060 --> 00:00:32,500
+interacting with webpages in different ways.
+
+11
+00:00:32,640 --> 00:00:38,290
+So for now the first example is this Instagram example.
+
+12
+00:00:32,640 --> 00:00:38,290
+If you remember in the earlier video,
+
+13
+00:00:38,330 --> 00:00:46,020
+we searched for this "Log in" button and
+
+14
+00:00:38,330 --> 00:00:46,020
+we used the ".click" method to get to this
+
+15
+00:00:46,020 --> 00:00:50,140
+I mean to change the HTML of this
+
+16
+00:00:50,410 --> 00:00:52,410
+this section here.
+
+17
+00:00:52,410 --> 00:00:57,530
+So I mean if I click "Log in", this changes things
+
+18
+00:00:52,410 --> 00:00:57,530
+without sending a request to the server.
+
+19
+00:00:57,930 --> 00:01:04,830
+So what what we did earlier was we used
+
+20
+00:00:57,930 --> 00:01:04,830
+Selenium "link_text" method for finding this
+
+21
+00:01:05,010 --> 00:01:06,580
+"a" tag.
+
+22
+00:01:06,760 --> 00:01:14,300
+But for this video, what we are going to do is going to
+
+23
+00:01:06,760 --> 00:01:14,300
+select this "Log in", this is basically the "a" tag
+
+24
+00:01:14,310 --> 00:01:17,080
+we get from previous videos.
+
+25
+00:01:17,110 --> 00:01:18,330
+This is in "a" tag.
+
+26
+00:01:18,370 --> 00:01:22,660
+So what we are going to do is say we are going
+
+27
+00:01:18,370 --> 00:01:22,660
+select this "a" tag using XPath expression.
+
+28
+00:01:22,660 --> 00:01:29,080
+So by that we are going to learn how we
+
+29
+00:01:22,660 --> 00:01:29,080
+can do this, write a XPath expression for
+
+30
+00:01:29,080 --> 00:01:29,340
+a live website.
+
+31
+00:01:29,390 --> 00:01:31,710
+Let's see how we can do that.
+
+32
+00:01:31,720 --> 00:01:39,760
+I say "login_button" and I say "driver.find_element_by_xpath".
+
+33
+00:01:39,990 --> 00:01:41,600
+Now here comes my XPath.
+
+34
+00:01:44,330 --> 00:01:44,950
+OK.
+
+35
+00:01:44,990 --> 00:01:47,810
+So let's see the tree structure for this.
+
+36
+00:01:47,960 --> 00:01:54,730
+And then we can decide like how we're
+
+37
+00:01:47,960 --> 00:01:54,730
+going to write the XPath expression for this.
+
+38
+00:01:54,830 --> 00:01:56,300
+Like for this "a" tag here.
+
+39
+00:01:56,510 --> 00:02:02,570
+So this is the "a" tag in question for which you want to
+
+40
+00:01:56,510 --> 00:02:02,570
+get a XPath expression. As you can see
+
+41
+00:02:02,570 --> 00:02:04,410
+it does not contain an ID.
+
+42
+00:02:04,430 --> 00:02:10,400
+So if I go directly with class, I mean you never
+
+43
+00:02:04,430 --> 00:02:10,400
+know if there is another "a" tag which contains the
+
+44
+00:02:10,400 --> 00:02:14,990
+same class so I'm not sure if I can get to this "a" tag directly.
+
+45
+00:02:15,050 --> 00:02:19,380
+So what I do was I move to the parent and
+
+46
+00:02:15,050 --> 00:02:19,380
+see the first parent in which has an ID.
+
+47
+00:02:19,430 --> 00:02:21,380
+I mean that is a good practice to do this.
+
+48
+00:02:21,560 --> 00:02:26,120
+So let's move upwards and see this "p" doesn't have one, this "div"...
+
+49
+00:02:26,120 --> 00:02:27,720
+No, no, no.
+
+50
+00:02:27,740 --> 00:02:32,030
+I mean you can see that I am moving
+
+51
+00:02:27,740 --> 00:02:32,030
+up, moving up and I get to this "span"
+
+52
+00:02:32,030 --> 00:02:35,120
+I see that it has an ID which is "react-root".
+
+53
+00:02:35,180 --> 00:02:41,990
+So what I do is I say "OK, I want to get
+
+54
+00:02:35,180 --> 00:02:41,990
+to this element, the "span" which has its id
+
+55
+00:02:41,990 --> 00:02:42,810
+'react-root'".
+
+56
+00:02:43,280 --> 00:02:50,180
+So if you remember from our previous video, if we use
+
+57
+00:02:43,280 --> 00:02:50,180
+the double slashes, these two forward slashes,
+
+58
+00:02:50,180 --> 00:02:56,030
+this mean that we can search our
+
+59
+00:02:50,180 --> 00:02:56,030
+parse tree from where we're standing
+
+60
+00:02:56,030 --> 00:02:56,800
+right now.
+
+61
+00:02:56,960 --> 00:03:00,260
+And initially we are standing at
+
+62
+00:02:56,960 --> 00:03:00,260
+the very root of our parse tree.
+
+63
+00:03:00,380 --> 00:03:04,830
+This means that it is now like
+
+64
+00:03:00,380 --> 00:03:04,830
+when there are two forward slashes,
+
+65
+00:03:04,840 --> 00:03:11,990
+it is going to search from the entire
+
+66
+00:03:04,840 --> 00:03:11,990
+parse tree, from entire HTML tree.
+
+67
+00:03:11,990 --> 00:03:19,820
+OK, so now what we do is we say "span" and I'm going to
+
+68
+00:03:11,990 --> 00:03:19,820
+write a predicate here using the square brackets.
+
+69
+00:03:19,820 --> 00:03:24,840
+The predicate is that the span should have an ID "react-root".
+
+70
+00:03:24,880 --> 00:03:35,250
+So I say "id" is equals to "react-root" that being done now
+
+71
+00:03:24,880 --> 00:03:35,250
+as I'm here now what I want to do is I say let's
+
+72
+00:03:35,250 --> 00:03:39,090
+give it a shot for this "p" tag which has its class this.
+
+73
+00:03:39,190 --> 00:03:42,060
+So I'm copying its class.
+
+74
+00:03:42,090 --> 00:03:47,610
+And now what I want to do is I want to search the
+
+75
+00:03:42,090 --> 00:03:47,610
+whole descendants of this "span" so I used the
+
+76
+00:03:47,790 --> 00:03:54,990
+two slashes again and I say I want to search for
+
+77
+00:03:47,790 --> 00:03:54,990
+this "p" tag in the predicate which has its class
+
+78
+00:03:56,290 --> 00:03:57,870
+this.
+
+79
+00:03:57,930 --> 00:04:04,180
+Now when I'm at this, I can see
+
+80
+00:03:57,930 --> 00:04:04,180
+that it is a direct child of "p".
+
+81
+00:04:04,230 --> 00:04:09,420
+So what I can do right now is I can use a single
+
+82
+00:04:04,230 --> 00:04:09,420
+forward slash and then I write "a". The forward slash
+
+83
+00:04:09,450 --> 00:04:15,490
+only means that it is only going to
+
+84
+00:04:09,450 --> 00:04:15,490
+look in the direct children of this "p" tag.
+
+85
+00:04:15,570 --> 00:04:20,200
+It is going to search for the
+
+86
+00:04:15,570 --> 00:04:20,200
+whole descendents of this "p" tag.
+
+87
+00:04:20,220 --> 00:04:21,770
+Then it would look to the direct children.
+
+88
+00:04:21,810 --> 00:04:27,690
+And then "a" tag is a direct child of this "p".
+
+89
+00:04:27,690 --> 00:04:32,710
+So what I do now is I say "login_button.click".
+
+90
+00:04:32,800 --> 00:04:34,690
+So this should work.
+
+91
+00:04:34,750 --> 00:04:37,770
+I mean like we have written a expression.
+
+92
+00:04:37,880 --> 00:04:40,570
+which is next to this "a" tag and then we click it.
+
+93
+00:04:40,960 --> 00:04:44,060
+So let's see if we can make this work or not.
+
+94
+00:04:44,140 --> 00:04:47,920
+So I'm just introducing sleeps so
+
+95
+00:04:44,140 --> 00:04:47,920
+that we can see if it is working or not.
+
+96
+00:04:48,490 --> 00:04:49,040
+And I'm going to run it
+
+97
+00:04:49,060 --> 00:04:49,310
+now.
+
+98
+00:04:59,950 --> 00:05:06,090
+You see that it actually found it and clicked it.
+
+99
+00:05:06,240 --> 00:05:08,970
+So this XPath expression is absolutely valid.
+
+100
+00:05:08,990 --> 00:05:10,650
+That is valid.
+
+101
+00:05:10,980 --> 00:05:17,490
+So now I'm going to do another example which is
+
+102
+00:05:10,980 --> 00:05:17,490
+going to be, if you remember in one of our
+
+103
+00:05:17,490 --> 00:05:23,130
+previous videos, we searched Google, we used the
+
+104
+00:05:17,490 --> 00:05:23,130
+"send_keys" method to write some text
+
+105
+00:05:23,130 --> 00:05:30,130
+into this text field and then we submitted the form
+
+106
+00:05:23,130 --> 00:05:30,130
+using the "submit" function of selenium.
+
+107
+00:05:30,570 --> 00:05:34,980
+So what we are going going to do is
+
+108
+00:05:30,570 --> 00:05:34,980
+we're going to find this text area,
+
+109
+00:05:34,970 --> 00:05:39,430
+we are going to write an expression to find
+
+110
+00:05:34,970 --> 00:05:39,430
+this text are using XPath expression.
+
+111
+00:05:39,620 --> 00:05:47,900
+So let's do this, I'm just going to comment this
+
+112
+00:05:39,620 --> 00:05:47,900
+Instagram example so that we can write one for Google.
+
+113
+00:05:47,900 --> 00:05:57,130
+OK, so this being this, I have opened Google, I have sleep tag
+
+114
+00:05:47,900 --> 00:05:57,130
+here and then what I'm going to do is I'm going to
+
+115
+00:05:57,150 --> 00:06:03,230
+say "Inspect Element" and I'm going to see if I get
+
+116
+00:05:57,150 --> 00:06:03,230
+this "input" tag. I want an expression for this
+
+117
+00:06:03,230 --> 00:06:04,350
+"input" tag.
+
+118
+00:06:04,370 --> 00:06:08,030
+So let's see if this "input" has
+
+119
+00:06:04,370 --> 00:06:08,030
+an ID as you know ID is unique.
+
+120
+00:06:08,030 --> 00:06:09,550
+You get directly to it.
+
+121
+00:06:09,650 --> 00:06:12,500
+It has a class and it has an ID.
+
+122
+00:06:12,530 --> 00:06:16,640
+So this should be should be fairly simple.
+
+123
+00:06:16,640 --> 00:06:18,070
+So what should I do now.
+
+124
+00:06:18,080 --> 00:06:20,800
+I mean I want to search my whole
+
+125
+00:06:18,080 --> 00:06:20,800
+parse tree for the "input" tag.
+
+126
+00:06:20,840 --> 00:06:22,110
+What should I do.
+
+127
+00:06:22,220 --> 00:06:26,040
+How do I search for this "input"
+
+128
+00:06:22,220 --> 00:06:26,040
+tag in the whole parse tree.
+
+129
+00:06:26,120 --> 00:06:33,410
+So if you remember what we should do is I say "search_bar" is
+
+130
+00:06:33,410 --> 00:06:34,420
+equals to "driver.
+
+131
+00:06:34,510 --> 00:06:35,160
+find_
+
+132
+00:06:37,320 --> 00:06:43,630
+element_by_xpath" and if you remember if you
+
+133
+00:06:37,320 --> 00:06:43,630
+want to search your whole tree we use two
+
+134
+00:06:43,630 --> 00:06:45,420
+forward slashes from where you are right now.
+
+135
+00:06:45,430 --> 00:06:49,870
+So I wanted to search for a whole tree from the very start,
+
+136
+00:06:45,430 --> 00:06:49,870
+from a root node. So now I want to search for the
+
+137
+00:06:49,900 --> 00:06:58,080
+"input" tag which has its "id" equals to this.
+
+138
+00:06:58,110 --> 00:07:02,840
+So this is an example of predicate.
+
+139
+00:07:03,010 --> 00:07:05,950
+We are using a predicate here.
+
+140
+00:07:06,190 --> 00:07:07,360
+Just let me copy this.
+
+141
+00:07:10,810 --> 00:07:21,110
+I say "driver.find_element_by_xpath" then
+
+142
+00:07:10,810 --> 00:07:21,110
+I say I'm searching for an "input" tag, I say
+
+143
+00:07:21,170 --> 00:07:30,040
+"id" is equals to this.
+
+144
+00:07:30,080 --> 00:07:37,510
+OK, so now that I have the search bar, I say
+
+145
+00:07:30,080 --> 00:07:37,510
+"search_bar.send_keys" and "valid xpath expression"
+
+146
+00:07:38,570 --> 00:07:47,250
+and then I say "search_bar.submit". Let's see
+
+147
+00:07:38,570 --> 00:07:47,250
+if this works or not and how this goes on.
+
+148
+00:07:47,270 --> 00:07:51,420
+I'm going to run this now to see if this works or not.
+
+149
+00:07:52,830 --> 00:07:54,770
+So OK.
+
+150
+00:07:55,480 --> 00:08:00,920
+Open Google and let's see.
+
+151
+00:08:01,070 --> 00:08:01,790
+Yes.
+
+152
+00:08:02,810 --> 00:08:03,520
+It works.
+
+153
+00:08:03,560 --> 00:08:09,340
+So it sends the keys, the XPath expression
+
+154
+00:08:03,560 --> 00:08:09,340
+ended and it did submit in the form.
+
+155
+00:08:09,350 --> 00:08:12,220
+So this is also a valid XPath expression.
+
+156
+00:08:12,230 --> 00:08:17,390
+Now I've provided you with a word document, I want you to
+
+157
+00:08:12,230 --> 00:08:17,390
+look at it, I want you to play around with XPath
+
+158
+00:08:17,390 --> 00:08:23,090
+expressions, open different sites, select
+
+159
+00:08:17,390 --> 00:08:23,090
+different elements using XPath expressions
+
+160
+00:08:23,160 --> 00:08:29,560
+play around with them, use Selenium, use Beautiful Soup,
+
+161
+00:08:23,160 --> 00:08:29,560
+just learn as much as you can and make
+
+162
+00:08:29,780 --> 00:08:35,270
+your own XPath expressions
+
+163
+00:08:29,780 --> 00:08:35,270
+because they're widely used on web scraping
+
+164
+00:08:35,300 --> 00:08:42,210
+as they are quite efficient in terms of time and memory.
+
+165
+00:08:42,890 --> 00:08:44,560
+I hope this clear to you now.
+
+166
+00:08:44,670 --> 00:08:46,730
+So I'll see you in the next video.
+
+167
+00:08:47,070 --> 00:08:48,060
+Thank you very much.
+

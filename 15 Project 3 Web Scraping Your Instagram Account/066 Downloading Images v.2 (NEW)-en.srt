@@ -1,0 +1,876 @@
+1
+00:00:01,680 --> 00:00:08,190
+Hello everyone! In the previous video, we discussed how
+
+2
+00:00:01,680 --> 00:00:08,190
+we are going to get the links for all of the images
+
+3
+00:00:08,430 --> 00:00:11,630
+by accessing the source attribute of that image.
+
+4
+00:00:12,060 --> 00:00:16,780
+In this video, we are going to discuss
+
+5
+00:00:12,060 --> 00:00:16,780
+how we are going to download that image into our system.
+
+6
+00:00:18,060 --> 00:00:23,970
+OK, so moving forward this
+
+7
+00:00:18,060 --> 00:00:23,970
+is the code we have right now.
+
+8
+00:00:24,020 --> 00:00:31,740
+I am going to introduce an index counter
+
+9
+00:00:24,020 --> 00:00:31,740
+and I'm going to put this enumerate.
+
+10
+00:00:31,830 --> 00:00:32,250
+So what
+
+11
+00:00:32,310 --> 00:00:42,680
+enumerate basically does is say that I have a
+
+12
+00:00:32,310 --> 00:00:42,680
+list of three items, let's say "a", "b", "c".
+
+13
+00:00:42,720 --> 00:00:45,630
+So these are the elements in my list.
+
+14
+00:00:45,630 --> 00:00:50,970
+So what enumerate basically does is it is going to give
+
+15
+00:00:45,630 --> 00:00:50,970
+me index for each item so "a" is in index zero
+
+16
+00:00:51,390 --> 00:00:54,040
+"b" is on one and "c" is on two.
+
+17
+00:00:54,450 --> 00:01:01,080
+So image would then contain the first iteration of
+
+18
+00:00:54,450 --> 00:01:01,080
+the loop and would contain "a" and index would contain
+
+19
+00:01:01,080 --> 00:01:02,010
+0.
+
+20
+00:01:02,400 --> 00:01:08,400
+And similarly next iteration image will
+
+21
+00:01:02,400 --> 00:01:08,400
+contain "b" and index would contain one.
+
+22
+00:01:08,400 --> 00:01:13,790
+Now this ABC explanation is just
+
+23
+00:01:08,400 --> 00:01:13,790
+to make explain how enumerate works.
+
+24
+00:01:13,800 --> 00:01:14,580
+OK.
+
+25
+00:01:14,610 --> 00:01:20,850
+This explanation has nothing to
+
+26
+00:01:14,610 --> 00:01:20,850
+do with the fact about downloading
+
+27
+00:01:20,850 --> 00:01:21,350
+images.
+
+28
+00:01:21,360 --> 00:01:22,760
+Don't mix that stuff up.
+
+29
+00:01:22,800 --> 00:01:32,390
+It's just explaining how enumerate is working and
+
+30
+00:01:22,800 --> 00:01:32,390
+what this index is. OK, so that being clear what we
+
+31
+00:01:32,390 --> 00:01:38,330
+want to do now is first we want to know
+
+32
+00:01:32,390 --> 00:01:38,330
+what what file I am going to have for our
+
+33
+00:01:38,330 --> 00:01:42,770
+image here, we need to decide that
+
+34
+00:01:38,330 --> 00:01:42,770
+obviously before we download it.
+
+35
+00:01:42,780 --> 00:01:52,980
+So a suggestion is that what we can do is "image_",
+
+36
+00:01:42,780 --> 00:01:52,980
+"str(index)" because this index is going to be unique and
+
+37
+00:01:52,980 --> 00:01:59,820
+we can just append this image before that,
+
+38
+00:01:52,980 --> 00:01:59,820
+not append it actually we actually append the index
+
+39
+00:02:00,350 --> 00:02:03,830
+count, this string here, this image one,
+
+40
+00:02:00,350 --> 00:02:03,830
+and then we have our file.
+
+41
+00:02:05,330 --> 00:02:13,790
+Now that we have a file name what we want to do next is
+
+42
+00:02:05,330 --> 00:02:13,790
+we want to download this now. Before we finally
+
+43
+00:02:13,790 --> 00:02:14,630
+download this,
+
+44
+00:02:14,630 --> 00:02:17,650
+we have to know where we are actually storing this image.
+
+45
+00:02:17,690 --> 00:02:18,600
+Right.
+
+46
+00:02:18,680 --> 00:02:22,150
+So the main directory is this
+
+47
+00:02:18,680 --> 00:02:22,150
+which I just highlighted, this path.
+
+48
+00:02:22,160 --> 00:02:26,390
+"/Users/waqarjoyian/Desktop/instaPhotos".
+
+49
+00:02:26,750 --> 00:02:29,810
+But what is going to the "image_path" in total.
+
+50
+00:02:29,930 --> 00:02:34,820
+So that is going to be something
+
+51
+00:02:29,930 --> 00:02:34,820
+like I am going to use...
+
+52
+00:02:34,910 --> 00:02:41,070
+OK, before I use that function let me just explain
+
+53
+00:02:34,910 --> 00:02:41,070
+to you what the image path is going to be like. It
+
+54
+00:02:41,070 --> 00:02:43,380
+is going to be something like this
+
+55
+00:02:46,540 --> 00:02:52,690
+and let's say "image_1" and this is
+
+56
+00:02:46,540 --> 00:02:52,690
+going to be like the image path we have.
+
+57
+00:02:53,020 --> 00:02:55,170
+Now how do I actually make this path.
+
+58
+00:02:55,180 --> 00:03:07,960
+Obviously, one way is that I say "image_path" is
+
+59
+00:02:55,180 --> 00:03:07,960
+equal to "self.path" and then I add
+
+60
+00:03:07,960 --> 00:03:14,980
+file name to it and before adding filename
+
+61
+00:03:07,960 --> 00:03:14,980
+I should also add the forward slash here.
+
+62
+00:03:15,070 --> 00:03:18,620
+So this is the "image_path",
+
+63
+00:03:15,070 --> 00:03:18,620
+this is one way to do it.
+
+64
+00:03:20,490 --> 00:03:21,580
+Excuse me.
+
+65
+00:03:22,000 --> 00:03:22,590
+OK.
+
+66
+00:03:22,860 --> 00:03:31,100
+So a better way to get this done is to use
+
+67
+00:03:22,860 --> 00:03:31,100
+the "os" module and the method is
+
+68
+00:03:31,140 --> 00:03:33,350
+"os.path.join".
+
+69
+00:03:34,050 --> 00:03:38,150
+So that is it, "image_path" is equals to "os.path.join".
+
+70
+00:03:38,220 --> 00:03:46,110
+And here we give the first part and here
+
+71
+00:03:38,220 --> 00:03:46,110
+we give "filename" in and this creates us the image path.
+
+72
+00:03:46,270 --> 00:03:47,710
+OK.
+
+73
+00:03:47,820 --> 00:03:53,880
+So the method is "os.path.join" and it is
+
+74
+00:03:47,820 --> 00:03:53,880
+going to do what we just did here, like this
+
+75
+00:03:54,450 --> 00:03:59,060
+line here. It is going to do that for us but
+
+76
+00:03:54,450 --> 00:03:59,060
+it is going to handle the forward slash.
+
+77
+00:03:59,370 --> 00:04:01,960
+Like here we were inserting that ourselves.
+
+78
+00:04:01,980 --> 00:04:02,510
+Right.
+
+79
+00:04:02,730 --> 00:04:09,660
+And we also want this to be platform independent
+
+80
+00:04:02,730 --> 00:04:09,660
+like for Windows this might be different,
+
+81
+00:04:09,660 --> 00:04:15,560
+for some other operating system it might be different.
+
+82
+00:04:09,660 --> 00:04:15,560
+So just to ensure cross compatibility.
+
+83
+00:04:15,570 --> 00:04:16,550
+You should use
+
+84
+00:04:16,550 --> 00:04:17,590
+"os.path.join".
+
+85
+00:04:17,610 --> 00:04:18,940
+It's better that way.
+
+86
+00:04:19,770 --> 00:04:27,060
+OK, so now that we have the image path.
+
+87
+00:04:19,770 --> 00:04:27,060
+Let's finally move to downloading that image.
+
+88
+00:04:30,100 --> 00:04:37,240
+Let's create another variable "link"
+
+89
+00:04:30,100 --> 00:04:37,240
+and save the link of the image there.
+
+90
+00:04:37,240 --> 00:04:47,240
+OK, so now what we are going to do is we are going to
+
+91
+00:04:37,240 --> 00:04:47,240
+use that "request" module to get this image. I'm going to import
+
+92
+00:04:47,420 --> 00:04:49,250
+"request" here.
+
+93
+00:04:49,260 --> 00:04:57,240
+So what I do is I say "response" is equals to
+
+94
+00:04:49,260 --> 00:04:57,240
+"request.get(link)" and then I say "stream" is equals to
+
+95
+00:04:57,260 --> 00:04:59,710
+"True". OK.
+
+96
+00:04:59,720 --> 00:05:07,280
+Now the next thing is that I have this image and I have this image
+
+97
+00:05:07,280 --> 00:05:12,730
+in this response object here. What I want to do
+
+98
+00:05:07,280 --> 00:05:12,730
+now is I want to save that image to my hard disk.
+
+99
+00:05:12,770 --> 00:05:13,580
+What do I do now.
+
+100
+00:05:13,610 --> 00:05:18,950
+I have the binary contents of that image and I want
+
+101
+00:05:13,610 --> 00:05:18,950
+to shift those binary contents to my hard disk.
+
+102
+00:05:19,080 --> 00:05:24,630
+What we are going to do is going to use
+
+103
+00:05:19,080 --> 00:05:24,630
+another module here it is known as shutil.
+
+104
+00:05:24,700 --> 00:05:29,330
+OK, so you may pronounce it differently but it's ok.
+
+105
+00:05:29,360 --> 00:05:34,780
+I mean you don't actually have to pronounce it
+
+106
+00:05:29,360 --> 00:05:34,780
+in your code you just have to write it down.
+
+107
+00:05:34,800 --> 00:05:41,310
+So, OK the method for that is... What you're going to use is...
+
+108
+00:05:41,600 --> 00:05:43,670
+First let me open the file.
+
+109
+00:05:44,180 --> 00:05:57,430
+I say "image.path" and lets's open it in binary
+
+110
+00:05:44,180 --> 00:05:57,430
+mode, "as file", and let's say "file.write", "response". Oh, I'm
+
+111
+00:05:57,490 --> 00:06:04,410
+sorry.
+
+112
+00:06:04,430 --> 00:06:08,200
+So this is the method which we
+
+113
+00:06:04,430 --> 00:06:08,200
+are going to use, "copyfileobj".
+
+114
+00:06:08,360 --> 00:06:16,450
+And the first thing is from resource and the
+
+115
+00:06:08,360 --> 00:06:16,450
+next thing is the destination source. Right.
+
+116
+00:06:16,460 --> 00:06:17,660
+We're going to write it down.
+
+117
+00:06:17,690 --> 00:06:18,720
+Right.
+
+118
+00:06:18,860 --> 00:06:24,800
+So the first parameter is going to be "response.raw".
+
+119
+00:06:18,860 --> 00:06:24,800
+This is going to give the binary contents
+
+120
+00:06:24,800 --> 00:06:33,450
+of the image and where we actually want
+
+121
+00:06:24,800 --> 00:06:33,450
+to get this content are at "file". Now this
+
+122
+00:06:33,570 --> 00:06:40,430
+should write that image to our location
+
+123
+00:06:33,570 --> 00:06:40,430
+here which is this "instaPhotos".
+
+124
+00:06:40,440 --> 00:06:41,010
+OK.
+
+125
+00:06:41,870 --> 00:06:44,080
+I need to have this in a "try catch" block.
+
+126
+00:06:44,290 --> 00:06:48,320
+So if some error comes, we'll know what happened.
+
+127
+00:06:48,340 --> 00:06:53,450
+And our program would just crash like that.
+
+128
+00:06:53,470 --> 00:06:56,090
+You would actually have a good reason for it.
+
+129
+00:06:56,110 --> 00:06:58,940
+Like as to why did that and where did that.
+
+130
+00:06:59,470 --> 00:07:10,550
+So I can say "as e", I'm going to print this and then
+
+131
+00:06:59,470 --> 00:07:10,550
+I'm going to print "Could not download image number "
+
+132
+00:07:11,020 --> 00:07:23,450
+and here I can give the index and I could also
+
+133
+00:07:11,020 --> 00:07:23,450
+print the link for that, "Image link" so that will "link"
+
+134
+00:07:23,460 --> 00:07:25,210
+here.
+
+135
+00:07:25,220 --> 00:07:30,070
+OK, so now let's run this and see what we get.
+
+136
+00:07:30,890 --> 00:07:35,040
+And actually before doing that let
+
+137
+00:07:30,890 --> 00:07:35,040
+me just print this too, "Downloading
+
+138
+00:07:38,720 --> 00:07:43,210
+image".
+
+139
+00:07:43,390 --> 00:07:44,420
+And here we go.
+
+140
+00:07:44,620 --> 00:07:45,250
+OK.
+
+141
+00:07:45,400 --> 00:07:50,330
+Now let's run this and see if this works or not.
+
+142
+00:07:50,920 --> 00:07:56,320
+And we are on the same page here, "shutil.copyfileobj".
+
+143
+00:07:56,320 --> 00:07:57,970
+What it does is the first parameter
+
+144
+00:07:58,020 --> 00:08:05,420
+expects the from destination and the second is...
+
+145
+00:08:05,530 --> 00:08:09,670
+Not the destination, the source.
+
+146
+00:08:09,950 --> 00:08:15,030
+Ok, the next is destination. OK.
+
+147
+00:08:15,270 --> 00:08:17,660
+So now let's run this and see what happens.
+
+148
+00:08:22,000 --> 00:08:24,210
+So moving forward.
+
+149
+00:08:27,900 --> 00:08:46,860
+Instagram, it is opening Instagram.
+
+150
+00:08:46,930 --> 00:08:48,630
+We have our target's profile open,
+
+151
+00:08:52,860 --> 00:08:54,220
+scrolling this down.
+
+152
+00:09:04,700 --> 00:09:11,400
+You can actually get rid of this here, these numbers
+
+153
+00:09:04,700 --> 00:09:11,400
+which we are printing while scrolling down.
+
+154
+00:09:11,690 --> 00:09:15,880
+That's not really necessary. Ok, to it says
+
+155
+00:09:11,690 --> 00:09:15,880
+the length of images is just 31.
+
+156
+00:09:15,890 --> 00:09:21,750
+It is downloading them right now, you can see that
+
+157
+00:09:15,890 --> 00:09:21,750
+here. Let me open the folder and see are we getting anything.
+
+158
+00:09:24,480 --> 00:09:26,600
+And so we are getting the images.
+
+159
+00:09:26,610 --> 00:09:32,430
+But there's just one problem here that we
+
+160
+00:09:26,610 --> 00:09:32,430
+didn't said the extension for these images
+
+161
+00:09:32,460 --> 00:09:34,080
+and that is creating an issue.
+
+162
+00:09:34,080 --> 00:09:39,270
+Now you can see that they're not
+
+163
+00:09:34,080 --> 00:09:39,270
+giving me a default format here.
+
+164
+00:09:39,280 --> 00:09:43,790
+So if I rename an image to say ".jpg".
+
+165
+00:09:45,370 --> 00:09:55,060
+I say "Add" and I'll be able to access
+
+166
+00:09:45,370 --> 00:09:55,060
+these images. So we forgot that and we
+
+167
+00:09:55,060 --> 00:09:56,140
+are just going to fix that.
+
+168
+00:09:56,150 --> 00:09:58,530
+Now we should add this here.
+
+169
+00:10:00,120 --> 00:10:09,630
+That would be "jpg". I'm going to stop this and
+
+170
+00:10:00,120 --> 00:10:09,630
+I'm going to run this again and we should have the images.
+
+171
+00:10:09,630 --> 00:10:11,700
+Now, I'm to delete everything here.
+
+172
+00:10:12,210 --> 00:10:14,490
+OK so now you can see that our instaPhotos folder
+
+173
+00:10:14,490 --> 00:10:16,290
+is clear, you don't have anything here.
+
+174
+00:10:17,570 --> 00:10:23,900
+OK, so the scraper is running, it has log us in.
+
+175
+00:10:26,630 --> 00:10:27,460
+Instagram.
+
+176
+00:10:35,160 --> 00:10:36,690
+Any time now.
+
+177
+00:10:40,180 --> 00:10:40,630
+Ok.
+
+178
+00:10:49,310 --> 00:10:52,200
+So we're at the end of our target's profile.
+
+179
+00:10:52,320 --> 00:10:55,750
+Let's see when we start the downloading process.
+
+180
+00:11:00,180 --> 00:11:06,730
+OK, so we're actually downloading all the images now. It says
+
+181
+00:11:00,180 --> 00:11:06,730
+"downloading image zero". Let me open instaPhotos.
+
+182
+00:11:06,800 --> 00:11:08,680
+So there you go.
+
+183
+00:11:08,690 --> 00:11:10,110
+Now we have add an extension.
+
+184
+00:11:10,160 --> 00:11:13,760
+And you can see that I'm getting
+
+185
+00:11:10,160 --> 00:11:13,760
+all the photos in the right format.
+
+186
+00:11:13,850 --> 00:11:15,200
+Right.
+
+187
+00:11:15,230 --> 00:11:21,750
+So you can see that this worked, just to
+
+188
+00:11:15,230 --> 00:11:21,750
+walk you through the process again.
+
+189
+00:11:21,770 --> 00:11:24,590
+What we did was we decided the filename for the image.
+
+190
+00:11:24,620 --> 00:11:25,640
+It had to be unique.
+
+191
+00:11:25,640 --> 00:11:30,910
+That's why I introduced the index
+
+192
+00:11:25,640 --> 00:11:30,910
+attribute here. Not an attribute,
+
+193
+00:11:30,930 --> 00:11:32,610
+it's like the count here.
+
+194
+00:11:32,870 --> 00:11:35,090
+And we added the file format.
+
+195
+00:11:35,140 --> 00:11:37,660
+What do we want it to be, we added "jpg" here.
+
+196
+00:11:37,680 --> 00:11:45,020
+Then we decided the image path, we had the
+
+197
+00:11:37,680 --> 00:11:45,020
+link then we use request to get the
+
+198
+00:11:45,020 --> 00:11:52,310
+contents from that link and then after we had the binary
+
+199
+00:11:45,020 --> 00:11:52,310
+content we used "shutil" and this method to
+
+200
+00:11:52,310 --> 00:11:54,880
+write those contents to the file destination
+
+201
+00:11:54,890 --> 00:11:57,770
+we have decided, the image path, that would be here.
+
+202
+00:11:57,830 --> 00:11:58,480
+OK.
+
+203
+00:11:58,880 --> 00:12:02,950
+So we have downloaded image 30 here and we're almost done.
+
+204
+00:12:02,950 --> 00:12:04,660
+We're done.
+
+205
+00:12:04,670 --> 00:12:07,720
+So we had 31 images in total.
+
+206
+00:12:07,730 --> 00:12:15,200
+And the reason it is say 30 here is because we started
+
+207
+00:12:07,730 --> 00:12:15,200
+with zero and there you go. You see that we have all
+
+208
+00:12:15,200 --> 00:12:19,580
+the images here including the display picture.
+
+209
+00:12:19,730 --> 00:12:22,800
+OK, so I hope the downloading part was clear to you.
+
+210
+00:12:22,880 --> 00:12:27,990
+And if there is anything that you
+
+211
+00:12:22,880 --> 00:12:27,990
+might not understand, you can always
+
+212
+00:12:28,040 --> 00:12:31,850
+ask us questions and definitely get back to you.
+
+213
+00:12:33,940 --> 00:12:34,830
+OK.
+
+214
+00:12:35,000 --> 00:12:36,920
+So good.
+
+215
+00:12:36,920 --> 00:12:42,930
+I think this is clear to you. In the next video,
+
+216
+00:12:36,920 --> 00:12:42,930
+we are going to discuss how to download the captions.
+
+217
+00:12:42,950 --> 00:12:43,530
+OK.
+
+218
+00:12:44,670 --> 00:12:45,600
+Perfect.
+
+219
+00:12:44,670 --> 00:12:45,600
+Thank you!
+

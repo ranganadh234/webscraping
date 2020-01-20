@@ -1,0 +1,212 @@
+1
+00:00:00,610 --> 00:00:07,000
+Hello everyone! In the last video, we discussed the
+
+2
+00:00:00,610 --> 00:00:07,000
+parameters of "find_all" function and we
+
+3
+00:00:07,000 --> 00:00:13,210
+completed all the parameters we can send to
+
+4
+00:00:07,000 --> 00:00:13,210
+"find_all" function to refine our search.
+
+5
+00:00:13,240 --> 00:00:16,280
+In this video, we are going to discuss the "find" function.
+
+6
+00:00:16,540 --> 00:00:19,870
+It is the same as the "find_all" function.
+
+7
+00:00:19,870 --> 00:00:24,370
+I mean it takes the same arguments as you can see
+
+8
+00:00:19,870 --> 00:00:24,370
+here, the "name", the attributes, "recursive", "string"
+
+9
+00:00:24,370 --> 00:00:30,880
+and keyword arguments but the one argument that
+
+10
+00:00:24,370 --> 00:00:30,880
+is missing here is the "limit" argument if you
+
+11
+00:00:30,880 --> 00:00:37,430
+remember. "limit" is the argument which in "find_all"
+
+12
+00:00:30,880 --> 00:00:37,430
+function limites the number of searches it also returns.
+
+13
+00:00:37,720 --> 00:00:44,920
+So what's the difference between "find" and "find_all"?
+
+14
+00:00:37,720 --> 00:00:44,920
+"find" only returns a single object if it finds
+
+15
+00:00:44,920 --> 00:00:47,720
+any, it doesn't return more than one.
+
+16
+00:00:47,980 --> 00:00:52,830
+I mean if there are more than one. Let's say we
+
+17
+00:00:47,980 --> 00:00:52,830
+are searching for "a" tags using "find".
+
+18
+00:00:52,840 --> 00:01:00,290
+So if there are let's say 5 "a" tags, it only returns
+
+19
+00:00:52,840 --> 00:01:00,290
+us the first "a" tag, not the whole list of "a" tags. So
+
+20
+00:01:00,410 --> 00:01:02,290
+"limit" is of no use here.
+
+21
+00:01:02,300 --> 00:01:10,370
+"find" only returns us a single object. "limit" was
+
+22
+00:01:02,300 --> 00:01:10,370
+used to limit the number of search results returned and "find" here
+
+23
+00:01:10,460 --> 00:01:15,020
+only returns one, so it doesn't make sense to have a limit argument here.
+
+24
+00:01:15,020 --> 00:01:19,010
+So the signature for the "find" function is same as you can see here.
+
+25
+00:01:19,160 --> 00:01:23,960
+It's the same as "find_all" except for the "limit", we don't have a limit here.
+
+26
+00:01:23,960 --> 00:01:26,600
+I'm just going to give you an example.
+
+27
+00:01:26,750 --> 00:01:29,670
+We're going to use the same HTML document here.
+
+28
+00:01:29,900 --> 00:01:32,330
+So you can see let's say I have
+
+29
+00:01:32,510 --> 00:01:38,950
+three "a" tags. I'm going to call this find function on "a".
+
+30
+00:01:38,980 --> 00:01:40,310
+And let's see what happens.
+
+31
+00:01:47,030 --> 00:01:51,290
+And if I call this, it only returns me one "a" tag, the first one precisely.
+
+32
+00:01:51,290 --> 00:01:59,090
+If you see this here. So it only returns us
+
+33
+00:01:51,290 --> 00:01:59,090
+the first "a" tag, it doesn't return us
+
+34
+00:01:59,110 --> 00:02:06,690
+all "a" tags and if I change this to "find_all", you
+
+35
+00:01:59,110 --> 00:02:06,690
+can see ir returns me a list of "a" tags which are
+
+36
+00:02:06,690 --> 00:02:07,760
+three in number.
+
+37
+00:02:07,980 --> 00:02:12,250
+I mean I could say "len(tag)"
+
+38
+00:02:15,200 --> 00:02:16,640
+and you can see this three.
+
+39
+00:02:16,670 --> 00:02:18,380
+So ir returns three tags
+
+40
+00:02:18,440 --> 00:02:22,100
+if we use "find_all" but when we use
+
+41
+00:02:22,250 --> 00:02:25,270
+"find" it only returns us one.
+
+42
+00:02:25,310 --> 00:02:31,100
+So the difference between "find" and "find_all" is
+
+43
+00:02:25,310 --> 00:02:31,100
+that "find" only returns us one single object if it finds
+
+44
+00:02:31,100 --> 00:02:31,620
+any.
+
+45
+00:02:31,910 --> 00:02:38,250
+And in case of multiple objects it only returns us the first
+
+46
+00:02:31,910 --> 00:02:38,250
+object it finds and "find_all" what it does is that
+
+47
+00:02:38,260 --> 00:02:43,400
+it returns us the whole list of objects it finds in the whole parse tree.
+
+48
+00:02:43,400 --> 00:02:46,670
+So this is a difference between "find" and "find_all". In the next
+
+49
+00:02:46,670 --> 00:02:52,490
+video, we are going to discuss a live example of how to scrap from a life site
+
+50
+00:02:53,000 --> 00:02:59,510
+and I'll show you how we can apply these techniques, how we apply these techniques
+
+51
+00:02:59,510 --> 00:03:03,470
+to parse a real HTML tree of a website.
+
+52
+00:03:03,510 --> 00:03:05,510
+And see you soon.
+
+53
+00:03:05,510 --> 00:03:06,590
+Thank you very much.
+

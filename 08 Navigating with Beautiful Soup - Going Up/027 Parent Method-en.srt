@@ -1,0 +1,338 @@
+0
+00:00.820 --> 00:02.200
+Hello everyone!
+
+1
+00:02.340 --> 00:09.240
+In the last video, we discussed how we can move down in our parse tree.
+
+2
+00:09.550 --> 00:14.560
+Like if I'm at my "body", how can I access the "body" children individually. It happens actually
+
+3
+00:14.560 --> 00:15.180
+moving through them.
+
+4
+00:15.190 --> 00:22.660
+And how I could access the direct children or all the children, discussed the ".contents",
+
+5
+00:22.720 --> 00:24.300
+the ".children", the
+
+6
+00:24.390 --> 00:28.710
+".descendants" method for doing these.
+
+7
+00:29.080 --> 00:34.270
+In this video, we are going to discuss now how 
+we are going to actually move up a parse tree.
+
+8
+00:34.270 --> 00:39.250
+Let's say I am at this "p" tag here and I want to move up
+
+9
+00:39.340 --> 00:41.010
+towards the enclosing tag.
+
+10
+00:41.020 --> 00:43.420
+I mean towards the parent of this tag.
+
+11
+00:43.420 --> 00:44.720
+How do we do that.
+
+12
+00:47.300 --> 00:48.080
+There are
+
+13
+00:48.230 --> 00:54.200
+in general, when we speak about this area like you could say three kinds of movements.
+
+14
+00:54.590 --> 01:02.140
+One is that we go down our tree like I'm at my HTML 
+and I am moving down. One is that I and moving up. Let's
+
+15
+01:02.140 --> 01:07.000
+say I am at this "p" tag and I want to move to the parent of this "p"
+
+16
+01:07.010 --> 01:10.010
+tag which is this "body" here.
+
+17
+01:10.100 --> 01:14.420
+The third one we can say is the movement we have sideways.
+
+18
+01:14.420 --> 01:20.780
+So if I'm at this "p" tag, I could say how can 
+we move to this "b" tag or how could I move
+
+19
+01:20.780 --> 01:24.450
+to this "p" tag or the other "p" tag.
+
+20
+01:24.890 --> 01:29.760
+So in general we can get (inaudible). There 
+are three kinds of movements in a parse tree.
+
+21
+01:29.780 --> 01:36.530
+One is that moving down, one is that moving up 
+and the last one is that moving sideways.
+
+22
+01:36.530 --> 01:43.220
+So we've discussed how we actually moved down our parse tree 
+in the previous videos we did. In this video
+
+23
+01:43.240 --> 01:48.690
+and the next one, we're going to discuss 
+how we can move up our parse tree.
+
+24
+01:49.180 --> 01:55.630
+So we have a method in Beautiful Soup 
+for moving up our parse tree.
+
+25
+01:55.750 --> 02:02.010
+So I'm using the same HTML file I used for moving 
+down the parse tree. I am using the same HTML file
+
+26
+02:02.020 --> 02:05.770
+because I think this would simplify things more.
+
+27
+02:05.770 --> 02:13.780
+I mean you can actually compare how you're moving down 
+and up in a HTML file and better to create
+
+28
+02:13.850 --> 02:15.590
+concepts this way.
+
+29
+02:16.060 --> 02:19.810
+OK, so I have the soup here of this file.
+
+30
+02:20.680 --> 02:25.580
+And then what I do is I extract the "title" tag. I say "soup.title".
+
+31
+02:25.600 --> 02:28.020
+So I have "title" tag here.
+
+32
+02:28.160 --> 02:35.020
+Now what I want to do is I want to move up to the parent 
+of this "title" tag, which in our case right now
+
+33
+02:35.050 --> 02:42.120
+is "head". How can I do this? I can say "parents" 
+is equals to "title.parent".
+
+34
+02:45.120 --> 02:47.040
+And if I print
+
+35
+02:47.120 --> 02:54.360
+"parent.name"... If you remember, we have a method ".name" 
+of a tag which gives us that tag's name.
+
+36
+03:00.250 --> 03:02.340
+If I run this, it says "head".
+
+37
+03:05.650 --> 03:07.940
+And if I remove this ".name"
+
+38
+03:08.110 --> 03:16.760
+You can see it returns this, the "head" tag, or the 
+parent of this "title" tag. We can do this for any tag.
+
+39
+03:16.770 --> 03:20.280
+I mean I am going to show you this with this "p" tag here.
+
+40
+03:21.920 --> 03:34.440
+I am going to say "p" is equals to "soup.p". And 
+if I print "p", it gives me this "<p class='title'>".
+
+41
+03:34.510 --> 03:40.250
+So it is giving me this "p" tag.
+
+42
+03:40.340 --> 03:44.420
+Now what I'm doing is I'm going to say "p.parent".
+
+43
+03:47.970 --> 03:50.350
+So it actually gives me this "body" tag.
+
+44
+03:50.800 --> 03:58.180
+And as you can see, this "p" tag has this 
+"body" tag as its parent. This "b" tag and this
+
+45
+03:58.210 --> 04:02.560
+"p" tag and this "p" tag, they're its siblings.
+
+46
+04:02.770 --> 04:10.960
+So the relation we have between "body" and "p" is that 
+"body" is a parent tag and this "b" and other "p" tags
+
+47
+04:11.110 --> 04:14.080
+are siblings of this "p" tag here,
+
+48
+04:14.080 --> 04:22.220
+this "p" tag which has its "class='title'". 
+So I could just say "p.parent.name".
+
+49
+04:22.500 --> 04:25.500
+And you can see it gives me "body".
+
+50
+04:25.590 --> 04:33.760
+So, as you know, our tree starts from "soup", 
+and after "soup" we have its child, "html", and
+
+51
+04:33.790 --> 04:37.300
+after "html" we have its children, "head" and "body",
+
+52
+04:37.380 --> 04:38.670
+and so on.
+
+53
+04:38.730 --> 04:41.570
+I mean it depends on our document.
+
+54
+04:41.600 --> 04:50.980
+So if I say "html" is equals to "soup.html", 
+the question is: Who is the parent of html?
+
+55
+04:52.440 --> 04:56.370
+If I say print "type(html.parent)"
+
+56
+04:59.340 --> 05:04.170
+it says beautiful soup is the parent of HTML.
+
+57
+05:06.120 --> 05:16.080
+OK, so hierarchy is: we have Beautiful Soup at the topmost level.
+
+58
+05:16.080 --> 05:21.310
+It is the parent of every tag in parse tree.
+
+59
+05:21.740 --> 05:29.430
+And then we have the "html" tag and then as a 
+document, I mean depends on the document. If we have "head"
+
+60
+05:29.860 --> 05:36.480
+and "body", then it has two direct children, 
+"head" and "body" and then further.
+
+61
+05:36.480 --> 05:43.710
+So the first one is "bs4", next one is "html". 
+So at the very top level,
+
+62
+05:43.710 --> 05:51.780
+we have Beautiful Soup as the parent of each 
+bag, each object we have in our parse tree.
+
+63
+05:52.230 --> 05:55.690
+So now the question is: Who 
+is the parent of Beautiful Soup?
+
+64
+05:56.650 --> 06:01.930
+I just said that Beautiful Soup is the parent 
+into every tag or object in our parse tree.
+
+65
+06:01.950 --> 06:09.370
+So this method, if I say print 
+"soup.parent", it returns me "None".
+
+66
+06:12.120 --> 06:19.480
+Just going to comment this so this is clear.
+
+67
+06:19.660 --> 06:21.180
+You can see it returns me "None".
+
+68
+06:21.190 --> 06:25.530
+It says that there is no parent of Beautiful Soup.
+
+69
+06:25.570 --> 06:30.470
+So the hierarchy is: Beautiful Soup is the 
+parent of each tag we have in our parse tree,
+
+70
+06:30.490 --> 06:35.260
+then the "html" tag and then it depends on the document.
+
+71
+06:35.260 --> 06:39.420
+In our case we have two children, two direct children for "html"  tag.
+
+72
+06:39.430 --> 06:43.160
+They are "head" and "body" and then "head" has 
+"title" and "body" has further four children.
+
+73
+06:43.170 --> 06:46.440
+I hope this is clear to you.
+
+74
+06:46.440 --> 06:51.270
+That how we can access a tag's parent with ".parent" method.
+
+75
+06:51.330 --> 06:58.400
+In the next video, we will be discussing the ".parents" 
+method which returns us a list of the parents and we can
+
+76
+06:58.430 --> 07:02.150
+iterate over them.
+Thank you very much.

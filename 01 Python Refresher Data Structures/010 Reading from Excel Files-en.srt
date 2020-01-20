@@ -1,0 +1,424 @@
+1
+00:00:00,580 --> 00:00:01,850
+Hello everyone.
+
+2
+00:00:02,070 --> 00:00:05,740
+In last video, we learned how to write an Excel file.
+
+3
+00:00:05,760 --> 00:00:10,490
+So in this video, we are going to
+
+4
+00:00:05,760 --> 00:00:10,490
+learn how to read from an Excel file.
+
+5
+00:00:10,710 --> 00:00:16,800
+So this was the file we wrote in the last video.
+
+6
+00:00:10,710 --> 00:00:16,800
+In this we have 200 rows and you can see in the first
+
+7
+00:00:16,800 --> 00:00:22,010
+column we have the string here. It says the row number
+
+8
+00:00:16,800 --> 00:00:22,010
+and in the second column we have the actual
+
+9
+00:00:22,200 --> 00:00:24,300
+number for the relevant rows.
+
+10
+00:00:24,340 --> 00:00:30,820
+Like for this it says 0, then 1, then 2 and
+
+11
+00:00:24,340 --> 00:00:30,820
+this goes on to 199. In total there are 200.
+
+12
+00:00:31,220 --> 00:00:31,940
+OK.
+
+13
+00:00:32,430 --> 00:00:38,580
+So we'll be using "xlrd" module for reading
+
+14
+00:00:38,580 --> 00:00:45,140
+an Excel file. This is the import we use for reading from an Excel file.
+
+15
+00:00:45,150 --> 00:00:50,480
+Obviously there are many other ways you can
+
+16
+00:00:45,150 --> 00:00:50,480
+do this but we are only going to talk about
+
+17
+00:00:50,610 --> 00:00:55,790
+the most easy way and the one which is frequently
+
+18
+00:00:50,610 --> 00:00:55,790
+used which is sufficient for a user right now.
+
+19
+00:00:56,200 --> 00:00:56,680
+OK.
+
+20
+00:00:56,820 --> 00:01:00,710
+So what we do is we open the workbook,
+
+21
+00:01:00,770 --> 00:01:08,030
+that's our first task. We say "xlrd.open_workbook". I give it the fileame.
+
+22
+00:01:08,160 --> 00:01:14,100
+The filename is "first_file.xlsx".
+
+23
+00:01:14,250 --> 00:01:20,090
+I have opened the workbook like I want to read
+
+24
+00:01:14,250 --> 00:01:20,090
+from this so I give it the file, the path of that
+
+25
+00:01:20,150 --> 00:01:22,230
+file which is the name here.
+
+26
+00:01:22,400 --> 00:01:27,020
+So this is goig to open the file here, "first_file.xlsx".
+
+27
+00:01:27,430 --> 00:01:28,000
+OK.
+
+28
+00:01:28,220 --> 00:01:33,850
+Now after doing that what we do is we select the
+
+29
+00:01:28,220 --> 00:01:33,850
+sheet from where we want to read. Here we only have
+
+30
+00:01:33,870 --> 00:01:35,850
+one sheet, so we are going to select this one.
+
+31
+00:01:35,940 --> 00:01:39,590
+But if we have multiple sheets,
+
+32
+00:01:35,940 --> 00:01:39,590
+we could specify the index there.
+
+33
+00:01:39,830 --> 00:01:50,310
+So I say "worksheet" is equals to
+
+34
+00:01:39,830 --> 00:01:50,310
+"workbook.sheet_by_index".
+
+35
+00:01:50,320 --> 00:01:52,950
+And then I say the first sheet
+
+36
+00:01:50,320 --> 00:01:52,950
+which is the zero sheet.
+
+37
+00:01:53,250 --> 00:01:53,940
+OK.
+
+38
+00:01:54,160 --> 00:02:01,720
+Now that I have that, I want to
+
+39
+00:01:54,160 --> 00:02:01,720
+read the whole of this Excel file
+
+40
+00:02:01,720 --> 00:02:06,210
+so I need to know how many rows are
+
+41
+00:02:01,720 --> 00:02:06,210
+there in this Excel file. What can I do now?
+
+42
+00:02:06,210 --> 00:02:08,290
+There's a method here.
+
+43
+00:02:08,680 --> 00:02:13,730
+We can say it is like ".nrows".
+
+44
+00:02:13,780 --> 00:02:20,610
+And if I print it, "worksheet.nrows", it is
+
+45
+00:02:13,780 --> 00:02:20,610
+actually going to tell me the number
+
+46
+00:02:20,610 --> 00:02:22,990
+of rows in this Excel sheet.
+
+47
+00:02:23,440 --> 00:02:24,260
+It says 200.
+
+48
+00:02:24,270 --> 00:02:25,550
+And this is absolutely right.
+
+49
+00:02:25,560 --> 00:02:26,940
+I mean there are 200.
+
+50
+00:02:26,970 --> 00:02:30,210
+You can see that here. There are actually 200 rows here.
+
+51
+00:02:31,630 --> 00:02:38,220
+OK, so now what we do is we say "rows"
+
+52
+00:02:31,630 --> 00:02:38,220
+is equals to "worksheet.nrows".
+
+53
+00:02:38,290 --> 00:02:45,740
+Now what we are going do is we
+
+54
+00:02:38,290 --> 00:02:45,740
+are going to read each row and then we
+
+55
+00:02:45,740 --> 00:02:48,750
+are going to interpret the value or
+
+56
+00:02:45,740 --> 00:02:48,750
+we are going to print it right now.
+
+57
+00:02:49,210 --> 00:02:50,740
+And see how this works.
+
+58
+00:02:50,750 --> 00:02:51,970
+So I say "for row in
+
+59
+00:02:52,070 --> 00:02:54,540
+rows".
+
+60
+00:02:54,600 --> 00:02:59,810
+Now this method for worksheets,
+
+61
+00:02:54,600 --> 00:02:59,810
+the method is "row_values".
+
+62
+00:03:00,000 --> 00:03:06,050
+And then what it takes is the row number and it
+
+63
+00:03:00,000 --> 00:03:06,050
+returns a tuple of values, a tuple of different
+
+64
+00:03:06,080 --> 00:03:11,430
+values, the value of all the columns that are present there.
+
+65
+00:03:11,430 --> 00:03:15,980
+So I'm just going to show you
+
+66
+00:03:11,430 --> 00:03:15,980
+how this works so it will be more clear then.
+
+67
+00:03:16,230 --> 00:03:16,840
+OK.
+
+68
+00:03:17,100 --> 00:03:19,450
+Now we only have two columns here.
+
+69
+00:03:19,490 --> 00:03:21,510
+OK, the rest of them are blank.
+
+70
+00:03:21,570 --> 00:03:25,740
+So it is only going to returns us
+
+71
+00:03:21,570 --> 00:03:25,740
+a tuple of two values for each row.
+
+72
+00:03:25,910 --> 00:03:29,800
+The first value would be first column and
+
+73
+00:03:25,910 --> 00:03:29,800
+the second value would be the second column.
+
+74
+00:03:30,080 --> 00:03:40,230
+So I could say "first_column" and I could say
+
+75
+00:03:30,080 --> 00:03:40,230
+"second_column" is equals to "worksheet.row_values"
+
+76
+00:03:40,230 --> 00:03:45,240
+and then I say row and then I could say print "first_column"
+
+77
+00:03:46,420 --> 00:03:49,140
+and then give some space and then I say "second_column".
+
+78
+00:03:50,700 --> 00:03:53,150
+And let's see how this works.
+
+79
+00:03:54,100 --> 00:03:55,200
+I'm going to run this now.
+
+80
+00:03:59,750 --> 00:04:00,800
+Oh, I'm sorry.
+
+81
+00:04:00,800 --> 00:04:03,990
+Actually it should be "range" because "rows" is like 200.
+
+82
+00:04:04,010 --> 00:04:04,920
+I'm sorry.
+
+83
+00:04:05,140 --> 00:04:06,120
+That's my mistake.
+
+84
+00:04:06,860 --> 00:04:08,560
+OK, so you can see it here.
+
+85
+00:04:08,560 --> 00:04:14,610
+Now what it did was like I used a
+
+86
+00:04:08,560 --> 00:04:14,610
+loop which I run 200 times.
+
+87
+00:04:14,840 --> 00:04:19,550
+And each time it ran, what I did was
+
+88
+00:04:14,840 --> 00:04:19,550
+I use this "row_values" function.
+
+89
+00:04:19,770 --> 00:04:26,870
+This takes input as the number
+
+90
+00:04:19,770 --> 00:04:26,870
+of the roll with which we
+
+91
+00:04:26,870 --> 00:04:32,480
+want to get the values and then it returns me a tuple
+
+92
+00:04:26,870 --> 00:04:32,480
+of values of all the values that are present in that row.
+
+93
+00:04:32,480 --> 00:04:35,020
+So we only have two values here in each row.
+
+94
+00:04:35,210 --> 00:04:38,070
+So it is only going to return
+
+95
+00:04:35,210 --> 00:04:38,070
+us two values in our tuple.
+
+96
+00:04:38,090 --> 00:04:38,650
+OK.
+
+97
+00:04:38,990 --> 00:04:44,570
+So let's say first column and second column
+
+98
+00:04:38,990 --> 00:04:44,570
+and I get them. Then I'm just going to print them.
+
+99
+00:04:44,570 --> 00:04:50,870
+So this is how this works out and you can play
+
+100
+00:04:44,570 --> 00:04:50,870
+around with this module or you can create
+
+101
+00:04:50,870 --> 00:04:55,990
+your own Excel files and then you can
+
+102
+00:04:50,870 --> 00:04:55,990
+read from them and you can manipulate
+
+103
+00:04:56,050 --> 00:04:58,990
+them in different ways just to see how this works.
+
+104
+00:04:59,000 --> 00:05:03,770
+So I hope that this is clear to you now, how we can read Excel Files.
+
+105
+00:05:04,040 --> 00:05:08,020
+And if there are any queries, you can reach back.
+
+106
+00:05:08,090 --> 00:05:08,920
+Thank you very much.
+

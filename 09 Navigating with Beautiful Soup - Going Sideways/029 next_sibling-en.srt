@@ -1,0 +1,300 @@
+1
+00:00:00,830 --> 00:00:09,400
+Hello everyone! In the last video, we discussed how we can
+
+2
+00:00:00,830 --> 00:00:09,400
+move up our parse tree. In this video, we are going to discuss how
+
+3
+00:00:09,400 --> 00:00:11,940
+we can move downwards in our parse tree.
+
+4
+00:00:12,280 --> 00:00:16,960
+As we discussed earlier, there are three
+
+5
+00:00:12,280 --> 00:00:16,960
+types of basic movements in our parse tree.
+
+6
+00:00:17,050 --> 00:00:19,100
+One is that we move downwards.
+
+7
+00:00:19,240 --> 00:00:23,960
+Let's say from the "html" level to this "body"
+
+8
+00:00:19,240 --> 00:00:23,960
+and then to this "p" and then do this "b.
+
+9
+00:00:24,190 --> 00:00:28,260
+So I have been moving downwards in this scenario.
+
+10
+00:00:28,630 --> 00:00:34,840
+Another is that it moves upwards. Let's say if I'm at this
+
+11
+00:00:28,630 --> 00:00:34,840
+"b" tag, I move to this "p", then to this "body", then
+
+12
+00:00:34,840 --> 00:00:42,230
+to this "html". In upwards, we are moving towards a parent,
+
+13
+00:00:34,840 --> 00:00:42,230
+and in downwards, we are moving towards a child.
+
+14
+00:00:42,390 --> 00:00:48,390
+Then there's this third type of movement which we are
+
+15
+00:00:42,390 --> 00:00:48,390
+going to discuss today. That is like we move sideways.
+
+16
+00:00:48,830 --> 00:00:56,340
+If I'm at this "p" tag, I move to this "b" or to this
+
+17
+00:00:48,830 --> 00:00:56,340
+"p" or to this "p". When you make a tree of this
+
+18
+00:00:56,340 --> 00:01:04,830
+HTML, we can see that these all tags, this "b" tag, this
+
+19
+00:00:56,340 --> 00:01:04,830
+"p" tag, this "p" and this "p", they are the same level.
+
+20
+00:01:04,880 --> 00:01:07,590
+We can call them siblings.
+
+21
+00:01:07,800 --> 00:01:18,180
+So I've read this file here and I made a soup of
+
+22
+00:01:07,800 --> 00:01:18,180
+this file here then I have my "body" tag and
+
+23
+00:01:18,180 --> 00:01:19,890
+and I have to first "p" tag.
+
+24
+00:01:19,910 --> 00:01:20,960
+So if I print "p".
+
+25
+00:01:25,390 --> 00:01:33,000
+It gives me the "p" tag with
+
+26
+00:01:25,390 --> 00:01:33,000
+"class='title'", which is this here.
+
+27
+00:01:33,140 --> 00:01:34,040
+OK, so
+
+28
+00:01:39,310 --> 00:01:42,600
+now what I want to do is I
+
+29
+00:01:39,310 --> 00:01:42,600
+want to move at the same level.
+
+30
+00:01:42,630 --> 00:01:49,630
+So either I want to get to this B or I want
+
+31
+00:01:42,630 --> 00:01:49,630
+to get to this "p" tag which has "class='story'".
+
+32
+00:01:49,720 --> 00:01:53,580
+So what can I do know? If I print "body.contents",
+
+33
+00:02:00,410 --> 00:02:06,970
+you can see that the first child of "body" is this
+
+34
+00:02:00,410 --> 00:02:06,970
+new new line character which we are going to
+
+35
+00:02:07,630 --> 00:02:13,540
+omit, we are not going to consider that.
+
+36
+00:02:07,630 --> 00:02:13,540
+Then the first child is this "b" tag.
+
+37
+00:02:13,610 --> 00:02:22,010
+Then the next child is this "p" tag and the next child is then
+
+38
+00:02:13,610 --> 00:02:22,010
+again a new line character which we are not going to consider
+
+39
+00:02:22,070 --> 00:02:25,880
+as a child and then we have the story one.
+
+40
+00:02:25,910 --> 00:02:33,510
+So what we want to do is: currently we are
+
+41
+00:02:25,910 --> 00:02:33,510
+here at this tag and we want to move to "p" here.
+
+42
+00:02:34,420 --> 00:02:35,430
+So what can we do.
+
+43
+00:02:35,430 --> 00:02:45,090
+So I mean we have to move two places. Like in one place,
+
+44
+00:02:35,430 --> 00:02:45,090
+I have this new line character and if I move to
+
+45
+00:02:45,090 --> 00:02:50,580
+the right again then I could go to this "p" tag.
+
+46
+00:02:51,000 --> 00:02:55,330
+So I'm just going to run so it's more clear.
+
+47
+00:02:55,350 --> 00:03:01,400
+Now we have this function in Beautiful Soup, this tag function.
+
+48
+00:03:01,410 --> 00:03:06,480
+What this does is if I say print "p.next_sibling"
+
+49
+00:03:12,720 --> 00:03:17,320
+and then again "next_sibling".
+
+50
+00:03:17,470 --> 00:03:26,450
+The reason I'm doing this "next_sibling" again is because
+
+51
+00:03:17,470 --> 00:03:26,450
+as you can see that I have this new line character
+
+52
+00:03:26,450 --> 00:03:27,510
+which I have to omit.
+
+53
+00:03:27,600 --> 00:03:32,760
+So if I do this once and
+
+54
+00:03:37,400 --> 00:03:43,800
+if I run it, this doesn't give me anything because it's
+
+55
+00:03:37,400 --> 00:03:43,800
+a new line character that just prints a new line.
+
+56
+00:03:44,210 --> 00:03:46,550
+So if I do it twice.
+
+57
+00:03:48,770 --> 00:03:51,770
+You see I have moved to the next "p" tag.
+
+58
+00:03:52,010 --> 00:03:57,340
+So I've successfully moved to the next "p" tag.
+
+59
+00:03:52,010 --> 00:03:57,340
+I've moved sideways successfully.
+
+60
+00:03:58,940 --> 00:04:02,870
+So this can be done like
+
+61
+00:04:03,080 --> 00:04:08,960
+if you are at our "head", we could move to this
+
+62
+00:04:03,080 --> 00:04:08,960
+"body" tag using the same method, "next_sibling".
+
+63
+00:04:08,990 --> 00:04:13,970
+So the "next_sibling" method, what this does
+
+64
+00:04:08,990 --> 00:04:13,970
+is this allows us to move sideways in our parse tree.
+
+65
+00:04:14,180 --> 00:04:20,780
+It allows us to move to our siblings, our next siblings.
+
+66
+00:04:14,180 --> 00:04:20,780
+In the next video, we will discuss how to move
+
+67
+00:04:20,780 --> 00:04:22,160
+to our previous siblings.
+
+68
+00:04:22,160 --> 00:04:27,450
+Let's say I'm at this "body". How do I move to "head"?
+
+69
+00:04:22,160 --> 00:04:27,450
+I can't do that with that next sibling
+
+70
+00:04:27,500 --> 00:04:34,580
+because "body" has no next sibling. "body" is the last sibling,
+
+71
+00:04:27,500 --> 00:04:34,580
+"head" has next sibling which is this "body"
+
+72
+00:04:34,630 --> 00:04:36,390
+tag here.
+
+73
+00:04:36,530 --> 00:04:40,340
+So I hope this is clear to you and I'll elaborate this more.
+
+74
+00:04:40,370 --> 00:04:44,500
+Once we get to "previous_sibling" and we'll discuss this more there then.
+
+75
+00:04:44,540 --> 00:04:44,980
+Thank you.
+

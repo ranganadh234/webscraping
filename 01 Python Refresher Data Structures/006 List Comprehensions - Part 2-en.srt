@@ -1,0 +1,1036 @@
+1
+00:00:00,900 --> 00:00:02,160
+Hello everyone.
+
+2
+00:00:02,430 --> 00:00:09,660
+Last time we talked about list comprehensions and
+
+3
+00:00:02,430 --> 00:00:09,660
+an alternative way to making this a more natural one.
+
+4
+00:00:09,660 --> 00:00:13,560
+I hope you're more familiar with
+
+5
+00:00:09,660 --> 00:00:13,560
+making lists using list comprehensions.
+
+6
+00:00:13,560 --> 00:00:21,320
+Now we'll discuss this concept more. Now in this
+
+7
+00:00:13,560 --> 00:00:21,320
+lecture, we'll make 2D lists using list comprehensions.
+
+8
+00:00:21,360 --> 00:00:25,240
+and discuss how to manipulate them and how to access them.
+
+9
+00:00:25,650 --> 00:00:34,890
+So first questions first, what is a 2D list? 2D list is
+
+10
+00:00:25,650 --> 00:00:34,890
+basically a nested list or a list in a
+
+11
+00:00:34,890 --> 00:00:35,960
+list.
+
+12
+00:00:36,110 --> 00:00:43,850
+What I mean by this is that let's say you have a
+
+13
+00:00:36,110 --> 00:00:43,850
+shop and people come there for shopping.
+
+14
+00:00:44,220 --> 00:00:52,170
+So for each person comes to shop has his own
+
+15
+00:00:44,220 --> 00:00:52,170
+cart and they go and they add items to
+
+16
+00:00:52,170 --> 00:00:56,120
+their cart and they can add unlimited items their carts.
+
+17
+00:00:56,130 --> 00:01:03,590
+And they come back to you and you check and
+
+18
+00:00:56,130 --> 00:01:03,590
+then they pay you and they can take that items.
+
+19
+00:01:03,870 --> 00:01:10,520
+So how can I illustrate this concept in Python.
+
+20
+00:01:10,870 --> 00:01:17,450
+Let's say I have carts like I said, I have many carts,
+
+21
+00:01:10,870 --> 00:01:17,450
+I have unlimited carts and what I do is I say OK, the first
+
+22
+00:01:17,450 --> 00:01:32,440
+person bought toothpaste, he got shoes,
+
+23
+00:01:17,450 --> 00:01:32,440
+he got bread and then I say my second
+
+24
+00:01:32,450 --> 00:01:36,670
+person got pencils,
+
+25
+00:01:40,260 --> 00:01:46,400
+he got erasers, let's say he bought a notebook
+
+26
+00:01:49,170 --> 00:01:55,300
+and there's a third person who bought meat,
+
+27
+00:01:55,950 --> 00:02:00,630
+bought some fruit and
+
+28
+00:02:00,630 --> 00:02:04,870
+he also bought some vegetables.
+
+29
+00:02:04,950 --> 00:02:10,170
+So like I have three persons, they came,
+
+30
+00:02:10,560 --> 00:02:17,580
+they took your carts and they shop these things. The
+
+31
+00:02:10,560 --> 00:02:17,580
+first person took toothpaste, shoes and bread, the second
+
+32
+00:02:17,580 --> 00:02:28,490
+pencils, erasers and notebook and the third meat, fruit,
+
+33
+00:02:17,580 --> 00:02:28,490
+vegetables. Another way to write this can be "person1"
+
+34
+00:02:28,520 --> 00:02:33,340
+one is equals to this
+
+35
+00:02:40,630 --> 00:02:42,550
+and I can say "person2"
+
+36
+00:02:47,370 --> 00:02:48,950
+is equals to this,
+
+37
+00:02:52,740 --> 00:03:01,470
+"person3" is equals to this one: meat, fruit, vegetables.
+
+38
+00:03:01,800 --> 00:03:10,780
+And then I can say "cart" is equals
+
+39
+00:03:01,800 --> 00:03:10,780
+to "person1", "person2", "person3".
+
+40
+00:03:11,010 --> 00:03:12,870
+I've just done this for readability.
+
+41
+00:03:12,870 --> 00:03:15,900
+I mean this is not so readable.
+
+42
+00:03:15,930 --> 00:03:22,770
+So now I have three carts, cart one for "person1"
+
+43
+00:03:15,930 --> 00:03:22,770
+contains shoes, the cart for "person2" contains
+
+44
+00:03:22,830 --> 00:03:26,380
+pencils, erasers and notebook and person3's
+
+45
+00:03:26,400 --> 00:03:29,620
+cart contains meat, fruit and vegetables.
+
+46
+00:03:29,850 --> 00:03:31,310
+So if I print "carts",
+
+47
+00:03:34,420 --> 00:03:42,620
+what I get as I get a single list and that list
+
+48
+00:03:34,420 --> 00:03:42,620
+I have three different lists. So this is basically a
+
+49
+00:03:42,620 --> 00:03:49,850
+nested list, carts is nested list or
+
+50
+00:03:42,620 --> 00:03:49,850
+I could say that this is a 2D list.
+
+51
+00:03:49,850 --> 00:03:54,900
+Another way to represent this
+
+52
+00:03:49,850 --> 00:03:54,900
+can be like "person1 cart",
+
+53
+00:03:56,930 --> 00:03:58,270
+"person2 cart",
+
+54
+00:03:59,730 --> 00:04:00,590
+"person3 cart"
+
+55
+00:04:04,840 --> 00:04:10,340
+and I can have a loop
+
+56
+00:04:04,840 --> 00:04:10,340
+"for value in carts", print "value".
+
+57
+00:04:11,740 --> 00:04:13,100
+If I do this.
+
+58
+00:04:13,150 --> 00:04:15,120
+Let me just comment that.
+
+59
+00:04:16,750 --> 00:04:17,480
+You can see.
+
+60
+00:04:17,480 --> 00:04:25,130
+I have three lines and in each you get a table.
+
+61
+00:04:17,480 --> 00:04:25,130
+It has three rows and three columns, one
+
+62
+00:04:25,220 --> 00:04:30,410
+two, three and three columns like
+
+63
+00:04:25,220 --> 00:04:30,410
+toothpaste, shoes, bread. Three columns.
+
+64
+00:04:30,410 --> 00:04:34,720
+So this is basically a 2D list. To access a single value,
+
+65
+00:04:34,730 --> 00:04:40,920
+what I can do is let's say I want
+
+66
+00:04:34,730 --> 00:04:40,920
+to see what is the first thing that my
+
+67
+00:04:40,940 --> 00:04:41,970
+"person1" bought.
+
+68
+00:04:41,990 --> 00:04:49,740
+So what I'll do is I'll say print "carts[0][0]".
+
+69
+00:04:49,850 --> 00:04:51,940
+It gives me toothpaste.
+
+70
+00:04:51,950 --> 00:04:56,430
+I want to know what my last person, "person3", bought at the very end.
+
+71
+00:04:56,480 --> 00:05:05,010
+So the index for last person is 2 and the index for
+
+72
+00:04:56,480 --> 00:05:05,010
+the last value to that item the person
+
+73
+00:05:05,030 --> 00:05:08,570
+bought that's also 2 like our list contains three values.
+
+74
+00:05:08,570 --> 00:05:15,590
+The last index is 2. So if I run this, it gives you
+
+75
+00:05:08,570 --> 00:05:15,590
+vegetables. Let's say I want to find what
+
+76
+00:05:16,120 --> 00:05:18,660
+"person2" bought at the very start.
+
+77
+00:05:18,740 --> 00:05:21,730
+When you started shopping what is the first thing he bought.
+
+78
+00:05:21,740 --> 00:05:27,460
+So the index for "person2" is 1,
+
+79
+00:05:27,620 --> 00:05:31,880
+and the first thing he bought, that would be 0.
+
+80
+00:05:31,880 --> 00:05:38,820
+And if I run this, it gives me pencils and he indeed
+
+81
+00:05:31,880 --> 00:05:38,820
+bought pencils first, then he got to erasers and notebook.
+
+82
+00:05:38,840 --> 00:05:41,220
+So this is basically a 2D list.
+
+83
+00:05:41,240 --> 00:05:46,000
+This here, this cart here is a 2D list.
+
+84
+00:05:46,090 --> 00:05:49,690
+I hope that this is making sense to you right now.
+
+85
+00:05:49,690 --> 00:05:56,070
+I just want you to go through this and I want you
+
+86
+00:05:49,690 --> 00:05:56,070
+to call this yourself so that you understand this
+
+87
+00:05:56,110 --> 00:05:58,320
+better and how this works.
+
+88
+00:05:58,520 --> 00:06:01,450
+And you can think of 2D list as a table.
+
+89
+00:06:01,720 --> 00:06:10,390
+And what you do is you use two indexes to
+
+90
+00:06:01,720 --> 00:06:10,390
+access any single element, like the first index
+
+91
+00:06:10,420 --> 00:06:18,100
+gives you your row so if you use 0
+
+92
+00:06:10,420 --> 00:06:18,100
+here this gives me "person1" cart and
+
+93
+00:06:18,100 --> 00:06:20,730
+the second value gives me the column number.
+
+94
+00:06:20,740 --> 00:06:25,310
+I mean like which column I am talking about.
+
+95
+00:06:25,330 --> 00:06:33,430
+So if I'm saying this 0 is like my row, this gets me
+
+96
+00:06:25,330 --> 00:06:33,430
+to "person1" and if I say 0 this this gives me
+
+97
+00:06:33,540 --> 00:06:34,480
+this toothpaste here.
+
+98
+00:06:34,510 --> 00:06:34,830
+Why?
+
+99
+00:06:34,830 --> 00:06:37,080
+Because this is the column zero.
+
+100
+00:06:37,100 --> 00:06:45,630
+If you represent this in a table format,
+
+101
+00:06:37,100 --> 00:06:45,630
+that would be something like this, "0, 0".
+
+102
+00:06:45,800 --> 00:07:03,100
+So "0, 1", "0, 2", "1, 0", "1, 1", "1, 2".
+
+103
+00:06:45,800 --> 00:07:03,100
+This would be "2, 0", "2, 1", "2, 2".
+
+104
+00:07:03,120 --> 00:07:08,160
+So this is the first index is row.
+
+105
+00:07:08,460 --> 00:07:12,150
+And the second index is column.
+
+106
+00:07:12,310 --> 00:07:13,820
+I hope this makes sense.
+
+107
+00:07:15,450 --> 00:07:24,080
+Now the task is to make this, to make a 2D
+
+108
+00:07:15,450 --> 00:07:24,080
+list which contains these values.
+
+109
+00:07:24,090 --> 00:07:29,990
+The first row cantains value from 0 to 4,
+
+110
+00:07:24,090 --> 00:07:29,990
+the second 5 to 9, and then 10 to 14, 15 to 19
+
+111
+00:07:30,000 --> 00:07:32,430
+and 20 to 24.
+
+112
+00:07:32,430 --> 00:07:34,870
+We have to do this using "for" loops right now.
+
+113
+00:07:34,890 --> 00:07:41,980
+I mean like the way we normally declare list,
+
+114
+00:07:34,890 --> 00:07:41,980
+the way we normally make list right now
+
+115
+00:07:42,000 --> 00:07:48,130
+and then after doing that, we'll use
+
+116
+00:07:42,000 --> 00:07:48,130
+list comprehension to make the same 2D list.
+
+117
+00:07:48,160 --> 00:07:53,560
+So I say "task_list".
+
+118
+00:07:53,710 --> 00:07:56,370
+I've declared an empty list.
+
+119
+00:07:56,600 --> 00:08:04,710
+And before I go on with this, I want you
+
+120
+00:07:56,600 --> 00:08:04,710
+to understand the "range" function.
+
+121
+00:08:04,700 --> 00:08:14,120
+Like if I say "for value in range", "range" takes three
+
+122
+00:08:04,700 --> 00:08:14,120
+parameters. I mean you can also give it one or
+
+123
+00:08:14,240 --> 00:08:14,910
+two or three.
+
+124
+00:08:14,930 --> 00:08:17,790
+But it can also take three parameters.
+
+125
+00:08:17,810 --> 00:08:19,760
+The first is the starting value.
+
+126
+00:08:19,770 --> 00:08:22,580
+The second is where I want to go.
+
+127
+00:08:22,760 --> 00:08:30,560
+And the last one is the increment one. So if I print "value"
+
+128
+00:08:22,760 --> 00:08:30,560
+here, what does it give me? It gives me like
+
+129
+00:08:30,680 --> 00:08:32,740
+the first value gives me 0.
+
+130
+00:08:32,820 --> 00:08:38,590
+The second gives me 5 because what it
+
+131
+00:08:32,820 --> 00:08:38,590
+does is it says 0 and adds this increment here,
+
+132
+00:08:38,630 --> 00:08:43,790
+it gives me 5 and it sees if it's
+
+133
+00:08:38,630 --> 00:08:43,790
+less than 25 it goes into my loop.
+
+134
+00:08:44,030 --> 00:08:45,260
+So I get 0, 5.
+
+135
+00:08:45,290 --> 00:08:46,620
+And then after that I get 10.
+
+136
+00:08:46,610 --> 00:08:53,880
+Then add 5, 15, and add 5, 20, and as soon as they
+
+137
+00:08:46,610 --> 00:08:53,880
+get to 20 what it will do is it will add five.
+
+138
+00:08:53,900 --> 00:08:55,310
+It will say 20 plus 5.
+
+139
+00:08:55,310 --> 00:08:59,290
+That makes it 25 and it sees is it less than 25.
+
+140
+00:08:59,310 --> 00:09:00,070
+It isn't.
+
+141
+00:09:00,190 --> 00:09:07,040
+So it won't get into the loop and they
+
+142
+00:09:00,190 --> 00:09:07,040
+don't get the value 25 in the very end because
+
+143
+00:09:07,610 --> 00:09:09,490
+this value is excluded.
+
+144
+00:09:09,500 --> 00:09:13,990
+I mean this loops runs until 24, if it was 1 here.
+
+145
+00:09:14,210 --> 00:09:22,740
+So, OK, what I'm going to do now is I'm going
+
+146
+00:09:14,210 --> 00:09:22,740
+to make a 2D list for this using "for" loops
+
+147
+00:09:23,190 --> 00:09:36,110
+I could say "for row in range(0, 25, 5)"
+
+148
+00:09:23,190 --> 00:09:36,110
+and then I say "for column"...
+
+149
+00:09:36,330 --> 00:09:40,660
+OK, so in each row I have a list, right.
+
+150
+00:09:40,680 --> 00:09:43,820
+Each row has a list and it contains five values.
+
+151
+00:09:43,920 --> 00:10:00,290
+So I declare a list, "inner_list" is equals to this, and
+
+152
+00:09:43,920 --> 00:10:00,290
+I say "for column in range(row, row+5)".
+
+153
+00:10:00,480 --> 00:10:07,920
+I say "inner_list.append" and I say "column". OK.
+
+154
+00:10:07,940 --> 00:10:11,060
+So why did they use this? For the first row
+
+155
+00:10:11,210 --> 00:10:13,160
+this is going to give me 0.
+
+156
+00:10:13,370 --> 00:10:21,260
+And if I go through this, this loop will give
+
+157
+00:10:13,370 --> 00:10:21,260
+me values from 0 to 4, this inner loop, this "for column
+
+158
+00:10:21,260 --> 00:10:22,210
+in range"
+
+159
+00:10:22,430 --> 00:10:26,810
+will give me values from 0 to 4 and
+
+160
+00:10:22,430 --> 00:10:26,810
+then add them to my "inner_list".
+
+161
+00:10:26,810 --> 00:10:31,720
+And after doing that what I do is I
+
+162
+00:10:26,810 --> 00:10:31,720
+say "task_list.append", "inner_list".
+
+163
+00:10:32,070 --> 00:10:39,580
+The next time this loop runs, my "row" is 5,
+
+164
+00:10:32,070 --> 00:10:39,580
+the value of "row" is 5, it gets to this inner
+
+165
+00:10:39,580 --> 00:10:40,140
+loop.
+
+166
+00:10:40,170 --> 00:10:47,670
+And now my inner loop starts from 5 and it
+
+167
+00:10:40,170 --> 00:10:47,670
+goes till 10 or 9, preciselly. To be precise, it goes to 9.
+
+168
+00:10:47,780 --> 00:10:53,220
+And now the values of my
+
+169
+00:10:47,780 --> 00:10:53,220
+"inner_list" now are 5, 6, 7, 8,
+
+170
+00:10:53,220 --> 00:10:57,450
+9 and I add that "inner_list" in my "task_list".
+
+171
+00:10:57,590 --> 00:11:07,230
+So if I print my "task_list", I say
+
+172
+00:10:57,590 --> 00:11:07,230
+"for row in task_list", print "row". If I do that,
+
+173
+00:11:07,230 --> 00:11:11,300
+you can see I have this 2D list here.
+
+174
+00:11:12,220 --> 00:11:21,160
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+
+175
+00:11:12,220 --> 00:11:21,160
+13, 14, 15, 16, 17, 18, 19 and similarly the last row.
+
+176
+00:11:21,490 --> 00:11:30,680
+So "task_list" now is a 2D list and it contains
+
+177
+00:11:21,490 --> 00:11:30,680
+five rows and each row contains five columns.
+
+178
+00:11:33,790 --> 00:11:40,420
+Just take a pause here and understand what's
+
+179
+00:11:33,790 --> 00:11:40,420
+going on and see if you can I would like to decode this
+
+180
+00:11:40,450 --> 00:11:49,070
+side by side if you can do this so that you
+
+181
+00:11:40,450 --> 00:11:49,070
+understand this better and how this is working. OK.
+
+182
+00:11:49,130 --> 00:11:54,710
+Now we're going to use a list
+
+183
+00:11:49,130 --> 00:11:54,710
+comprehension to do the same thing.
+
+184
+00:11:55,520 --> 00:12:02,430
+And it is going to be more neat though it may
+
+185
+00:11:55,520 --> 00:12:02,430
+look a little complex right now but once you get used
+
+186
+00:12:02,430 --> 00:12:06,180
+to list comprehensions, you won't look back.
+
+187
+00:12:06,220 --> 00:12:12,810
+So I say my "new_list" is equal to...
+
+188
+00:12:13,260 --> 00:12:15,540
+I have this empty square brackets here.
+
+189
+00:12:15,780 --> 00:12:18,630
+So to declare a 2D list.
+
+190
+00:12:18,630 --> 00:12:26,670
+I mean if you remember, to declare a list comprehension
+
+191
+00:12:18,630 --> 00:12:26,670
+what we did was we had value which is
+
+192
+00:12:26,670 --> 00:12:31,290
+to be added and then the loop.
+
+193
+00:12:31,480 --> 00:12:33,420
+This was the syntax right.
+
+194
+00:12:33,430 --> 00:12:37,890
+So what I do is I add the loop, I say my outer loop
+
+195
+00:12:37,900 --> 00:12:46,080
+is "for row in the range(0, 25, 5)". OK.
+
+196
+00:12:46,310 --> 00:12:52,010
+So now what's missing is this value which is
+
+197
+00:12:46,310 --> 00:12:52,010
+to be added. So the value which I'm adding is
+
+198
+00:12:52,020 --> 00:12:53,840
+this "inner_list", right.
+
+199
+00:12:54,810 --> 00:12:56,140
+So what do I do now.
+
+200
+00:12:56,160 --> 00:12:58,240
+Basically this "inner_list" is a list.
+
+201
+00:12:58,260 --> 00:13:01,490
+So I can use a list comprehension here.
+
+202
+00:13:01,590 --> 00:13:09,910
+What I do is I say I want to add a list, the value
+
+203
+00:13:01,590 --> 00:13:09,910
+which I want to add each time this loop runs is
+
+204
+00:13:10,140 --> 00:13:13,850
+another list and the values for this list are going to be
+
+205
+00:13:13,850 --> 00:13:26,440
+now comes my inner loop, I say
+
+206
+00:13:13,850 --> 00:13:26,440
+"for column in range(row, row+5)". And in this inner list
+
+207
+00:13:26,520 --> 00:13:30,600
+I want to add this column
+
+208
+00:13:34,130 --> 00:13:35,960
+and if I
+
+209
+00:13:40,910 --> 00:13:41,870
+run this now,
+
+210
+00:13:51,160 --> 00:13:55,680
+you can see that it gives me the
+
+211
+00:13:51,160 --> 00:13:55,680
+same output as this loop was giving me.
+
+212
+00:13:55,750 --> 00:14:04,510
+I mean these two nested loops we used. But
+
+213
+00:13:55,750 --> 00:14:04,510
+the line we were consuming were like from 41 to 47.
+
+214
+00:14:04,590 --> 00:14:11,850
+And in this list comprehension what
+
+215
+00:14:04,590 --> 00:14:11,850
+we did was we only use a single line for
+
+216
+00:14:11,850 --> 00:14:14,600
+creating a 2D list.
+
+217
+00:14:14,620 --> 00:14:17,980
+This is a very efficient way of doing things.
+
+218
+00:14:18,010 --> 00:14:20,770
+It is more neat, it is more natural looking.
+
+219
+00:14:20,890 --> 00:14:27,920
+And once you get to understand this and once
+
+220
+00:14:20,890 --> 00:14:27,920
+you're familiar with them, you won't look back.
+
+221
+00:14:27,930 --> 00:14:30,520
+So now I want you to understand what happened here.
+
+222
+00:14:30,590 --> 00:14:37,560
+So I had my outter loop, this
+
+223
+00:14:30,590 --> 00:14:37,560
+"for row in range", this one. I had my here loop.
+
+224
+00:14:37,670 --> 00:14:43,790
+Now according to the syntax, I have written
+
+225
+00:14:37,670 --> 00:14:43,790
+my loop, now what I want to write is the value which I
+
+226
+00:14:43,790 --> 00:14:45,650
+want to add. So the value which I'm
+
+227
+00:14:45,650 --> 00:14:52,460
+adding to "my_task" list each time this
+
+228
+00:14:45,650 --> 00:14:52,460
+loop runs is another list, this "inner_list".
+
+229
+00:14:52,490 --> 00:14:57,860
+So what I do is I use this empty square brackets, I
+
+230
+00:14:52,490 --> 00:14:57,860
+have these empty square brackets so that each time
+
+231
+00:14:57,860 --> 00:14:59,990
+the loop runs, I'm inserting a list.
+
+232
+00:15:00,380 --> 00:15:01,050
+OK.
+
+233
+00:15:01,730 --> 00:15:08,670
+And this list contains what values?
+
+234
+00:15:01,730 --> 00:15:08,670
+I use another list comprehension here.
+
+235
+00:15:08,750 --> 00:15:17,750
+I use this loop. I say "for column in
+
+236
+00:15:08,750 --> 00:15:17,750
+range(row, row+5)" and then for this inner
+
+237
+00:15:17,750 --> 00:15:22,670
+list I have to add the value, right.
+
+238
+00:15:22,690 --> 00:15:26,470
+So I add the value now which is supposed to be this column.
+
+239
+00:15:26,470 --> 00:15:30,410
+So I add this column and my list comprehension is complete.
+
+240
+00:15:30,530 --> 00:15:32,170
+This line,
+
+241
+00:15:32,170 --> 00:15:40,890
+this statement creates a 2D list and
+
+242
+00:15:32,170 --> 00:15:40,890
+after that I print it and I see that
+
+243
+00:15:41,370 --> 00:15:48,810
+I have a 2D list and each row contains five
+
+244
+00:15:41,370 --> 00:15:48,810
+values, each row contains five values or a single list
+
+245
+00:15:48,810 --> 00:15:50,270
+which contains five values.
+
+246
+00:15:51,640 --> 00:15:55,670
+I hope this is making sense to you right now.
+
+247
+00:15:55,730 --> 00:16:00,810
+I would drop by some assignments which I would like to
+
+248
+00:15:55,730 --> 00:16:00,810
+do and perform and I would have the solutions
+
+249
+00:16:01,040 --> 00:16:06,550
+with this so that you understand how this thing
+
+250
+00:16:01,040 --> 00:16:06,550
+is working and I want you to practice this more
+
+251
+00:16:06,580 --> 00:16:10,210
+and more as this is a very efficient way of doing things.
+
+252
+00:16:10,360 --> 00:16:19,660
+And this will be mostly how we will be doing things
+
+253
+00:16:10,360 --> 00:16:19,660
+in the later part of our course when we are analyzing
+
+254
+00:16:19,660 --> 00:16:26,140
+the data which we are scraping
+
+255
+00:16:19,660 --> 00:16:26,140
+because is way more meat than writing
+
+256
+00:16:26,140 --> 00:16:33,160
+five to six lines for just creating a 2D list or
+
+257
+00:16:26,140 --> 00:16:33,160
+maybe we can have a 3D list too. So thank you
+
+258
+00:16:33,160 --> 00:16:33,840
+very much.
+
+259
+00:16:33,850 --> 00:16:36,690
+I hope you understand this and have a nice day.
+

@@ -1,0 +1,384 @@
+1
+00:00:00,660 --> 00:00:07,680
+Hello everyone! In this video, we are going to discuss
+
+2
+00:00:00,660 --> 00:00:07,680
+how to resolve the settings tag issue which we faced in
+
+3
+00:00:07,680 --> 00:00:11,210
+part one when we were trying to log in.
+
+4
+00:00:11,450 --> 00:00:19,160
+So the issue was that when we logged in a new tab
+
+5
+00:00:11,450 --> 00:00:19,160
+open up, a Settings tab, and my main window,
+
+6
+00:00:19,170 --> 00:00:22,610
+my Instagram window, it went out of focus.
+
+7
+00:00:22,640 --> 00:00:28,790
+So I'm just going to run this so we have the issue
+
+8
+00:00:22,640 --> 00:00:28,790
+in front of us and then we can discuss how
+
+9
+00:00:29,530 --> 00:00:30,570
+to resolve it.
+
+10
+00:00:31,420 --> 00:00:32,140
+OK.
+
+11
+00:00:32,570 --> 00:00:38,490
+So it is going to log in now and
+
+12
+00:00:32,570 --> 00:00:38,490
+setting tab is going to open any time now.
+
+13
+00:00:38,510 --> 00:00:39,790
+And there it is.
+
+14
+00:00:40,040 --> 00:00:42,650
+OK so the reason why.
+
+15
+00:00:42,710 --> 00:00:43,900
+Why does this occur.
+
+16
+00:00:44,060 --> 00:00:51,170
+This occurs because we are at version 62 of Google
+
+17
+00:00:44,060 --> 00:00:51,170
+Chrome and the Chrome driver with engine is
+
+18
+00:00:51,170 --> 00:00:52,140
+2.33.
+
+19
+00:00:52,220 --> 00:00:59,380
+So these are both the latest versions for the Chrome
+
+20
+00:00:52,220 --> 00:00:59,380
+drivers which I have right now and the Chrome.
+
+21
+00:00:59,990 --> 00:01:05,570
+So there's a bug in these builds and that's
+
+22
+00:00:59,990 --> 00:01:05,570
+why this issue is coming right now.
+
+23
+00:01:05,570 --> 00:01:10,220
+So many of you this might not be happening
+
+24
+00:01:05,570 --> 00:01:10,220
+if you don't have the latest versions of Chrome
+
+25
+00:01:10,220 --> 00:01:11,400
+and Chrome driver.
+
+26
+00:01:11,810 --> 00:01:18,110
+If you don't want to resolve this with your code, you
+
+27
+00:01:11,810 --> 00:01:18,110
+can just downgrade your Chrome to version 59 and
+
+28
+00:01:18,110 --> 00:01:19,710
+everything should be fine.
+
+29
+00:01:19,760 --> 00:01:25,260
+If you don't want to do that and you want to resolve
+
+30
+00:01:19,760 --> 00:01:25,260
+this with our code, we are going to discuss how they are going
+
+31
+00:01:25,310 --> 00:01:26,690
+to do it.
+
+32
+00:01:26,690 --> 00:01:30,760
+So if this issue is not happening for you, don't worry about it.
+
+33
+00:01:30,830 --> 00:01:31,420
+It's good.
+
+34
+00:01:31,430 --> 00:01:32,640
+If it's not happening,
+
+35
+00:01:32,690 --> 00:01:35,500
+you can just skip this video and move for the next ones.
+
+36
+00:01:35,630 --> 00:01:40,850
+And for those of you this issue is occurring just hear me out.
+
+37
+00:01:40,910 --> 00:01:46,550
+You can just implement the solution where this issue occurs
+
+38
+00:01:46,550 --> 00:01:49,640
+for you because the location might change for you.
+
+39
+00:01:49,640 --> 00:01:54,970
+For some it might happen after logging in, for some it
+
+40
+00:01:49,640 --> 00:01:54,970
+might happen at a later stage or even
+
+41
+00:01:54,980 --> 00:01:56,430
+at an earlier stage.
+
+42
+00:01:56,810 --> 00:01:57,780
+OK.
+
+43
+00:01:57,990 --> 00:02:06,120
+So let's move forward and just discuss the solution
+
+44
+00:01:57,990 --> 00:02:06,120
+we have. So right now, in this Chrome instance we have
+
+45
+00:02:06,120 --> 00:02:11,030
+two windows, the first window is Instagram
+
+46
+00:02:06,120 --> 00:02:11,030
+and second window is settings.
+
+47
+00:02:11,030 --> 00:02:11,510
+OK.
+
+48
+00:02:11,760 --> 00:02:15,980
+Two windows, windows 0 Instagram, window one settings.
+
+49
+00:02:16,200 --> 00:02:21,590
+So in Selenium we have this variable known as window handles.
+
+50
+00:02:21,600 --> 00:02:26,920
+It is a list and it contains references to
+
+51
+00:02:21,600 --> 00:02:26,920
+each window in that Chrome instance.
+
+52
+00:02:26,970 --> 00:02:29,270
+So this window handles object
+
+53
+00:02:29,310 --> 00:02:35,740
+at zero index it has Instagram and in that one index it has settings.
+
+54
+00:02:35,760 --> 00:02:40,840
+Now what we want to do is we want to close this Settings tab.
+
+55
+00:02:41,160 --> 00:02:44,280
+And where is this our Selenium window handles list.
+
+56
+00:02:44,280 --> 00:02:47,070
+It is at index number one.
+
+57
+00:02:47,200 --> 00:02:53,180
+Now let's write some code and you'll
+
+58
+00:02:47,200 --> 00:02:53,180
+have a clear idea of what I'm saying here.
+
+59
+00:02:53,570 --> 00:02:59,960
+"close_setting_tab". I'm going to write this and "try except".
+
+60
+00:02:59,970 --> 00:03:04,690
+And the reason is that for those this issue is rising,
+
+61
+00:03:04,700 --> 00:03:11,640
+they have this code in their "log_in" function or
+
+62
+00:03:04,700 --> 00:03:11,640
+"profile" function, it is not going to hurt
+
+63
+00:03:11,640 --> 00:03:14,120
+them if they just call this function.
+
+64
+00:03:14,310 --> 00:03:23,470
+Ok, so I say "self.driver.switch_to_window".
+
+65
+00:03:14,310 --> 00:03:23,470
+Now which window do I want to switch to, I want
+
+66
+00:03:23,470 --> 00:03:28,210
+to switch to the settings window. I just want to make sure that
+
+67
+00:03:28,210 --> 00:03:29,230
+I'm actually there.
+
+68
+00:03:29,230 --> 00:03:29,880
+OK.
+
+69
+00:03:29,980 --> 00:03:31,770
+And then I'm going to close this tab.
+
+70
+00:03:32,970 --> 00:03:36,700
+So I say "self.driver
+
+71
+00:03:36,940 --> 00:03:39,570
+.window_handles". This "window_handles" is a list.
+
+72
+00:03:39,610 --> 00:03:43,540
+I tell it "Open window_handle[1]".
+
+73
+00:03:43,630 --> 00:03:46,120
+So now this line which we just showed,
+
+74
+00:03:46,120 --> 00:03:52,790
+it ensures that I am at this settings tag.
+
+75
+00:03:46,120 --> 00:03:52,790
+Then I say "self.driver.close".
+
+76
+00:03:52,900 --> 00:03:55,890
+This means that I've closed
+
+77
+00:03:56,230 --> 00:04:00,310
+the settings tab. OK, perfect.
+
+78
+00:04:00,560 --> 00:04:07,490
+Ok, so now what I want to do is I want to my Instagram window
+
+79
+00:04:07,490 --> 00:04:09,860
+be the main focus of our code right now.
+
+80
+00:04:09,860 --> 00:04:19,200
+So now I shift the focus back to Instagram, I say "switch_to_window",
+
+81
+00:04:09,860 --> 00:04:19,200
+say "self.driver.window_handles[0]"
+
+82
+00:04:19,820 --> 00:04:23,190
+because Instagram was window number zero or the first window.
+
+83
+00:04:23,210 --> 00:04:31,390
+And in Python we start counting from zero and
+
+84
+00:04:23,210 --> 00:04:31,390
+it's the same for most programming languages. OK.
+
+85
+00:04:31,560 --> 00:04:35,460
+So now let's call this function "close_settings_tab".
+
+86
+00:04:36,030 --> 00:04:38,600
+And let's see if it actually does that or not.
+
+87
+00:04:39,180 --> 00:04:40,490
+I'm going to run this now.
+
+88
+00:04:43,330 --> 00:04:50,460
+So Instagram log in.
+
+89
+00:04:50,490 --> 00:04:52,590
+So that was really quick.
+
+90
+00:04:52,690 --> 00:04:53,480
+OK.
+
+91
+00:04:53,590 --> 00:04:57,620
+The settings tab didn open up and they closed it fairly quickly.
+
+92
+00:04:58,490 --> 00:05:00,560
+So this bug has been resolved.
+
+93
+00:05:00,640 --> 00:05:06,970
+And in the next video, we are going to discuss how
+
+94
+00:05:00,640 --> 00:05:06,970
+we're going to open our target users profile.
+
+95
+00:05:07,430 --> 00:05:09,810
+I hope you understood how we did this.
+
+96
+00:05:10,020 --> 00:05:10,510
+Thank you.
+

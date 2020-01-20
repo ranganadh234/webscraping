@@ -1,0 +1,268 @@
+1
+00:00:00,620 --> 00:00:02,390
+Hello everyone!
+
+2
+00:00:02,390 --> 00:00:07,350
+In the last video, we discussed the "next_sibling" method of a tag.
+
+3
+00:00:07,520 --> 00:00:15,720
+In this video, we are going to discuss the "previous_sibling"
+
+4
+00:00:07,520 --> 00:00:15,720
+method of a tag. As we saw earlier in our previous
+
+5
+00:00:15,730 --> 00:00:24,960
+video, we saw that if I'm at this "p" tag, I could move
+
+6
+00:00:15,730 --> 00:00:24,960
+this "p" tag using not using the ".next_sibling" method.
+
+7
+00:00:25,060 --> 00:00:33,370
+And similarly I could move to this, the last "p" tag,
+
+8
+00:00:25,060 --> 00:00:33,370
+which is the last tag which is the last
+
+9
+00:00:33,370 --> 00:00:36,520
+last sibling here of this tag.
+
+10
+00:00:36,580 --> 00:00:42,830
+So with the "next_sibling" we can go forward. We
+
+11
+00:00:36,580 --> 00:00:42,830
+can actually move forward over tags or other
+
+12
+00:00:42,830 --> 00:00:52,300
+tag siblings. So we have a method in Beautiful
+
+13
+00:00:42,830 --> 00:00:52,300
+Soup which allows us to move backwards as well.
+
+14
+00:00:52,350 --> 00:00:54,630
+It allows us to move backwards.
+
+15
+00:00:54,960 --> 00:01:03,960
+Like if I'm here I can move to this "b" tag or this
+
+16
+00:00:54,960 --> 00:01:03,960
+"p" tag using a method which will allow me to
+
+17
+00:01:03,960 --> 00:01:06,080
+walk over my siblings backwards.
+
+18
+00:01:06,240 --> 00:01:12,050
+The "next_sibling" method what it does was it
+
+19
+00:01:06,240 --> 00:01:12,050
+allowed us to walk forwards over our siblings.
+
+20
+00:01:12,220 --> 00:01:20,280
+This method here, "previous_sibling", it allows
+
+21
+00:01:12,220 --> 00:01:20,280
+us to move backwards over our sibling tags.
+
+22
+00:01:20,330 --> 00:01:31,150
+So what I'm to do now is I've made a soup of this file
+
+23
+00:01:20,330 --> 00:01:31,150
+here, this "three_sisters.html" and now I am going to
+
+24
+00:01:31,150 --> 00:01:35,060
+print the contents of my HTML.
+
+25
+00:01:35,260 --> 00:01:41,360
+OK, so you can see I have this "body" tag here.
+
+26
+00:01:41,410 --> 00:01:41,750
+OK.
+
+27
+00:01:41,770 --> 00:01:46,810
+And before that "body" tag I have a new line
+
+28
+00:01:41,770 --> 00:01:46,810
+character which we are going to ignore.
+
+29
+00:01:47,020 --> 00:01:49,220
+And then I have this "head" tag.
+
+30
+00:01:49,660 --> 00:01:57,820
+So what I want to do now is I say that I'm at "body"
+
+31
+00:01:49,660 --> 00:01:57,820
+and I want to move back to my previous sibling.
+
+32
+00:01:57,850 --> 00:02:01,350
+So we are going to do that now and see how we do this.
+
+33
+00:02:01,420 --> 00:02:06,760
+So I have this "body" variable which is the
+
+34
+00:02:01,420 --> 00:02:06,760
+"body" tag. "body" is equals to "soup.body".
+
+35
+00:02:06,760 --> 00:02:15,370
+So what I do is I say print, and
+
+36
+00:02:06,760 --> 00:02:15,370
+comment this here. I say for print
+
+37
+00:02:18,020 --> 00:02:21,830
+"body.previous_sibling".
+
+38
+00:02:21,860 --> 00:02:24,520
+This will give me the new line character.
+
+39
+00:02:24,530 --> 00:02:29,270
+This one here. We don't want that, we
+
+40
+00:02:24,530 --> 00:02:29,270
+want to move our "head" tag.
+
+41
+00:02:29,450 --> 00:02:34,730
+So if I just run this, you can see it
+
+42
+00:02:29,450 --> 00:02:34,730
+gives me nothing except for a new line.
+
+43
+00:02:34,760 --> 00:02:40,340
+So what I'm going to do is I'm going to have to
+
+44
+00:02:34,760 --> 00:02:40,340
+input this again and just say "previous_sibling"
+
+45
+00:02:44,190 --> 00:02:46,260
+So if I do this, now it gives me the "head" tag.
+
+46
+00:02:46,320 --> 00:02:47,420
+You can see this here.
+
+47
+00:02:48,810 --> 00:02:54,910
+So using this "previous_sibling" method,
+
+48
+00:02:48,810 --> 00:02:54,910
+we've successfully moved backwards to our "head" tag.
+
+49
+00:02:55,380 --> 00:03:01,540
+And we were at our "body" tag initially and using
+
+50
+00:02:55,380 --> 00:03:01,540
+this method we have gone to our "head" tag.
+
+51
+00:03:01,570 --> 00:03:10,150
+So we have discussed right now two
+
+52
+00:03:01,570 --> 00:03:10,150
+ways of moving sideways. One is
+
+53
+00:03:10,210 --> 00:03:17,280
+that we move moved downwards, like to the next siblings,
+
+54
+00:03:10,210 --> 00:03:17,280
+and other method is the "previous_sibling", like
+
+55
+00:03:17,300 --> 00:03:23,090
+we move backwards to our previous siblings.
+
+56
+00:03:23,320 --> 00:03:28,600
+This example illustrates this concept better.
+
+57
+00:03:23,320 --> 00:03:28,600
+If I'm at body,
+
+58
+00:03:28,730 --> 00:03:30,440
+I can move backwards to "head".
+
+59
+00:03:30,500 --> 00:03:36,320
+So I'll use "previous_sibling" method. And if I'm at the "head"
+
+60
+00:03:30,500 --> 00:03:36,320
+and I have to move to "body", I'll use the "next_sibling"
+
+61
+00:03:36,320 --> 00:03:37,000
+method.
+
+62
+00:03:38,110 --> 00:03:38,590
+OK.
+
+63
+00:03:38,600 --> 00:03:47,150
+So next we'll discuss the methods "next_siblings"
+
+64
+00:03:38,600 --> 00:03:47,150
+and "previous_siblings". I hope up till now
+
+65
+00:03:47,490 --> 00:03:49,310
+this is clear to you.
+
+66
+00:03:50,130 --> 00:03:51,710
+And thank you very much.
+
+67
+00:03:51,710 --> 00:03:52,610
+See you soon.
+

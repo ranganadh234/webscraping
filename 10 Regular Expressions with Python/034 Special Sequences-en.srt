@@ -1,0 +1,152 @@
+1
+00:00:00,290 --> 00:00:07,320
+Hello everyone! In the last video, we discussed the
+
+2
+00:00:00,290 --> 00:00:07,320
+"compile" function and character classes and we also
+
+3
+00:00:07,320 --> 00:00:14,450
+went over through the "match" function and how we
+
+4
+00:00:07,320 --> 00:00:14,450
+can match RegEX expressions using the "match" function.
+
+5
+00:00:15,060 --> 00:00:20,850
+Ok, so in this video, we are going to discuss
+
+6
+00:00:15,060 --> 00:00:20,850
+special sequences especially sequences
+
+7
+00:00:20,850 --> 00:00:27,780
+that are commonly used character classes and
+
+8
+00:00:20,850 --> 00:00:27,780
+we can just use these special sequences instead
+
+9
+00:00:27,780 --> 00:00:30,040
+of writing those character classes.
+
+10
+00:00:30,330 --> 00:00:35,880
+I will just quickly go through the
+
+11
+00:00:30,330 --> 00:00:35,880
+sequences and I would like you to play
+
+12
+00:00:35,880 --> 00:00:41,040
+with this code and experiment with this yourself and see how it works.
+
+13
+00:00:41,040 --> 00:00:45,180
+So here the first special sequence is this "\d".
+
+14
+00:00:45,180 --> 00:00:50,480
+This matches any decimal digit and is equal to this
+
+15
+00:00:50,580 --> 00:00:53,260
+character class, like 0 to 9 range.
+
+16
+00:00:53,260 --> 00:00:56,980
+So this capital "D" matches any non-digit character.
+
+17
+00:00:56,980 --> 00:00:59,210
+So that's the complement of this character class.
+
+18
+00:00:59,250 --> 00:01:06,650
+So this "\s" matches any whitespace
+
+19
+00:00:59,250 --> 00:01:06,650
+character like tabs, new line, spaces.
+
+20
+00:01:06,930 --> 00:01:10,390
+And similarly this is a complement, the capital S..
+
+21
+00:01:10,410 --> 00:01:18,750
+And then I have a "\w". This matches any
+
+22
+00:01:10,410 --> 00:01:18,750
+alphanumeric character and
+
+23
+00:01:18,750 --> 00:01:20,100
+the character class for this
+
+24
+00:01:20,130 --> 00:01:21,810
+is this like, "a" to "z"
+
+25
+00:01:22,130 --> 00:01:22,550
+lowercase,
+
+26
+00:01:22,560 --> 00:01:29,310
+and then "A" to "Z" uppercase, and 0 to 9 range of
+
+27
+00:01:22,560 --> 00:01:29,310
+any numbers. And then this here is the complement of
+
+28
+00:01:29,310 --> 00:01:30,550
+this set here.
+
+29
+00:01:30,930 --> 00:01:37,190
+So I would like you to play with this and
+
+30
+00:01:30,930 --> 00:01:37,190
+experiment with this yourself and see how it works.
+
+31
+00:01:37,460 --> 00:01:43,030
+And I hope you'll understand better
+
+32
+00:01:37,460 --> 00:01:43,030
+then and how character classes work.
+
+33
+00:01:43,030 --> 00:01:51,750
+Next, we'll discuss more about RegEX and I'll
+
+34
+00:01:43,030 --> 00:01:51,750
+discuss how we can repeat different characters
+
+35
+00:01:51,840 --> 00:02:00,030
+and we'll go through this in the next video on how we
+
+36
+00:01:51,840 --> 00:02:00,030
+can repeat stuff and write more powerful RegEX
+
+37
+00:02:00,030 --> 00:02:01,370
+expressions.
+
+38
+00:02:01,380 --> 00:02:02,330
+Thank you very much.
+

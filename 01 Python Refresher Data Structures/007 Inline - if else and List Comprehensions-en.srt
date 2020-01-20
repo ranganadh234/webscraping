@@ -1,0 +1,216 @@
+1
+00:00:00,870 --> 00:00:02,230
+Hello everyone.
+
+2
+00:00:02,520 --> 00:00:09,020
+Last time we discussed list comprehensions. Today in
+
+3
+00:00:02,520 --> 00:00:09,020
+this lecture, we're going to discuss inline "if
+
+4
+00:00:09,020 --> 00:00:16,250
+else" statements. In Python, we have this feature
+
+5
+00:00:09,020 --> 00:00:16,250
+where we can write an "if" statement in a single line.
+
+6
+00:00:16,290 --> 00:00:18,060
+And it's very handy.
+
+7
+00:00:18,120 --> 00:00:25,570
+I'm just going to walk you through this very quickly.
+
+8
+00:00:18,120 --> 00:00:25,570
+Let's have this variable, it has a value 20 in it.
+
+9
+00:00:26,160 --> 00:00:32,230
+So normally I would use an "if" statement,
+
+10
+00:00:26,160 --> 00:00:32,230
+if "a" is equal to 20 print "a is 20"
+
+11
+00:00:32,270 --> 00:00:32,820
+else
+
+12
+00:00:32,820 --> 00:00:34,870
+print "a is not 20".
+
+13
+00:00:34,870 --> 00:00:40,260
+So if run this, it says "a is 20".
+
+14
+00:00:34,870 --> 00:00:40,260
+So how can I do this in a single line.
+
+15
+00:00:40,560 --> 00:00:55,450
+So one way to do this is we say
+
+16
+00:00:40,560 --> 00:00:55,450
+print "a is 20" if here comes the condition,
+
+17
+00:00:56,020 --> 00:01:02,020
+else "a is not 20". So if I
+
+18
+00:00:56,020 --> 00:01:02,020
+run this, it says "a is 20".
+
+19
+00:01:02,190 --> 00:01:06,570
+And let's say I change it to 21 so
+
+20
+00:01:02,190 --> 00:01:06,570
+this should evaluate to false now.
+
+21
+00:01:06,580 --> 00:01:11,220
+If I run it, it says "a is not 20".
+
+22
+00:01:11,240 --> 00:01:14,810
+So how did I write this.
+
+23
+00:01:14,880 --> 00:01:18,510
+The syntax for this was that I'd do something here.
+
+24
+00:01:19,550 --> 00:01:25,550
+Then I write "if" condition and then
+
+25
+00:01:19,550 --> 00:01:25,550
+I say "else" and then do something.
+
+26
+00:01:25,730 --> 00:01:26,800
+So here in do something
+
+27
+00:01:26,800 --> 00:01:32,590
+what I was doing was I was writing a
+
+28
+00:01:26,800 --> 00:01:32,590
+string here that is 20 if condition else
+
+29
+00:01:32,750 --> 00:01:34,380
+and then I was doing something here.
+
+30
+00:01:34,670 --> 00:01:40,860
+So if I write 20 here, it evaluate true.
+
+31
+00:01:41,350 --> 00:01:49,890
+And we can also use it to let's say if "a" is 20 I
+
+32
+00:01:41,350 --> 00:01:49,890
+want to say that "b" is true else "b" is false.
+
+33
+00:01:50,080 --> 00:01:54,660
+So what I'll do is I'll say "b" is equal to "True"
+
+34
+00:01:55,150 --> 00:01:59,320
+if "a" is equal to 20 else "False".
+
+35
+00:01:59,690 --> 00:02:10,260
+So if I print "b", just going to comment this line,
+
+36
+00:01:59,690 --> 00:02:10,260
+if I print "b" it says "True" because it is 20.
+
+37
+00:02:10,780 --> 00:02:17,880
+OK, so inline "if else" statements are used
+
+38
+00:02:10,780 --> 00:02:17,880
+extensively in list comprehension. Let's say I have a list of numbers
+
+39
+00:02:18,510 --> 00:02:30,260
+"num" is equals to "value for value in range".
+
+40
+00:02:30,360 --> 00:02:36,580
+Now if I print this list, you'll see that
+
+41
+00:02:30,360 --> 00:02:36,580
+I have negative numbers and positive numbers.
+
+42
+00:02:36,580 --> 00:02:41,570
+Now I only want a list of positive numbers from this "num" list.
+
+43
+00:02:41,590 --> 00:02:48,190
+So what I can do is I can use list comprehension and
+
+44
+00:02:41,590 --> 00:02:48,190
+these inline "if else" statements to do this. So I say
+
+45
+00:02:48,190 --> 00:03:03,150
+"positive_numbers" is equals to
+
+46
+00:02:48,190 --> 00:03:03,150
+"value for value in num if value > 0".
+
+47
+00:03:05,390 --> 00:03:07,550
+And if I print "positive_num",
+
+48
+00:03:10,990 --> 00:03:15,140
+it only gives me positive values from this whole list.
+
+49
+00:03:15,430 --> 00:03:21,730
+And similarly I can do this for negative values.
+
+50
+00:03:21,770 --> 00:03:27,080
+So this is how you use inline "if else"
+
+51
+00:03:21,770 --> 00:03:27,080
+statements in list comprehensions and in general Python.
+
+52
+00:03:27,140 --> 00:03:33,580
+Next we'll move to how servers work and how the Websites are hosted on servers.
+
+53
+00:03:33,590 --> 00:03:34,600
+Thank you very much.
+
+54
+00:03:34,700 --> 00:03:35,300
+Have a nice day.
+

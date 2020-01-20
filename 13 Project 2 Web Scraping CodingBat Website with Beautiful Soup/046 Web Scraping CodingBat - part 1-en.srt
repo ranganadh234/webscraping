@@ -1,0 +1,708 @@
+1
+00:00:00,430 --> 00:00:02,630
+Hello everyone! In the last video,
+
+2
+00:00:02,640 --> 00:00:09,060
+I explained the description for this project which
+
+3
+00:00:02,640 --> 00:00:09,060
+states that you have to scrape questions from
+
+4
+00:00:09,060 --> 00:00:11,190
+"codingbat.com".
+
+5
+00:00:11,190 --> 00:00:19,260
+So in this video, I'm going to show you how
+
+6
+00:00:11,190 --> 00:00:19,260
+the solution is structured and how we are going to do
+
+7
+00:00:19,260 --> 00:00:19,700
+this.
+
+8
+00:00:19,740 --> 00:00:22,720
+And I have divided the solution for this project
+
+9
+00:00:22,720 --> 00:00:30,540
+in three separate videos so I'll let you know that
+
+10
+00:00:22,720 --> 00:00:30,540
+how I've done divisions and how we are going to go
+
+11
+00:00:30,540 --> 00:00:32,230
+about this.
+
+12
+00:00:32,260 --> 00:00:39,520
+So if you remember here in Coding Bat, we
+
+13
+00:00:32,260 --> 00:00:39,520
+have sections so I have opened Java.
+
+14
+00:00:39,790 --> 00:00:41,340
+By default it's Java.
+
+15
+00:00:41,350 --> 00:00:47,830
+So I have Java here, and Java has different sections like
+
+16
+00:00:41,350 --> 00:00:47,830
+"Warmup" and "Array" and "Logic" and "Strings"
+
+17
+00:00:48,220 --> 00:00:49,830
+and again "Array", "Recursion",
+
+18
+00:00:49,840 --> 00:00:56,810
+and then this "Map", that "Map" here.
+
+19
+00:00:49,840 --> 00:00:56,810
+So each section contains some questions.
+
+20
+00:00:56,810 --> 00:01:03,190
+So if I open this section "Warmup-1", it contains some
+
+21
+00:00:56,810 --> 00:01:03,190
+questions. So the questions are like "sleepIn",
+
+22
+00:01:03,200 --> 00:01:05,450
+"monkeyTrouble", "parrotTrouble", "nearHundred".
+
+23
+00:01:05,450 --> 00:01:12,300
+These are all questions, so let's say that I opened this
+
+24
+00:01:05,450 --> 00:01:12,300
+question and as soon as I open it, I get the question and
+
+25
+00:01:12,300 --> 00:01:13,720
+the examples with them.
+
+26
+00:01:15,080 --> 00:01:22,280
+So if you see this way there are basically
+
+27
+00:01:15,080 --> 00:01:22,280
+three pages that you're navigating from. First you click
+
+28
+00:01:22,280 --> 00:01:31,040
+on the desired section, the section you want the questions from and
+
+29
+00:01:31,040 --> 00:01:33,200
+then as soon as you've open that.
+
+30
+00:01:33,470 --> 00:01:41,900
+So here I have question for "Warmup-1" and then select
+
+31
+00:01:33,470 --> 00:01:41,900
+the desired question which I want to see or code.
+
+32
+00:01:41,900 --> 00:01:43,740
+And then when they get here.
+
+33
+00:01:43,940 --> 00:01:47,050
+Here is the actual question,
+
+34
+00:01:47,190 --> 00:01:52,210
+the example. So we want this right.
+
+35
+00:01:52,250 --> 00:02:00,220
+So the way I have structured the solution is that in the
+
+36
+00:01:52,250 --> 00:02:00,220
+first video we scrape this like is this, the sections
+
+37
+00:02:00,320 --> 00:02:06,700
+and the links to them, and then in the second
+
+38
+00:02:00,320 --> 00:02:06,700
+video we scrape questions for each section.
+
+39
+00:02:07,530 --> 00:02:13,530
+Like how many questions it has and the link for
+
+40
+00:02:07,530 --> 00:02:13,530
+each question and then in the final video
+
+41
+00:02:13,530 --> 00:02:18,450
+we scrape the question and the example with that.
+
+42
+00:02:18,520 --> 00:02:21,090
+This is the hierarchy of solution.
+
+43
+00:02:21,280 --> 00:02:28,540
+And in this video, I'm going to discuss how we can scrape
+
+44
+00:02:21,280 --> 00:02:28,540
+these, how are we going to scrape the links from these
+
+45
+00:02:28,540 --> 00:02:29,890
+sections.
+
+46
+00:02:32,860 --> 00:02:39,790
+And I'm sure you're familiar with "Inspect Element" of a browser.
+
+47
+00:02:39,800 --> 00:02:41,840
+So I have sections here.
+
+48
+00:02:42,230 --> 00:02:43,660
+"Warmup-1", "Warmup-2"...
+
+49
+00:02:43,660 --> 00:02:50,110
+So what I do is I try to see the HTML for this "codingbat.com".
+
+50
+00:02:50,260 --> 00:02:58,450
+So I have it opened here and you can see that this
+
+51
+00:02:50,260 --> 00:02:58,450
+"div" contains this "Warmup-1". You can see
+
+52
+00:02:58,570 --> 00:02:59,740
+it highlighted there.
+
+53
+00:02:59,870 --> 00:03:08,370
+Then as I move to the second "td" and it again says that
+
+54
+00:02:59,870 --> 00:03:08,370
+this is a "div" which highlights "Warmup-2"
+
+55
+00:03:08,440 --> 00:03:13,780
+and then you can see this for each section I have.
+
+56
+00:03:14,200 --> 00:03:17,290
+So there's a similarity here.
+
+57
+00:03:17,290 --> 00:03:27,590
+The similarity is that each "div" has its class "summ" contains a section's
+
+58
+00:03:27,590 --> 00:03:28,470
+link.
+
+59
+00:03:28,520 --> 00:03:36,680
+So if I open this, you can see I have a "a" tag here which
+
+60
+00:03:28,520 --> 00:03:36,680
+contains the link for that section and right now
+
+61
+00:03:36,680 --> 00:03:37,930
+I've opened "String-1".
+
+62
+00:03:40,760 --> 00:03:46,950
+So we can cross-check this by going to
+
+63
+00:03:40,760 --> 00:03:46,950
+the very end and then seeing if this
+
+64
+00:03:47,230 --> 00:03:49,670
+this is repeated everywhere.
+
+65
+00:03:50,040 --> 00:03:58,880
+And yes, it is. You can see that here that I'm at this "div" and
+
+66
+00:03:50,040 --> 00:03:58,880
+it shows me, it highlights the "Recursion-2" section.
+
+67
+00:03:58,880 --> 00:04:09,000
+So if I open this "div" I get an "a" tag which gives me
+
+68
+00:03:58,880 --> 00:04:09,000
+this here, the questions of the
+
+69
+00:04:09,000 --> 00:04:20,410
+section "Recursion-2". So now what we want to do is we want to
+
+70
+00:04:09,000 --> 00:04:20,410
+scrape the links for each section and then
+
+71
+00:04:20,410 --> 00:04:23,270
+we can open the link for each section.
+
+72
+00:04:23,290 --> 00:04:30,190
+And then after we're done with that what we're
+
+73
+00:04:23,290 --> 00:04:30,190
+going to do is to scrape the questions from each
+
+74
+00:04:30,580 --> 00:04:38,660
+page other of that section and then open each question
+
+75
+00:04:30,580 --> 00:04:38,660
+and then scrape the question statement and the examples.
+
+76
+00:04:38,680 --> 00:04:47,240
+So right now what we do is we're going to scrape the link
+
+77
+00:04:38,680 --> 00:04:47,240
+for each section. So you can see this it contains
+
+78
+00:04:47,290 --> 00:04:50,500
+a "href" attribute which shows us a relative link.
+
+79
+00:04:50,920 --> 00:04:52,770
+So what is the relative link?
+
+80
+00:04:53,810 --> 00:05:01,100
+If I open this here, which I have open here, you can see
+
+81
+00:04:53,810 --> 00:05:01,100
+that this contains, the link for this is
+
+82
+00:05:01,100 --> 00:05:04,760
+"codingbat.com/java/Recursion-2".
+
+83
+00:05:04,970 --> 00:05:09,360
+And if I see this here, it only shows me "java/Recursion-2".
+
+84
+00:05:09,500 --> 00:05:10,580
+So what does this mean.
+
+85
+00:05:10,580 --> 00:05:18,420
+This means that this is a relative URL and this
+
+86
+00:05:10,580 --> 00:05:18,420
+URL is being added to the main URL
+
+87
+00:05:18,450 --> 00:05:26,840
+of this site which is "codingbat.com". So now to extract
+
+88
+00:05:18,450 --> 00:05:26,840
+the original URL what I'm going to do is
+
+89
+00:05:26,840 --> 00:05:32,050
+I need to add the "http://codingbat.com".
+
+90
+00:05:32,050 --> 00:05:34,470
+So I'll just show you how this is going to work.
+
+91
+00:05:34,910 --> 00:05:41,230
+So like what we have seen right now is that all of the
+
+92
+00:05:34,910 --> 00:05:41,230
+section is contained in a "div" which has its class
+
+93
+00:05:41,240 --> 00:05:42,830
+"summ".
+
+94
+00:05:42,950 --> 00:05:45,340
+So let's see if we can make this work.
+
+95
+00:05:45,440 --> 00:05:53,120
+And if this is true and I hope that we don't get another
+
+96
+00:05:45,440 --> 00:05:53,120
+"div" which has its class "summ". So let's see.
+
+97
+00:05:53,330 --> 00:06:07,020
+I say "all_divs" is equal to
+
+98
+00:05:53,330 --> 00:06:07,020
+"soup.find_all('divs')" and then I say "class_"
+
+99
+00:06:07,100 --> 00:06:16,560
+So I think it has tow m's. Yes, it has. "for divs in all_divs", print "div"
+
+100
+00:06:20,520 --> 00:06:22,450
+So if I run this now.
+
+101
+00:06:23,070 --> 00:06:28,380
+And you'll be able to see that if
+
+102
+00:06:23,070 --> 00:06:28,380
+you're right or wrong about this. Let's see.
+
+103
+00:06:33,100 --> 00:06:42,540
+So you can see, it has given me all the "divs" that this page
+
+104
+00:06:33,100 --> 00:06:42,540
+here contains and you can see that this is
+
+105
+00:06:42,720 --> 00:06:49,280
+the right approach because you can see that
+
+106
+00:06:42,720 --> 00:06:49,280
+for each "div" class, I have a "a" tag which
+
+107
+00:06:49,280 --> 00:06:53,940
+contains the section you are in.
+
+108
+00:06:53,950 --> 00:07:01,330
+So I start from "Warmup-1", then "Warmup-2", then strings,
+
+109
+00:06:53,950 --> 00:07:01,330
+array, logic, strings again, array again and then recursion and then map.
+
+110
+00:07:01,700 --> 00:07:03,640
+So this is it.
+
+111
+00:07:03,680 --> 00:07:04,500
+This is it.
+
+112
+00:07:04,520 --> 00:07:11,900
+So what we one now is we wanted this "a" tag,
+
+113
+00:07:04,520 --> 00:07:11,900
+we want this "a" tag "href" attribute.
+
+114
+00:07:11,960 --> 00:07:16,760
+So let's see if I can extract the "a" tag for each
+
+115
+00:07:16,760 --> 00:07:18,360
+"div" tag.
+
+116
+00:07:18,460 --> 00:07:25,590
+So what I'm going to do is I'm going to navigate through this
+
+117
+00:07:18,460 --> 00:07:25,590
+HTML structure for this "div" which has a "div" and then is a
+
+118
+00:07:25,660 --> 00:07:27,010
+child of this "div".
+
+119
+00:07:27,030 --> 00:07:31,980
+So I say "div.a" and I'm going to run it
+
+120
+00:07:27,030 --> 00:07:31,980
+again and let's see if this works or not.
+
+121
+00:07:32,200 --> 00:07:39,350
+You see now I have "a" tags for each section.
+
+122
+00:07:39,370 --> 00:07:45,700
+So what I have done right now is that I
+
+123
+00:07:39,370 --> 00:07:45,700
+got the divs and then I navigate
+
+124
+00:07:45,910 --> 00:07:54,750
+to the "a" tags using that "div". So if I remove that ".a"
+
+125
+00:07:45,910 --> 00:07:54,750
+and if I run it again, you see it gives me "div" and
+
+126
+00:07:54,750 --> 00:07:56,210
+then it has a "a" tag here.
+
+127
+00:07:56,430 --> 00:08:04,250
+So to clean this, to jump directly to "a", what to
+
+128
+00:07:56,430 --> 00:08:04,250
+do with I say "div.a" and if I run that it gives
+
+129
+00:08:04,250 --> 00:08:06,500
+me all the "a" tags for each section.
+
+130
+00:08:06,520 --> 00:08:11,070
+Now we're not interested in the "a" tags, we are only
+
+131
+00:08:06,520 --> 00:08:11,070
+interested in the links for the "a" tags.
+
+132
+00:08:11,090 --> 00:08:15,860
+So what I do is I say "div.a['href']".
+
+133
+00:08:15,950 --> 00:08:25,460
+So this here is how we access a tags
+
+134
+00:08:15,950 --> 00:08:25,460
+attributes. So if I  run this now, you can see it
+
+135
+00:08:25,520 --> 00:08:26,690
+only gives me
+
+136
+00:08:26,940 --> 00:08:33,240
+the URL, a relative URL for that sections.
+
+137
+00:08:33,260 --> 00:08:37,520
+So the first one is "Warmup-1", string, array, logic and string again.
+
+138
+00:08:38,830 --> 00:08:40,760
+So what was the base URL.
+
+139
+00:08:40,780 --> 00:08:42,820
+I mean if I open this
+
+140
+00:08:45,630 --> 00:08:54,190
+you see the base is "codingbat.com" and then relative URL is
+
+141
+00:08:54,220 --> 00:08:56,860
+"Java/Warmup-1".
+
+142
+00:08:57,080 --> 00:08:58,330
+In this case, "Recursion-2".
+
+143
+00:08:58,370 --> 00:09:03,430
+So the base URL here is this, is "codingbat.com".
+
+144
+00:09:03,460 --> 00:09:05,650
+So I need to say "base_url".
+
+145
+00:09:09,500 --> 00:09:14,030
+So this is the "base_url" and then remove the backslash here
+
+146
+00:09:14,060 --> 00:09:16,440
+because this already has a backslash
+
+147
+00:09:16,580 --> 00:09:17,870
+this relative URL.
+
+148
+00:09:18,410 --> 00:09:25,900
+So what I'm going to do is I'm going to say print "main_url" plus
+
+149
+00:09:26,330 --> 00:09:32,750
+"div.a['href']". And if I run this now, you see it  gives
+
+150
+00:09:26,330 --> 00:09:32,750
+me the link for each section because this is complete now.
+
+151
+00:09:37,750 --> 00:09:43,620
+You see what I've done wrong is that this now gives me "java/java". So
+
+152
+00:09:43,690 --> 00:09:45,030
+what's wrong here.
+
+153
+00:09:45,040 --> 00:09:50,080
+The thing is that I had this "main_url" variable
+
+154
+00:09:45,040 --> 00:09:50,080
+which contain this and I should have
+
+155
+00:09:50,080 --> 00:09:51,490
+"base_url" here.
+
+156
+00:09:51,850 --> 00:09:53,550
+So let's run it again.
+
+157
+00:09:56,540 --> 00:10:02,900
+And you can see now that it gives me the exact link
+
+158
+00:09:56,540 --> 00:10:02,900
+for each section then I can open this is just to
+
+159
+00:10:02,900 --> 00:10:07,050
+see if this works or not. I'm going to copy this here
+
+160
+00:10:07,310 --> 00:10:11,060
+and I'm going to paste it here.
+
+161
+00:10:11,190 --> 00:10:15,160
+So let's see.
+
+162
+00:10:15,190 --> 00:10:18,680
+So this works, it has given me "String-2" questions.
+
+163
+00:10:18,970 --> 00:10:20,600
+So I copied "String-2" here.
+
+164
+00:10:20,620 --> 00:10:21,510
+So you see this.
+
+165
+00:10:21,610 --> 00:10:23,150
+These are valid link.
+
+166
+00:10:23,230 --> 00:10:27,640
+So now what we want to do now is that we want to open each of this section.
+
+167
+00:10:27,640 --> 00:10:33,310
+Now that I have the links for each section, I'm going to
+
+168
+00:10:27,640 --> 00:10:33,310
+open each section and we are going to scrape the links
+
+169
+00:10:33,310 --> 00:10:34,750
+for each question.
+
+170
+00:10:34,930 --> 00:10:43,290
+And after I'm done with that, I'm going to open each question
+
+171
+00:10:34,930 --> 00:10:43,290
+and then I'm going to scrape the question statement
+
+172
+00:10:43,380 --> 00:10:45,370
+and examples for that question.
+
+173
+00:10:46,010 --> 00:10:49,410
+So this is how we're going to do this.
+
+174
+00:10:49,520 --> 00:10:54,410
+I hope up to now this is clear to
+
+175
+00:10:49,520 --> 00:10:54,410
+you and I'll see you in the next video.
+
+176
+00:10:54,430 --> 00:10:56,950
+And I hope that will clear things up more.
+
+177
+00:10:57,260 --> 00:10:58,220
+Thank you very much.
+

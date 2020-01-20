@@ -1,0 +1,188 @@
+1
+00:00:00,580 --> 00:00:07,750
+Hello everyone! In the last lecture we talked about tags
+
+2
+00:00:00,580 --> 00:00:07,750
+and how we can access our tags attributes and
+
+3
+00:00:07,750 --> 00:00:08,920
+modify them.
+
+4
+00:00:09,800 --> 00:00:16,320
+In this lecture, we are going to talk about bits of text
+
+5
+00:00:09,800 --> 00:00:16,320
+that are present in some of the tags. Like this "title"
+
+6
+00:00:16,330 --> 00:00:23,510
+tag here contains this text "Intro_to_soup" or the
+
+7
+00:00:16,330 --> 00:00:23,510
+"p" tag here, it contains "In first div".
+
+8
+00:00:23,540 --> 00:00:28,300
+And the second "p" tag contains "In second div".
+
+9
+00:00:28,430 --> 00:00:36,960
+So I want to make you more familiar with these tags.
+
+10
+00:00:28,430 --> 00:00:36,960
+In Beautiful Soup,
+
+11
+00:00:37,030 --> 00:00:40,720
+We call them navigable strings.
+
+12
+00:00:40,960 --> 00:00:46,310
+We call them, I will write this down, navigable strings.
+
+13
+00:00:47,310 --> 00:00:49,720
+They are parsed as objects.
+
+14
+00:00:50,110 --> 00:00:52,140
+So how do we access these strings.
+
+15
+00:00:52,150 --> 00:00:55,440
+Let's say I want to get this string inside this "title" tag.
+
+16
+00:00:55,720 --> 00:00:58,680
+So what I do is I get the "title" first.
+
+17
+00:00:58,690 --> 00:01:09,630
+I say "title" is equals to "soup.title",
+
+18
+00:00:58,690 --> 00:01:09,630
+then I say print "title.string". And if I run it,
+
+19
+00:01:09,660 --> 00:01:11,660
+it gives me "Intro_to_soup".
+
+20
+00:01:11,860 --> 00:01:18,180
+And if I run "print(title)", it gives me the whole tag.
+
+21
+00:01:18,330 --> 00:01:25,930
+So to get the string enclosed in a tag what we do is each tag has a method ".string".
+
+22
+00:01:26,280 --> 00:01:35,400
+And if that tag has a string object or it is enclosing some kind of string,
+
+23
+00:01:35,510 --> 00:01:40,140
+some navigable string, it prints it like as it did here.
+
+24
+00:01:40,160 --> 00:01:45,790
+So this navigable string object has another function which is ".replace_with".
+
+25
+00:01:46,070 --> 00:01:52,380
+So what we can do with this is we can actually replace the contents of the string.
+
+26
+00:01:52,440 --> 00:02:02,330
+I'm just going to show you an example here. You can comment this first to make it more neat.
+
+27
+00:02:02,370 --> 00:02:05,040
+So I say I have the title here.
+
+28
+00:02:05,040 --> 00:02:13,400
+I can say "title.string.replace_with" and
+
+29
+00:02:13,540 --> 00:02:17,740
+"title has been changed".
+
+30
+00:02:17,870 --> 00:02:21,310
+So what I did was I said "title.string".
+
+31
+00:02:21,380 --> 00:02:28,750
+Now I got the navigable string object here and now I say ".replace_with" and "title has been changed".
+
+32
+00:02:29,990 --> 00:02:37,870
+And let's print "title" now to see if there is any change in the title tag or not.
+
+33
+00:02:38,060 --> 00:02:40,790
+And if I print, it says "title has been changed".
+
+34
+00:02:42,300 --> 00:02:52,600
+And before doing this if I print "title", it says "Intro_to_soup".
+
+35
+00:02:42,300 --> 00:02:52,600
+So this function ".replace_with"
+
+36
+00:02:52,650 --> 00:03:00,640
+is a function of a navigable string and what it does
+
+37
+00:02:52,650 --> 00:03:00,640
+is it changes the contents of the navigable
+
+38
+00:03:00,670 --> 00:03:01,350
+string.
+
+39
+00:03:01,760 --> 00:03:08,990
+So you can actually change the contents of any navigable string
+
+40
+00:03:01,760 --> 00:03:08,990
+in Beautiful Soup using this
+
+41
+00:03:09,020 --> 00:03:10,460
+".replace_with" function.
+
+42
+00:03:11,060 --> 00:03:20,270
+I hope this is more clear to you and I would like
+
+43
+00:03:11,060 --> 00:03:20,270
+you to go through this yourself and practice,
+
+44
+00:03:20,270 --> 00:03:20,980
+you know.
+
+45
+00:03:20,990 --> 00:03:27,640
+Just play with this and access different tags and
+
+46
+00:03:20,990 --> 00:03:27,640
+try to access the strings and then modify them.
+
+47
+00:03:28,100 --> 00:03:29,110
+Thank you very much.
+

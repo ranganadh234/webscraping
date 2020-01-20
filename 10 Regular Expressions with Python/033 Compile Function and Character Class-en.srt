@@ -1,0 +1,624 @@
+1
+00:00:00,790 --> 00:00:08,870
+Hello everyone! In the last video, we discussed
+
+2
+00:00:00,790 --> 00:00:08,870
+what metacharacters are and we discussed a
+
+3
+00:00:08,870 --> 00:00:14,250
+very basic metacharacter known as
+
+4
+00:00:08,870 --> 00:00:14,250
+character class or square brackets.
+
+5
+00:00:14,250 --> 00:00:18,580
+In this video, we are going to discuss
+
+6
+00:00:18,770 --> 00:00:24,750
+this compiled function and we will discuss how we can
+
+7
+00:00:24,740 --> 00:00:30,610
+actually run this like these patterns and see how
+
+8
+00:00:24,740 --> 00:00:30,610
+they work and we'll work with character class too.
+
+9
+00:00:30,620 --> 00:00:39,080
+And I hope this video will clarify your questions
+
+10
+00:00:30,620 --> 00:00:39,080
+you have from your previous video. So at line number
+
+11
+00:00:39,080 --> 00:00:39,460
+one,
+
+12
+00:00:39,470 --> 00:00:46,400
+I have this "import re". This "re" is the
+
+13
+00:00:39,470 --> 00:00:46,400
+module for Regular Expressions in Python.
+
+14
+00:00:46,850 --> 00:00:52,820
+So if you want to use Regular Expressions
+
+15
+00:00:46,850 --> 00:00:52,820
+or something, you need to include this
+
+16
+00:00:53,120 --> 00:00:56,740
+each time you want to use Regular Expressions.
+
+17
+00:00:57,080 --> 00:01:04,520
+OK, so this "re" module has a function "compile" which takes
+
+18
+00:01:04,530 --> 00:01:10,970
+a pattern or a Regular Expression as its parameter and it returns us a RegEX
+
+19
+00:01:11,150 --> 00:01:12,500
+object.
+
+20
+00:01:12,680 --> 00:01:16,450
+So I could say "regex" is equals to
+
+21
+00:01:16,630 --> 00:01:21,690
+"re.compile". Let's keep it a simple "a".
+
+22
+00:01:21,910 --> 00:01:24,230
+I've only written "a" here, OK.
+
+23
+00:01:24,380 --> 00:01:32,160
+OK, so now this "regex" object has a function ".match".
+
+24
+00:01:32,240 --> 00:01:38,100
+And in this ".match" function, I give it a string and it matches that like
+
+25
+00:01:38,150 --> 00:01:44,720
+if this expression is in the string or not. And if it
+
+26
+00:01:38,150 --> 00:01:44,720
+finds it, it returns us a match object or if it doesn't
+
+27
+00:01:44,720 --> 00:01:48,820
+find it, it returns us "None" that it was unable to find it.
+
+28
+00:01:49,130 --> 00:01:55,280
+So let's say I say print "regex.match".
+
+29
+00:01:55,490 --> 00:01:58,780
+And I say "Does this 'a' exist and this 'a'?".
+
+30
+00:01:59,060 --> 00:02:00,140
+And if I print this...
+
+31
+00:02:09,410 --> 00:02:10,650
+OK, so.
+
+32
+00:02:10,890 --> 00:02:17,160
+If I print this, it gives me...
+
+33
+00:02:10,890 --> 00:02:17,160
+Oh I'm sorry it's running. OK.
+
+34
+00:02:17,220 --> 00:02:21,240
+So if I print it, this gives me a match object.
+
+35
+00:02:21,240 --> 00:02:31,220
+It says yes, it has found "a" and the
+
+36
+00:02:21,240 --> 00:02:31,220
+span is 0,1 which is like from 0 to 1.
+
+37
+00:02:31,570 --> 00:02:39,950
+The range of characters it has found it. If I change
+
+38
+00:02:31,570 --> 00:02:39,950
+my expression, if I say sets "ab" and if I run, it returns me
+
+39
+00:02:39,950 --> 00:02:46,100
+"None" because it can't find this string in this string.
+
+40
+00:02:46,650 --> 00:02:54,470
+So this "re.compile" takes our Regular Expression
+
+41
+00:02:46,650 --> 00:02:54,470
+as its parameter and it returns us a regex object.
+
+42
+00:02:54,600 --> 00:02:58,250
+And then this regex object has a match parameter.
+
+43
+00:02:58,630 --> 00:03:03,640
+So a match function which takes
+
+44
+00:02:58,630 --> 00:03:03,640
+a string which we want to match,
+
+45
+00:03:04,350 --> 00:03:09,540
+its parameters, and it
+
+46
+00:03:04,350 --> 00:03:09,540
+searches this Regular Expression in the string.
+
+47
+00:03:09,570 --> 00:03:16,640
+And if it finds it, it returns us a match object
+
+48
+00:03:09,570 --> 00:03:16,640
+which tells us details like from where the string is starting
+
+49
+00:03:16,660 --> 00:03:19,950
+and ending and that kind of stuff.
+
+50
+00:03:20,100 --> 00:03:24,380
+And if it is unable to find it,
+
+51
+00:03:20,100 --> 00:03:24,380
+it returns us "None", like it did.
+
+52
+00:03:24,390 --> 00:03:27,900
+So in this case I said
+
+53
+00:03:28,020 --> 00:03:30,280
+I want to find "ab".
+
+54
+00:03:30,390 --> 00:03:37,170
+And when I ran that through this match here in this "a" string,
+
+55
+00:03:30,390 --> 00:03:37,170
+it gave me "None" because it couldn't find
+
+56
+00:03:37,170 --> 00:03:41,160
+"ab" in this "a" string.
+
+57
+00:03:41,250 --> 00:03:50,940
+Ok, so what we're going to do now is I'm going to use character
+
+58
+00:03:41,250 --> 00:03:50,940
+classes to clarify this concept more on how
+
+59
+00:03:50,940 --> 00:03:52,110
+this works.
+
+60
+00:03:52,110 --> 00:03:56,200
+So if you remember, what a character class did was like
+
+61
+00:03:56,250 --> 00:04:00,070
+I have the square brackets and I wrote "abc".
+
+62
+00:04:00,930 --> 00:04:07,960
+So this should accept like if I input a character,
+
+63
+00:04:00,930 --> 00:04:07,960
+it should accept any of these three characters.
+
+64
+00:04:07,980 --> 00:04:13,490
+If I input "a", it should give me a match object,
+
+65
+00:04:07,980 --> 00:04:13,490
+if I say "b" it should still give me a match object.
+
+66
+00:04:13,500 --> 00:04:20,080
+And similarly for "c" but if I put anything other
+
+67
+00:04:13,500 --> 00:04:20,080
+than these three characters, it should give me "None".
+
+68
+00:04:20,100 --> 00:04:26,190
+So let's see if this is true or not. I say
+
+69
+00:04:20,100 --> 00:04:26,190
+"regex.match" and give it "a", and if I run it,
+
+70
+00:04:26,180 --> 00:04:33,570
+it has given me a match object and that
+
+71
+00:04:26,180 --> 00:04:33,570
+tells me exactly where it found this match.
+
+72
+00:04:33,570 --> 00:04:35,720
+The span gives me the indexes.
+
+73
+00:04:36,340 --> 00:04:40,090
+So if I say "c" and then run it.
+
+74
+00:04:40,270 --> 00:04:43,950
+So gives me a match object.
+
+75
+00:04:40,270 --> 00:04:43,950
+If I give it a D.
+
+76
+00:04:44,380 --> 00:04:51,160
+Let's see if it gives me something. And it gives me "None"
+
+77
+00:04:44,380 --> 00:04:51,160
+because it was unable to find this "d" in this
+
+78
+00:04:51,190 --> 00:04:53,320
+Regular Expression.
+
+79
+00:04:53,440 --> 00:05:03,370
+So what character class allows us is that we
+
+80
+00:04:53,440 --> 00:05:03,370
+can actually provide multiple characters to match
+
+81
+00:05:03,370 --> 00:05:05,830
+a character from like you know I have
+
+82
+00:05:05,900 --> 00:05:08,100
+given the range of characters I've said
+
+83
+00:05:08,260 --> 00:05:09,600
+I want to match.
+
+84
+00:05:09,640 --> 00:05:18,830
+Either it could be "a" or "b" or "c". It could be any of
+
+85
+00:05:09,640 --> 00:05:18,830
+them and if the character is any of these characters
+
+86
+00:05:18,880 --> 00:05:24,820
+mentioned in the pattern, it returns us a match object
+
+87
+00:05:18,880 --> 00:05:24,820
+else it says it was unable to find it by giving us
+
+88
+00:05:24,870 --> 00:05:29,750
+a "None". Here we go, it gives us "None".
+
+89
+00:05:29,860 --> 00:05:32,210
+So if you remember I can actually give it a range.
+
+90
+00:05:32,220 --> 00:05:34,070
+I could say "a" to "h".
+
+91
+00:05:35,070 --> 00:05:37,600
+And if I run it now, if I say "g",
+
+92
+00:05:38,640 --> 00:05:48,190
+it sends me a match object. I can have the range
+
+93
+00:05:38,640 --> 00:05:48,190
+from "a" to "z" even .And now all the lower case letters
+
+94
+00:05:48,240 --> 00:05:50,330
+are going to come into this strange.
+
+95
+00:05:50,600 --> 00:05:56,610
+So if I try caps lock "A" or an uppercase "A".
+
+96
+00:05:56,630 --> 00:05:58,770
+It returns me "None" because it
+
+97
+00:05:58,850 --> 00:06:00,680
+is unable to find it.
+
+98
+00:06:01,070 --> 00:06:06,460
+So to make it a little more complex, I could say "a-z"
+
+99
+00:06:06,500 --> 00:06:15,310
+and then I could have capital letters too here. So if I
+
+100
+00:06:06,500 --> 00:06:15,310
+run this now, it returns me a match object because now
+
+101
+00:06:15,600 --> 00:06:22,870
+this pattern here looks for all the lowercase letters,
+
+102
+00:06:15,600 --> 00:06:22,870
+all the lowercase alphabet, and all the uppercase
+
+103
+00:06:22,870 --> 00:06:31,090
+alphabets. So you can see how powerful this RegEX is.
+
+104
+00:06:22,870 --> 00:06:31,090
+Just by writing this expression, it is able to search
+
+105
+00:06:31,480 --> 00:06:41,430
+through each alphabet like no matter if they are lowercase
+
+106
+00:06:31,480 --> 00:06:41,430
+or uppercase. Ok, so we have this complement function,
+
+107
+00:06:41,580 --> 00:06:42,390
+not a function.
+
+108
+00:06:42,410 --> 00:06:48,930
+So I mean we could make the complement of this set.
+
+109
+00:06:42,410 --> 00:06:48,930
+You could say that this is a set of characters,
+
+110
+00:06:48,960 --> 00:06:50,340
+this "a" to "z" and "A" to "Z".
+
+111
+00:06:50,340 --> 00:06:57,760
+I mean this expression is a set of
+
+112
+00:06:50,340 --> 00:06:57,760
+lowercase and uppercase alphabets.
+
+113
+00:06:57,870 --> 00:07:04,950
+So what we can do is we can actually
+
+114
+00:06:57,870 --> 00:07:04,950
+have a complement of this set.
+
+115
+00:07:04,950 --> 00:07:14,870
+So what I mean by that is like I want to accept all
+
+116
+00:07:04,950 --> 00:07:14,870
+those characters which are not lowercase
+
+117
+00:07:14,900 --> 00:07:17,270
+and which are not uppercase.
+
+118
+00:07:17,270 --> 00:07:22,100
+So that would be like our digits or our symbols.
+
+119
+00:07:22,100 --> 00:07:30,090
+So I could say "regex.match". So if I say one...
+
+120
+00:07:30,180 --> 00:07:33,990
+So what I'm going to do is I'm going
+
+121
+00:07:30,180 --> 00:07:33,990
+to input this hat symbol here.
+
+122
+00:07:34,080 --> 00:07:40,770
+This hat symbol means that I am going to
+
+123
+00:07:34,080 --> 00:07:40,770
+take the complement of this character class.
+
+124
+00:07:40,790 --> 00:07:48,920
+If I run this now, it says "Yes, this
+
+125
+00:07:40,790 --> 00:07:48,920
+is a match" because now what
+
+126
+00:07:48,920 --> 00:07:56,500
+it is matching is that it is going to match anything
+
+127
+00:07:48,920 --> 00:07:56,500
+apart from lowercase and uppercase alphabets.
+
+128
+00:07:56,860 --> 00:07:58,310
+If I remove this hat.
+
+129
+00:07:58,310 --> 00:08:04,160
+Now it is going to match any lowercase and uppercase alphabet.
+
+130
+00:07:58,310 --> 00:08:04,160
+If I run this, it returns me "None" because "1"
+
+131
+00:08:04,160 --> 00:08:05,870
+is not in this character class.
+
+132
+00:08:06,020 --> 00:08:15,200
+But if I have this hat back on, this hat assures that the complement of
+
+133
+00:08:15,200 --> 00:08:20,000
+this character class works. A complement
+
+134
+00:08:15,200 --> 00:08:20,000
+is that in this case any character
+
+135
+00:08:20,000 --> 00:08:28,120
+which is not the lowercase or uppercase. So if I run this now, it
+
+136
+00:08:20,000 --> 00:08:28,120
+gives me a match. Ok, so all meta characters lose their meaning
+
+137
+00:08:28,120 --> 00:08:29,890
+inside a character class.
+
+138
+00:08:30,070 --> 00:08:33,580
+So I could actually search for plus here
+
+139
+00:08:33,660 --> 00:08:42,010
+if I wanted to. I could say "+" and if
+
+140
+00:08:33,660 --> 00:08:42,010
+I run this, it finds us a plus sign.
+
+141
+00:08:42,380 --> 00:08:45,550
+But if you remember meta characters like
+
+142
+00:08:45,960 --> 00:08:48,110
+plus is a meta character.
+
+143
+00:08:48,120 --> 00:08:53,990
+You see this is a symbol and this is the
+
+144
+00:08:48,120 --> 00:08:53,990
+whole list of meta characters. And in that
+
+145
+00:08:53,990 --> 00:09:00,470
+we have plus, and then we have this question mark, and
+
+146
+00:08:53,990 --> 00:09:00,470
+this curly brackets and they all lose their meaning
+
+147
+00:09:00,470 --> 00:09:03,500
+here when you're using character class.
+
+148
+00:09:03,710 --> 00:09:09,440
+So I hope this is more clear to you now,
+
+149
+00:09:03,710 --> 00:09:09,440
+like how this "compile" function works
+
+150
+00:09:09,830 --> 00:09:15,620
+and what a character class is and how we can specify ranges
+
+151
+00:09:09,830 --> 00:09:15,620
+of class and how we can complement a character
+
+152
+00:09:15,620 --> 00:09:19,060
+class to search for a particular string.
+
+153
+00:09:19,130 --> 00:09:28,190
+Next we'll move further into RegEX
+
+154
+00:09:19,130 --> 00:09:28,190
+and I think you'll understand it more
+
+155
+00:09:28,190 --> 00:09:30,360
+once we do more stuff in it with it.
+
+156
+00:09:30,600 --> 00:09:32,320
+OK so thank you very much.
+

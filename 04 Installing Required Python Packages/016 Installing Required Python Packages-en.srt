@@ -1,0 +1,156 @@
+1
+00:00:00,900 --> 00:00:09,160
+Hello everyone! For this course we are going to use an IDE for Python which is PyCharm.
+
+2
+00:00:09,340 --> 00:00:15,220
+So what you do is you go to Google and you write "download pycharm" on the first link which opens here
+
+3
+00:00:15,310 --> 00:00:16,510
+you open it up.
+
+4
+00:00:16,600 --> 00:00:18,240
+I've opened it and it's here.
+
+5
+00:00:18,340 --> 00:00:27,850
+So from here this tab gives me the option to download this IDE PyCharm and
+
+6
+00:00:27,930 --> 00:00:34,420
+it is provided for different operating systems like for Mac OS, Windows and Linux. It has two versions: Community
+
+7
+00:00:34,450 --> 00:00:36,040
+and Professional.
+
+8
+00:00:36,040 --> 00:00:38,940
+We don't need Professional and it is also paid.
+
+9
+00:00:38,950 --> 00:00:42,340
+So what we do with you know Community works for us.
+
+10
+00:00:42,340 --> 00:00:46,120
+We download it and you can just download it from here.
+
+11
+00:00:46,120 --> 00:00:49,320
+I've already downloaded it. After you have downloaded it.
+
+12
+00:00:49,510 --> 00:00:56,190
+You install it in your system and after doing that you just run that.
+
+13
+00:00:56,200 --> 00:01:03,430
+So now I'm opening PyCharm. After the installation you open PyCharm and then this window opens
+
+14
+00:01:03,430 --> 00:01:03,990
+up.
+
+15
+00:01:04,080 --> 00:01:12,100
+You say create new project and here you give it the bars like where you want your project to be.
+
+16
+00:01:12,170 --> 00:01:22,430
+So I say, you know, by making a folder on my Desktop, "web scrapping tutorials", and it create a project.
+
+17
+00:01:22,440 --> 00:01:31,260
+So this has created a Python project on my Desktop. Now create a test file just to test if
+
+18
+00:01:31,680 --> 00:01:33,560
+my Python file works or not.
+
+19
+00:01:34,500 --> 00:01:41,220
+And here I say "print('Hello world')".
+
+20
+00:01:41,300 --> 00:01:45,280
+So I run this and you can see that it works.
+
+21
+00:01:45,330 --> 00:01:47,030
+I can run it again and it works.
+
+22
+00:01:47,030 --> 00:01:48,920
+So this project is working.
+
+23
+00:01:48,920 --> 00:01:54,270
+So this is where, you know, we will continue our whole course.
+
+24
+00:01:54,390 --> 00:02:00,540
+And before we move forward with our course what I want you to do is I want you to download some of the
+
+25
+00:02:00,540 --> 00:02:04,540
+necessary modules which we will be using in our course.
+
+26
+00:02:04,590 --> 00:02:06,290
+So how do we do that.
+
+27
+00:02:06,510 --> 00:02:14,650
+You go to this this project, double click on it and then this opens up, you say "new",
+
+28
+00:02:15,510 --> 00:02:23,000
+"file" and here you make a file "requirements.txt".
+
+29
+00:02:23,030 --> 00:02:29,910
+So what I'm gonna do now here is that I'm going to list all the modules which I'm going to use in my course and
+
+30
+00:02:29,910 --> 00:02:35,070
+PyCharm is automatically going to download and install them for me.
+
+31
+00:02:35,120 --> 00:02:41,120
+So I've made a list here, it's there. And I say Command-C
+
+32
+00:02:41,140 --> 00:02:47,450
+and Command-V so I'm sorry for this.
+
+33
+00:02:47,980 --> 00:02:48,310
+OK.
+
+34
+00:02:48,310 --> 00:02:57,010
+So here are the modules which we will be using for our course.
+
+35
+00:02:57,030 --> 00:03:03,540
+So what PyCharm is going to do now is it is going to download them install them for you itself
+
+36
+00:03:03,630 --> 00:03:06,010
+so you don't really need to worry about them anymore.
+
+37
+00:03:06,360 --> 00:03:13,140
+And in the next video when we start our course and I hope up till now that this is clear you and you
+
+38
+00:03:13,230 --> 00:03:18,680
+successfully install these modules as you will be using them extensively throughout our course.
+
+39
+00:03:18,720 --> 00:03:19,630
+Thank you very much.
+

@@ -1,0 +1,1380 @@
+1
+00:00:00,180 --> 00:00:07,150
+Hello everyone! In the last video, we've discussed
+
+2
+00:00:00,180 --> 00:00:07,150
+how we can scrape the links for each section.
+
+3
+00:00:07,350 --> 00:00:10,800
+So we discussed how we are going to scrape the links of "Warmup-1",
+
+4
+00:00:10,810 --> 00:00:14,580
+then strings, logic, arrays, recursion, map.
+
+5
+00:00:14,790 --> 00:00:17,630
+We discuss how we can scrape these links.
+
+6
+00:00:17,820 --> 00:00:27,600
+And now the next task is that we have to open each
+
+7
+00:00:17,820 --> 00:00:27,600
+section. So we open each section and then we
+
+8
+00:00:27,600 --> 00:00:30,580
+get we get questions here for each section.
+
+9
+00:00:30,580 --> 00:00:37,540
+So the next task is that we have to scrape the links for each question.
+
+10
+00:00:37,710 --> 00:00:43,930
+You can see it is a link to a question which
+
+11
+00:00:37,710 --> 00:00:43,930
+contains the question statement and the examples
+
+12
+00:00:43,930 --> 00:00:45,000
+for that question.
+
+13
+00:00:46,900 --> 00:00:51,370
+So how are we going to do this.
+
+14
+00:00:51,370 --> 00:00:58,490
+Now we have developed a script which scrapes the links for each section.
+
+15
+00:00:58,730 --> 00:01:04,280
+And now here what we are going to do now is we are going
+
+16
+00:00:58,730 --> 00:01:04,280
+to write a script which is going to scrap the question
+
+17
+00:01:04,280 --> 00:01:12,640
+links for each section. So we can open this link here.
+
+18
+00:01:04,280 --> 00:01:12,640
+This link, the link we have scrapped using the
+
+19
+00:01:12,660 --> 00:01:19,960
+"request" module and then after doing that we get this page and
+
+20
+00:01:12,660 --> 00:01:19,960
+now what we are going to do is we are going to scrape this
+
+21
+00:01:19,960 --> 00:01:27,860
+question links and then we can again open them in
+
+22
+00:01:19,960 --> 00:01:27,860
+a list using a loop and then we can scrape these
+
+23
+00:01:28,160 --> 00:01:31,120
+question statements and the examples with it.
+
+24
+00:01:32,470 --> 00:01:39,440
+So now the idea is to scrape these questions and
+
+25
+00:01:32,470 --> 00:01:39,440
+this is what I'll be doing in this video as
+
+26
+00:01:39,490 --> 00:01:44,680
+we decided earlier that we are going to split this project
+
+27
+00:01:39,490 --> 00:01:44,680
+into three parts. The first part is the main
+
+28
+00:01:44,680 --> 00:01:49,520
+page from where we will be scrapped the links for each section.
+
+29
+00:01:49,660 --> 00:01:54,100
+Then the next part is where we scrape the question links from each section.
+
+30
+00:01:55,470 --> 00:02:01,410
+And finally we get the question page where we have the question statement and examples.
+
+31
+00:02:01,430 --> 00:02:07,840
+So one thing to note here is that there is a structure being followed here.
+
+32
+00:02:07,970 --> 00:02:13,860
+Let's see if I open "Warmup-1" and it opens up some questions here.
+
+33
+00:02:13,910 --> 00:02:17,910
+So if there is going to be some "div" here in which these questions are contained.
+
+34
+00:02:17,960 --> 00:02:25,220
+And if I open another section it's going to be the same "div" which contains these questions.
+
+35
+00:02:25,220 --> 00:02:32,720
+I mean so like there's repetition here and this
+
+36
+00:02:25,220 --> 00:02:32,720
+repetition actually helps you structure code nicely.
+
+37
+00:02:32,810 --> 00:02:38,430
+And this also helps scraping because like if your
+
+38
+00:02:38,430 --> 00:02:43,280
+HTML is structured then you can easily scrape data from that website.
+
+39
+00:02:43,460 --> 00:02:50,630
+And as you can see that this website has
+
+40
+00:02:43,460 --> 00:02:50,630
+structured HTML, by structured I mean that there is a proper
+
+41
+00:02:50,630 --> 00:02:52,900
+structure that is being followed.
+
+42
+00:02:52,910 --> 00:02:59,250
+So if let's say I'm just going to use "Inspect Element",
+
+43
+00:02:52,910 --> 00:02:59,250
+I'm going to show you this what I'm talking about.
+
+44
+00:02:59,510 --> 00:03:05,620
+So let's say I have this "div" here, "div class='tabin'"
+
+45
+00:02:59,510 --> 00:03:05,620
+which has it's class "tabin" and this is for "Warmup-1"
+
+46
+00:03:06,980 --> 00:03:08,690
+So if I open up "Map-2"
+
+47
+00:03:12,060 --> 00:03:22,100
+and if I see that... OK, you can see that
+
+48
+00:03:12,060 --> 00:03:22,100
+this "Map-2" also contains a "div"
+
+49
+00:03:22,460 --> 00:03:27,690
+which contains its class "tabin" and it contains all the questions.
+
+50
+00:03:28,660 --> 00:03:32,780
+So you can see that there is a structure being followed here.
+
+51
+00:03:32,980 --> 00:03:38,180
+So that is like when you open the section the questions
+
+52
+00:03:32,980 --> 00:03:38,180
+that are being displayed for that section, they
+
+53
+00:03:38,200 --> 00:03:42,640
+are in the "div" which each has its class "tabin".
+
+54
+00:03:42,880 --> 00:03:45,660
+I hope this makes sense to you.
+
+55
+00:03:45,790 --> 00:03:49,410
+So now let's get back to our code.
+
+56
+00:03:49,440 --> 00:03:58,200
+What we did in our last section, in our last
+
+57
+00:03:49,440 --> 00:03:58,200
+video, was this. We accessed main
+
+58
+00:03:58,200 --> 00:03:59,940
+"div" and then using the "div"
+
+59
+00:04:00,060 --> 00:04:01,160
+we iterate that "div"
+
+60
+00:04:01,170 --> 00:04:07,460
+and then we got they URL using this "div.a['href']"
+
+61
+00:04:01,170 --> 00:04:07,460
+tag and then we are adding "base_url".
+
+62
+00:04:07,570 --> 00:04:14,310
+We are using "base_url" into this URL we
+
+63
+00:04:07,570 --> 00:04:14,310
+were scrapping from the website because
+
+64
+00:04:14,310 --> 00:04:17,230
+the URL here was relative.
+
+65
+00:04:17,240 --> 00:04:22,310
+OK, so now to rewrite this I can say "all_links" is
+
+66
+00:04:25,290 --> 00:04:33,670
+equals to...
+
+67
+00:04:34,050 --> 00:04:38,880
+So I'm just using list comprehension for writing this, "for div
+
+68
+00:04:39,030 --> 00:04:41,310
+in all_divs".
+
+69
+00:04:41,390 --> 00:04:51,550
+So this is basically equal it. OK, so now "all_links"
+
+70
+00:04:41,390 --> 00:04:51,550
+contains the link for each section which we are going to
+
+71
+00:04:51,770 --> 00:04:52,360
+open.
+
+72
+00:04:52,360 --> 00:04:56,230
+So how we are going to do this.
+
+73
+00:04:52,360 --> 00:04:56,230
+We say "for link in all_links".
+
+74
+00:04:59,620 --> 00:05:00,860
+Sorry for that.
+
+75
+00:05:00,880 --> 00:05:04,870
+So now the thing is that we want to get to this page here.
+
+76
+00:05:04,960 --> 00:05:10,300
+This page which contains the question links,
+
+77
+00:05:04,960 --> 00:05:10,300
+the links for the questions.
+
+78
+00:05:10,330 --> 00:05:19,610
+So what I do is I say in "inner_page" is equals to
+
+79
+00:05:10,330 --> 00:05:19,610
+"requests.get", then I say "link" and I can
+
+80
+00:05:19,950 --> 00:05:25,220
+add the "headers" here, and I say "user-agent.chrome"
+
+81
+00:05:31,700 --> 00:05:34,290
+OK.
+
+82
+00:05:34,480 --> 00:05:41,380
+So now I have sent a request to this page and I have this
+
+83
+00:05:34,480 --> 00:05:41,380
+open in this response object now I can make
+
+84
+00:05:41,380 --> 00:05:47,620
+a soup. I can say in "inner_soup" is equals to in "inner_page".
+
+85
+00:05:47,730 --> 00:05:50,370
+Sorry, I say "BeautifulSoup".
+
+86
+00:05:50,400 --> 00:05:52,180
+and "inner_page"
+
+87
+00:05:56,120 --> 00:05:58,230
+and I use "lxml".
+
+88
+00:06:02,050 --> 00:06:05,600
+OK, so now I've made a soup of this page here.
+
+89
+00:06:05,860 --> 00:06:06,380
+Great.
+
+90
+00:06:06,400 --> 00:06:08,850
+Now the question is how do I scrape this question links.
+
+91
+00:06:08,860 --> 00:06:16,090
+So we're going to observe the HTML for this page and I'm
+
+92
+00:06:08,860 --> 00:06:16,090
+going to see how we can get to these questions,
+
+93
+00:06:16,090 --> 00:06:23,550
+the links to these questions. So you can see that there
+
+94
+00:06:16,090 --> 00:06:23,550
+is this "div" here which has its class "tabc"
+
+95
+00:06:23,560 --> 00:06:25,990
+then in it we have
+
+96
+00:06:26,030 --> 00:06:29,300
+a another "navbar" which contains "Java" and "Python"
+
+97
+00:06:31,000 --> 00:06:36,940
+links, you can see that here. As soon as I come to this
+
+98
+00:06:31,000 --> 00:06:36,940
+"nav", you can see that that bar is highlighted
+
+99
+00:06:37,420 --> 00:06:45,390
+then I move down to this "div class='tabIn'".
+
+100
+00:06:37,420 --> 00:06:45,390
+This "tabIn" contains the questions for each section.
+
+101
+00:06:46,410 --> 00:06:50,130
+And all of this is contained in "tabc".
+
+102
+00:06:50,130 --> 00:06:54,720
+So let's open "tabIn" and see what we have there.
+
+103
+00:06:55,970 --> 00:07:03,300
+So I as soon as I've opened it, you can see that I
+
+104
+00:06:55,970 --> 00:07:03,300
+have this "span" which highlights the "Warmup-1"
+
+105
+00:07:03,390 --> 00:07:13,720
+like the section's name and then I have the starts here and
+
+106
+00:07:03,390 --> 00:07:13,720
+then I have this table here which contains the
+
+107
+00:07:13,720 --> 00:07:19,780
+links for each question as you can see that
+
+108
+00:07:13,720 --> 00:07:19,780
+only that part is highlighted now. So this table
+
+109
+00:07:19,780 --> 00:07:22,080
+is what I'm supposed to be after.
+
+110
+00:07:22,300 --> 00:07:23,790
+Let's see the structure for that table,
+
+111
+00:07:23,890 --> 00:07:32,410
+how this is laid out. OK, so this table has rows and
+
+112
+00:07:23,890 --> 00:07:32,410
+each row contains three questions, you can see
+
+113
+00:07:32,410 --> 00:07:39,090
+that as I move down. Look next three questions are highlighted.
+
+114
+00:07:32,410 --> 00:07:39,090
+And if I move down again, the next three questions are
+
+115
+00:07:39,130 --> 00:07:40,320
+highlighted.
+
+116
+00:07:40,330 --> 00:07:43,380
+So each row contains three questions.
+
+117
+00:07:44,370 --> 00:07:50,500
+Each row contains the links for the questions
+
+118
+00:07:44,370 --> 00:07:50,500
+and as I open the row, I get columns.
+
+119
+00:07:50,550 --> 00:07:57,080
+So I get three columns here and for the first column
+
+120
+00:07:50,550 --> 00:07:57,080
+I have "sleepIn" and then this "monkeyTrouble"
+
+121
+00:07:57,090 --> 00:07:59,330
+then this "sumDouble".
+
+122
+00:07:59,400 --> 00:08:05,800
+Each "td" contains a single question link.
+
+123
+00:08:06,060 --> 00:08:11,960
+So if I open a "td", you'll see I have an
+
+124
+00:08:06,060 --> 00:08:11,960
+image here which is that tick here.
+
+125
+00:08:12,190 --> 00:08:14,100
+Like that tick mark.
+
+126
+00:08:14,100 --> 00:08:17,770
+And then I have this "href" like "a" tag.
+
+127
+00:08:18,030 --> 00:08:25,690
+So this "a" tag contains the link for
+
+128
+00:08:18,030 --> 00:08:25,690
+that question, a relative link again.
+
+129
+00:08:25,870 --> 00:08:26,860
+OK.
+
+130
+00:08:27,150 --> 00:08:34,170
+Now what we want is you want this "a" tag's attribute "href"
+
+131
+00:08:34,540 --> 00:08:37,400
+so that we can get the link for this question.
+
+132
+00:08:37,870 --> 00:08:42,560
+So once again, let's see how we are going to get to this.
+
+133
+00:08:42,610 --> 00:08:47,600
+There was a main "div" which had its class "tabc"
+
+134
+00:08:42,610 --> 00:08:47,600
+and in that "div" we have the "div"
+
+135
+00:08:47,640 --> 00:08:56,770
+again "tabIn" and then in that "tabIn" div, we
+
+136
+00:08:47,640 --> 00:08:56,770
+have a table which has rows and each row
+
+137
+00:08:56,830 --> 00:09:00,700
+contains three columns which has a "div" tag.
+
+138
+00:09:01,090 --> 00:09:07,670
+And then each "td" tag contains a single
+
+139
+00:09:01,090 --> 00:09:07,670
+question, a link for a single question.
+
+140
+00:09:09,400 --> 00:09:13,270
+OK, so let's start off with this "div".
+
+141
+00:09:13,320 --> 00:09:19,710
+Let's go with this "div". We're going to get to
+
+142
+00:09:13,320 --> 00:09:19,710
+this "div class='tabc'". Let's see if we can
+
+143
+00:09:19,710 --> 00:09:24,050
+get to this. Ok, we are going to use break because
+
+144
+00:09:24,280 --> 00:09:31,240
+like let's just do this for one section because like this all links
+
+145
+00:09:31,390 --> 00:09:33,910
+is a list for each section.
+
+146
+00:09:33,940 --> 00:09:45,140
+You know like I think I have how many sections here?
+
+147
+00:09:33,940 --> 00:09:45,140
+One, two, three, four, five... Twelve... I have fifteen sections here.
+
+148
+00:09:45,610 --> 00:09:49,580
+So this all links contains 15 links, for each section.
+
+149
+00:09:49,790 --> 00:09:54,670
+And as we saw earlier that each sections go into a structure.
+
+150
+00:09:54,760 --> 00:09:56,330
+The HTML code is structured.
+
+151
+00:09:56,500 --> 00:10:01,460
+So if you do this for one section like if
+
+152
+00:09:56,500 --> 00:10:01,460
+I've done a script which scrapes the question links
+
+153
+00:10:01,460 --> 00:10:06,040
+for one section, that is going
+
+154
+00:10:01,460 --> 00:10:06,040
+to work for any other section.
+
+155
+00:10:06,220 --> 00:10:11,980
+So I'm only going to open the first link
+
+156
+00:10:06,220 --> 00:10:11,980
+and I'm going to see if I can make this work.
+
+157
+00:10:12,250 --> 00:10:14,130
+So that's I'm using a break here.
+
+158
+00:10:14,550 --> 00:10:15,190
+OK.
+
+159
+00:10:15,580 --> 00:10:21,430
+So what we decided right now was that we are
+
+160
+00:10:15,580 --> 00:10:21,430
+going to access this "div" which has class "tabc".
+
+161
+00:10:21,430 --> 00:10:23,270
+And see if we can get to that.
+
+162
+00:10:23,300 --> 00:10:28,960
+Or if there could be another "div" here
+
+163
+00:10:23,300 --> 00:10:28,960
+which has its class "tabc". So let's see
+
+164
+00:10:28,960 --> 00:10:33,020
+if this is the "div" like this is how we are
+
+165
+00:10:28,960 --> 00:10:33,020
+going to access this "div" there which has its class
+
+166
+00:10:33,020 --> 00:10:40,840
+"tabc". OK, so we say "div" is equals to "inner_soup.find".
+
+167
+00:10:40,960 --> 00:10:49,540
+And then I say "div", then I say "class_"
+
+168
+00:10:40,960 --> 00:10:49,540
+and "tabc". I'm going to print this "div"
+
+169
+00:10:49,540 --> 00:10:54,250
+now and let's see what happens.
+
+170
+00:10:56,620 --> 00:11:03,630
+OK, so you can see that here, that this "div" has "tabc", that
+
+171
+00:11:03,690 --> 00:11:06,300
+this have "navbars".
+
+172
+00:11:06,450 --> 00:11:07,300
+And if I get that here.
+
+173
+00:11:07,390 --> 00:11:09,560
+OK, so far so good.
+
+174
+00:11:09,570 --> 00:11:15,340
+We have a "div" and then a "nav" and then you can seen that
+
+175
+00:11:15,350 --> 00:11:18,920
+now I have this "Python" and "Java".
+
+176
+00:11:19,080 --> 00:11:28,420
+You can see this here, this "Python" and this
+
+177
+00:11:19,080 --> 00:11:28,420
+is here actually, this "Python" and this "Java".
+
+178
+00:11:28,450 --> 00:11:39,340
+So then after that, we have this "table" here which has
+
+179
+00:11:28,450 --> 00:11:39,340
+its rows and then each row has this "td" tag which contains
+
+180
+00:11:39,410 --> 00:11:41,880
+the problem link,
+
+181
+00:11:41,890 --> 00:11:43,110
+is this "a" tag.
+
+182
+00:11:43,400 --> 00:11:50,600
+So I think it's safe to assume that we have that
+
+183
+00:11:43,400 --> 00:11:50,600
+right "div" is because you can see that these are the
+
+184
+00:11:50,600 --> 00:11:57,450
+links for the questions we just saw. OK, so now
+
+185
+00:11:50,600 --> 00:11:57,450
+what this means is that we have access to this
+
+186
+00:11:57,460 --> 00:12:03,630
+"div" here which I have highlighted,
+
+187
+00:11:57,460 --> 00:12:03,630
+this "div" has its class "tabc".
+
+188
+00:12:03,670 --> 00:12:05,540
+So we have access to this "div".
+
+189
+00:12:05,830 --> 00:12:07,620
+So what's next.
+
+190
+00:12:07,630 --> 00:12:13,710
+Now this "div" has a child, a descendant, which is "table" here.
+
+191
+00:12:13,900 --> 00:12:19,530
+And then this "table" contains here contains "td" tags.
+
+192
+00:12:19,930 --> 00:12:27,690
+And we want to find those "td" tags because each
+
+193
+00:12:19,930 --> 00:12:27,690
+the "td" tag contains a link for a single question.
+
+194
+00:12:27,940 --> 00:12:33,670
+So what I'm going to do is I'm going to say print
+
+195
+00:12:27,940 --> 00:12:33,670
+"div.table" to see if I can access the table directly.
+
+196
+00:12:37,320 --> 00:12:44,220
+And apparently yes, we can access the table directly by
+
+197
+00:12:37,320 --> 00:12:44,220
+writing "div.table" because "table" here is a child
+
+198
+00:12:44,280 --> 00:12:48,910
+of this "div" here, this div "tabc", a descendant of this "tabc.
+
+199
+00:12:49,320 --> 00:12:56,180
+So what we do is we write "div.table" so
+
+200
+00:12:49,320 --> 00:12:56,180
+gets it searches for the first table
+
+201
+00:12:56,270 --> 00:12:58,110
+to find at is descendant.
+
+202
+00:12:58,290 --> 00:13:00,000
+When I write this.
+
+203
+00:13:00,060 --> 00:13:07,800
+So the first table that is descendant of "tabc" like
+
+204
+00:13:00,060 --> 00:13:07,800
+this "div" has its class "tabc" is this table
+
+205
+00:13:07,800 --> 00:13:10,630
+here which contains the links for each question.
+
+206
+00:13:10,800 --> 00:13:16,620
+So you can see that here that it has rows
+
+207
+00:13:10,800 --> 00:13:16,620
+and then it has "td" tags in that
+
+208
+00:13:16,800 --> 00:13:22,940
+and then each the "td" tag contains an "a"
+
+209
+00:13:16,800 --> 00:13:22,940
+tag which contains a link for a question.
+
+210
+00:13:24,400 --> 00:13:33,520
+OK so now what we want to do is we want to get to this
+
+211
+00:13:24,400 --> 00:13:33,520
+"td" here. We want to get to the "td" element.
+
+212
+00:13:33,530 --> 00:13:42,420
+So what I can do is I can say "for td in
+
+213
+00:13:45,170 --> 00:13:54,720
+div.table.find_all", let's search for "td"
+
+214
+00:13:45,170 --> 00:13:54,720
+and see if you can find it. Print "td".
+
+215
+00:13:55,190 --> 00:14:03,350
+So what I'm doing right now is this
+
+216
+00:13:55,190 --> 00:14:03,350
+"div.table" means that I am at this this element
+
+217
+00:14:03,350 --> 00:14:03,560
+here,
+
+218
+00:14:03,560 --> 00:14:08,350
+this tag here and now here I use the "find_all" function
+
+219
+00:14:08,480 --> 00:14:09,720
+using this tag.
+
+220
+00:14:09,950 --> 00:14:17,550
+So this "find_all" function is going to search
+
+221
+00:14:09,950 --> 00:14:17,550
+within this "table" tag like within the descendants
+
+222
+00:14:17,550 --> 00:14:24,250
+of this "table" tag for "td" because as we saw earlier each
+
+223
+00:14:17,550 --> 00:14:24,250
+"td" contains a link for a single question, it contains
+
+224
+00:14:24,250 --> 00:14:26,870
+an anchor tag which contains a link.
+
+225
+00:14:27,000 --> 00:14:34,130
+So I'm going to search "td" and I'm going to see
+
+226
+00:14:27,000 --> 00:14:34,130
+if I can search like this. If I can't do this,
+
+227
+00:14:34,150 --> 00:14:35,860
+I have to think in another approach.
+
+228
+00:14:36,750 --> 00:14:40,380
+And I'm going to run this and see if I can make this work.
+
+229
+00:14:42,550 --> 00:14:51,180
+I think this works as you can see that I've all
+
+230
+00:14:42,550 --> 00:14:51,180
+the "td" which are present in this "table".
+
+231
+00:14:51,310 --> 00:14:55,640
+So let's just make sure that this is the right "td".
+
+232
+00:14:55,660 --> 00:14:57,710
+So I have this "td" then I have this image.
+
+233
+00:14:57,710 --> 00:15:03,700
+Then I have "a" tag which contains the
+
+234
+00:14:57,710 --> 00:15:03,700
+relative link for the question
+
+235
+00:15:03,780 --> 00:15:06,760
+like for each question to that section.
+
+236
+00:15:06,810 --> 00:15:09,160
+So let's see if this is consistent.
+
+237
+00:15:09,160 --> 00:15:09,660
+OK.
+
+238
+00:15:09,680 --> 00:15:16,650
+Then as you can move downwards, you can see the cursor we
+
+239
+00:15:09,680 --> 00:15:16,650
+are moving, so I have problems and these are valid
+
+240
+00:15:16,650 --> 00:15:17,570
+problems.
+
+241
+00:15:19,280 --> 00:15:21,770
+So these are the questions that you want.
+
+242
+00:15:21,800 --> 00:15:23,760
+These are the links we want to scrape.
+
+243
+00:15:24,240 --> 00:15:25,980
+So now how do we get to this
+
+244
+00:15:26,060 --> 00:15:30,110
+"a" tag here. Let's just say print "td.a" and run it.
+
+245
+00:15:33,620 --> 00:15:40,920
+So you can see that this works. What I did right now
+
+246
+00:15:33,620 --> 00:15:40,920
+was that we saw that each "td" has an anchor tag.
+
+247
+00:15:41,110 --> 00:15:41,650
+OK.
+
+248
+00:15:41,750 --> 00:15:45,420
+So I only wrote "td.a". After accessing "td",
+
+249
+00:15:45,440 --> 00:15:52,510
+like I said "td.a" and now I am
+
+250
+00:15:45,440 --> 00:15:52,510
+here. You can see this here.
+
+251
+00:15:53,540 --> 00:15:54,620
+I have the "a" tags.
+
+252
+00:15:54,740 --> 00:16:00,050
+And now what I want was I want the relative URL for each question.
+
+253
+00:16:00,050 --> 00:16:07,840
+I'm going to get the attribute for this "a" tag using
+
+254
+00:16:00,050 --> 00:16:07,840
+the dictionary method and let's see if I can get them.
+
+255
+00:16:08,710 --> 00:16:09,200
+Great.
+
+256
+00:16:09,220 --> 00:16:12,000
+So I have the relative URL for each problem.
+
+257
+00:16:12,960 --> 00:16:13,630
+OK.
+
+258
+00:16:13,980 --> 00:16:20,800
+So now the thing is that how are these questions placed.
+
+259
+00:16:22,830 --> 00:16:32,150
+I mean like that the relative URL. OK, so you can
+
+260
+00:16:22,830 --> 00:16:32,150
+see that the link that I've scraped
+
+261
+00:16:32,150 --> 00:16:33,300
+contains...
+
+262
+00:16:33,320 --> 00:16:33,920
+Where is it?
+
+263
+00:16:33,920 --> 00:16:34,340
+OK.
+
+264
+00:16:34,370 --> 00:16:34,990
+So here.
+
+265
+00:16:35,180 --> 00:16:41,410
+So this contains a relative URL which says "prob" and
+
+266
+00:16:35,180 --> 00:16:41,410
+then it has some id number, slash some id
+
+267
+00:16:41,410 --> 00:16:42,160
+number.
+
+268
+00:16:42,560 --> 00:16:48,240
+And what I want to just see now was that
+
+269
+00:16:42,560 --> 00:16:48,240
+before this, do I have this "java" here?
+
+270
+00:16:48,270 --> 00:16:55,160
+Like this "java/Warmup-1" here? Or is the base URL is
+
+271
+00:16:55,160 --> 00:16:56,960
+something else.
+
+272
+00:16:56,960 --> 00:17:04,160
+So when I open this question, I saw that this part
+
+273
+00:16:56,960 --> 00:17:04,160
+I've highlighted, this part has something
+
+274
+00:17:04,160 --> 00:17:05,150
+which I have.
+
+275
+00:17:05,380 --> 00:17:06,130
+OK.
+
+276
+00:17:06,440 --> 00:17:08,560
+Now that "codingbat.com".
+
+277
+00:17:08,770 --> 00:17:09,890
+This thing here.
+
+278
+00:17:09,950 --> 00:17:11,660
+This thing here is
+
+279
+00:17:11,750 --> 00:17:16,070
+the base URL, so the base URL remains
+
+280
+00:17:11,750 --> 00:17:16,070
+the same which we have here.
+
+281
+00:17:17,220 --> 00:17:23,100
+It remains the same. So what I am doing now
+
+282
+00:17:17,220 --> 00:17:23,100
+is I'm going to say "base_url" plus
+
+283
+00:17:23,370 --> 00:17:23,790
+"td.a['href']".
+
+284
+00:17:28,210 --> 00:17:34,420
+So you can see that I have the links for
+
+285
+00:17:28,210 --> 00:17:34,420
+questions like the whole question for
+
+286
+00:17:34,420 --> 00:17:40,910
+the first section and I'm just going to open
+
+287
+00:17:34,420 --> 00:17:40,910
+one of this just to make sure that this works.
+
+288
+00:17:40,990 --> 00:17:41,890
+So I say...
+
+289
+00:17:46,640 --> 00:17:51,550
+OK, so you can see that I have open this question
+
+290
+00:17:46,640 --> 00:17:51,550
+which I says the question name is "makes10",
+
+291
+00:17:51,570 --> 00:18:00,040
+and its from "Warmup-1" section and now I can actually
+
+292
+00:17:51,570 --> 00:18:00,040
+remove this "break" and you are going to see that it is going
+
+293
+00:18:00,040 --> 00:18:05,740
+to open each section and give me the links for
+
+294
+00:18:00,040 --> 00:18:05,740
+the questions that are present in each section.
+
+295
+00:18:06,060 --> 00:18:08,500
+And if I run this now, this may take a while
+
+296
+00:18:12,130 --> 00:18:16,540
+but you can see that it is scraping the question links from each section.
+
+297
+00:18:17,690 --> 00:18:21,750
+And it should be done any time now.
+
+298
+00:18:21,920 --> 00:18:27,870
+So you can see this here that it has printed
+
+299
+00:18:21,920 --> 00:18:27,870
+the link for each question here.
+
+300
+00:18:29,280 --> 00:18:30,180
+And see this there
+
+301
+00:18:36,020 --> 00:18:36,680
+OK.
+
+302
+00:18:38,730 --> 00:18:42,610
+So this was actually what we wanted.
+
+303
+00:18:42,630 --> 00:18:48,990
+Now like we had decided to split our project
+
+304
+00:18:42,630 --> 00:18:48,990
+into three parts. The first part was that
+
+305
+00:18:49,120 --> 00:18:50,630
+we scrape the links for each section.
+
+306
+00:18:50,680 --> 00:18:56,820
+Then the second part was that we scrape the questions
+
+307
+00:18:50,680 --> 00:18:56,820
+links that are that are present in the section in
+
+308
+00:18:56,820 --> 00:19:03,300
+each section and then the final part is that we scrape
+
+309
+00:18:56,820 --> 00:19:03,300
+the statement, the question statement and the examples
+
+310
+00:19:03,990 --> 00:19:05,800
+for that question.
+
+311
+00:19:05,880 --> 00:19:10,600
+So we have been able to scrape the links for these sections.
+
+312
+00:19:10,860 --> 00:19:11,380
+Okay.
+
+313
+00:19:11,520 --> 00:19:17,170
+And then what we do is we open each link in the loop and
+
+314
+00:19:17,220 --> 00:19:24,710
+now what we do is we scrape the questions present
+
+315
+00:19:17,220 --> 00:19:24,710
+in each section and we have also done that.
+
+316
+00:19:24,900 --> 00:19:27,510
+So I can write it like this.
+
+317
+00:19:27,510 --> 00:19:37,750
+I can say "question_links" is equals to "base_url" plus "td.a['href']
+
+318
+00:19:40,750 --> 00:19:46,090
+for div in div.table.find_all".
+
+319
+00:19:49,170 --> 00:19:58,390
+I'm only writing a list comprehension for this
+
+320
+00:19:49,170 --> 00:19:58,390
+because this is way more neat than this.
+
+321
+00:19:58,560 --> 00:20:03,300
+And I can do it like this like "for question
+
+322
+00:19:58,560 --> 00:20:03,300
+in question_links" to see if this works or not.
+
+323
+00:20:07,790 --> 00:20:13,490
+And I can use a "break" again, I don't want
+
+324
+00:20:07,790 --> 00:20:13,490
+to go to each page and see it again.
+
+325
+00:20:13,510 --> 00:20:15,980
+I mean if it works for the first and that works for the rest.
+
+326
+00:20:16,150 --> 00:20:17,350
+So yes, it works.
+
+327
+00:20:18,620 --> 00:20:24,060
+So for the first section like it shows me the
+
+328
+00:20:18,620 --> 00:20:24,060
+questions for the first section of this list like the list
+
+329
+00:20:24,060 --> 00:20:25,510
+comprehension returned here.
+
+330
+00:20:25,760 --> 00:20:28,020
+So it works, it actually works.
+
+331
+00:20:28,100 --> 00:20:39,890
+OK, so now this is for now we have completed the second
+
+332
+00:20:28,100 --> 00:20:39,890
+section of our project as we had decided earlier
+
+333
+00:20:40,700 --> 00:20:48,820
+and now in the final section, the final pardon, we are going to
+
+334
+00:20:40,700 --> 00:20:48,820
+scrape the question statement and the example, like this
+
+335
+00:20:48,860 --> 00:20:57,140
+example here which is for that question. I hope that
+
+336
+00:20:48,860 --> 00:20:57,140
+I made things clear and I hope this makes
+
+337
+00:20:57,140 --> 00:20:57,760
+more sense to you.
+
+338
+00:20:57,810 --> 00:21:02,680
+Just look at the code and play with
+
+339
+00:20:57,810 --> 00:21:02,680
+that and see how it is working.
+
+340
+00:21:02,810 --> 00:21:08,330
+I'm sure though that you have done this already like
+
+341
+00:21:02,810 --> 00:21:08,330
+you've coded this already so just think if
+
+342
+00:21:08,330 --> 00:21:13,660
+you need help or if you're stuck you can just review
+
+343
+00:21:08,330 --> 00:21:13,660
+this code and you could see how this is working.
+
+344
+00:21:13,790 --> 00:21:14,960
+Thank you very much
+
+345
+00:21:14,960 --> 00:21:15,640
+and I see you in the next video.
+

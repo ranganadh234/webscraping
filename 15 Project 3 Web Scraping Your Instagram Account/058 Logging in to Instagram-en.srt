@@ -1,0 +1,1076 @@
+1
+00:00:00,770 --> 00:00:06,670
+Hello everyone! In this video, we are going to
+
+2
+00:00:00,770 --> 00:00:06,670
+move forward with implementation of the Instagram scraper
+
+3
+00:00:06,670 --> 00:00:08,650
+we discussed.
+
+4
+00:00:08,710 --> 00:00:17,020
+So the idea is to log into Instagram, open target's profile
+
+5
+00:00:08,710 --> 00:00:17,020
+whose photos we want to download and once
+
+6
+00:00:17,020 --> 00:00:21,500
+we have opened that profile, we
+
+7
+00:00:17,020 --> 00:00:21,500
+download the photos then of that user.
+
+8
+00:00:21,970 --> 00:00:28,210
+The only condition here is that you should
+
+9
+00:00:21,970 --> 00:00:28,210
+have access to that user's profile. If you don't
+
+10
+00:00:28,210 --> 00:00:30,540
+have that,
+
+11
+00:00:30,780 --> 00:00:33,590
+you can't download photos for that user.
+
+12
+00:00:34,030 --> 00:00:37,510
+OK, so I've just written some code here.
+
+13
+00:00:37,510 --> 00:00:44,230
+I'm just going to walk you through it and
+
+14
+00:00:37,510 --> 00:00:44,230
+then you can move forward with the first part of
+
+15
+00:00:44,290 --> 00:00:49,280
+this project which would be logging us into Instagram.
+
+16
+00:00:50,080 --> 00:00:57,940
+OK, so at the very start, the lines I highlighted
+
+17
+00:00:50,080 --> 00:00:57,940
+you can see that these are the "import" statement. I'm
+
+18
+00:00:57,940 --> 00:01:04,320
+importing the webdriver from Selenium and this is
+
+19
+00:00:57,940 --> 00:01:04,320
+what I'll be using to make a Chrome instance.
+
+20
+00:01:04,670 --> 00:01:08,160
+OK, and now I have imported sleep here.
+
+21
+00:01:08,200 --> 00:01:12,180
+I'll explain why I have imported sleep here as we move forward.
+
+22
+00:01:12,850 --> 00:01:20,230
+So I've created an upper class "app" and this
+
+23
+00:01:12,850 --> 00:01:20,230
+is the constructor of this "app", this class.
+
+24
+00:01:20,410 --> 00:01:23,500
+So in the constructor, I have username and password.
+
+25
+00:01:23,560 --> 00:01:27,850
+So this is supposed to be your username and your password.
+
+26
+00:01:27,850 --> 00:01:34,970
+I've created an account here whose username is "dataminer2060" and password
+
+27
+00:01:35,000 --> 00:01:40,580
+is "WebScraper", "target_username" is the argument for the
+
+28
+00:01:40,870 --> 00:01:44,500
+profile you want to open and download photos from.
+
+29
+00:01:44,500 --> 00:01:49,460
+So right now in our case, it's "dataminer2060", I haven't changed that.
+
+30
+00:01:49,480 --> 00:01:56,920
+You can have it for your friend or who have the
+
+31
+00:01:49,480 --> 00:01:56,920
+photo you want to download and this path
+
+32
+00:01:56,950 --> 00:01:59,750
+is where I want my photos to be downloaded.
+
+33
+00:01:59,800 --> 00:02:05,680
+So right now if you see my desktop,
+
+34
+00:01:59,800 --> 00:02:05,680
+we don't see any folder here named in
+
+35
+00:02:05,690 --> 00:02:06,610
+"InstaScraper".
+
+36
+00:02:06,630 --> 00:02:07,800
+You can see it here.
+
+37
+00:02:08,800 --> 00:02:13,180
+But here I have written
+
+38
+00:02:08,800 --> 00:02:13,180
+"Users/waqarjoyian/Desktop/instaPhotos".
+
+39
+00:02:13,180 --> 00:02:15,950
+So when we move forward to the downloading part,
+
+40
+00:02:15,970 --> 00:02:23,480
+I'll show you that if this path exists in your system,
+
+41
+00:02:15,970 --> 00:02:23,480
+OK, then the photos will be downloaded in that
+
+42
+00:02:23,480 --> 00:02:23,790
+path.
+
+43
+00:02:23,800 --> 00:02:29,450
+If it doesn't exist, we are going to make that
+
+44
+00:02:23,800 --> 00:02:29,450
+directory and then download that element photos.
+
+45
+00:02:30,250 --> 00:02:36,320
+OK, so this is our main function here and
+
+46
+00:02:30,250 --> 00:02:36,320
+we are creating an "app" instance here.
+
+47
+00:02:36,440 --> 00:02:40,760
+Now we are not passing any argument here to the "app" object.
+
+48
+00:02:40,760 --> 00:02:41,450
+Why is that?
+
+49
+00:02:41,450 --> 00:02:46,110
+Because you have declared default arguments for the username,
+
+50
+00:02:41,450 --> 00:02:46,110
+password, target_username and
+
+51
+00:02:46,110 --> 00:02:47,640
+path.
+
+52
+00:02:47,720 --> 00:02:55,300
+So here I have just created class variables and I have assigned the values to them.
+
+53
+00:02:55,700 --> 00:02:59,130
+Now here it is line number 13.
+
+54
+00:02:59,210 --> 00:03:02,910
+This is where I create an instance of Chrome.
+
+55
+00:03:02,930 --> 00:03:11,410
+So for some of you, who even added the Chrome driver
+
+56
+00:03:02,930 --> 00:03:11,410
+path, to the Python path in their systems,
+
+57
+00:03:11,900 --> 00:03:12,910
+this statement
+
+58
+00:03:12,910 --> 00:03:16,400
+won't create a Chrome object.
+
+59
+00:03:16,530 --> 00:03:23,220
+So what they would have to do is they would have to
+
+60
+00:03:16,530 --> 00:03:23,220
+manually enter the path for their Chrome driver.
+
+61
+00:03:23,220 --> 00:03:30,230
+So it could be any and then it would be
+
+62
+00:03:23,220 --> 00:03:30,230
+something like this for Mac and Linux
+
+63
+00:03:30,240 --> 00:03:34,180
+users and for Windows it would be ".exe", something like that.
+
+64
+00:03:34,620 --> 00:03:41,290
+So I've added Chrome driver, the path to the
+
+65
+00:03:34,620 --> 00:03:41,290
+Chrome driver to my default Python path
+
+66
+00:03:41,300 --> 00:03:45,830
+so thats why it is not going to cause me problems and
+
+67
+00:03:41,300 --> 00:03:45,830
+the statement is going to execute gracefully.
+
+68
+00:03:47,120 --> 00:03:47,480
+OK.
+
+69
+00:03:47,480 --> 00:03:52,390
+So this is the main URL we want to open, "Instagram.com".
+
+70
+00:03:52,480 --> 00:03:56,930
+And here I say "driver.get", "self.main_url".
+
+71
+00:03:56,960 --> 00:03:59,140
+That sounds like pretty simple right.
+
+72
+00:03:59,390 --> 00:04:03,440
+Let's just run this and see what we get.
+
+73
+00:04:03,650 --> 00:04:10,240
+OK, so you're running this. You can
+
+74
+00:04:03,650 --> 00:04:10,240
+see that open Instagram here.
+
+75
+00:04:16,800 --> 00:04:20,530
+OK, so that's that.
+
+76
+00:04:20,790 --> 00:04:26,560
+Now what we have to do is we
+
+77
+00:04:20,790 --> 00:04:26,560
+have to write the "log_in" function.
+
+78
+00:04:27,010 --> 00:04:32,820
+Let's get started with the "log_in" function.
+
+79
+00:04:34,860 --> 00:04:39,060
+What do we need here, what do we have to do to login.
+
+80
+00:04:39,090 --> 00:04:45,780
+So this is what opens up when you open Instagram
+
+81
+00:04:39,090 --> 00:04:45,780
+so this is where you sign up and then
+
+82
+00:04:45,780 --> 00:04:51,360
+there's this button that says "Have an account? Log in".
+
+83
+00:04:45,780 --> 00:04:51,360
+What we want do is we want to click this button
+
+84
+00:04:51,360 --> 00:04:52,970
+"Log in" which displays.
+
+85
+00:04:52,980 --> 00:05:01,490
+So I click on inspect here, I check it's like the class here.
+
+86
+00:05:01,620 --> 00:05:03,120
+Anchor tag I have.
+
+87
+00:05:03,120 --> 00:05:04,680
+I want to
+
+88
+00:05:04,680 --> 00:05:06,820
+have a reference to this button.
+
+89
+00:05:06,820 --> 00:05:09,660
+And so how do I get this button on with Selenium.
+
+90
+00:05:09,990 --> 00:05:16,070
+So what I do is I say "log_in_button" is equals to "self.driver
+
+91
+00:05:16,090 --> 00:05:19,430
+.find_element_by_xpath".
+
+92
+00:05:19,950 --> 00:05:25,390
+And so this button is basically
+
+93
+00:05:19,950 --> 00:05:25,390
+an anchor tag. Can you see this here?
+
+94
+00:05:25,590 --> 00:05:30,440
+And it has this class and to
+
+95
+00:05:25,590 --> 00:05:30,440
+copy the class here I say "a"
+
+96
+00:05:37,530 --> 00:05:39,270
+The attribute is class.
+
+97
+00:05:39,270 --> 00:05:44,730
+So now that I have this just to be sure that
+
+98
+00:05:39,270 --> 00:05:44,730
+I'm not getting some other anchor tag,
+
+99
+00:05:45,180 --> 00:05:54,780
+I can also include this the "p" tag here and
+
+100
+00:05:45,180 --> 00:05:54,780
+the copy its class and we are going to say "p".
+
+101
+00:06:02,780 --> 00:06:06,160
+So this is going to give me access to the login button.
+
+102
+00:06:06,170 --> 00:06:11,420
+Now what we want to do is we want to click the
+
+103
+00:06:06,170 --> 00:06:11,420
+login button and we say "log_in_button.click".
+
+104
+00:06:12,080 --> 00:06:19,750
+So this should do the clicking part and I'm
+
+105
+00:06:12,080 --> 00:06:19,750
+going to say "input('stop for now')". That line
+
+106
+00:06:19,800 --> 00:06:22,580
+in going to say our program has stopped executing.
+
+107
+00:06:22,580 --> 00:06:23,180
+Why is that?
+
+108
+00:06:23,180 --> 00:06:26,780
+Because I have writeen an input statement
+
+109
+00:06:26,810 --> 00:06:29,570
+which prompts you to give some input.
+
+110
+00:06:29,810 --> 00:06:35,960
+I'm just using that temporarily to let you know to walk
+
+111
+00:06:29,810 --> 00:06:35,960
+you through how we're clicking
+
+112
+00:06:35,960 --> 00:06:37,740
+the button.
+
+113
+00:06:38,030 --> 00:06:40,120
+Ok, so I run this Python log in.
+
+114
+00:06:40,190 --> 00:06:47,790
+Let's see if it clicks the button on not.
+
+115
+00:06:40,190 --> 00:06:47,790
+So it's opening Instagram.
+
+116
+00:06:55,190 --> 00:06:56,440
+OK.
+
+117
+00:06:56,820 --> 00:06:59,120
+Oh, I'm sorry.
+
+118
+00:06:59,450 --> 00:07:01,170
+We didn't call the "log_in" function.
+
+119
+00:07:01,170 --> 00:07:05,840
+We did write it but it won't run obviously until we call it.
+
+120
+00:07:05,900 --> 00:07:07,510
+So I'm running it now.
+
+121
+00:07:20,340 --> 00:07:26,430
+So you can see it did click the "Log in" button and now
+
+122
+00:07:20,340 --> 00:07:26,430
+I have these fields here: phone number, username and
+
+123
+00:07:26,430 --> 00:07:27,510
+password.
+
+124
+00:07:27,960 --> 00:07:30,780
+So OK, perfect. It says "Stop for now".
+
+125
+00:07:30,790 --> 00:07:34,650
+So we have been good. Okay, perfect.
+
+126
+00:07:34,790 --> 00:07:43,150
+Now what we want to do is we have clicked
+
+127
+00:07:34,790 --> 00:07:43,150
+"Log in" button we want now to input a username here
+
+128
+00:07:43,180 --> 00:07:47,210
+and password here and then click "Log in".
+
+129
+00:07:47,240 --> 00:07:51,620
+So let's find the HTML for this username section.
+
+130
+00:07:51,620 --> 00:07:58,760
+So this is an "input" tag which has its placeholder
+
+131
+00:07:51,620 --> 00:07:58,760
+value this. Let's copy the placeholder
+
+132
+00:07:58,760 --> 00:07:59,340
+value.
+
+133
+00:07:59,960 --> 00:08:04,090
+And I say "user_name_input"
+
+134
+00:08:04,300 --> 00:08:16,860
+is equals to this.
+
+135
+00:08:16,870 --> 00:08:26,050
+So what I've done now is I'm going to find this
+
+136
+00:08:16,870 --> 00:08:26,050
+element here, this "input" tag
+
+137
+00:08:26,050 --> 00:08:31,400
+here. I'm going to find this "input" tag and how I'm going
+
+138
+00:08:26,050 --> 00:08:31,400
+to find it is I'm going to use XPath and then
+
+139
+00:08:31,510 --> 00:08:35,740
+use the placeholder value for this "input" tag.
+
+140
+00:08:35,740 --> 00:08:44,800
+So I'm going to say "user_name_input", so the function to
+
+141
+00:08:35,740 --> 00:08:44,800
+type something into an "input" tag is ".send_keys"
+
+142
+00:08:44,800 --> 00:08:48,260
+and what I want to send is
+
+143
+00:08:48,270 --> 00:08:50,600
+I want to send the user name here.
+
+144
+00:08:50,920 --> 00:08:52,500
+So I just did that.
+
+145
+00:08:52,840 --> 00:08:55,060
+So let's move to the password one.
+
+146
+00:08:55,060 --> 00:08:57,850
+What do we have in the passwords.
+
+147
+00:08:58,040 --> 00:09:04,730
+So if you see here, it is another "input" tag and it's place holder is password.
+
+148
+00:09:04,830 --> 00:09:13,110
+So I'm going to do the same here, "password_input" here
+
+149
+00:09:04,830 --> 00:09:13,110
+is equals to "self.driver.find_element_by_xpath"
+
+150
+00:09:14,800 --> 00:09:25,690
+I say "input".
+
+151
+00:09:25,930 --> 00:09:29,760
+Now let's send it.
+
+152
+00:09:30,080 --> 00:09:35,150
+So "self.password". OK, so "input"
+
+153
+00:09:38,870 --> 00:09:46,250
+"stop for now". OK, so now when I run this, I should
+
+154
+00:09:38,870 --> 00:09:46,250
+have the password here
+
+155
+00:09:46,290 --> 00:09:48,570
+and the user name here.
+
+156
+00:09:48,620 --> 00:09:55,050
+We're going to discuss how we login after this part.
+
+157
+00:09:48,620 --> 00:09:55,050
+Let's make sure that we have reached out
+
+158
+00:09:55,280 --> 00:09:56,720
+to line the 31.
+
+159
+00:09:56,740 --> 00:09:59,040
+It is going as expected.
+
+160
+00:09:59,040 --> 00:10:00,910
+I'm running this now.
+
+161
+00:10:01,140 --> 00:10:02,700
+Let's see what happens.
+
+162
+00:10:12,170 --> 00:10:13,310
+OK, logging in.
+
+163
+00:10:16,010 --> 00:10:20,910
+So the settings tab which you're seeing right now this.
+
+164
+00:10:21,110 --> 00:10:22,050
+OK.
+
+165
+00:10:22,370 --> 00:10:24,110
+I'll explain what happened here.
+
+166
+00:10:24,150 --> 00:10:26,080
+The did the setting tab open.
+
+167
+00:10:26,450 --> 00:10:32,470
+But before that, before explaining that, you can see
+
+168
+00:10:26,450 --> 00:10:32,470
+that we have "dataminer2060" here and the
+
+169
+00:10:32,470 --> 00:10:33,560
+password here.
+
+170
+00:10:33,560 --> 00:10:34,410
+Right.
+
+171
+00:10:34,460 --> 00:10:35,480
+So we are going good.
+
+172
+00:10:35,540 --> 00:10:43,190
+You know the code we wrote for this, for finding
+
+173
+00:10:35,540 --> 00:10:43,190
+the user name field and the password field
+
+174
+00:10:43,670 --> 00:10:48,940
+it's working and the password and the user
+
+175
+00:10:43,670 --> 00:10:48,940
+name, they are in the relevant fields.
+
+176
+00:10:49,430 --> 00:10:57,240
+OK, so now I would like to know
+
+177
+00:10:49,430 --> 00:10:57,240
+why the settings tab is opening up.
+
+178
+00:10:57,770 --> 00:11:04,750
+So the reason behind this is I'm using Chrome version
+
+179
+00:10:57,770 --> 00:11:04,750
+62 and the Chrome driver version is 2.3 3.
+
+180
+00:11:04,820 --> 00:11:13,280
+I've just updated it to the latest build and this
+
+181
+00:11:04,820 --> 00:11:13,280
+is why the setting Stabb is opening up. There's some
+
+182
+00:11:13,280 --> 00:11:15,320
+bug here with the Chrome driver.
+
+183
+00:11:15,990 --> 00:11:23,310
+So if your Chrome version right now 62 and
+
+184
+00:11:15,990 --> 00:11:23,310
+you're experiencing the same issue
+
+185
+00:11:23,340 --> 00:11:31,560
+you might want to downgrade it to 59
+
+186
+00:11:23,340 --> 00:11:31,560
+because at 59 it works perfectly for now.
+
+187
+00:11:31,770 --> 00:11:38,880
+I'll explain in the next video how
+
+188
+00:11:31,770 --> 00:11:38,880
+we can move forward without
+
+189
+00:11:40,020 --> 00:11:41,730
+experiencing the settings issue.
+
+190
+00:11:41,880 --> 00:11:47,070
+You are going to experience it but there's a
+
+191
+00:11:41,880 --> 00:11:47,070
+turn around for this and alternative to how we
+
+192
+00:11:47,070 --> 00:11:50,150
+combat this bug here through our code.
+
+193
+00:11:50,370 --> 00:11:54,000
+But if you don't want to do that, if you don't
+
+194
+00:11:50,370 --> 00:11:54,000
+want to get into the technicalities of it.
+
+195
+00:11:54,010 --> 00:11:55,250
+It is not that difficult though.
+
+196
+00:11:55,260 --> 00:12:01,620
+But still if you don't want to do that, it's OK.
+
+197
+00:11:55,260 --> 00:12:01,620
+You can just downgrade your version to
+
+198
+00:12:01,940 --> 00:12:08,840
+Chrome version 60 or 59 and maybe for
+
+199
+00:12:01,940 --> 00:12:08,840
+many of you, this might not be happening.
+
+200
+00:12:08,850 --> 00:12:17,950
+So this is just a bug because of the
+
+201
+00:12:08,850 --> 00:12:17,950
+updated versions of Chrome driver and Chrome.
+
+202
+00:12:17,950 --> 00:12:20,650
+Maybe like soon they might release
+
+203
+00:12:20,940 --> 00:12:25,500
+another version which covers this bug
+
+204
+00:12:20,940 --> 00:12:25,500
+so you might you might not experience it
+
+205
+00:12:25,500 --> 00:12:26,710
+even.
+
+206
+00:12:27,310 --> 00:12:33,930
+Ok, let's complete our login. In the next video, I am going to
+
+207
+00:12:27,310 --> 00:12:33,930
+explain how we are going to combat
+
+208
+00:12:33,930 --> 00:12:37,080
+the setting Stabb issue we face.
+
+209
+00:12:37,080 --> 00:12:43,980
+OK, so coming back to log in, you can see that we have
+
+210
+00:12:37,080 --> 00:12:43,980
+the user name, the user name field and the password
+
+211
+00:12:43,980 --> 00:12:44,840
+and the password field.
+
+212
+00:12:44,830 --> 00:12:47,930
+Now what I want to do is I want to click "Log in".
+
+213
+00:12:48,000 --> 00:12:49,770
+Now there is this Selenium function.
+
+214
+00:12:49,770 --> 00:12:50,880
+What it does is
+
+215
+00:12:54,190 --> 00:13:00,880
+it says like "password_input.submit".
+
+216
+00:13:00,920 --> 00:13:04,180
+What this means is what this is going to do.
+
+217
+00:13:04,760 --> 00:13:06,220
+I'm sorry.
+
+218
+00:13:06,390 --> 00:13:07,690
+Let me just write this.
+
+219
+00:13:07,940 --> 00:13:08,620
+OK.
+
+220
+00:13:08,840 --> 00:13:12,820
+So "password_input" is basically a child of a form.
+
+221
+00:13:12,830 --> 00:13:13,380
+Right.
+
+222
+00:13:13,550 --> 00:13:21,340
+So in HTML you can't have "input" tags without a "form",
+
+223
+00:13:13,550 --> 00:13:21,340
+you can't send data without a form to the server.
+
+224
+00:13:21,480 --> 00:13:27,920
+It's like speaking generally, I'm not speaking about
+
+225
+00:13:21,480 --> 00:13:27,920
+specific instances really using AJAX requests or
+
+226
+00:13:27,920 --> 00:13:30,840
+some other method to send data at the server.
+
+227
+00:13:30,920 --> 00:13:31,740
+So.
+
+228
+00:13:31,860 --> 00:13:32,670
+OK.
+
+229
+00:13:32,720 --> 00:13:33,710
+Coming back to this.
+
+230
+00:13:33,710 --> 00:13:42,710
+So you know what happens is an "input" tag is
+
+231
+00:13:33,710 --> 00:13:42,710
+generally it's a child of a "form" tag, at some
+
+232
+00:13:42,710 --> 00:13:45,130
+point it's a child or "form" tag.
+
+233
+00:13:45,140 --> 00:13:50,130
+So what we do is, what we want to do is we want to submit that form.
+
+234
+00:13:50,140 --> 00:13:57,330
+So if you if you see log in here, it's a button and when we click on it.
+
+235
+00:13:57,330 --> 00:14:04,720
+It is in the submit this form here which I've highlighted
+
+236
+00:13:57,330 --> 00:14:04,720
+in the screen. Can you see this in the HTML?
+
+237
+00:14:05,120 --> 00:14:07,070
+This is going to submit this form.
+
+238
+00:14:07,110 --> 00:14:13,740
+So there is a quick way to do this in Selenium,
+
+239
+00:14:07,110 --> 00:14:13,740
+is that if you have access to a
+
+240
+00:14:13,740 --> 00:14:18,320
+single "input" tag in Selenium what you do
+
+241
+00:14:13,740 --> 00:14:18,320
+is just say "password" and "input.submit".
+
+242
+00:14:18,450 --> 00:14:22,400
+So it would also work if I say "user_name.submit".
+
+243
+00:14:22,470 --> 00:14:23,730
+It's basically the same thing.
+
+244
+00:14:23,730 --> 00:14:25,090
+It doesn't make difference.
+
+245
+00:14:25,130 --> 00:14:26,600
+I'm going to run this now.
+
+246
+00:14:26,760 --> 00:14:28,710
+And let's see if I were able to log in.
+
+247
+00:14:28,830 --> 00:14:29,440
+OK.
+
+248
+00:14:32,100 --> 00:14:34,990
+OK, so it opens up Instagram.
+
+249
+00:14:35,040 --> 00:14:35,830
+Cool.
+
+250
+00:14:40,190 --> 00:14:45,350
+Log in. Ok, the settings issue. Oh, so we're logged in.
+
+251
+00:14:45,370 --> 00:14:50,080
+You can see that there's a pop up here and
+
+252
+00:14:45,370 --> 00:14:50,080
+basically we are logged in, you can see that.
+
+253
+00:14:50,190 --> 00:14:50,750
+OK.
+
+254
+00:14:52,060 --> 00:14:58,510
+OK, so in this video I walked you through as to how
+
+255
+00:14:52,060 --> 00:14:58,510
+you can log into Instagram using Selenium
+
+256
+00:14:58,810 --> 00:15:05,650
+and Python. In the next video, we are going to
+
+257
+00:14:58,810 --> 00:15:05,650
+discuss how to combat the Settings tab issue.
+
+258
+00:15:05,650 --> 00:15:07,530
+It may not be occurring for you.
+
+259
+00:15:07,530 --> 00:15:09,010
+So if it's not coming for you.
+
+260
+00:15:09,010 --> 00:15:11,280
+Just keep that video and we are good.
+
+261
+00:15:11,300 --> 00:15:13,230
+We're going to write a code for this.
+
+262
+00:15:13,280 --> 00:15:14,820
+Like a single line code.
+
+263
+00:15:14,890 --> 00:15:17,790
+And next video, we can skip that code.
+
+264
+00:15:17,800 --> 00:15:21,990
+If this issue is not happening for you,
+
+265
+00:15:22,330 --> 00:15:26,670
+you can skip that or even if you have
+
+266
+00:15:22,330 --> 00:15:26,670
+it's not going to cause any problems.
+
+267
+00:15:26,670 --> 00:15:29,080
+I'm sure of that and I will make sure you of that.
+
+268
+00:15:29,740 --> 00:15:34,010
+OK, so see in the next video then I hope the "log_in" function is clear to you.
+
+269
+00:15:34,060 --> 00:15:34,480
+Thank you.
+

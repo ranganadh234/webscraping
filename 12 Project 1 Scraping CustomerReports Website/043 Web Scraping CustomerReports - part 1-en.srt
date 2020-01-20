@@ -1,0 +1,684 @@
+1
+00:00:00,460 --> 00:00:07,610
+Hello everyone! In this video, we are going to scrap some
+
+2
+00:00:00,460 --> 00:00:07,610
+data from this URL which I've opened, this website
+
+3
+00:00:07,680 --> 00:00:14,690
+page, this HTML page I have so the site's name is Consumer Reports
+
+4
+00:00:14,690 --> 00:00:16,510
+".org".
+
+5
+00:00:16,740 --> 00:00:22,660
+And I have this URL for this page here. I've showed you all with you in my code.
+
+6
+00:00:22,810 --> 00:00:25,540
+So this
+
+7
+00:00:25,630 --> 00:00:29,780
+here, this page contains products from A to Z.
+
+8
+00:00:29,800 --> 00:00:34,930
+So for A you have different products, air
+
+9
+00:00:29,800 --> 00:00:34,930
+conditioners, airline travel, appliance stores, athletic
+
+10
+00:00:34,930 --> 00:00:37,250
+shoes. For B
+
+11
+00:00:37,330 --> 00:00:45,580
+you have baby food, baby bathtubs, backpacks, batteries, beer, bike helmets and so on.
+
+12
+00:00:45,610 --> 00:00:47,420
+So the list goes on and on and on.
+
+13
+00:00:47,430 --> 00:00:52,070
+For each alphabet you have some products listed here.
+
+14
+00:00:52,990 --> 00:01:02,230
+So what I want to do here is that I want to
+
+15
+00:00:52,990 --> 00:01:02,230
+scrap the names of these products, these whole
+
+16
+00:01:02,230 --> 00:01:03,940
+products from A to Z.
+
+17
+00:01:03,970 --> 00:01:07,540
+One way would be that
+
+18
+00:01:07,600 --> 00:01:09,780
+I can write them down manually, I could say
+
+19
+00:01:09,790 --> 00:01:15,370
+"OK, air conditioner is first, air purifier, airline
+
+20
+00:01:09,790 --> 00:01:15,370
+travel, all-purpose cleaner, appliance stores..."
+
+21
+00:01:15,760 --> 00:01:17,790
+And I don't know how many there are there.
+
+22
+00:01:17,950 --> 00:01:20,360
+I mean they look a lot.
+
+23
+00:01:20,370 --> 00:01:21,100
+OK.
+
+24
+00:01:21,190 --> 00:01:27,670
+So the other ways is that we can write
+
+25
+00:01:21,190 --> 00:01:27,670
+a script and we can scrape the list,
+
+26
+00:01:28,200 --> 00:01:32,080
+the names of them, like okay which products are listed here.
+
+27
+00:01:33,030 --> 00:01:39,690
+So how are you going to do that. I'm going to show
+
+28
+00:01:33,030 --> 00:01:39,690
+this in this video, I'm going to show you
+
+29
+00:01:39,690 --> 00:01:45,820
+how to get a list of these products here, of all the products that are listed here.
+
+30
+00:01:46,140 --> 00:01:47,370
+OK.
+
+31
+00:01:47,370 --> 00:01:51,060
+So I have this Python file here.
+
+32
+00:01:51,060 --> 00:01:57,630
+What it does is I give it a URL and give it a
+
+33
+00:01:51,060 --> 00:01:57,630
+filename and output filename and it gives
+
+34
+00:01:57,630 --> 00:02:00,060
+me the HTML of that file.
+
+35
+00:02:00,180 --> 00:02:05,800
+It's pretty simple what I've done here is that
+
+36
+00:02:00,180 --> 00:02:05,800
+I've sended a request to this URL
+
+37
+00:02:05,850 --> 00:02:16,880
+and then I write the HTML of this URL to a
+
+38
+00:02:05,850 --> 00:02:16,880
+".txt" file so we don't ping the server of the site
+
+39
+00:02:16,920 --> 00:02:19,480
+often. OK.
+
+40
+00:02:19,490 --> 00:02:27,970
+So what we want to do here is that we want to scrape the names of these products.
+
+41
+00:02:28,090 --> 00:02:32,430
+We want to know which products are listed here.
+
+42
+00:02:33,270 --> 00:02:34,510
+So what do I do.
+
+43
+00:02:34,870 --> 00:02:35,210
+OK.
+
+44
+00:02:35,220 --> 00:02:40,540
+So in your browser, I'm using Safari right now.
+
+45
+00:02:40,620 --> 00:02:47,910
+But I'll say you could use Firefox or Chrome for
+
+46
+00:02:40,620 --> 00:02:47,910
+this if you want to or even Safari. Safari is good.
+
+47
+00:02:48,030 --> 00:02:50,720
+So when you double click,
+
+48
+00:02:50,850 --> 00:02:58,830
+when you right click, you get this window here and then you click "Inspect
+
+49
+00:02:58,830 --> 00:03:06,230
+Element" and this "Inspect Element" gives you the whole page HTML.
+
+50
+00:03:06,300 --> 00:03:09,330
+I have the whole page HTML here, right here.
+
+51
+00:03:11,250 --> 00:03:14,540
+Like where my cursor is. I'm scrolling through it right now.
+
+52
+00:03:14,610 --> 00:03:21,660
+So as soon as I move over to some element, you know, it's highlighted.
+
+53
+00:03:21,660 --> 00:03:27,870
+Here you can see, the "By Category" is highlighted in my HTML page.
+
+54
+00:03:28,110 --> 00:03:31,990
+So as like I moved here now the product part is highlighted.
+
+55
+00:03:32,290 --> 00:03:40,380
+So this shows me that this div contains this data on the HTML page.
+
+56
+00:03:40,390 --> 00:03:48,520
+So what I'm interested in is I'm interested in the
+
+57
+00:03:40,390 --> 00:03:48,520
+names of the products listed so I say "air conditioner",
+
+58
+00:03:48,520 --> 00:03:49,600
+"Inspect Element".
+
+59
+00:03:49,810 --> 00:03:56,640
+So you see here we have this "air conditioner" is written
+
+60
+00:03:49,810 --> 00:03:56,640
+and it is in the "span" tag. Can you see this here?
+
+61
+00:03:57,300 --> 00:03:57,850
+This is a "span" tag
+
+62
+00:03:57,900 --> 00:03:59,920
+and as I move upward
+
+63
+00:03:59,970 --> 00:04:08,090
+I get a "a href" tag and then as I get a "div"
+
+64
+00:03:59,970 --> 00:04:08,090
+tag and then I have another that "div". So
+
+65
+00:04:08,390 --> 00:04:12,700
+if I close this "div", you can see I have
+
+66
+00:04:08,390 --> 00:04:12,700
+multiple divs which say "results".
+
+67
+00:04:12,880 --> 00:04:17,360
+And in each "results" there, there is another "div" "entry-letter".
+
+68
+00:04:17,570 --> 00:04:21,230
+And this is similar for each product.
+
+69
+00:04:22,000 --> 00:04:30,500
+You can see that "entry-letter" here is for "air
+
+70
+00:04:22,000 --> 00:04:30,500
+conditioners". Then as I move downwards I get it for "air
+
+71
+00:04:30,500 --> 00:04:38,540
+purifiers" and then as I move further down what I get
+
+72
+00:04:30,500 --> 00:04:38,540
+is for "airline travel", so it's safe to assume that each
+
+73
+00:04:38,540 --> 00:04:47,530
+product has this div. I'll just make sure by
+
+74
+00:04:38,540 --> 00:04:47,530
+going to some random product and if I go to
+
+75
+00:04:47,560 --> 00:04:55,300
+"coffee makers" and if move I forward here, you can see right
+
+76
+00:04:47,560 --> 00:04:55,300
+now in this "span" of this "coffee makers", I move up a tag
+
+77
+00:04:55,340 --> 00:05:04,070
+then there is this "div" and this "div" which has a
+
+78
+00:04:55,340 --> 00:05:04,070
+class "entry-letter" so you can see that this is consistent like
+
+79
+00:05:04,140 --> 00:05:10,730
+all the products are under a "div" tag which has its class "entry-letter".
+
+80
+00:05:10,780 --> 00:05:14,080
+So this is something which is common in all the product,
+
+81
+00:05:14,080 --> 00:05:18,390
+all the products that are listed here.
+
+82
+00:05:18,400 --> 00:05:25,780
+So right now I want you to run this script and this would generate
+
+83
+00:05:25,810 --> 00:05:28,480
+a HTML file for this page.
+
+84
+00:05:28,480 --> 00:05:32,340
+So the name I've set is "consumer_reports".
+
+85
+00:05:32,590 --> 00:05:33,830
+I mean it depends on you.
+
+86
+00:05:33,850 --> 00:05:38,980
+Whatever you want, you can set it here and the URL for this site is this one.
+
+87
+00:05:39,250 --> 00:05:47,000
+So I run this and here is my "consumer_reports.txt" this page.
+
+88
+00:05:47,110 --> 00:05:54,990
+You can see that here, so I have the HTML for this page here in this ".txt" file.
+
+89
+00:05:55,000 --> 00:05:57,730
+OK so what I do know is
+
+90
+00:06:00,530 --> 00:06:05,560
+I open this file, I read this file and then I make a soup out of this file
+
+91
+00:06:05,640 --> 00:06:11,310
+this "consumer_reports" file. So I have a soup of this
+
+92
+00:06:05,640 --> 00:06:11,310
+whole page here, the soup of the page you are viewing.
+
+93
+00:06:11,540 --> 00:06:18,020
+So what did we decide on? We decided that every product
+
+94
+00:06:11,540 --> 00:06:18,020
+has one thing in common that it is under a "div"
+
+95
+00:06:18,020 --> 00:06:21,000
+tag which has its class "entry-letter".
+
+96
+00:06:21,080 --> 00:06:22,090
+You can see it here.
+
+97
+00:06:22,370 --> 00:06:27,140
+We can just make the sure by moving to some on the very end.
+
+98
+00:06:27,470 --> 00:06:31,950
+So for some of the products that are listed at the very end.
+
+99
+00:06:32,000 --> 00:06:39,470
+So if I click on this "Washing Machine" and if I say
+
+100
+00:06:32,000 --> 00:06:39,470
+"Inspect Element", I can see this "span" and then as I move upwards
+
+101
+00:06:39,510 --> 00:06:40,640
+I can get to the "a" tag
+
+102
+00:06:40,670 --> 00:06:48,120
+and then up further to the "div" tag and then here,
+
+103
+00:06:40,670 --> 00:06:48,120
+this "div" here which has its class "entry-letter".
+
+104
+00:06:48,150 --> 00:06:55,100
+OK, so now what we can do is I want to find all the divs
+
+105
+00:06:48,150 --> 00:06:55,100
+which have the class "entry-letter" as they contain
+
+106
+00:06:55,550 --> 00:07:07,340
+the name of a product. OK, so I say "all_divs" is
+
+107
+00:06:55,550 --> 00:07:07,340
+equals to "soup.find_all", and then I say "div"
+
+108
+00:07:08,980 --> 00:07:12,100
+and now I can set the attributes and I could say "class",
+
+109
+00:07:14,890 --> 00:07:22,210
+"entry-letter". I think this is it, "entry-letter" yes.
+
+110
+00:07:22,320 --> 00:07:30,100
+I've just matched it and it's "entry-letter". OK, so
+
+111
+00:07:22,320 --> 00:07:30,100
+if I say "for div in all_divs", print "div"
+
+112
+00:07:33,010 --> 00:07:40,620
+you can see it returns me a list of divs with class "entry-letter".
+
+113
+00:07:41,510 --> 00:07:44,470
+OK so now I want to print this.
+
+114
+00:07:44,500 --> 00:07:47,070
+I want to know that.
+
+115
+00:07:47,260 --> 00:07:47,870
+OK.
+
+116
+00:07:48,100 --> 00:07:49,990
+Which product is being listed here.
+
+117
+00:07:50,000 --> 00:07:51,790
+No this is garbage.
+
+118
+00:07:51,790 --> 00:07:52,690
+I mean OK.
+
+119
+00:07:52,700 --> 00:07:57,130
+Yes, I can see that "air conditioners" is here right
+
+120
+00:07:52,700 --> 00:07:57,130
+now but I only want the "air conditioning" thing.
+
+121
+00:07:57,250 --> 00:08:02,950
+I don't want this "a" tag, I don't want this "span" tag, I
+
+122
+00:07:57,250 --> 00:08:02,950
+don't want this "div" tag here, I only want to see
+
+123
+00:08:02,950 --> 00:08:04,680
+the name of the product listed.
+
+124
+00:08:04,900 --> 00:08:10,040
+I don't want this, I don't want these tags here,
+
+125
+00:08:04,900 --> 00:08:10,040
+I don't want the HTML of these tags here.
+
+126
+00:08:10,260 --> 00:08:11,430
+So what do I do.
+
+127
+00:08:12,400 --> 00:08:19,630
+As you can see that if I'm at this "div" which has
+
+128
+00:08:12,400 --> 00:08:19,630
+its class "entry-letter" where is my span
+
+129
+00:08:19,690 --> 00:08:21,610
+which contains "Washing Machines".
+
+130
+00:08:21,850 --> 00:08:28,260
+So this "div" has a child which is a "div",
+
+131
+00:08:21,850 --> 00:08:28,260
+then this is a child which is an "a" tag.
+
+132
+00:08:28,470 --> 00:08:32,600
+And then this "a" tag has a child with just the "span" tag.
+
+133
+00:08:32,610 --> 00:08:37,660
+So what I do is I say print "div.div". OK.
+
+134
+00:08:37,690 --> 00:08:43,570
+So I started off from here when they say "div.div"
+
+135
+00:08:37,690 --> 00:08:43,570
+I get to this div here and then I want to get
+
+136
+00:08:43,570 --> 00:08:48,250
+to this "a" tag. What I do is I say ".a".
+
+137
+00:08:48,390 --> 00:08:57,110
+Now I made this "a" tag and now I want to get the "span"
+
+138
+00:08:48,390 --> 00:08:57,110
+tag so what I do know is I say ".span". So now I'm
+
+139
+00:08:57,110 --> 00:08:58,520
+at the "span" tag.
+
+140
+00:08:58,790 --> 00:09:06,380
+And if I run this, you can see it gives
+
+141
+00:08:58,790 --> 00:09:06,380
+me "span" tags, whole "span" tags.
+
+142
+00:09:06,440 --> 00:09:11,580
+And then in each "span" tag I have a string which
+
+143
+00:09:06,440 --> 00:09:11,580
+lists the name of the product I'm interested in.
+
+144
+00:09:11,690 --> 00:09:16,850
+So how do we get the list out the tag? We use the ".string" method.
+
+145
+00:09:17,980 --> 00:09:24,730
+And if I run it, it gives me the names of all
+
+146
+00:09:17,980 --> 00:09:24,730
+the products which are listed on this page
+
+147
+00:09:24,750 --> 00:09:29,050
+here. All of them.
+
+148
+00:09:29,180 --> 00:09:31,430
+So I hope this is clear to you.
+
+149
+00:09:31,640 --> 00:09:38,120
+So if I want to make a list what I can do is I can say "products" is equal to
+
+150
+00:09:41,290 --> 00:09:46,480
+"div.div.a.span.string for div in all_divs".
+
+151
+00:09:54,310 --> 00:09:55,580
+and now
+
+152
+00:09:59,690 --> 00:10:01,010
+I can iterate over this.
+
+153
+00:10:01,010 --> 00:10:09,030
+If I want to I can say print "product". You can
+
+154
+00:10:01,010 --> 00:10:09,030
+see it gives me the whole list of products.
+
+155
+00:10:09,150 --> 00:10:15,650
+This "product" contains the name of each product that is listed on this page.
+
+156
+00:10:17,250 --> 00:10:24,840
+So I hope this example is clear to you and I hope
+
+157
+00:10:17,250 --> 00:10:24,840
+that how this works and how we can actually
+
+158
+00:10:24,840 --> 00:10:31,040
+apply the skills we have learned on life sites and
+
+159
+00:10:24,840 --> 00:10:31,040
+how we can scrape data and how we can define
+
+160
+00:10:31,080 --> 00:10:35,710
+the data that we have scraped and get the values which we really need.
+
+161
+00:10:35,920 --> 00:10:44,580
+And I hope that now this is both clear to you. In the next video, we are going to work on
+
+162
+00:10:44,580 --> 00:10:45,100
+this.
+
+163
+00:10:45,170 --> 00:10:48,120
+We are going to work more on this.
+
+164
+00:10:48,480 --> 00:10:51,530
+I'll have a slight change.
+
+165
+00:10:51,530 --> 00:10:56,130
+So the data that I want to extract and then we'll see how we do that.
+
+166
+00:10:56,130 --> 00:11:01,130
+After that you've been to get a project which I want you to work on yourself.
+
+167
+00:11:01,380 --> 00:11:07,540
+And then then we can discuss on the project like what I
+
+168
+00:11:01,380 --> 00:11:07,540
+want you to do with the project and how you are going to
+
+169
+00:11:07,770 --> 00:11:09,450
+achieve it.
+
+170
+00:11:09,450 --> 00:11:10,200
+Thank you very much.
+
+171
+00:11:10,200 --> 00:11:11,540
+I'll see you in the next video.
+

@@ -1,0 +1,416 @@
+1
+00:00:00,970 --> 00:00:09,130
+Hello everyone! In the last video, we've discussed the
+
+2
+00:00:00,970 --> 00:00:09,130
+".contents" and ".children" methods of tags and how we can
+
+3
+00:00:09,130 --> 00:00:13,970
+access the children of any tag through these methods.
+
+4
+00:00:14,320 --> 00:00:21,170
+In this video, we're going to discuss
+
+5
+00:00:14,320 --> 00:00:21,170
+the method ".descendants" each tag has.
+
+6
+00:00:21,360 --> 00:00:27,860
+I mean like if you see the names "children" and "descendants",
+
+7
+00:00:21,360 --> 00:00:27,860
+they are pretty much the same thing.
+
+8
+00:00:27,930 --> 00:00:29,600
+But there's a difference.
+
+9
+00:00:29,650 --> 00:00:37,350
+Like a great one. If you see in this example here,
+
+10
+00:00:29,650 --> 00:00:37,350
+like this is we file we are using in the previous video
+
+11
+00:00:37,350 --> 00:00:40,750
+as well and I mean to use it in this one too.
+
+12
+00:00:40,920 --> 00:00:47,800
+So in this video, in this HTML file, you can see
+
+13
+00:00:40,920 --> 00:00:47,800
+that I have this "head" tag and it contains it in
+
+14
+00:00:47,860 --> 00:00:51,200
+the "title" tag which contained a navigable string.
+
+15
+00:00:51,230 --> 00:00:56,310
+So this navigable string is basically a child of this "head" tag.
+
+16
+00:00:57,120 --> 00:01:05,140
+And if I use the ".contents" method, should I get this as a child or not.
+
+17
+00:01:05,490 --> 00:01:08,810
+I mean up to now what we have seen,
+
+18
+00:01:08,850 --> 00:01:10,950
+I think we should get this as a child.
+
+19
+00:01:11,310 --> 00:01:21,390
+But if I say "head" is equals to "soup.head" and
+
+20
+00:01:11,310 --> 00:01:21,390
+I say "for child in soup.head", print "child",
+
+21
+00:01:24,210 --> 00:01:26,840
+you can see I don't really get this as a child.
+
+22
+00:01:26,840 --> 00:01:30,790
+I don't get this navigable string as a child here.
+
+23
+00:01:30,810 --> 00:01:37,250
+I can print the length. I can say print "head.contents".
+
+24
+00:01:38,580 --> 00:01:44,170
+And I can say print "len(head.contents)".
+
+25
+00:01:44,750 --> 00:01:51,470
+So you can see it has given me this list which in
+
+26
+00:01:44,750 --> 00:01:51,470
+its first index contains in a new line character and
+
+27
+00:01:51,560 --> 00:01:57,290
+second it contains the "title" tag and in the third
+
+28
+00:01:51,560 --> 00:01:57,290
+it contains another new line character. It gives me three,
+
+29
+00:01:57,610 --> 00:01:58,480
+the length three.
+
+30
+00:01:58,490 --> 00:02:02,200
+But in actual I mean it only contains one child
+
+31
+00:02:02,270 --> 00:02:04,640
+when we omit these new line characters.
+
+32
+00:02:05,180 --> 00:02:14,360
+So when we used ".contents" method it is giving us
+
+33
+00:02:05,180 --> 00:02:14,360
+one child but if we see this, this navigable string,
+
+34
+00:02:14,360 --> 00:02:16,380
+is also a child of "head".
+
+35
+00:02:16,400 --> 00:02:18,560
+So what's happening here.
+
+36
+00:02:18,560 --> 00:02:27,220
+So the issue with ".contents" method is that it only returns
+
+37
+00:02:27,340 --> 00:02:36,010
+any direct children of the said tag we are using it with.
+
+38
+00:02:27,340 --> 00:02:36,010
+So the direct children of "head" are... is only "title".
+
+39
+00:02:36,270 --> 00:02:41,110
+Navigable string is a child of "title", it is not a direct child of "head".
+
+40
+00:02:41,540 --> 00:02:45,220
+I'm just going to clarify this with another example.
+
+41
+00:02:45,430 --> 00:02:50,320
+Let's take "body" here. "body" contains four children: "b", "p"...
+
+42
+00:02:50,390 --> 00:02:58,560
+I mean four direct children: "b", "p", another "p",
+
+43
+00:02:50,390 --> 00:02:58,560
+another "p". And you can see these are four.
+
+44
+00:02:58,570 --> 00:03:04,450
+One, two, three, four. But if we see the children in here I mean there are different tags.
+
+45
+00:03:04,450 --> 00:03:05,970
+I have these eight.
+
+46
+00:03:06,050 --> 00:03:13,010
+See I'm not really counting them but if you really need to get all the children "body"
+
+47
+00:03:13,010 --> 00:03:20,300
+tag has, so these "a" tags too count two and these navigable strings, they do counting.
+
+48
+00:03:20,770 --> 00:03:26,240
+But when we use the ".contents" method it only returns us direct children.
+
+49
+00:03:26,450 --> 00:03:30,090
+"returns us direct children of the said tag".
+
+50
+00:03:31,490 --> 00:03:41,310
+I'm just going to show you this with "body".
+
+51
+00:03:31,490 --> 00:03:41,310
+I can say "body" is equals to "soup.body" and if I print
+
+52
+00:03:41,550 --> 00:03:47,490
+"body.contents" and I say print the length of "body.contents",
+
+53
+00:03:50,720 --> 00:03:57,970
+it gives me 9 and there are many new line characters here. So we can just omit them.
+
+54
+00:03:58,130 --> 00:04:06,070
+After that we're only going to get four or maybe I could just show you this. Just give me a sec.
+
+55
+00:04:10,220 --> 00:04:25,480
+"children"... I want to make my custom list and I'm to say "for child in" this, and I say "child",
+
+56
+00:04:28,200 --> 00:04:35,900
+"if child" does not equals to this. And now if I print "len(children)",
+
+57
+00:04:38,710 --> 00:04:43,040
+you can see I get four. And now if I print "children".
+
+58
+00:04:46,110 --> 00:04:56,400
+So the first element is the "b" tag, this one.
+
+59
+00:04:46,110 --> 00:04:56,400
+Second is this "p", class="title". Then I have
+
+60
+00:04:56,540 --> 00:04:57,400
+this "p".
+
+61
+00:04:57,600 --> 00:05:04,920
+And then lastly I have this "p". So it has four children, as you can see.
+
+62
+00:05:04,920 --> 00:05:13,200
+I mean four direct children. So the ".contents" method
+
+63
+00:05:04,920 --> 00:05:13,200
+returns us direct children of the said tag.
+
+64
+00:05:13,950 --> 00:05:21,420
+But when we talk about the descendants method,
+
+65
+00:05:13,950 --> 00:05:21,420
+this returns us all the children there are for any given
+
+66
+00:05:21,470 --> 00:05:22,320
+tag.
+
+67
+00:05:22,720 --> 00:05:27,020
+They're not really confined to direct children.
+
+68
+00:05:27,300 --> 00:05:30,870
+It is going to access all the children a tag has.
+
+69
+00:05:31,260 --> 00:05:39,150
+So for a very simple example, here "head" has two children, this "title" and this navigable string.
+
+70
+00:05:39,300 --> 00:05:41,200
+I mean if we count all the children.
+
+71
+00:05:41,310 --> 00:05:48,400
+It only has one direct child which is this "title" and all the children it has, the number is two here.
+
+72
+00:05:48,750 --> 00:05:53,580
+So this "descendants" returns us
+
+73
+00:05:57,550 --> 00:06:08,920
+all the children of the said tag and it returns us a generator.
+
+74
+00:06:09,230 --> 00:06:21,210
+So I can say "for index, child in enumerate".
+
+75
+00:06:09,230 --> 00:06:21,210
+I can say, talking about "head" here:
+
+76
+00:06:21,280 --> 00:06:23,330
+"soup.head.descendants".
+
+77
+00:06:27,300 --> 00:06:39,780
+Then can just print this, print "index" and I can say
+
+78
+00:06:27,300 --> 00:06:39,780
+print "child" if "child" does not equals to "\n" else this.
+
+79
+00:06:40,010 --> 00:06:49,740
+So if I run this, you can see it gives me two basically because this here is a "\n"
+
+80
+00:06:49,770 --> 00:06:58,350
+or, just to clarify, just to show you that it's really a "\n", I'm
+
+81
+00:06:58,350 --> 00:07:03,860
+just going to say "do this here" so that you know that
+
+82
+00:06:58,350 --> 00:07:03,860
+this is a "\n". Oh, I have to escape this. I'm
+
+83
+00:07:03,870 --> 00:07:06,110
+sorry.
+
+84
+00:07:06,260 --> 00:07:11,780
+So you can see, it contains a new line character and that the ending index contains another
+
+85
+00:07:11,780 --> 00:07:12,610
+new line character.
+
+86
+00:07:12,620 --> 00:07:13,980
+So we can just omit that.
+
+87
+00:07:14,250 --> 00:07:16,390
+So after that we only have two children.
+
+88
+00:07:16,410 --> 00:07:22,640
+The first one is the "title" tag and the second one is
+
+89
+00:07:16,410 --> 00:07:22,640
+the navigable string we have in that "title" tag.
+
+90
+00:07:22,850 --> 00:07:30,980
+So ".descendants" method returns us all the child
+
+91
+00:07:22,850 --> 00:07:30,980
+a particular tag has, regardless of the
+
+92
+00:07:30,980 --> 00:07:41,440
+fact that is that a direct child or it is a child of a child.
+
+93
+00:07:30,980 --> 00:07:41,440
+So I hope this is clear the ".contents" method
+
+94
+00:07:41,440 --> 00:07:48,430
+returns us direct children of the said tag. A very simple and a brief example is that this "title" is a direct
+
+95
+00:07:48,490 --> 00:07:53,200
+child of "head" whereas this navigable string is not a direct child of "head".
+
+96
+00:07:53,320 --> 00:07:55,180
+It is a direct child of "title".
+
+97
+00:07:56,740 --> 00:08:05,820
+And similarly this "head" tag has two children. Like if
+
+98
+00:07:56,740 --> 00:08:05,820
+we see all the children there are inside this "head" tag,
+
+99
+00:08:05,900 --> 00:08:06,610
+they are
+
+100
+00:08:06,700 --> 00:08:10,820
+the "title" tag and this navigable string.
+
+101
+00:08:10,840 --> 00:08:16,090
+I hope this is clear to you and I want you to play around
+
+102
+00:08:10,840 --> 00:08:16,090
+with this so that you're most familiar with
+
+103
+00:08:16,090 --> 00:08:17,610
+this and how this works.
+
+104
+00:08:17,800 --> 00:08:19,400
+So thank you very much.
+

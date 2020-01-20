@@ -1,0 +1,436 @@
+1
+00:00:00,560 --> 00:00:08,300
+Hello everyone! In this video we're going to discuss
+
+2
+00:00:00,560 --> 00:00:08,300
+how we can access our tags children and how we can
+
+3
+00:00:08,300 --> 00:00:10,180
+move through them.
+
+4
+00:00:10,220 --> 00:00:15,280
+So I'm going to use the previous HTML file we used in the previous example.
+
+5
+00:00:15,380 --> 00:00:21,710
+So in this file we have this "html" tag
+
+6
+00:00:15,380 --> 00:00:21,710
+which contains two children, "head" and "body".
+
+7
+00:00:21,890 --> 00:00:26,940
+This head contains one child, "title",
+
+8
+00:00:21,890 --> 00:00:26,940
+and then this "body" contains further children.
+
+9
+00:00:26,950 --> 00:00:29,570
+They are like this "b" tag, this "p" tag and other "p"
+
+10
+00:00:29,570 --> 00:00:31,230
+and then another "p".
+
+11
+00:00:31,290 --> 00:00:37,320
+So I think there are four. One, two, three, four...
+
+12
+00:00:31,290 --> 00:00:37,320
+Yes, there are four. So "body" has four children and "head" has
+
+13
+00:00:37,320 --> 00:00:38,510
+one child
+
+14
+00:00:38,760 --> 00:00:41,930
+and "html" has two children.
+
+15
+00:00:42,130 --> 00:00:46,840
+So how can I know that this tag contains this many children.
+
+16
+00:00:48,130 --> 00:00:56,320
+OK, so Beautiful Soup provides us with different methods to do access a tags children.
+
+17
+00:00:56,380 --> 00:00:59,420
+The first method is ".contents".
+
+18
+00:00:59,620 --> 00:01:07,790
+This is a method for any tag.
+
+19
+00:00:59,620 --> 00:01:07,790
+"Returns a list of children"
+
+20
+00:01:09,350 --> 00:01:13,110
+for that particular tag we're talking about.
+
+21
+00:01:13,110 --> 00:01:23,420
+So let's say "head" is equal to "soup.head".
+
+22
+00:01:13,110 --> 00:01:23,420
+And if I say print
+
+23
+00:01:23,800 --> 00:01:24,420
+"head.contents",
+
+24
+00:01:29,510 --> 00:01:35,980
+it returns me a list and this list contains this "\n".
+
+25
+00:01:29,510 --> 00:01:35,980
+This is a new line character because we're
+
+26
+00:01:35,990 --> 00:01:37,310
+reading from a file.
+
+27
+00:01:37,400 --> 00:01:44,120
+So we have these new line characters and we don't really need them.
+
+28
+00:01:44,540 --> 00:01:51,890
+They are basically garbage right now for us but
+
+29
+00:01:44,540 --> 00:01:51,890
+for indentation we have to have these new
+
+30
+00:01:51,890 --> 00:01:53,010
+line characters.
+
+31
+00:01:53,240 --> 00:01:58,800
+So just don't focus on them right now.
+
+32
+00:01:59,030 --> 00:02:08,540
+I mean it displays "title" tag which shows
+
+33
+00:01:59,030 --> 00:02:08,540
+that it has this "title" tag as its child.
+
+34
+00:02:09,140 --> 00:02:09,580
+OK.
+
+35
+00:02:09,590 --> 00:02:17,810
+And actually this is a list so I can iterate through
+
+36
+00:02:09,590 --> 00:02:17,810
+this. I can say "for child in head.content"
+
+37
+00:02:17,920 --> 00:02:30,380
+print "child" if "child" is not None.
+
+38
+00:02:30,480 --> 00:02:36,340
+So it gives me this "title" tag as its child.
+
+39
+00:02:36,340 --> 00:02:41,970
+So it had has only one child which is
+
+40
+00:02:36,340 --> 00:02:41,970
+the "title" tag. Let's move to "body" now.
+
+41
+00:02:41,970 --> 00:02:48,150
+Let's say I mean I'm just going to give you an example
+
+42
+00:02:41,970 --> 00:02:48,150
+of "body" that this is more clear and we'll
+
+43
+00:02:48,160 --> 00:02:51,450
+have new link for this, doing
+
+44
+00:02:48,160 --> 00:02:51,450
+that we just simply ignore them.
+
+45
+00:02:51,890 --> 00:02:52,340
+OK.
+
+46
+00:02:52,360 --> 00:02:59,660
+So I say "body" is equals to "soup.body".
+
+47
+00:02:59,830 --> 00:03:05,510
+And I say "body.contents".
+
+48
+00:03:05,730 --> 00:03:07,050
+So when I run this...
+
+49
+00:03:09,720 --> 00:03:21,880
+I think we need to make sure that we know there's a difference.
+
+50
+00:03:21,960 --> 00:03:23,020
+I think this should do this.
+
+51
+00:03:25,990 --> 00:03:26,290
+OK.
+
+52
+00:03:26,300 --> 00:03:32,400
+So this is one child. This is another child.
+
+53
+00:03:32,420 --> 00:03:38,650
+So two children.
+
+54
+00:03:32,420 --> 00:03:38,650
+This is another child. Three.
+
+55
+00:03:38,720 --> 00:03:45,860
+And lastly this is another child. Four.
+
+56
+00:03:38,720 --> 00:03:45,860
+So "body" has four children.
+
+57
+00:03:46,100 --> 00:03:50,300
+We are not really focusing on new line characters.
+
+58
+00:03:50,450 --> 00:03:51,750
+I'm sure (inaudible) here do.
+
+59
+00:03:51,770 --> 00:03:53,640
+So if I just printed this way
+
+60
+00:03:56,570 --> 00:04:02,450
+you can see it has this new line characters we're just
+
+61
+00:03:56,570 --> 00:04:02,450
+going to omit them for the time being because
+
+62
+00:04:02,450 --> 00:04:03,650
+we're dealing from a file.
+
+63
+00:04:03,670 --> 00:04:08,290
+So that's why they are here. When you're
+
+64
+00:04:03,670 --> 00:04:08,290
+actually scrapping from the internet.
+
+65
+00:04:08,330 --> 00:04:11,350
+I'm sure you won't encounter them.
+
+66
+00:04:11,360 --> 00:04:17,280
+It's very rare that this will happen and even if
+
+67
+00:04:11,360 --> 00:04:17,280
+that does happen you can just ignore them.
+
+68
+00:04:18,690 --> 00:04:26,140
+Like we're doing right now. OK, so if I run this, you
+
+69
+00:04:18,690 --> 00:04:26,140
+can see that body has four children and the method
+
+70
+00:04:26,170 --> 00:04:34,010
+I used to access body children were "body.contents".
+
+71
+00:04:26,170 --> 00:04:34,010
+This "contents" method returns a list of that
+
+72
+00:04:34,030 --> 00:04:46,940
+particular tags children. Just to crosschecked, you can
+
+73
+00:04:34,030 --> 00:04:46,940
+see body has four children. One, two, three and four.
+
+74
+00:04:46,950 --> 00:04:54,610
+OK, so now let's move to ".children" method.
+
+75
+00:04:54,810 --> 00:05:05,790
+This method basically returns an iterator or you can say
+
+76
+00:04:54,810 --> 00:05:05,790
+it returns a generator and through that generator
+
+77
+00:05:05,850 --> 00:05:08,260
+I can access the children of that
+
+78
+00:05:08,280 --> 00:05:11,110
+particular tag to which I call this method.
+
+79
+00:05:11,220 --> 00:05:14,040
+So let's stick to "body".
+
+80
+00:05:14,070 --> 00:05:16,280
+I have the body.
+
+81
+00:05:16,320 --> 00:05:18,330
+So I can say print
+
+82
+00:05:21,620 --> 00:05:33,100
+"type", "body.children". And if I run this, it says that
+
+83
+00:05:21,620 --> 00:05:33,100
+this is a list iterator. And if I say print "type",
+
+84
+00:05:33,330 --> 00:05:42,440
+"body.contents", it says it's a list. So you can tell
+
+85
+00:05:33,330 --> 00:05:42,440
+the difference between ".content" and the
+
+86
+00:05:42,660 --> 00:05:43,520
+".children".
+
+87
+00:05:43,630 --> 00:05:52,390
+So children is an iterator and I can use a
+
+88
+00:05:43,630 --> 00:05:52,390
+for loop to access the children
+
+89
+00:05:56,580 --> 00:05:57,890
+in "body".
+
+90
+00:05:57,990 --> 00:06:01,650
+So I mean I can just copy this here.
+
+91
+00:06:01,680 --> 00:06:02,100
+So
+
+92
+00:06:05,480 --> 00:06:12,370
+if I run this now, it gives the same as before but
+
+93
+00:06:05,480 --> 00:06:12,370
+the difference is that "body.children" returns an iterator
+
+94
+00:06:12,500 --> 00:06:16,160
+where ".contents" method returns a list of children.
+
+95
+00:06:16,320 --> 00:06:18,210
+So let's say a tree is huge.
+
+96
+00:06:18,450 --> 00:06:23,700
+So you wouldn't want a list of children in that case.
+
+97
+00:06:23,840 --> 00:06:30,200
+But I mean in that case an iterator would be preferable,
+
+98
+00:06:23,840 --> 00:06:30,200
+you would use the "children" method as compared to
+
+99
+00:06:30,200 --> 00:06:31,860
+the ".contents" method.
+
+100
+00:06:32,900 --> 00:06:35,460
+I hope that this is clear.
+
+101
+00:06:35,480 --> 00:06:42,500
+This is another example of how we can move
+
+102
+00:06:35,480 --> 00:06:42,500
+down our tree and how we can access a tag children.
+
+103
+00:06:42,740 --> 00:06:49,430
+So in the next video, we will to further study
+
+104
+00:06:42,740 --> 00:06:49,430
+how we can move down and the further methods
+
+105
+00:06:49,430 --> 00:06:55,400
+like the other methods Beautiful Soup provide us like
+
+106
+00:06:49,430 --> 00:06:55,400
+the "descendants" method and how that differentiates
+
+107
+00:06:55,400 --> 00:06:56,810
+from the "contents"
+
+108
+00:06:56,870 --> 00:07:01,070
+and our "children" methods. I hope this is clear.
+
+109
+00:07:01,120 --> 00:07:02,400
+Thank you very much.
+

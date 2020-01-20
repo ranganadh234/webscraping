@@ -1,0 +1,548 @@
+1
+00:00:00,790 --> 00:00:08,710
+Hello everyone! In the previous section, we discussed
+
+2
+00:00:00,790 --> 00:00:08,710
+how we can navigate through our parse tree or
+
+3
+00:00:08,770 --> 00:00:12,370
+our HTML tree.
+
+4
+00:00:12,430 --> 00:00:18,880
+And then in this section, we are going to discuss a
+
+5
+00:00:12,430 --> 00:00:18,880
+specialized language known as Regular Expressions which
+
+6
+00:00:18,880 --> 00:00:29,090
+will help us search through tags and data through
+
+7
+00:00:18,880 --> 00:00:29,090
+our parse tree while we were doing searching
+
+8
+00:00:29,090 --> 00:00:30,810
+in our next section.
+
+9
+00:00:31,310 --> 00:00:40,730
+So this Regular Expression basically is a specialized
+
+10
+00:00:31,310 --> 00:00:40,730
+anguage which is used to search for text or strings
+
+11
+00:00:40,730 --> 00:00:46,190
+in a given document or a string
+
+12
+00:00:40,730 --> 00:00:46,190
+with extreme precision and efficiency.
+
+13
+00:00:46,190 --> 00:00:49,660
+It's blazingly fast as it's written in C.
+
+14
+00:00:49,670 --> 00:00:55,890
+I mean the engine written to match
+
+15
+00:00:49,670 --> 00:00:55,890
+the strings is written in C.
+
+16
+00:00:56,180 --> 00:00:57,260
+So how do they work.
+
+17
+00:00:57,260 --> 00:01:04,490
+You can say that there are a set of rules or
+
+18
+00:00:57,260 --> 00:01:04,490
+it's an expression which is compiled into bytecode
+
+19
+00:01:04,610 --> 00:01:08,970
+and then that bytecode is executed by matching engine written in C.
+
+20
+00:01:09,020 --> 00:01:17,120
+As I told you before. So it's blazingly fast, it's
+
+21
+00:01:09,020 --> 00:01:17,120
+very efficient and you should definitely use it.
+
+22
+00:01:17,360 --> 00:01:24,230
+But the drawback is that for complex expressions
+
+23
+00:01:17,360 --> 00:01:24,230
+like if you want to find a very complex string
+
+24
+00:01:24,320 --> 00:01:31,970
+in your document, your ugly your expression it's going
+
+25
+00:01:24,320 --> 00:01:31,970
+to be very complex and that reduces readability
+
+26
+00:01:32,570 --> 00:01:34,540
+which is a key point
+
+27
+00:01:34,580 --> 00:01:37,110
+in some scenarios.
+
+28
+00:01:37,340 --> 00:01:40,430
+So what's the main usage of Regular Expressions.
+
+29
+00:01:40,490 --> 00:01:47,660
+In that case, that is matching characters or finding
+
+30
+00:01:40,490 --> 00:01:47,660
+tags or finding data through our parse tree.
+
+31
+00:01:47,660 --> 00:01:48,890
+So how do we do this.
+
+32
+00:01:48,890 --> 00:01:55,780
+How do we actually find data using Regular
+
+33
+00:01:48,890 --> 00:01:55,780
+Expressions and how do we write these expressions.
+
+34
+00:01:56,330 --> 00:02:00,380
+So a simple Regular Expression
+
+35
+00:01:56,330 --> 00:02:00,380
+matches itself in the given string.
+
+36
+00:02:00,380 --> 00:02:09,390
+What I mean by this is that let's say I have written
+
+37
+00:02:00,380 --> 00:02:09,390
+a Regular Expression "abc". So I mean, yes this
+
+38
+00:02:09,390 --> 00:02:14,430
+is a expression. First things first, this is a Regular Expression.
+
+39
+00:02:14,580 --> 00:02:20,610
+And what this Regular Expressions is going to do
+
+40
+00:02:14,580 --> 00:02:20,610
+is like if let's say I have a string that says
+
+41
+00:02:20,610 --> 00:02:21,560
+"abcdef".
+
+42
+00:02:21,590 --> 00:02:22,770
+Yes.
+
+43
+00:02:22,950 --> 00:02:28,530
+So if I match this like if I run this and
+
+44
+00:02:22,950 --> 00:02:28,530
+if they want to see if this Regular Expression
+
+45
+00:02:28,530 --> 00:02:33,940
+exists in the string, it is going to give me "true" because it does exist.
+
+46
+00:02:33,960 --> 00:02:36,140
+So this is a very simple expression.
+
+47
+00:02:36,150 --> 00:02:42,300
+And what I want to convey is that if you write a
+
+48
+00:02:36,150 --> 00:02:42,300
+very simple thing, it is going to find itself
+
+49
+00:02:42,910 --> 00:02:45,960
+in the given document or in the given string.
+
+50
+00:02:45,960 --> 00:02:51,520
+So if I've written "abc", it is going to find itself int this string heree.
+
+51
+00:02:51,870 --> 00:02:55,230
+I mean if it was a document, you would got a document here.
+
+52
+00:02:55,470 --> 00:02:59,330
+So there are some exceptions to this rule though.
+
+53
+00:02:59,370 --> 00:03:02,100
+The exceptions are metacharacters.
+
+54
+00:03:02,130 --> 00:03:08,990
+So what are metacharacters. Metacharacters are characters
+
+55
+00:03:02,130 --> 00:03:08,990
+which don't match themselves. Like if you did
+
+56
+00:03:09,000 --> 00:03:16,000
+an ABC and you get an expression "abc"
+
+57
+00:03:09,000 --> 00:03:16,000
+and you were finding it in string "abcdef",
+
+58
+00:03:16,040 --> 00:03:24,970
+this will find it, this "abc" will find
+
+59
+00:03:16,040 --> 00:03:24,970
+itself in this "abcdef", in this string.
+
+60
+00:03:25,160 --> 00:03:26,590
+But this metacharacters,
+
+61
+00:03:26,630 --> 00:03:28,800
+they don't do that.
+
+62
+00:03:28,850 --> 00:03:33,330
+You know this is a complete list of
+
+63
+00:03:28,850 --> 00:03:33,330
+metacharacters which I use in Python.
+
+64
+00:03:33,650 --> 00:03:42,430
+And let's say if I have this metacharacter
+
+65
+00:03:33,650 --> 00:03:42,430
+here and I say... This is a Regular Expression I've
+
+66
+00:03:42,430 --> 00:03:48,950
+used this I corrected and then add this this
+
+67
+00:03:42,430 --> 00:03:48,950
+is "a" character and I say I want to match this.
+
+68
+00:03:49,040 --> 00:03:55,110
+It won't match because these metacharacters
+
+69
+00:03:49,040 --> 00:03:55,110
+they don't mean like that.
+
+70
+00:03:55,250 --> 00:03:57,190
+They don't mean what they are like.
+
+71
+00:03:57,260 --> 00:03:58,880
+It doesn't mean that I'm looking for
+
+72
+00:03:58,910 --> 00:04:00,140
+a "*" here.
+
+73
+00:04:00,140 --> 00:04:02,360
+It doesn't mean that. These metacharacters
+
+74
+00:04:02,380 --> 00:04:08,480
+have different meanings and they
+
+75
+00:04:02,380 --> 00:04:08,480
+xecute according to those meanings.
+
+76
+00:04:08,490 --> 00:04:16,610
+So once we get more into this I hope
+
+77
+00:04:08,490 --> 00:04:16,610
+you'll understand more about this like
+
+78
+00:04:16,610 --> 00:04:18,920
+once we actually code this.
+
+79
+00:04:19,130 --> 00:04:21,680
+So just stay with me.
+
+80
+00:04:21,740 --> 00:04:24,770
+And let's get to the first metacharacter.
+
+81
+00:04:24,770 --> 00:04:30,270
+And I think they'll help clear things up.
+
+82
+00:04:24,770 --> 00:04:30,270
+So the first metacharacter
+
+83
+00:04:30,280 --> 00:04:38,630
+which you'll look at are these square brackets. We call
+
+84
+00:04:30,280 --> 00:04:38,630
+them character class. A character class is a set of
+
+85
+00:04:38,650 --> 00:04:40,630
+characters you wish to match.
+
+86
+00:04:40,670 --> 00:04:49,710
+So let's say a user is going to input some character, any character,
+
+87
+00:04:49,720 --> 00:04:50,420
+you know.
+
+88
+00:04:50,550 --> 00:04:53,620
+Let's say the user inputs a single character.
+
+89
+00:04:53,660 --> 00:04:57,110
+Let's say he inputs "b".
+
+90
+00:04:57,420 --> 00:05:03,360
+So what I can do is I can write a Regular
+
+91
+00:04:57,420 --> 00:05:03,360
+Expression to match what the user inputs. Let's say
+
+92
+00:05:03,460 --> 00:05:05,960
+I want to see if a user is
+
+93
+00:05:06,000 --> 00:05:11,290
+inputing a character which is like from "a" to "b".
+
+94
+00:05:11,300 --> 00:05:18,570
+So what I can do is I can say I'll use the square brackets, I say "[abcdef]".
+
+95
+00:05:18,660 --> 00:05:19,920
+OK so.
+
+96
+00:05:20,320 --> 00:05:28,690
+And close the square brackets what this means is that
+
+97
+00:05:20,320 --> 00:05:28,690
+if any character comes from these six characters
+
+98
+00:05:28,720 --> 00:05:33,000
+"abcdef", if the user inputs any of these characters
+
+99
+00:05:33,010 --> 00:05:40,560
+and if I match them it is going to give me "true".
+
+100
+00:05:33,010 --> 00:05:40,560
+Like the character the user has input, that exists
+
+101
+00:05:40,570 --> 00:05:50,610
+in this character class. So if the user inputs "Z", then
+
+102
+00:05:40,570 --> 00:05:50,610
+this is going to give me "false" as my character class
+
+103
+00:05:50,610 --> 00:05:57,930
+is from "a" to "f", like "a", "b", "c", "d","e", "f"...  Actually it
+
+104
+00:05:50,610 --> 00:05:57,930
+only contains these characters and there is no "z" here. And other
+
+105
+00:05:57,930 --> 00:06:02,100
+way to write this is "[a-f]", this is a range.
+
+106
+00:06:02,100 --> 00:06:06,400
+So this means like from "a" to "f", all characters are included.
+
+107
+00:06:06,560 --> 00:06:09,170
+So if I input "c" now this is going to give me "true".
+
+108
+00:06:09,290 --> 00:06:19,540
+Because like my ranges from "a" to "f". This is
+
+109
+00:06:09,290 --> 00:06:19,540
+like a very basic use of square brackets.
+
+110
+00:06:20,040 --> 00:06:23,630
+OK, so let's say I have this here
+
+111
+00:06:26,590 --> 00:06:29,520
+I have 1, 2, 3, 4, 5 here.
+
+112
+00:06:32,690 --> 00:06:44,760
+And if the user inputs 9, do you think this will match? It
+
+113
+00:06:32,690 --> 00:06:44,760
+won't match. Why it wouldn't match? Because what happens
+
+114
+00:06:44,760 --> 00:06:46,260
+is like when you run this,
+
+115
+00:06:46,470 --> 00:06:47,360
+it says that
+
+116
+00:06:47,410 --> 00:06:47,980
+"OK,
+
+117
+00:06:48,060 --> 00:06:53,880
+Is this character from any of these characters which are like 1, 2, 3, 4, 5?" and then
+
+118
+00:06:53,880 --> 00:06:54,280
+the it says
+
+119
+00:06:54,300 --> 00:06:55,920
+"Oh, no! It isn't.""
+
+120
+00:06:55,980 --> 00:06:57,370
+So it just tells that.
+
+121
+00:06:57,570 --> 00:06:57,910
+"OK.
+
+122
+00:06:57,930 --> 00:06:59,700
+It doesn't match."
+
+123
+00:07:00,300 --> 00:07:02,690
+So what is the other way to write this.
+
+124
+00:07:02,700 --> 00:07:07,510
+I mean I have numbers from 1 to 5, I could say "1-5".
+
+125
+00:07:07,890 --> 00:07:11,650
+So this means that this and this is the same thing.
+
+126
+00:07:11,670 --> 00:07:14,870
+This includes all numbers from 1 to 5.
+
+127
+00:07:15,040 --> 00:07:17,480
+Or I could write them down if I want to.
+
+128
+00:07:18,000 --> 00:07:27,130
+OK so this was a very basic introduction to meta
+
+129
+00:07:18,000 --> 00:07:27,130
+characters and the square brackets are character
+
+130
+00:07:27,140 --> 00:07:28,050
+class.
+
+131
+00:07:28,430 --> 00:07:36,780
+In the next video, we're going to discuss more
+
+132
+00:07:28,430 --> 00:07:36,780
+about this and I hope that you'll understand more as we
+
+133
+00:07:36,780 --> 00:07:38,110
+code this.
+
+134
+00:07:38,310 --> 00:07:44,910
+So please stay with me and let's watch the
+
+135
+00:07:38,310 --> 00:07:44,910
+next video to see how this works.
+
+136
+00:07:44,960 --> 00:07:48,480
+And I like I hope you'll understand more then.
+
+137
+00:07:48,650 --> 00:07:49,610
+Thank you very much.
+

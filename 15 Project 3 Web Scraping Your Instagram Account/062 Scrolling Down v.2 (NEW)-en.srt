@@ -1,0 +1,464 @@
+1
+00:00:00,630 --> 00:00:01,890
+Hello everyone.
+
+2
+00:00:02,190 --> 00:00:08,870
+In the last video, we discussed how we are going to extract
+
+3
+00:00:02,190 --> 00:00:08,870
+the number of posts from my target's profile. In this
+
+4
+00:00:08,880 --> 00:00:14,600
+video, we are going to discuss how we are going to make
+
+5
+00:00:08,880 --> 00:00:14,600
+the relation between the scrolling and the number
+
+6
+00:00:14,620 --> 00:00:15,270
+of posts.
+
+7
+00:00:15,300 --> 00:00:18,810
+And how we are going to implement the scroll down procedure.
+
+8
+00:00:19,620 --> 00:00:25,850
+OK, so let's open our dataminer profile.
+
+9
+00:00:25,870 --> 00:00:30,220
+So here we have 30 posts as discussed before in the previous video.
+
+10
+00:00:30,310 --> 00:00:38,440
+Twelve posts had already loaded as soon as we
+
+11
+00:00:30,310 --> 00:00:38,440
+open this page and as I move down,
+
+12
+00:00:38,680 --> 00:00:45,970
+more photos start to load. They load in chunks
+
+13
+00:00:38,680 --> 00:00:45,970
+and each chunk contains 12 photos.
+
+14
+00:00:45,990 --> 00:00:50,660
+OK, so right now all of them are here.
+
+15
+00:00:50,710 --> 00:00:54,710
+I'm just going to run this again and
+
+16
+00:00:50,710 --> 00:00:54,710
+let's see how many we have right now.
+
+17
+00:00:55,930 --> 00:00:59,840
+So row number one, row number two,
+
+18
+00:00:55,930 --> 00:00:59,840
+row number three, row number four.
+
+19
+00:00:59,920 --> 00:01:06,720
+So four rows loaded right and then
+
+20
+00:00:59,920 --> 00:01:06,720
+these two load again as I scroll down.
+
+21
+00:01:06,950 --> 00:01:13,010
+So essentially what's happening here is that as
+
+22
+00:01:06,950 --> 00:01:13,010
+I scroll down 12 photos are being loaded.
+
+23
+00:01:13,030 --> 00:01:18,710
+And initially there are 12 photos on the
+
+24
+00:01:13,030 --> 00:01:18,710
+page as soon as you open the target's profile.
+
+25
+00:01:18,760 --> 00:01:19,580
+OK.
+
+26
+00:01:19,810 --> 00:01:27,640
+So if we have two reports and we want to make
+
+27
+00:01:19,810 --> 00:01:27,640
+sure that all of these images are on a target's
+
+28
+00:01:27,670 --> 00:01:30,770
+profile, what can we do here.
+
+29
+00:01:30,970 --> 00:01:32,380
+How do we ensure that.
+
+30
+00:01:32,590 --> 00:01:36,900
+So how we can show that is I can divide 30 by 12.
+
+31
+00:01:37,140 --> 00:01:37,890
+OK.
+
+32
+00:01:38,150 --> 00:01:41,080
+And I'm going to round to the next integer.
+
+33
+00:01:41,080 --> 00:01:49,590
+If I divide 30 by 12, 30 divided by 12 that
+
+34
+00:01:41,080 --> 00:01:49,590
+means 2.5. I'm going to round it off to three.
+
+35
+00:01:49,660 --> 00:01:57,280
+OK, so if I scroll three times that is
+
+36
+00:01:49,660 --> 00:01:57,280
+going to ensure that all the images have been loaded.
+
+37
+00:01:57,280 --> 00:01:58,140
+Right.
+
+38
+00:01:58,180 --> 00:02:03,340
+So here I was with Number of posts and they were like 12 here.
+
+39
+00:02:03,820 --> 00:02:08,430
+So I say "slf.no_of_posts" is equals to "int(no_of_posts)".
+
+40
+00:02:08,440 --> 00:02:09,440
+OK.
+
+41
+00:02:09,460 --> 00:02:15,490
+So the first condition is that if the
+
+42
+00:02:09,460 --> 00:02:15,490
+number of posts is let's say five or three.
+
+43
+00:02:15,520 --> 00:02:17,080
+So there's no need to scroll down.
+
+44
+00:02:17,080 --> 00:02:17,710
+Right.
+
+45
+00:02:17,770 --> 00:02:26,160
+So I say if "self.no_of_posts" is bigger than 12, only then scroll down.
+
+46
+00:02:26,190 --> 00:02:33,990
+Now how many times do we have scroll down. Then I say
+
+47
+00:02:26,190 --> 00:02:33,990
+"number_of_scrolls" is equals to "self.no_os_posts"
+
+48
+00:02:34,260 --> 00:02:35,600
+divided by 12
+
+49
+00:02:38,990 --> 00:02:41,540
+and I need to add three here.
+
+50
+00:02:41,540 --> 00:02:42,960
+It's just for good measure.
+
+51
+00:02:42,980 --> 00:02:45,790
+Just to ensure that there's no discrepancy.
+
+52
+00:02:45,800 --> 00:02:50,630
+And we are not missing out anything. So
+
+53
+00:02:45,800 --> 00:02:50,630
+even if I don't add three we are good.
+
+54
+00:02:53,060 --> 00:02:54,220
+So OK.
+
+55
+00:02:55,720 --> 00:02:57,280
+Let's move forward.
+
+56
+00:03:00,680 --> 00:03:04,040
+OK, so now how many times I have to scroll down.
+
+57
+00:03:04,040 --> 00:03:12,380
+So what I do is I say "for value in range". I'm
+
+58
+00:03:04,040 --> 00:03:12,380
+just having a loop here for "value" and "range(no_of_scrolls)" and
+
+59
+00:03:12,370 --> 00:03:13,990
+I say "self.driver.execute_script".
+
+60
+00:03:14,030 --> 00:03:21,620
+Now what this command does is this
+
+61
+00:03:14,030 --> 00:03:21,620
+command executes some JS code, some
+
+62
+00:03:21,620 --> 00:03:22,790
+Javascript code.
+
+63
+00:03:22,820 --> 00:03:25,360
+So we're going to scroll down
+
+64
+00:03:25,370 --> 00:03:27,620
+Selenium browser via javascript.
+
+65
+00:03:27,620 --> 00:03:28,180
+OK.
+
+66
+00:03:29,250 --> 00:03:29,550
+OK.
+
+67
+00:03:29,560 --> 00:03:34,110
+So let's write that. "window.scrollTo"
+
+68
+00:03:37,290 --> 00:03:43,170
+and I say "0", "document.body.scrollHeight".
+
+69
+00:03:43,330 --> 00:03:45,510
+Perfect.
+
+70
+00:03:46,930 --> 00:03:48,660
+So what does this script should do
+
+71
+00:03:48,660 --> 00:03:49,710
+is this script
+
+72
+00:03:49,760 --> 00:03:56,800
+should scroll down our target's profile to make sure that
+
+73
+00:03:56,890 --> 00:03:58,770
+all the images have been loaded.
+
+74
+00:03:58,870 --> 00:04:02,510
+I'm just going to print the value here
+
+75
+00:03:58,870 --> 00:04:02,510
+so we know how many times this does it.
+
+76
+00:04:03,680 --> 00:04:04,160
+OK.
+
+77
+00:04:04,350 --> 00:04:08,520
+Let's run this now and see if this works or not.
+
+78
+00:04:08,880 --> 00:04:15,480
+And if you're missing something or not. Ok I'm just going
+
+79
+00:04:08,880 --> 00:04:15,480
+to introduce a "sleep" for one second because it's
+
+80
+00:04:15,640 --> 00:04:20,110
+you know just to make sure that all the
+
+81
+00:04:15,640 --> 00:04:20,110
+data is there and not just scrolling down
+
+82
+00:04:20,100 --> 00:04:20,920
+and
+
+83
+00:04:21,210 --> 00:04:25,320
+nothing is there and nothing loaded.
+
+84
+00:04:25,530 --> 00:04:31,750
+The delay value is going to vary with
+
+85
+00:04:25,530 --> 00:04:31,750
+the connection you have, with the Internet
+
+86
+00:04:31,750 --> 00:04:34,830
+connection you have. So it's really
+
+87
+00:04:31,750 --> 00:04:34,830
+good maybe one need delays at all.
+
+88
+00:04:38,010 --> 00:04:38,580
+OK.
+
+89
+00:04:38,590 --> 00:04:40,930
+And now we're opening up Instagram.
+
+90
+00:04:59,590 --> 00:05:07,520
+It has log us in. Now our news feeds should come up.
+
+91
+00:05:07,590 --> 00:05:16,950
+And there it is. We are going to close the dialog box
+
+92
+00:05:07,590 --> 00:05:16,950
+soon as soon as everything in the news feed has loaded.
+
+93
+00:05:23,760 --> 00:05:24,890
+That's being done now.
+
+94
+00:05:24,900 --> 00:05:27,280
+Now we're opening target profile.
+
+95
+00:05:29,130 --> 00:05:29,970
+It's open.
+
+96
+00:05:29,970 --> 00:05:31,950
+We should start scrolling down now.
+
+97
+00:05:31,980 --> 00:05:32,290
+OK.
+
+98
+00:05:32,300 --> 00:05:33,030
+So it's crawling.
+
+99
+00:05:33,030 --> 00:05:35,920
+Can you see this?
+
+100
+00:05:35,940 --> 00:05:37,000
+So it's crawling.
+
+101
+00:05:37,010 --> 00:05:45,820
+And we have ensured that we were able to scroll
+
+102
+00:05:37,010 --> 00:05:45,820
+down our user, our target user's profile.
+
+103
+00:05:46,120 --> 00:05:49,760
+So now you can see that all the images are loaded.
+
+104
+00:05:49,760 --> 00:05:52,870
+You know there is no image has been skipped.
+
+105
+00:05:52,910 --> 00:06:00,240
+And if I take out HTML for this page now, I am going
+
+106
+00:05:52,910 --> 00:06:00,240
+to find image tags there where the source attribute
+
+107
+00:06:00,240 --> 00:06:04,550
+set for all of these images which we're going to get.
+
+108
+00:06:04,550 --> 00:06:11,860
+And then when we are going to use that to download these
+
+109
+00:06:04,550 --> 00:06:11,860
+images in our system. I hope this video made sense to you.
+
+110
+00:06:12,020 --> 00:06:19,070
+And if you have any questions please leave
+
+111
+00:06:12,020 --> 00:06:19,070
+them there and I'll try to get that get answers
+
+112
+00:06:19,070 --> 00:06:20,820
+for them as soon as I can.
+
+113
+00:06:20,820 --> 00:06:27,230
+I hope this was clear to you and in the next
+
+114
+00:06:20,820 --> 00:06:27,230
+video we're going to move forward with the
+
+115
+00:06:27,230 --> 00:06:28,370
+downloading part.
+
+116
+00:06:29,220 --> 00:06:30,080
+Thank you very much.
+

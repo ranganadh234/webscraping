@@ -1,0 +1,104 @@
+1
+00:00:00,930 --> 00:00:05,070
+Hello everyone! In this lecture we're going to discuss HTML.
+
+2
+00:00:05,470 --> 00:00:13,080
+HTML, or HyperText Markup Language, is a format system which is used to display graphics, text, audio
+
+3
+00:00:13,320 --> 00:00:14,780
+over the internet.
+
+4
+00:00:15,450 --> 00:00:20,610
+I'm sure all of you are familiar with HTML and I'm just going to put a review to the most basic
+
+5
+00:00:20,640 --> 00:00:23,090
+elements in HTML.
+
+6
+00:00:23,580 --> 00:00:32,520
+So in HTML have tags. A dog is a hidden keyword which sets the layout, how a browser
+
+7
+00:00:32,520 --> 00:00:36,830
+is going to display the content in that tag.
+
+8
+00:00:36,830 --> 00:00:46,840
+So here in this sample HTMl page I have one, two, three, four, five, six, seven tags.
+
+9
+00:00:46,860 --> 00:00:51,380
+So if I open this "tags.txt", I have written them down.
+
+10
+00:00:51,570 --> 00:00:55,410
+I have html, head, meta, title, body,
+
+11
+00:00:55,440 --> 00:01:01,440
+p and p. So if I run this on the browser, you'll see I get this here.
+
+12
+00:01:04,530 --> 00:01:12,090
+So this <p> tag here is defining that whatever comes here, whatever comes between these tags has
+
+13
+00:01:12,090 --> 00:01:12,870
+the color blue.
+
+14
+00:01:12,870 --> 00:01:16,510
+So if I see it here, I have this text here, the string here.
+
+15
+00:01:16,590 --> 00:01:19,130
+It says some text here and it's in blue.
+
+16
+00:01:19,200 --> 00:01:26,700
+So the next <p> tag I have has a "font-style: italic" and you can see that this text here is italic.
+
+17
+00:01:27,870 --> 00:01:34,300
+So the style thing, that's an attribute of the p tag, we call these attributes.
+
+18
+00:01:34,300 --> 00:01:35,790
+This is an attribute.
+
+19
+00:01:36,040 --> 00:01:41,330
+So the <p> tag here has a attribute style is equal to "color: blue".
+
+20
+00:01:41,590 --> 00:01:48,860
+And its font-style is italic. You can think of a HTML page as a tree, or having a tree structure.
+
+21
+00:01:48,950 --> 00:01:49,890
+For this file,
+
+22
+00:01:49,890 --> 00:01:57,640
+the tree would be that on the very top. I have HTML and then it has two children's: head and body. Then
+
+23
+00:01:57,660 --> 00:02:04,280
+heads for the two childrens: meta and title. And body has again two children P and P.
+
+24
+00:02:06,100 --> 00:02:12,660
+So this is a very basic summary of what HTML is and how we can interpret HTML
+
+25
+00:02:12,820 --> 00:02:17,350
+so that in future we are able to parse it efficiently.
+
+26
+00:02:17,650 --> 00:02:22,340
+I'm sure I've made myself clear and thank you very much for your time.
+

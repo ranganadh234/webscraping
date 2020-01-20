@@ -1,0 +1,636 @@
+1
+00:00:00,580 --> 00:00:06,970
+Hello everyone! In the last video, we discussed
+
+2
+00:00:00,580 --> 00:00:06,970
+some of the parameters of "find_all" function. In this video,
+
+3
+00:00:06,970 --> 00:00:10,360
+we're going to cover the rest of the parameters
+
+4
+00:00:10,470 --> 00:00:12,780
+we did not discussed in previous video.
+
+5
+00:00:13,050 --> 00:00:19,180
+So in the last video, we discussed the name parameter,
+
+6
+00:00:13,050 --> 00:00:19,180
+the attributes one and the limit one. In this video,
+
+7
+00:00:19,180 --> 00:00:26,010
+we are going to discuss the recursive one, the string one
+
+8
+00:00:19,180 --> 00:00:26,010
+and the key with arguments one as to how we can implement them
+
+9
+00:00:26,010 --> 00:00:33,480
+and what they mean and how we can use them to search
+
+10
+00:00:26,010 --> 00:00:33,480
+efficiently through our HTML tree case. Ok, so the first
+
+11
+00:00:33,500 --> 00:00:36,080
+way we are going to discuss is the string parameter.
+
+12
+00:00:36,360 --> 00:00:44,090
+So the string parameter expects a string or a RegEX
+
+13
+00:00:36,360 --> 00:00:44,090
+object as its input and it returns us a
+
+14
+00:00:44,110 --> 00:00:51,870
+a navigable string it finds in the whole document which contains our string
+
+15
+00:00:51,870 --> 00:00:53,220
+we specified.
+
+16
+00:00:53,220 --> 00:00:58,490
+So let's say I have this document here. It's the same one, the three sisters one.
+
+17
+00:00:59,040 --> 00:01:05,970
+And what I want is I want to know if there is some navibable string which
+
+18
+00:01:06,330 --> 00:01:08,590
+contains the word "Elsie".
+
+19
+00:01:08,670 --> 00:01:13,700
+So now we know that there is this navigable string, this here.
+
+20
+00:01:14,070 --> 00:01:16,190
+This is between this "a" tag here.
+
+21
+00:01:16,290 --> 00:01:17,480
+I mean this "a" tag here is the parent
+
+22
+00:01:17,490 --> 00:01:23,540
+of this navigable string and I want to find this
+
+23
+00:01:17,490 --> 00:01:23,540
+navigable string which contains "Elsie". What
+
+24
+00:01:23,540 --> 00:01:30,610
+I do is I say "regex" is equals to "re.compile" and "Elsie".
+
+25
+00:01:30,620 --> 00:01:40,480
+Now I'm going to say "tag" is equals to "soup.find_all"
+
+26
+00:01:30,620 --> 00:01:40,480
+and I say that "string" is equals to "regex"
+
+27
+00:01:40,530 --> 00:01:41,520
+and if I print "tag"
+
+28
+00:01:43,190 --> 00:01:47,790
+it returns me this navigable string which contains "Elsie".
+
+29
+00:01:48,020 --> 00:01:48,810
+I can do this.
+
+30
+00:01:48,800 --> 00:01:54,730
+Let's say I want to find a navigable string which contains the word
+
+31
+00:01:54,760 --> 00:01:58,370
+"story".
+
+32
+00:01:58,370 --> 00:02:09,430
+So what I do is I a RegEX object, I say "story". And if
+
+33
+00:01:58,370 --> 00:02:09,430
+I run that, you see it gives me back two navigable
+
+34
+00:02:09,460 --> 00:02:12,040
+strings which contain the word "story".
+
+35
+00:02:12,040 --> 00:02:19,240
+So if I go back to my HTML, you can see I have two
+
+36
+00:02:12,040 --> 00:02:19,240
+navigable strings which contain the word "story".
+
+37
+00:02:19,240 --> 00:02:24,160
+This one here between "title" and this one here between this "b" tag.
+
+38
+00:02:24,390 --> 00:02:26,680
+So you can see that here that it
+
+39
+00:02:26,700 --> 00:02:32,410
+returns me two different navigable strings which contain the word "story".
+
+40
+00:02:32,490 --> 00:02:35,490
+This is a list and it has two elements in it.
+
+41
+00:02:36,800 --> 00:02:38,900
+OK, so this was the "string" parameter.
+
+42
+00:02:38,900 --> 00:02:40,250
+It can either expect
+
+43
+00:02:40,370 --> 00:02:46,310
+expect a string or a RegEX object and it goes through the whole document
+
+44
+00:02:46,310 --> 00:02:54,540
+and sees all the navigable strings and see if any of them
+
+45
+00:02:46,310 --> 00:02:54,540
+equal to the string you have specified or it equals
+
+46
+00:02:54,560 --> 00:02:56,440
+to the regex that we have mentioned.
+
+47
+00:02:57,510 --> 00:03:07,920
+OK, so the next argument we are going to discuss is the
+
+48
+00:02:57,510 --> 00:03:07,920
+keyword argument. So the keyword argument what they do is
+
+49
+00:03:08,410 --> 00:03:18,080
+let's say I want to find all the tags which have the class "sister".
+
+50
+00:03:18,100 --> 00:03:18,640
+OK.
+
+51
+00:03:19,980 --> 00:03:31,160
+So what I do is I say "tags" is equals to "soup.find_all"
+
+52
+00:03:19,980 --> 00:03:31,160
+and then I say "class_" is equals to "sister".
+
+53
+00:03:37,560 --> 00:03:49,510
+Then I say "for tag in tags", print "tag". Ok, so what
+
+54
+00:03:37,560 --> 00:03:49,510
+I do here is I write the attributes of a tag
+
+55
+00:03:50,050 --> 00:03:54,470
+like this "class" here, this "class" is an attribute of "p" tag.
+
+56
+00:03:54,870 --> 00:03:57,990
+This "id" here is an attribute of "a" tag.
+
+57
+00:03:58,000 --> 00:03:59,960
+These are attributes.
+
+58
+00:03:59,960 --> 00:04:04,040
+So what I do is I specify the attributes.
+
+59
+00:04:04,180 --> 00:04:11,830
+Like I say if it's "id" I say "id" is equals to
+
+60
+00:04:04,180 --> 00:04:11,830
+"link1". I specify the attribute.
+
+61
+00:04:11,890 --> 00:04:16,120
+I write it down and then I say is equals to
+
+62
+00:04:11,890 --> 00:04:16,120
+the navigable string, to the given value
+
+63
+00:04:16,120 --> 00:04:18,260
+that attribute has,
+
+64
+00:04:18,390 --> 00:04:22,350
+which you want to search and then what this
+
+65
+00:04:22,580 --> 00:04:24,490
+"soup.find_all" does is it returns
+
+66
+00:04:24,490 --> 00:04:29,320
+me those tags which satisfy these attributes.
+
+67
+00:04:29,320 --> 00:04:36,200
+So let's say I want to have all the tags which
+
+68
+00:04:29,320 --> 00:04:36,200
+have the class "sister". So if I run it
+
+69
+00:04:36,210 --> 00:04:42,750
+now, you can see it has given me all the tags which
+
+70
+00:04:36,210 --> 00:04:42,750
+have the class "sister" and there are three here.
+
+71
+00:04:42,750 --> 00:04:50,960
+The first one, the second and the third. All of them
+
+72
+00:04:42,750 --> 00:04:50,960
+are "a" tags. So you know that "class" is a keyword
+
+73
+00:04:50,990 --> 00:04:52,160
+in Python.
+
+74
+00:04:52,160 --> 00:04:59,380
+So what we do here is we say "class" and then we have
+
+75
+00:04:52,160 --> 00:04:59,380
+this underscore here. You write it that way.
+
+76
+00:04:59,380 --> 00:05:04,470
+I mean, if I don't write the underscore, then this
+
+77
+00:04:59,380 --> 00:05:04,470
+"class" is a keyword and it gives me an
+
+78
+00:05:04,480 --> 00:05:05,390
+error here.
+
+79
+00:05:05,680 --> 00:05:12,600
+So when you are going to write the class attribute
+
+80
+00:05:05,680 --> 00:05:12,600
+when passing it as a keyword argument then
+
+81
+00:05:12,780 --> 00:05:15,460
+you are going to write "class_".
+
+82
+00:05:15,560 --> 00:05:24,740
+So let's say I want to find all the tags which have the
+
+83
+00:05:15,560 --> 00:05:24,740
+class "story". I just change it here and say "story".
+
+84
+00:05:25,600 --> 00:05:38,950
+And if I run it, you can see it gives me back two "p" tags. I can
+
+85
+00:05:25,600 --> 00:05:38,950
+just say print "len(tags)". It says two, it has returned me two "p" tags.
+
+86
+00:05:40,920 --> 00:05:41,430
+OK.
+
+87
+00:05:41,450 --> 00:05:51,320
+So now the last one, the last parameter here which I am
+
+88
+00:05:41,450 --> 00:05:51,320
+going to discuss now is the "recursive" parameter.
+
+89
+00:05:51,320 --> 00:05:54,960
+So what "recursive" does is let's say you search
+
+90
+00:05:55,090 --> 00:06:03,550
+"a" tags. So what happens is your parser starts from this "html" tag and
+
+91
+00:06:03,550 --> 00:06:09,850
+then it recursively searches through the whole parse
+
+92
+00:06:03,550 --> 00:06:09,850
+tree to see if there are any "a" tags. It goes to
+
+93
+00:06:09,850 --> 00:06:16,390
+"head" and it goes to head's children and then sees if
+
+94
+00:06:09,850 --> 00:06:16,390
+"head" contains any "a" tag then goes to "body" and
+
+95
+00:06:16,390 --> 00:06:21,970
+then goes to body's children, like this "p" tag here,
+
+96
+00:06:16,390 --> 00:06:21,970
+then goes to this "p" tag's children, this "b" tag
+
+97
+00:06:21,970 --> 00:06:25,170
+here and see if there is any "a" here then it goes to this "p" tag
+
+98
+00:06:25,300 --> 00:06:27,720
+and it comes here and it finds "a".
+
+99
+00:06:28,000 --> 00:06:32,340
+And then it collects all of them and goes back.
+
+100
+00:06:32,420 --> 00:06:35,280
+"recursive" searches the whole parse tree.
+
+101
+00:06:35,300 --> 00:06:42,980
+So what we do is let's say I only want to
+
+102
+00:06:35,300 --> 00:06:42,980
+search direct descendants of a particular
+
+103
+00:06:42,980 --> 00:06:48,650
+tag. Let's say I only want to search direct children
+
+104
+00:06:42,980 --> 00:06:48,650
+of "html", I don't want to search my whole tree
+
+105
+00:06:48,650 --> 00:06:50,600
+for an "a" tag.
+
+106
+00:06:50,620 --> 00:06:57,120
+So what will happen now is that if I want to do that
+
+107
+00:06:57,140 --> 00:07:02,510
+what I do is I say "title", and what I am going
+
+108
+00:06:57,140 --> 00:07:02,510
+to do is I am going to search for "title".
+
+109
+00:07:02,510 --> 00:07:03,000
+OK.
+
+110
+00:07:03,010 --> 00:07:08,690
+And I'm going to say "recursive" is equals to
+
+111
+00:07:03,010 --> 00:07:08,690
+"False". What it will do is it will force the
+
+112
+00:07:08,690 --> 00:07:09,700
+Beautiful Soup
+
+113
+00:07:09,850 --> 00:07:16,460
+to just look at this level here, in body
+
+114
+00:07:09,850 --> 00:07:16,460
+level, and not to go into the children.
+
+115
+00:07:16,460 --> 00:07:20,730
+It will just look into the children of "html" and nothing more.
+
+116
+00:07:20,760 --> 00:07:30,180
+If I say "soup.find_all", I say "title" and
+
+117
+00:07:20,760 --> 00:07:30,180
+I say "recursive" is equals to "False".
+
+118
+00:07:30,230 --> 00:07:37,120
+So now it is going to start from "html",
+
+119
+00:07:30,230 --> 00:07:37,120
+it is only going to access the HTML
+
+120
+00:07:37,140 --> 00:07:39,400
+children which are "head" and "body".
+
+121
+00:07:39,500 --> 00:07:45,900
+It is not going to go into head's children which here is "title".
+
+122
+00:07:39,500 --> 00:07:45,900
+So it is not going to recursively search the whole tree
+
+123
+00:07:46,130 --> 00:07:49,030
+because I've said "recursive" is equals to "False".
+
+124
+00:07:50,320 --> 00:07:57,300
+So if I print "title" now, it is an empty
+
+125
+00:07:50,320 --> 00:07:57,300
+list because it couldn't find "title".
+
+126
+00:07:57,620 --> 00:08:06,150
+But if I have this "True", which by default
+
+127
+00:07:57,620 --> 00:08:06,150
+is "True", it gives me "title" tag.
+
+128
+00:08:06,190 --> 00:08:13,840
+So again what happened was that when I send a
+
+129
+00:08:06,190 --> 00:08:13,840
+"False" there, it only searches the children
+
+130
+00:08:13,840 --> 00:08:19,380
+of "html", the direct children, and they did not go
+
+131
+00:08:13,840 --> 00:08:19,380
+into their children. So it did not go into "head".
+
+132
+00:08:19,430 --> 00:08:25,300
+It did not go into the children of "head".
+
+133
+00:08:19,430 --> 00:08:25,300
+It says "Ok, so 'html' has two children, 'head'
+
+134
+00:08:25,320 --> 00:08:26,050
+and 'body'".
+
+135
+00:08:26,140 --> 00:08:32,680
+So is there any "title" tag which is a direct child
+
+136
+00:08:26,140 --> 00:08:32,680
+of HTML? And it couldn't find any so it returned me an
+
+137
+00:08:32,680 --> 00:08:33,610
+empty list.
+
+138
+00:08:33,730 --> 00:08:40,360
+But when I have it "True", it
+
+139
+00:08:33,730 --> 00:08:40,360
+recursively searches the whole parse tree
+
+140
+00:08:40,360 --> 00:08:42,250
+for the tag.
+
+141
+00:08:42,480 --> 00:08:49,900
+So it goes to descendants, all of them, every one of
+
+142
+00:08:42,480 --> 00:08:49,900
+them and it fetches me all the "title" tags which
+
+143
+00:08:49,900 --> 00:08:50,770
+are present.
+
+144
+00:08:51,890 --> 00:08:54,350
+Which in our case we only have one.
+
+145
+00:08:54,440 --> 00:08:57,560
+So by default, this "recursive" parameter is "True".
+
+146
+00:08:57,560 --> 00:08:59,990
+So you don't need to set it to "True".
+
+147
+00:09:00,110 --> 00:09:07,370
+But if you only want to search the children of
+
+148
+00:09:00,110 --> 00:09:07,370
+some tag, the direct children, you
+
+149
+00:09:07,370 --> 00:09:13,840
+set it to "False" and it will return you an empty list.
+
+150
+00:09:14,040 --> 00:09:18,060
+So I hope that this is more clear to you.
+
+151
+00:09:18,060 --> 00:09:23,580
+We have discussed the "find_all" function and we discussed
+
+152
+00:09:18,060 --> 00:09:23,580
+the different parameters it can take and how we
+
+153
+00:09:23,580 --> 00:09:27,040
+can use them to refine our search.
+
+154
+00:09:27,040 --> 00:09:33,070
+I hope this is clear to you and I'll see you in the
+
+155
+00:09:27,040 --> 00:09:33,070
+next video and we'll discuss the "find" function
+
+156
+00:09:33,700 --> 00:09:44,370
+which is pretty similar to "find_all". I will
+
+157
+00:09:33,700 --> 00:09:44,370
+discuss in the next video what differences
+
+158
+00:09:44,370 --> 00:09:46,300
+we have in "find" and "find_all".
+
+159
+00:09:46,470 --> 00:09:47,490
+Thank you very much.
+

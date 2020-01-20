@@ -1,0 +1,324 @@
+1
+00:00:00,820 --> 00:00:02,180
+Hello everyone.
+
+2
+00:00:02,330 --> 00:00:09,660
+In the last video, we talked about the "previous_sibling"
+
+3
+00:00:02,330 --> 00:00:09,660
+method of a tag and we saw that if I am in
+
+4
+00:00:09,680 --> 00:00:12,850
+this "body" tag I could use that method to move to this "head" tag.
+
+5
+00:00:12,920 --> 00:00:20,170
+And similarly if I am in this "head" tag, I could use the
+
+6
+00:00:12,920 --> 00:00:20,170
+"next_sibling" method to move to this "body" tag.
+
+7
+00:00:20,180 --> 00:00:26,390
+So now the question is: if I'm at this "b" tag and I want
+
+8
+00:00:20,180 --> 00:00:26,390
+to see how many siblings I have or what siblings
+
+9
+00:00:26,390 --> 00:00:27,150
+I have.
+
+10
+00:00:27,380 --> 00:00:28,910
+So what do I do.
+
+11
+00:00:28,910 --> 00:00:36,650
+One way is to use a loop and call the "next_sibling"
+
+12
+00:00:28,910 --> 00:00:36,650
+method again and again to see at which sibling I am right
+
+13
+00:00:36,650 --> 00:00:37,260
+now.
+
+14
+00:00:38,640 --> 00:00:40,800
+I mean like doing that what I lose is all this
+
+15
+00:00:40,800 --> 00:00:46,360
+outside the ".next_sibling", I come across this "p",
+
+16
+00:00:40,800 --> 00:00:46,360
+then I can move to this, then I can move to this.
+
+17
+00:00:46,530 --> 00:00:51,000
+And now I'm at the very end. If I call the "next_sibling"
+
+18
+00:00:46,530 --> 00:00:51,000
+method again it is going to return me "None".
+
+19
+00:00:51,120 --> 00:00:56,250
+And I know that I have no further
+
+20
+00:00:51,120 --> 00:00:56,250
+next sibling after this "p" tag.
+
+21
+00:00:56,490 --> 00:01:02,760
+But this is a very inefficient version of doing things.
+
+22
+00:00:56,490 --> 00:01:02,760
+Beautiful Soup writes us with a built-in method
+
+23
+00:01:03,240 --> 00:01:07,630
+which returns us a list of all the next siblings for a particular tag.
+
+24
+00:01:07,890 --> 00:01:11,350
+So right now I have a "p" tag which is the first "p" tag.
+
+25
+00:01:11,370 --> 00:01:13,230
+I mean it's this "p" tag here.
+
+26
+00:01:13,250 --> 00:01:15,530
+This "p class='title'" one.
+
+27
+00:01:15,870 --> 00:01:21,730
+So you can see if I'm going to move
+
+28
+00:01:15,870 --> 00:01:21,730
+towards my next siblings, I only have two.
+
+29
+00:01:22,040 --> 00:01:28,370
+I have this "p" and this "p". I am omitting the new
+
+30
+00:01:22,040 --> 00:01:28,370
+line characters. So I'm just going to print this
+
+31
+00:01:28,380 --> 00:01:29,360
+"p" here.
+
+32
+00:01:29,820 --> 00:01:32,010
+So just, you know, like which "p" this is.
+
+33
+00:01:32,020 --> 00:01:37,180
+So this is the "title" one and if I get
+
+34
+00:01:32,020 --> 00:01:37,180
+back to my document, you can see this one.
+
+35
+00:01:37,410 --> 00:01:49,910
+And I have two further "p" tags. OK, let's move forward then. I say "for sibling in p.next_siblings",
+
+36
+00:01:51,120 --> 00:01:59,570
+I say print "sibling" if sibling does not
+
+37
+00:01:51,120 --> 00:01:59,570
+equal to a new line character else
+
+38
+00:01:59,600 --> 00:02:03,260
+print this. And if I run it.
+
+39
+00:02:03,650 --> 00:02:04,510
+Oh, I'm sorry.
+
+40
+00:02:04,520 --> 00:02:06,520
+I should say print "sibling.name".
+
+41
+00:02:08,100 --> 00:02:16,680
+OK, so if I run this, it ives me two "p" tags. And
+
+42
+00:02:08,100 --> 00:02:16,680
+if I am at this "p" tag here, I only have two further
+
+43
+00:02:16,680 --> 00:02:20,850
+siblings which are two "p" tags. This and this.
+
+44
+00:02:20,850 --> 00:02:28,450
+So this method returns us a list of my next siblings. OK.
+
+45
+00:02:28,450 --> 00:02:36,430
+Similarly if a wanted to know the previous siblings,
+
+46
+00:02:28,450 --> 00:02:36,430
+one way was that I could do this manually by having
+
+47
+00:02:36,430 --> 00:02:36,990
+a loop
+
+48
+00:02:37,230 --> 00:02:44,630
+and updating my previous sibling value. The other way
+
+49
+00:02:37,230 --> 00:02:44,630
+is what I'd do is I have this method, this built-in
+
+50
+00:02:44,630 --> 00:02:48,160
+method, which gives me a list of my previous siblings.
+
+51
+00:02:48,160 --> 00:02:50,720
+So I say "for sibling
+
+52
+00:02:51,040 --> 00:03:09,670
+in p.previous_siblings", I say print "sibling"
+
+53
+00:02:51,040 --> 00:03:09,670
+if "sibling" does not equal to "\n" else...
+
+54
+00:03:09,690 --> 00:03:16,260
+If I run this, it gives me "b". And you can see if I am at
+
+55
+00:03:09,690 --> 00:03:16,260
+this "p" tag here, it only has one previous sibling which is this
+
+56
+00:03:16,260 --> 00:03:17,830
+one, this "b" tag here.
+
+57
+00:03:19,340 --> 00:03:19,660
+OK.
+
+58
+00:03:19,670 --> 00:03:27,860
+So these were two methods and which
+
+59
+00:03:19,670 --> 00:03:27,860
+returns us a list and we have the whole
+
+60
+00:03:27,860 --> 00:03:28,430
+siblings now.
+
+61
+00:03:28,430 --> 00:03:32,810
+If we use this, we have the whole next sibling and
+
+62
+00:03:28,430 --> 00:03:32,810
+if you use this, we are all the previous siblings.
+
+63
+00:03:33,240 --> 00:03:37,970
+So we have discussed three ways of navigating our parse tree.
+
+64
+00:03:37,970 --> 00:03:44,000
+One is that we move up, one as that we move down
+
+65
+00:03:37,970 --> 00:03:44,000
+and the last one which we discussed right now is moving
+
+66
+00:03:44,000 --> 00:03:52,220
+sideways. Next, what we are going to do is we are
+
+67
+00:03:44,000 --> 00:03:52,220
+going to discuss RegEX, or regular expressions.
+
+68
+00:03:53,120 --> 00:04:01,190
+And after doing that, we are going to move to searching data
+
+69
+00:03:53,120 --> 00:04:01,190
+in our parse tree and how we do that because I mean
+
+70
+00:04:01,190 --> 00:04:05,870
+you can only navigate through your parse tree
+
+71
+00:04:01,190 --> 00:04:05,870
+if you know what you expect to find.
+
+72
+00:04:05,870 --> 00:04:11,630
+But what if you have like let's say you have
+
+73
+00:04:05,870 --> 00:04:11,630
+10000 lines of code and you have ten thousands of
+
+74
+00:04:11,660 --> 00:04:13,640
+thousands of tags in there.
+
+75
+00:04:13,700 --> 00:04:16,700
+I mean you really can't navigate that much, can you?
+
+76
+00:04:16,850 --> 00:04:19,620
+And if you do, that's going to be very inefficient.
+
+77
+00:04:20,030 --> 00:04:23,740
+Like checking each tag to see if that's the one you want.
+
+78
+00:04:24,170 --> 00:04:30,620
+So when you get to searching after doing regular
+
+79
+00:04:24,170 --> 00:04:30,620
+expressions which are going to help us search. I hope
+
+80
+00:04:30,680 --> 00:04:37,130
+this section is clear to you and we'll move forward then with regular expressions.
+
+81
+00:04:37,130 --> 00:04:38,350
+Thank you very much.
+

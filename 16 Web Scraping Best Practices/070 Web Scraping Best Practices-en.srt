@@ -1,0 +1,552 @@
+1
+00:00:01,170 --> 00:00:02,630
+Hello everyone.
+
+2
+00:00:02,760 --> 00:00:09,870
+Now as we as we've ended our course, we have
+
+3
+00:00:02,760 --> 00:00:09,870
+covered a lot of stuff like Beautiful Soup,
+
+4
+00:00:10,020 --> 00:00:12,220
+request, Selenium.
+
+5
+00:00:12,300 --> 00:00:14,000
+We have written Regular Expressions.
+
+6
+00:00:14,010 --> 00:00:19,860
+We have written XPath expressions. We have learned
+
+7
+00:00:14,010 --> 00:00:19,860
+how to parse data, how to actually get what
+
+8
+00:00:19,860 --> 00:00:27,240
+we want and how to handle that amount of data
+
+9
+00:00:19,860 --> 00:00:27,240
+and how we can write them to ".csv" files and stuff.
+
+10
+00:00:27,630 --> 00:00:32,820
+So now in this video, I'm just going to
+
+11
+00:00:27,630 --> 00:00:32,820
+highlight some best practices which you should keep
+
+12
+00:00:32,820 --> 00:00:34,720
+in mind when you are scraping.
+
+13
+00:00:35,040 --> 00:00:40,610
+So the first thing as you can see is
+
+14
+00:00:35,040 --> 00:00:40,610
+that you should avoid using Selenium.
+
+15
+00:00:40,610 --> 00:00:46,560
+You should actually avoid the use of Selenium and
+
+16
+00:00:40,610 --> 00:00:46,560
+use the request as much as possible because Selenium
+
+17
+00:00:46,560 --> 00:00:47,970
+slows up things.
+
+18
+00:00:48,080 --> 00:00:51,590
+So use Selenium as your last resort.
+
+19
+00:00:51,600 --> 00:00:57,570
+Don't jump to Selenium each time you get a chance.
+
+20
+00:00:57,570 --> 00:00:59,770
+So like let's say you want to search Google.
+
+21
+00:00:59,820 --> 00:01:04,290
+You can actually do that using requests,
+
+22
+00:00:59,820 --> 00:01:04,290
+you don't need Selenium for that.
+
+23
+00:01:04,590 --> 00:01:09,450
+But for that it will actually have to read
+
+24
+00:01:04,590 --> 00:01:09,450
+some documentation for request and go dig deeper
+
+25
+00:01:09,450 --> 00:01:09,960
+into that.
+
+26
+00:01:09,960 --> 00:01:14,490
+So I would advise you to do that. For now
+
+27
+00:01:09,960 --> 00:01:14,490
+you can stick to Selenium but for future you should
+
+28
+00:01:14,490 --> 00:01:19,710
+always improve and then try to be a better version of
+
+29
+00:01:19,710 --> 00:01:20,640
+yourself.
+
+30
+00:01:20,700 --> 00:01:23,600
+So you should avoid using Selenium.
+
+31
+00:01:23,670 --> 00:01:27,230
+And second is that you should limit your request to the server.
+
+32
+00:01:28,270 --> 00:01:33,430
+What I mean by that is that let's say you
+
+33
+00:01:28,270 --> 00:01:33,430
+send like in the final project we were downloading
+
+34
+00:01:33,430 --> 00:01:34,640
+images from Instagram.
+
+35
+00:01:34,870 --> 00:01:40,570
+And let's say that you run your scraper
+
+36
+00:01:34,870 --> 00:01:40,570
+again and again and again and
+
+37
+00:01:40,570 --> 00:01:46,470
+again for different target profiles and you downloading
+
+38
+00:01:40,570 --> 00:01:46,470
+hundreds of thousands of images.
+
+39
+00:01:46,630 --> 00:01:52,190
+So what Instagram is going to do is it is
+
+40
+00:01:46,630 --> 00:01:52,190
+going to see that something fishy is going on.
+
+41
+00:01:52,320 --> 00:01:59,230
+A single IP has send so many request to our server, what is going
+
+42
+00:01:59,230 --> 00:01:59,470
+on?
+
+43
+00:01:59,470 --> 00:02:03,470
+And they would get suspicious and
+
+44
+00:01:59,470 --> 00:02:03,470
+then they would block you out.
+
+45
+00:02:03,520 --> 00:02:07,700
+So you should introduce delays in your code.
+
+46
+00:02:07,840 --> 00:02:13,590
+First things that that actually helps that you can actually
+
+47
+00:02:13,590 --> 00:02:15,400
+undercover when you do that.
+
+48
+00:02:15,790 --> 00:02:19,300
+And secondly you should scrape carefully.
+
+49
+00:02:19,310 --> 00:02:25,860
+It is actually wrong to bombard someone's server
+
+50
+00:02:19,310 --> 00:02:25,860
+like this and they can actually block you.
+
+51
+00:02:25,870 --> 00:02:29,830
+So blocking is not an issue for them
+
+52
+00:02:25,870 --> 00:02:29,830
+and they're going to do that and they
+
+53
+00:02:29,830 --> 00:02:30,850
+will do that.
+
+54
+00:02:30,940 --> 00:02:33,220
+So they will definitely do that.
+
+55
+00:02:33,220 --> 00:02:40,360
+If you disrespect their policies and
+
+56
+00:02:33,220 --> 00:02:40,360
+you actually just go on sending
+
+57
+00:02:40,370 --> 00:02:41,210
+requests.
+
+58
+00:02:41,470 --> 00:02:47,170
+So the third one is a continuation of the second one. What
+
+59
+00:02:41,470 --> 00:02:47,170
+you can do is you can download web pages which
+
+60
+00:02:47,260 --> 00:02:48,770
+you intend to scrape.
+
+61
+00:02:48,790 --> 00:02:55,820
+So like if you have a very complex
+
+62
+00:02:48,790 --> 00:02:55,820
+structure of website and you know that you may
+
+63
+00:02:55,860 --> 00:03:01,240
+open the same links twice or thrice or many
+
+64
+00:02:55,860 --> 00:03:01,240
+times, what you can do is you can actually
+
+65
+00:03:01,240 --> 00:03:02,550
+download the HTML,
+
+66
+00:03:02,590 --> 00:03:09,050
+anything you can have them on your
+
+67
+00:03:02,590 --> 00:03:09,050
+local machine and then you can access
+
+68
+00:03:09,090 --> 00:03:16,530
+those files and then parse them later on instead
+
+69
+00:03:09,090 --> 00:03:16,530
+of sending requests to the server again and again. So
+
+70
+00:03:16,530 --> 00:03:21,630
+I would advise you to download web pages if you
+
+71
+00:03:16,530 --> 00:03:21,630
+think you are going to use it
+
+72
+00:03:21,630 --> 00:03:25,230
+many times and not once.
+
+73
+00:03:25,230 --> 00:03:28,690
+So the fourth one is that you should parse pessimisically.
+
+74
+00:03:28,920 --> 00:03:35,610
+What I mean by that is that let's say that
+
+75
+00:03:28,920 --> 00:03:35,610
+you parse some data and that data contains digits.
+
+76
+00:03:35,610 --> 00:03:40,400
+So I mean you should always think pessimistically here.
+
+77
+00:03:40,770 --> 00:03:45,620
+What I mean by that is that you should
+
+78
+00:03:40,770 --> 00:03:45,620
+think that it is a string, like
+
+79
+00:03:45,630 --> 00:03:52,290
+they are not digits because that would actually
+
+80
+00:03:45,630 --> 00:03:52,290
+help you that you don't actually get surprised
+
+81
+00:03:52,290 --> 00:03:54,770
+when you run your scraper.
+
+82
+00:03:54,780 --> 00:03:57,610
+So this will help you a
+
+83
+00:03:54,780 --> 00:03:57,610
+lot when you think pessimistically.
+
+84
+00:03:57,620 --> 00:04:03,070
+So you should think of them as a
+
+85
+00:03:57,620 --> 00:04:03,070
+string and you can just type cast
+
+86
+00:04:03,130 --> 00:04:07,370
+them as integers. You can definitely do that,
+
+87
+00:04:03,130 --> 00:04:07,370
+it is not a headache and if there are integers,
+
+88
+00:04:07,740 --> 00:04:08,590
+what's going to happen?
+
+89
+00:04:08,590 --> 00:04:09,860
+Nothing.
+
+90
+00:04:10,020 --> 00:04:12,270
+It's just that you remain safe from your end.
+
+91
+00:04:12,690 --> 00:04:13,580
+So just do that.
+
+92
+00:04:13,590 --> 00:04:18,330
+I mean it helps a lot when you are writing
+
+93
+00:04:13,590 --> 00:04:18,330
+a lot of code and you don't
+
+94
+00:04:18,330 --> 00:04:24,090
+have to... know definitely that this
+
+95
+00:04:18,330 --> 00:04:24,090
+is an integer or I'm just giving an example
+
+96
+00:04:24,090 --> 00:04:26,270
+here often intergers, this can be anything.
+
+97
+00:04:26,280 --> 00:04:31,860
+So when you are parsing, narrow your approach
+
+98
+00:04:26,280 --> 00:04:31,860
+and think pessimistically think
+
+99
+00:04:31,950 --> 00:04:33,700
+what is
+
+100
+00:04:33,720 --> 00:04:35,460
+the worst thing that can happen.
+
+101
+00:04:35,790 --> 00:04:41,110
+And then just take effective countermeasures for that.
+
+102
+00:04:41,460 --> 00:04:45,350
+So the fifth one is divide and conquer.
+
+103
+00:04:46,520 --> 00:04:48,770
+This is actually quite important.
+
+104
+00:04:48,830 --> 00:04:56,750
+As far Instagram scraper which we wrote in the last file, in the last
+
+105
+00:04:56,840 --> 00:05:03,170
+section, we saw that we actually downloaded
+
+106
+00:04:56,840 --> 00:05:03,170
+it in different parts. We were logging
+
+107
+00:05:03,170 --> 00:05:10,030
+in and we were opening a target profile and it
+
+108
+00:05:03,170 --> 00:05:10,030
+was scrolling down and scrolling with downloading images
+
+109
+00:05:10,040 --> 00:05:12,120
+and then getting captions.
+
+110
+00:05:12,380 --> 00:05:17,960
+So we had actually broken down this parts so we didn't
+
+111
+00:05:12,380 --> 00:05:17,960
+try to take everything had done. What we did was
+
+112
+00:05:17,960 --> 00:05:20,170
+we broke everything in parts.
+
+113
+00:05:20,270 --> 00:05:27,110
+Even if you even if you go for project one
+
+114
+00:05:20,270 --> 00:05:27,110
+when we scraped from "codingbat.com", what we did
+
+115
+00:05:27,110 --> 00:05:32,990
+was we knew we had three webpages, three main web pages
+
+116
+00:05:33,410 --> 00:05:35,700
+which we had to scrape from.
+
+117
+00:05:35,960 --> 00:05:42,720
+So first of all we did what we did
+
+118
+00:05:35,960 --> 00:05:42,720
+was we divided our scraper.
+
+119
+00:05:42,860 --> 00:05:49,320
+We had the first part for the main page and then the second part
+
+120
+00:05:49,410 --> 00:05:53,920
+was the scraper we had for them middle page
+
+121
+00:05:49,410 --> 00:05:53,920
+which when you open a section
+
+122
+00:05:53,920 --> 00:05:55,070
+to question which appeared.
+
+123
+00:05:55,280 --> 00:05:57,840
+And then the final one was the question part.
+
+124
+00:05:57,860 --> 00:06:01,090
+So divide and conquer is a really effective strategy.
+
+125
+00:06:01,100 --> 00:06:04,480
+And we should always look towards
+
+126
+00:06:01,100 --> 00:06:04,480
+because that really helps.
+
+127
+00:06:04,760 --> 00:06:12,590
+So I hope that you learned what
+
+128
+00:06:04,760 --> 00:06:12,590
+and what I taught you and I really
+
+129
+00:06:12,590 --> 00:06:19,790
+hope that you may utilize this knowledge in
+
+130
+00:06:12,590 --> 00:06:19,790
+a good manner and you don't actually
+
+131
+00:06:19,910 --> 00:06:22,820
+go on and get lot and stuff.
+
+132
+00:06:22,820 --> 00:06:25,190
+So it was great.
+
+133
+00:06:25,240 --> 00:06:27,540
+It was actually great teaching in this course.
+
+134
+00:06:27,650 --> 00:06:29,750
+I really look forward to having
+
+135
+00:06:29,750 --> 00:06:35,530
+another course with you guys. So thank you very much
+
+136
+00:06:29,750 --> 00:06:35,530
+guys, it was really nice teaching you this course.
+
+137
+00:06:35,690 --> 00:06:36,160
+Thank you.
+
+138
+00:06:36,200 --> 00:06:37,250
+Thank you very much.
+

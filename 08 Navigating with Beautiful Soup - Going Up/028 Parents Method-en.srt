@@ -1,0 +1,288 @@
+1
+00:00:01,000 --> 00:00:08,330
+Hello everyone! In the last video,
+
+2
+00:00:01,000 --> 00:00:08,330
+we discussed how we can move up our
+
+3
+00:00:08,570 --> 00:00:09,590
+parse tree.
+
+4
+00:00:10,160 --> 00:00:15,910
+A quick preview, if I have this "p" tag,
+
+5
+00:00:10,160 --> 00:00:15,910
+how can access this "body" tag here,
+
+6
+00:00:15,920 --> 00:00:16,880
+its parent.
+
+7
+00:00:17,560 --> 00:00:21,040
+In this video, we are going to discuss the ".parents" method.
+
+8
+00:00:22,170 --> 00:00:28,520
+The ".parents" method basically is that
+
+9
+00:00:22,170 --> 00:00:28,520
+how we can access all the parents of a particular tag.
+
+10
+00:00:28,630 --> 00:00:35,220
+So this method returns us a list of parents.
+
+11
+00:00:39,780 --> 00:00:40,280
+By list
+
+12
+00:00:40,290 --> 00:00:48,840
+I mean it returns us a generator and you can
+
+13
+00:00:40,290 --> 00:00:48,840
+actually iterate with this generator to
+
+14
+00:00:48,840 --> 00:00:53,020
+get the parents, all the parents, of a particular tag.
+
+15
+00:00:53,030 --> 00:01:03,550
+So let's say I'm going to access this first "a" tag.
+
+16
+00:00:53,030 --> 00:01:03,550
+You can see this "a" tag has its first parent as this "p" tag,
+
+17
+00:01:03,910 --> 00:01:10,510
+the story one, and then this "p" tag has its parent as this "body" tag.
+
+18
+00:01:10,740 --> 00:01:18,210
+And then this body has this "html" and "html"
+
+19
+00:01:10,740 --> 00:01:18,210
+has this Beautiful Soup of the document as its parent.
+
+20
+00:01:18,240 --> 00:01:25,080
+So I say "link" is equals to "soup.a" which
+
+21
+00:01:18,240 --> 00:01:25,080
+gives me this "a" tag here because this always
+
+22
+00:01:25,080 --> 00:01:27,990
+gives us the first occurrence of a particular tag.
+
+23
+00:01:28,940 --> 00:01:34,670
+So we have "link" is equals to "soup.a".
+
+24
+00:01:28,940 --> 00:01:34,670
+And if I print "link",
+
+25
+00:01:34,860 --> 00:01:40,970
+You can see it gives me the first "a" tag I have.
+
+26
+00:01:41,330 --> 00:01:48,810
+So this one. "id" is equals to "link1", so you can see the match.
+
+27
+00:01:48,920 --> 00:01:51,350
+So if I say "link.parents",
+
+28
+00:01:56,370 --> 00:02:00,660
+it says it returns us a generator object.
+
+29
+00:01:56,370 --> 00:02:00,660
+It says "generator object parents at"
+
+30
+00:02:00,850 --> 00:02:03,640
+this address.
+
+31
+00:02:03,880 --> 00:02:13,830
+And if I use "link.parent", it returns me the "story",
+
+32
+00:02:03,880 --> 00:02:13,830
+this "p" tag which has its "class='story'". So
+
+33
+00:02:14,150 --> 00:02:20,860
+let's just use ".name". So the direct parent of the
+
+34
+00:02:14,150 --> 00:02:20,860
+"a" tag is this "p" tag, you can see that here.
+
+35
+00:02:21,780 --> 00:02:24,890
+I wrote "link.parent.name".
+
+36
+00:02:25,270 --> 00:02:28,390
+So now what are we going to do is we are going to iterate
+
+37
+00:02:29,310 --> 00:02:34,730
+for this parents of this "a" tag and who are they.
+
+38
+00:02:34,770 --> 00:02:45,090
+So I say "for parents in link.parents", I say print
+
+39
+00:02:34,770 --> 00:02:45,090
+"parent". So this "parent" gives me the tag and if I print
+
+40
+00:02:45,090 --> 00:02:47,660
+this it is going to give me the whole values
+
+41
+00:02:47,760 --> 00:02:53,640
+for these tags which would be like
+
+42
+00:02:47,760 --> 00:02:53,640
+printing basically the whole document.
+
+43
+00:02:53,760 --> 00:02:56,920
+So I'm going to say "parent.name".
+
+44
+00:02:57,000 --> 00:03:03,480
+I hope you remember the ".name" method returns
+
+45
+00:02:57,000 --> 00:03:03,480
+the name of a particular tag. If I run this now,
+
+46
+00:03:03,680 --> 00:03:11,220
+you see it gives us the first parent which
+
+47
+00:03:03,680 --> 00:03:11,220
+is the "p" tag because this "a" tag has the
+
+48
+00:03:11,320 --> 00:03:15,600
+"p" tag as its parent and then this "p" tag
+
+49
+00:03:11,320 --> 00:03:15,600
+has this "body" tag as this parent.
+
+50
+00:03:15,970 --> 00:03:16,840
+You can see that here.
+
+51
+00:03:16,840 --> 00:03:23,550
+And then this "body" tag has "html" as its parent, you can
+
+52
+00:03:16,840 --> 00:03:23,550
+see that here. And then "html" has a document or Beautiful
+
+53
+00:03:23,630 --> 00:03:33,930
+Soup as its parent. So the ".parents" method returns
+
+54
+00:03:23,630 --> 00:03:33,930
+us a generator which is a list of all the
+
+55
+00:03:33,930 --> 00:03:42,030
+parents we have for that particular tag will ring
+
+56
+00:03:33,930 --> 00:03:42,030
+till we reach the Beautiful Soup or the document object
+
+57
+00:03:42,030 --> 00:03:50,930
+in our parse tree. I hope this is clear.
+
+58
+00:03:42,030 --> 00:03:50,930
+In the next videos, we would be moving sideways
+
+59
+00:03:50,990 --> 00:03:58,010
+in our parse tree. We have covered how we can move
+
+60
+00:03:50,990 --> 00:03:58,010
+down our parse tree like if I'm at the document or if I am
+
+61
+00:03:58,060 --> 00:04:06,320
+at this "html" tag, how can I access any of this "a" tag
+
+62
+00:03:58,060 --> 00:04:06,320
+or this "p" tag or any other tags, we've done that
+
+63
+00:04:06,410 --> 00:04:09,970
+and we've also discussed how we can move up our parse tree.
+
+64
+00:04:10,130 --> 00:04:16,550
+I was at this "a" tag and I wanted to move to
+
+65
+00:04:10,130 --> 00:04:16,550
+this body tag, how can I do that.
+
+66
+00:04:16,640 --> 00:04:24,150
+We can move through our parents using this ".parents"
+
+67
+00:04:16,640 --> 00:04:24,150
+method and then we can do whatever we want
+
+68
+00:04:24,150 --> 00:04:25,270
+to while moving
+
+69
+00:04:25,440 --> 00:04:29,800
+through them and we can manipulate the tags or we could get the data.
+
+70
+00:04:29,810 --> 00:04:33,350
+I mean we can do whatever we want with them this way.
+
+71
+00:04:33,600 --> 00:04:37,730
+And now we're going to discuss how we can move sideways in the parse tree.
+
+72
+00:04:38,900 --> 00:04:39,970
+Thank you very much.
+

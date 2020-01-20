@@ -1,0 +1,332 @@
+1
+00:00:00,580 --> 00:00:07,540
+Hello everyone! In the previous with you, we discussed how to send a simple GET request to the server and
+
+2
+00:00:07,540 --> 00:00:14,420
+receive a response object, and how to interpret that response object.
+
+3
+00:00:14,440 --> 00:00:22,660
+In this video we are going to discuss user agents. A user agent is a software which act on the behalf of a user.
+
+4
+00:00:22,750 --> 00:00:29,140
+By that I mean when you open Google through a browser, your browser which you are using, let's say
+
+5
+00:00:29,140 --> 00:00:30,120
+Google Chrome.
+
+6
+00:00:30,350 --> 00:00:36,310
+So your Chrome browser is acting on your behalf and sending a request to the Google server saying that
+
+7
+00:00:36,550 --> 00:00:43,420
+my user wants to open "Google.com" and Google receives this request and then sends back a response
+
+8
+00:00:43,420 --> 00:00:44,510
+object.
+
+9
+00:00:44,560 --> 00:00:47,720
+So when it does that, when it sends that request.
+
+10
+00:00:47,740 --> 00:00:53,340
+What it does is it adds a header to that request which shows like
+
+11
+00:00:53,360 --> 00:00:58,440
+it states that it is a Google Chrome browser which is sending that request on the
+
+12
+00:00:58,450 --> 00:01:00,000
+behalf of the user.
+
+13
+00:01:00,520 --> 00:01:08,940
+So when we normally send requests to a server when using this request
+
+14
+00:01:08,940 --> 00:01:17,340
+module we're not adding any header there which indicates that a robot or a program is sending this request
+
+15
+00:01:17,720 --> 00:01:20,750
+to a server, let it be sending a request to Google server.
+
+16
+00:01:20,910 --> 00:01:29,240
+So the Google Google will know that a program or piece of code is sending this request to its servers and
+
+17
+00:01:30,200 --> 00:01:35,960
+as we saw previously when you send a request to Google, it did return us a response.
+
+18
+00:01:36,150 --> 00:01:42,150
+But there are some sites which have a very strict policy and they don't allow programs to
+
+19
+00:01:42,150 --> 00:01:44,350
+send requests to the server.
+
+20
+00:01:44,370 --> 00:01:47,550
+And fear that their servers may crash
+
+21
+00:01:47,550 --> 00:01:49,160
+if you do this in a loop.
+
+22
+00:01:49,410 --> 00:01:54,480
+So the servers may crash because they would be excess traffic and they wouldn't be able to handle
+
+23
+00:01:54,480 --> 00:01:57,120
+that much traffic by sending response to each one.
+
+24
+00:01:57,240 --> 00:02:03,000
+So what they do is they block out codes or robots this way.
+
+25
+00:02:03,000 --> 00:02:10,560
+So what we can do is we can fake our user agent, we can fake this,
+
+26
+00:02:10,620 --> 00:02:16,440
+we can show to the servers that basically we are a browser which is sending a request and
+
+27
+00:02:16,440 --> 00:02:17,780
+not just a piece of code.
+
+28
+00:02:17,790 --> 00:02:19,080
+So how do we do this?
+
+29
+00:02:20,080 --> 00:02:23,090
+There is this package, fake_useragent.
+
+30
+00:02:23,480 --> 00:02:30,350
+You can install it by having a "requirements.txt" file in your project, which I have made here, in your
+
+31
+00:02:30,350 --> 00:02:31,220
+Python project.
+
+32
+00:02:31,220 --> 00:02:35,060
+OK you make it here and then you write "fake_useragent"
+
+33
+00:02:37,650 --> 00:02:44,890
+and you press Ctrl+S or if you're using Mac OS you could press Command+S. And then you get
+
+34
+00:02:44,890 --> 00:02:45,570
+back.
+
+35
+00:02:45,580 --> 00:02:50,700
+I've already installed fake_useragent so it doesn't ask me to install it.
+
+36
+00:02:50,710 --> 00:02:55,420
+But if you haven't done that, it will ask you to install fake_useragent and you can just click
+
+37
+00:02:55,450 --> 00:02:58,650
+yes and it will install it automatically.
+
+38
+00:02:58,810 --> 00:03:05,620
+So what you do is you get this module fake_useragent and then you import
+
+39
+00:03:05,620 --> 00:03:09,130
+this class UserAgent from this module.
+
+40
+00:03:09,190 --> 00:03:14,600
+After doing that what we do is we write "ua", I mean I'm using "ua,
+
+41
+00:03:14,650 --> 00:03:19,290
+I say UserAgent and then make an instance of this class.
+
+42
+00:03:19,630 --> 00:03:28,970
+After that I make a header, I say, "header" is a dictionary. I say "user-agent",
+
+43
+00:03:29,210 --> 00:03:34,410
+"ua.chrome". Let's say I am emulating Chrome here.
+
+44
+00:03:34,410 --> 00:03:42,370
+So our dictionary, the key is "user-agent" and the value is "ua.chrome".
+
+45
+00:03:42,470 --> 00:03:46,430
+So if you just print this, ua.chrome, you'll see
+
+46
+00:03:50,100 --> 00:03:56,490
+it says me Mozilla this, this, this, this, this. This is the required header which Chrome sends
+
+47
+00:03:56,640 --> 00:04:02,060
+every time it sends a request to the server, to any website it's opening.
+
+48
+00:04:02,130 --> 00:04:09,150
+So this time we are going to send a request to Google. We say "requests.get" and
+
+49
+00:04:14,440 --> 00:04:17,430
+now I'm going to add a header here, I say header.
+
+50
+00:04:17,750 --> 00:04:21,240
+Header is basically a dictionary which you're adding here.
+
+51
+00:04:21,260 --> 00:04:22,140
+OK.
+
+52
+00:04:22,200 --> 00:04:24,030
+And I can print it now.
+
+53
+00:04:32,320 --> 00:04:36,020
+I'm sorry it's "headers", it's
+
+54
+00:04:36,150 --> 00:04:37,420
+not "header". I'm sorry.
+
+55
+00:04:37,490 --> 00:04:38,590
+OK.
+
+56
+00:04:38,720 --> 00:04:43,450
+So you can see it send back its response.
+
+57
+00:04:44,690 --> 00:04:50,720
+But this time Google servers think that it was a Chrome browser which is sending a request and not some
+
+58
+00:04:50,720 --> 00:04:52,660
+piece of code or a robot.
+
+59
+00:04:53,060 --> 00:04:54,250
+OK.
+
+60
+00:04:55,040 --> 00:04:59,950
+So I'm just going to tell you something about time outs quickly.
+
+61
+00:05:00,290 --> 00:05:05,210
+Whenever you send a request to servers sometimes you may have seen in you are opening websites in browsers
+
+62
+00:05:05,300 --> 00:05:10,850
+they don't load and you wait forever and ever and they don't ever load,
+
+63
+00:05:11,240 --> 00:05:17,540
+because there has been some miss process, they had in some processing
+
+64
+00:05:17,540 --> 00:05:23,930
+error or maybe your request didn't reach the server or maybe it did and somehow it got dropped or
+
+65
+00:05:23,930 --> 00:05:26,360
+something and so rather than be able to process.
+
+66
+00:05:26,360 --> 00:05:30,610
+So you hang there indefinitely and server doesn't send you back a response.
+
+67
+00:05:30,680 --> 00:05:37,010
+So what do you do normally in a browser is that you just read the URL and press
+
+68
+00:05:37,010 --> 00:05:39,100
+refresh or press Enter.
+
+69
+00:05:39,230 --> 00:05:47,330
+So we can do the same thing and in a request module you don't want your code to
+
+70
+00:05:47,640 --> 00:05:49,220
+hand indefinitely
+
+71
+00:05:49,220 --> 00:05:52,160
+at some point, if server sends you back a request.
+
+72
+00:05:52,280 --> 00:06:01,290
+So what you do is you say "page" is equals to "requests.get". I'm going to send a request to Google
+
+73
+00:06:03,280 --> 00:06:05,400
+but this time I'm going to include a timeout.
+
+74
+00:06:06,440 --> 00:06:15,120
+Timeout means that after this time, my code won't wait for a response from Google servers and
+
+75
+00:06:15,220 --> 00:06:17,140
+it would move on.
+
+76
+00:06:17,140 --> 00:06:25,090
+So this basically ensures that my code is not waiting for the server to send back a response object
+
+77
+00:06:25,120 --> 00:06:31,270
+indefinitely and it won't hang in there forever for eternity.
+
+78
+00:06:31,270 --> 00:06:37,210
+So this is how timeout works and preferably you should have them in multiples of three.
+
+79
+00:06:37,720 --> 00:06:38,590
+OK.
+
+80
+00:06:38,830 --> 00:06:43,240
+I hope this user agent stuff is clear to you.
+
+81
+00:06:43,240 --> 00:06:50,740
+And next we'll move to Beautiful Soup which is a parser and I would explain how we can process
+
+82
+00:06:50,800 --> 00:06:54,790
+content which the server sent us back.
+
+83
+00:06:54,820 --> 00:06:56,000
+Thank you very much.
+

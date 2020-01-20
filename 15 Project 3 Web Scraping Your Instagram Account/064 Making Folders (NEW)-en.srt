@@ -1,0 +1,348 @@
+1
+00:00:00,630 --> 00:00:07,270
+Hello everyone! In this video, we are going to
+
+2
+00:00:00,630 --> 00:00:07,270
+discuss where we are going to download our photos.
+
+3
+00:00:07,380 --> 00:00:14,790
+Now we have this parameter coming "path". This argument.
+
+4
+00:00:07,380 --> 00:00:14,790
+So it tells us the location of where are going to
+
+5
+00:00:14,790 --> 00:00:17,120
+download our photos here.
+
+6
+00:00:17,340 --> 00:00:25,450
+OK, so to ensure I'm downloading in the right
+
+7
+00:00:17,340 --> 00:00:25,450
+directory I have to ensure this path exists.
+
+8
+00:00:25,480 --> 00:00:28,330
+It is a check which I have to ensure, right.
+
+9
+00:00:28,390 --> 00:00:33,450
+So if I open my desktop, can you see any folder name "instaPhotos"?
+
+10
+00:00:34,530 --> 00:00:40,270
+It is not there but here in the "path"
+
+11
+00:00:34,530 --> 00:00:40,270
+it states that "Desktop/instaPhotos".
+
+12
+00:00:40,280 --> 00:00:44,280
+But I don't have any folder "instaPhotos" in my desktop.
+
+13
+00:00:44,610 --> 00:00:46,370
+So what do we do now.
+
+14
+00:00:46,460 --> 00:00:51,770
+The first thing which needs to be done is to
+
+15
+00:00:46,460 --> 00:00:51,770
+ensure that does this path exist
+
+16
+00:00:51,780 --> 00:00:54,390
+which the user entered.
+
+17
+00:00:54,600 --> 00:00:58,910
+So I am going to import "os" here, "os" is a module.
+
+18
+00:00:58,920 --> 00:01:01,310
+It's a built in module. You do not have to download it.
+
+19
+00:01:01,380 --> 00:01:02,590
+We have "pep".
+
+20
+00:01:02,730 --> 00:01:05,230
+So it's it comes with Python.
+
+21
+00:01:05,250 --> 00:01:05,570
+OK.
+
+22
+00:01:05,580 --> 00:01:10,630
+So what we are going to do is we're going
+
+23
+00:01:05,580 --> 00:01:10,630
+to use "os" to see if this path exists.
+
+24
+00:01:10,740 --> 00:01:18,080
+This path which we have and if it doesn't exist
+
+25
+00:01:10,740 --> 00:01:18,080
+we're going to make sure that it exists now. And how we
+
+26
+00:01:18,090 --> 00:01:20,560
+are going to make sure that, we are going to create it.
+
+27
+00:01:21,000 --> 00:01:30,260
+OK, so what we are going to do is I'm going to open to
+
+28
+00:01:21,000 --> 00:01:30,260
+Selenium and go to this that whole process. I'm just
+
+29
+00:01:30,260 --> 00:01:40,100
+going to say "input" this is just to stop
+
+30
+00:01:30,260 --> 00:01:40,100
+the execution of the program. "stop for now".
+
+31
+00:01:40,290 --> 00:01:42,600
+And before that I say print
+
+32
+00:01:49,860 --> 00:01:55,700
+so the function that you're going to use is "os.path.exists"
+
+33
+00:01:55,740 --> 00:01:57,520
+and here I give it "path".
+
+34
+00:01:57,990 --> 00:02:01,310
+So this going to return me a boolean value, true or false.
+
+35
+00:02:01,320 --> 00:02:05,790
+If the file exists it is going to return me
+
+36
+00:02:01,320 --> 00:02:05,790
+"True" if it doesn't it is going to tell me false.
+
+37
+00:02:06,000 --> 00:02:06,800
+I'm going to run this.
+
+38
+00:02:06,810 --> 00:02:08,360
+And let's see what we get.
+
+39
+00:02:09,310 --> 00:02:16,530
+So it says "False", can you see the that? That means
+
+40
+00:02:09,310 --> 00:02:16,530
+that this path doesn't exist and that is very true.
+
+41
+00:02:16,530 --> 00:02:20,190
+We don't have any folder "instaPhotos" in my desktop.
+
+42
+00:02:20,220 --> 00:02:21,880
+So how do we take care of this?
+
+43
+00:02:22,170 --> 00:02:27,530
+So how we do that is is it says "os.mkdir".
+
+44
+00:02:27,870 --> 00:02:29,130
+And then you give it "path".
+
+45
+00:02:29,160 --> 00:02:35,720
+I'm going to run this now this like here
+
+46
+00:02:29,160 --> 00:02:35,720
+with this like we we're supposed to run this.
+
+47
+00:02:35,730 --> 00:02:39,190
+It is just to show you walk
+
+48
+00:02:35,730 --> 00:02:39,190
+you through the function here.
+
+49
+00:02:39,210 --> 00:02:47,470
+So make directory, "mkdir", what this function
+
+50
+00:02:39,210 --> 00:02:47,470
+does is it is going to create this directory
+
+51
+00:02:47,470 --> 00:02:49,420
+here, this "instaPhotos" directory here.
+
+52
+00:02:49,440 --> 00:02:55,010
+If it doesn't exist already on the desktop and
+
+53
+00:02:49,440 --> 00:02:55,010
+how we're going to do this is we are going to sat "if not
+
+54
+00:02:55,050 --> 00:02:57,300
+os.path.exists"
+
+55
+00:03:00,120 --> 00:03:03,160
+then "os.mkdir(path)".
+
+56
+00:03:03,660 --> 00:03:09,570
+Now what this line is going to do is this line is going
+
+57
+00:03:03,660 --> 00:03:09,570
+to ensure that this directory does exist in our
+
+58
+00:03:09,570 --> 00:03:14,140
+system and if it doesn't exist we are going to create it.
+
+59
+00:03:14,430 --> 00:03:15,670
+OK.
+
+60
+00:03:15,690 --> 00:03:23,590
+And I'm going to copy this and I'm going to say if "self.error" is "False".
+
+61
+00:03:24,420 --> 00:03:25,040
+Here you go.
+
+62
+00:03:28,550 --> 00:03:33,280
+Now let's run this and see if we get the directory.
+
+63
+00:03:33,620 --> 00:03:34,190
+OK.
+
+64
+00:03:35,050 --> 00:03:40,660
+With this specified path, I hope this is making sense to you.
+
+65
+00:03:40,740 --> 00:03:42,020
+I'm going to run this now.
+
+66
+00:03:44,010 --> 00:03:47,280
+There we go.
+
+67
+00:03:47,300 --> 00:03:53,780
+The reason I have this after all this is that say
+
+68
+00:03:47,300 --> 00:03:53,780
+that I got an error while logging in then it's
+
+69
+00:03:53,780 --> 00:03:56,820
+no use making a directory which is not going to be used.
+
+70
+00:03:56,830 --> 00:03:57,140
+Right.
+
+71
+00:03:57,140 --> 00:04:02,560
+We only make it until it's absolutely necessary to do that.
+
+72
+00:04:02,950 --> 00:04:04,120
+OK.
+
+73
+00:04:04,570 --> 00:04:06,630
+So now we're logged into Instagram
+
+74
+00:04:10,480 --> 00:04:12,440
+opening target's profile.
+
+75
+00:04:19,350 --> 00:04:21,450
+Scrolling down, scrolling down
+
+76
+00:04:40,330 --> 00:04:46,170
+and we should have our directory any time now
+
+77
+00:04:40,330 --> 00:04:46,170
+and here it is, "instaPhotos". Can you see this?
+
+78
+00:04:46,170 --> 00:04:46,950
+"instaPhotos".
+
+79
+00:04:47,800 --> 00:04:54,480
+So our code created this directory because it found that
+
+80
+00:04:47,800 --> 00:04:54,480
+it doesn't exist already in our system. OK.
+
+81
+00:04:54,490 --> 00:04:58,360
+Great. So in the next video, we're going
+
+82
+00:04:54,490 --> 00:04:58,360
+to discuss the downloading part.
+
+83
+00:04:58,360 --> 00:05:03,970
+Now as we have the directory the location of where we
+
+84
+00:04:58,360 --> 00:05:03,970
+are going to store our photos and we have ensured
+
+85
+00:05:03,970 --> 00:05:06,510
+that location exists on our system.
+
+86
+00:05:07,470 --> 00:05:09,410
+OK, I'll see you in the next video.
+
+87
+00:05:09,420 --> 00:05:09,900
+Thank you.
+

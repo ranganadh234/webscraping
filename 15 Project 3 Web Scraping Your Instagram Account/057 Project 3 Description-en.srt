@@ -1,0 +1,300 @@
+1
+00:00:00,990 --> 00:00:08,280
+Hello everyone! In this video, we are going to discuss
+
+2
+00:00:00,990 --> 00:00:08,280
+your final project and I'm going to brief you about what
+
+3
+00:00:08,520 --> 00:00:11,200
+we are supposed to do in your final project.
+
+4
+00:00:11,460 --> 00:00:18,450
+So I'm sure all of you have used Instagram before and
+
+5
+00:00:11,460 --> 00:00:18,450
+I mean it must be like let's say you
+
+6
+00:00:18,450 --> 00:00:25,760
+have uploaded 400 or 500 photos and now you want to
+
+7
+00:00:18,450 --> 00:00:25,760
+have a copy of each photo on your PC or somewhere.
+
+8
+00:00:25,890 --> 00:00:27,260
+So what are you going to do?
+
+9
+00:00:27,270 --> 00:00:32,190
+Don't tell me that you are going to open each photo and then
+
+10
+00:00:27,270 --> 00:00:32,190
+you're going to download them separately and
+
+11
+00:00:32,190 --> 00:00:33,470
+then using your phone.
+
+12
+00:00:33,810 --> 00:00:35,880
+So what do you suggest.
+
+13
+00:00:35,880 --> 00:00:37,440
+Like what can we do now.
+
+14
+00:00:38,570 --> 00:00:41,350
+So the task at hand is that
+
+15
+00:00:41,410 --> 00:00:49,820
+we are going to write a scraper for downloading
+
+16
+00:00:41,410 --> 00:00:49,820
+images from Instagram for any user
+
+17
+00:00:49,910 --> 00:00:57,100
+with we are friends with or with open
+
+18
+00:00:49,910 --> 00:00:57,100
+privacy like you can access the profile
+
+19
+00:00:57,130 --> 00:00:58,000
+openly.
+
+20
+00:00:58,160 --> 00:01:01,640
+So how can you go about this.
+
+21
+00:01:01,640 --> 00:01:07,940
+I'm just going to give you an overview. So you know
+
+22
+00:01:01,640 --> 00:01:07,940
+the first thing you do is you log into Instagram
+
+23
+00:01:08,270 --> 00:01:12,970
+and then you will say "dataminer2060".
+
+24
+00:01:12,980 --> 00:01:18,190
+I mean these are the credentials I'm
+
+25
+00:01:12,980 --> 00:01:18,190
+using and I'll provide them to you
+
+26
+00:01:18,320 --> 00:01:21,090
+but you can also use your own account if you want to.
+
+27
+00:01:21,380 --> 00:01:24,640
+OK, so and I'm going to log in now.
+
+28
+00:01:24,770 --> 00:01:28,210
+So this is what you are supposed to do. You are going to log in to Instagram.
+
+29
+00:01:28,400 --> 00:01:30,980
+Then you're going to open your own profile.
+
+30
+00:01:31,250 --> 00:01:31,810
+OK.
+
+31
+00:01:32,930 --> 00:01:34,620
+You need to open your own profile.
+
+32
+00:01:34,700 --> 00:01:37,690
+You're going to see how many photos are here.
+
+33
+00:01:37,850 --> 00:01:39,720
+So here they are 30 photos.
+
+34
+00:01:39,830 --> 00:01:45,260
+And if I scroll down, you see I don't get 30 photos
+
+35
+00:01:39,830 --> 00:01:45,260
+at once so I have to click this "Load
+
+36
+00:01:45,260 --> 00:01:47,500
+more" button. Ater doing that,
+
+37
+00:01:47,840 --> 00:01:54,330
+I have to scroll down because all the photos are
+
+38
+00:01:47,840 --> 00:01:54,330
+present, AJAX is being used here.
+
+39
+00:01:54,490 --> 00:02:00,620
+So then I scroll down and after I'm done
+
+40
+00:01:54,490 --> 00:02:00,620
+with that, after all the photos have been loaded
+
+41
+00:02:00,620 --> 00:02:05,010
+what I do is I download them, I download each photo.
+
+42
+00:02:05,060 --> 00:02:14,180
+And with that I also want to get the
+
+43
+00:02:05,060 --> 00:02:14,180
+status for each photo, the caption for each photo.
+
+44
+00:02:14,290 --> 00:02:16,310
+So this is the caption here.
+
+45
+00:02:16,340 --> 00:02:17,380
+This is the caption here.
+
+46
+00:02:17,400 --> 00:02:20,530
+I also want that.
+
+47
+00:02:20,580 --> 00:02:26,150
+So this is what you are supposed
+
+48
+00:02:20,580 --> 00:02:26,150
+to do for the final project.
+
+49
+00:02:26,260 --> 00:02:33,070
+So the user can give any username. OK.
+
+50
+00:02:33,150 --> 00:02:34,860
+It could be like your own username.
+
+51
+00:02:34,890 --> 00:02:36,690
+I mean the one who's using it.
+
+52
+00:02:36,690 --> 00:02:43,580
+So if he wants to get his images and stuff, he can
+
+53
+00:02:36,690 --> 00:02:43,580
+do that like it can be anyone's
+
+54
+00:02:43,620 --> 00:02:44,980
+username.
+
+55
+00:02:45,090 --> 00:02:45,730
+But
+
+56
+00:02:45,920 --> 00:02:49,620
+the privacy should be open to
+
+57
+00:02:45,920 --> 00:02:49,620
+that person who's accessing
+
+58
+00:02:49,760 --> 00:02:56,640
+their Instagram. So let's say if you
+
+59
+00:02:56,640 --> 00:03:00,960
+want to download my Instagram photos
+
+60
+00:02:56,640 --> 00:03:00,960
+but we are not friends on Instagram.
+
+61
+00:03:00,960 --> 00:03:02,690
+My privacy is private.
+
+62
+00:03:02,880 --> 00:03:07,630
+You can't download them so that you actually
+
+63
+00:03:02,880 --> 00:03:07,630
+need to be friend, you need to follow them.
+
+64
+00:03:07,650 --> 00:03:08,180
+OK.
+
+65
+00:03:08,340 --> 00:03:10,410
+And they have to give you access.
+
+66
+00:03:10,410 --> 00:03:13,840
+So if that's done then you can download their images.
+
+67
+00:03:13,880 --> 00:03:17,070
+But we'll stick with downloading our own images right now.
+
+68
+00:03:17,070 --> 00:03:17,620
+OK.
+
+69
+00:03:17,730 --> 00:03:20,270
+So this is what
+
+70
+00:03:20,490 --> 00:03:28,360
+your final project is about and I wish to use the
+
+71
+00:03:20,490 --> 00:03:28,360
+object oriented programming approach for doing this.
+
+72
+00:03:28,470 --> 00:03:30,610
+There would be many things we learned along the way.
+
+73
+00:03:30,610 --> 00:03:36,270
+Many more things, little things that we haven't really
+
+74
+00:03:36,270 --> 00:03:39,780
+covered so I'll see you soon
+
+75
+00:03:39,950 --> 00:03:42,840
+In the solution videos. Thank you very much.
+
